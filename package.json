@@ -1,0 +1,25 @@
+{
+  "name": "semantic-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "port": "7890"
+  },
+  "scripts": {
+    "preinstall": "npm prune",
+    "postinstall": "npm outdated",
+    "//postinstall": "cp -R ./node_modules/duplexer ./",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "python -m SimpleHTTPServer $npm_package_config_port",
+    "prod": "./scripts/prod.sh",
+    "deploy": "echo 'DEPLOY TO AWS'"
+  },
+  "author": "Jon Laz <jonathan.lazarini@wanadoo.fr>",
+  "license": "ISC",
+  "dependencies": {
+    "npm-run-all": "4.0.2",
+    "uglify-js": "2.8.13",
+    "uglifycss": "0.0.25"
+  }
+}
