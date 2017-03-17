@@ -6,14 +6,15 @@
   "scripts": {
     "clean": "rm -fr dist",
     "build": "node ./scripts/build",
-    "serve": "node ./scripts/serve"
+    "serve": "node ./scripts/serve",
+    "dev": "npm run clean && npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/buildit/buildit.git"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/buildit/buildit/issues"
   },
