@@ -32,9 +32,27 @@ gulp.task('copy-files', () => {
 });
 
 gulp.task('css', () => {
-  return gulp.src([`${src}/**/*css`])
+  const files = [
+    "components/reset.css",
+    "components/site.css",
+    "components/container.css",
+    "components/grid.css",
+    "components/header.css",
+    "components/image.css",
+    "components/menu.css",
+    "components/divider.css",
+    "components/dropdown.css",
+    "components/segment.css",
+    "components/button.css",
+    "components/list.css",
+    "components/icon.css",
+    "components/transition.css",
+    "components/buildit.css"
+  ]
+
+  return gulp.src( files.map( item => `${src}/${item}`))
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    // .pipe(concatCss("bundle.css"))
+    .pipe(concatCss("bundle.css"))
     .pipe(gulp.dest(target));
 });
 
