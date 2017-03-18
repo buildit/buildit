@@ -9,6 +9,7 @@ const watch = require('gulp-watch');
 const src = 'src';
 const target = 'dist';
 
+// Web server
 gulp.task('serve', () => {
   connect.server({
     root: target,
@@ -16,10 +17,12 @@ gulp.task('serve', () => {
   });
 });
 
+// File watcher
 gulp.task('watch', function () {
   gulp.watch([`${src}/**`], ['build']);
 });
 
+// Clean the output directory
 gulp.task('clean', () => {
   return gulp.src(target, {read: false})
     .pipe(clean());
@@ -31,7 +34,11 @@ gulp.task('copy-files', () => {
     .pipe(gulp.dest(target));
 });
 
+// Build the CSS
 gulp.task('css', () => {
+  // Normally we shouldn't have to do this. For now we have to
+  // as the CSS files need cleaning up and there seems to be an issue
+  // with the order of inclusion.
   const files = [
     "components/reset.css",
     "components/site.css",
@@ -57,4 +64,4 @@ gulp.task('css', () => {
 });
 
 gulp.task('build', ['copy-files', 'css']);
-gulp.task('default', ['build', 'serve', 'watch']);
+gulp.task('default', ['clean', 'build', 'serve', 'watch']);
