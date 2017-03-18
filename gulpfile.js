@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const clean = require('gulp-clean');
 const gulpCopy = require('gulp-copy');
 const connect = require('gulp-connect');
+const concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
 const watch = require('gulp-watch');
 
@@ -33,6 +34,7 @@ gulp.task('copy-files', () => {
 gulp.task('css', () => {
   return gulp.src([`${src}/**/*css`])
     .pipe(cleanCSS({compatibility: 'ie8'}))
+    // .pipe(concatCss("bundle.css"))
     .pipe(gulp.dest(target));
 });
 
