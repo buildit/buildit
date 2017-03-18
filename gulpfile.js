@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const clean = require('gulp-clean');
-const gulpCopy = require('gulp-copy');
 const connect = require('gulp-connect');
 const concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
@@ -18,13 +17,13 @@ gulp.task('serve', () => {
 });
 
 // File watcher
-gulp.task('watch', function () {
-  gulp.watch([`${src}/**`], ['build']);
+gulp.task('watch', () => {
+  watch([`${src}/**`], ['build']);
 });
 
 // Clean the output directory
 gulp.task('clean', () => {
-  return gulp.src(target, {read: false})
+  return gulp.src(target, { read: false })
     .pipe(clean());
 });
 
@@ -40,26 +39,26 @@ gulp.task('css', () => {
   // as the CSS files need cleaning up and there seems to be an issue
   // with the order of inclusion.
   const files = [
-    "components/reset.css",
-    "components/site.css",
-    "components/container.css",
-    "components/grid.css",
-    "components/header.css",
-    "components/image.css",
-    "components/menu.css",
-    "components/divider.css",
-    "components/dropdown.css",
-    "components/segment.css",
-    "components/button.css",
-    "components/list.css",
-    "components/icon.css",
-    "components/transition.css",
-    "components/buildit.css"
-  ]
+    'components/reset.css',
+    'components/site.css',
+    'components/container.css',
+    'components/grid.css',
+    'components/header.css',
+    'components/image.css',
+    'components/menu.css',
+    'components/divider.css',
+    'components/dropdown.css',
+    'components/segment.css',
+    'components/button.css',
+    'components/list.css',
+    'components/icon.css',
+    'components/transition.css',
+    'components/buildit.css'
+  ];
 
-  return gulp.src( files.map( item => `${src}/${item}`))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(concatCss("bundle.css"))
+  return gulp.src(files.map(item => `${src}/${item}`))
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest(target));
 });
 
