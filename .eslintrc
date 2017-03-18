@@ -5,6 +5,7 @@
     "node": true
   },
   "rules": {
-    "comma-dangle": 0
+    "comma-dangle": 0,
+    "arrow-body-style": 1
   }
 }
