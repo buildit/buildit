@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
-    "serve": "node ./scripts/serve",
-    "dev": "gulp && npm run serve",
+    "serve": "gulp serve",
+    "dev": "gulp",
     "test": "echo No tests just yet!"
   },
   "repository": {
@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/buildit/buildit#readme",
   "devDependencies": {
-    "chalk": "^1.1.3",
-    "express": "^4.15.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-cli": "^1.2.2",
-    "gulp-copy": "^1.0.0"
+    "gulp-connect": "^5.0.0",
+    "gulp-copy": "^1.0.0",
+    "gulp-watch": "^4.3.11"
   }
 }

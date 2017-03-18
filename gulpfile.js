@@ -1,9 +1,22 @@
 const gulp = require('gulp');
 const clean = require('gulp-clean');
 const gulpCopy = require('gulp-copy');
+const connect = require('gulp-connect');
+const watch = require('gulp-watch');
 
 const src = 'src';
 const target = 'dist';
+
+gulp.task('serve', () => {
+  connect.server({
+    root: target,
+    livereload: true
+  });
+});
+
+gulp.task('watch', function () {
+  gulp.watch([`${src}/**`], ['build']);
+});
 
 gulp.task('clean', () => {
   return gulp.src(target, {read: false})
@@ -22,4 +35,4 @@ gulp.task('css', () => {
 });
 
 gulp.task('build', ['copy-files', 'css']);
-gulp.task('default', ['clean', 'build']);
+gulp.task('default', ['serve', 'watch']);
