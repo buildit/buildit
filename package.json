@@ -1,0 +1,27 @@
+{
+  "name": "buildit",
+  "version": "0.1.0",
+  "description": "Buildit website",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -fr dist",
+    "build": "node ./scripts/build",
+    "serve": "node ./scripts/serve",
+    "dev": "npm run clean && npm run build && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buildit/buildit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buildit/buildit/issues"
+  },
+  "homepage": "https://github.com/buildit/buildit#readme",
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "express": "^4.15.2",
+    "recursive-copy": "^2.0.6"
+  }
+}

@@ -402,10 +402,10 @@
   }
 
   .ui.menu:not(.vertical) .right.menu {
-    display: none !important;
+    display: none;
   }
 
-  
+
 
   .secondary.pointing.menu .item,
   .secondary.pointing.menu .menu {
@@ -494,7 +494,7 @@
   }
 
   .ui.menu:not(.vertical) .right.menu {
-    display: none !important;
+    display: none;
   }
 
   .secondary.pointing.menu .item,
