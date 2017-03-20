@@ -1,3 +1,19 @@
+@import 'reset.css';
+@import 'site.css';
+@import 'container.css';
+@import 'grid.css';
+@import 'header.css';
+@import 'image.css';
+@import 'menu.css';
+@import 'divider.css';
+@import 'dropdown.css';
+@import 'segment.css';
+@import 'button.css';
+@import 'list.css';
+@import 'icon.css';
+@import 'transition.css';
+
+/*overrides*/
     .hidden.menu {
       display: none;
     }
@@ -573,8 +589,6 @@
 
 /* Tablet Only */
 @media only screen and (min-width: 429px) and (max-width: 767px) {
-
-
   .ui.fixed.menu {
     display: none !important;
   }
