@@ -413,6 +413,16 @@
 /* Mobile Horizontal Only */
 @media only screen and (min-width: 321px) and (max-width: 375px) {
 
+  #home {
+    display: none;
+  }
+
+  .ui.menu:not(.vertical) .right.menu {
+    display: none;
+  }
+
+
+
   .secondary.pointing.menu .item,
   .secondary.pointing.menu .menu {
     display: flex !important;
@@ -494,6 +504,14 @@
 
 /* Mobile Large Only */
 @media only screen and (min-width: 376px) and (max-width: 428px) {
+
+  #home {
+    display: none;
+  }
+
+  .ui.menu:not(.vertical) .right.menu {
+    display: none;
+  }
 
   .secondary.pointing.menu .item,
   .secondary.pointing.menu .menu {
@@ -1686,4 +1704,8 @@
 .atom .electron:nth-child(3):before {
   transform: rotateZ(-100deg) rotateX(-60deg) rotateY(60deg);
   animation: electron3 3s linear infinite;
+}
+
+*::-webkit-media-controls {
+  display: none !important;
 }
