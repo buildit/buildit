@@ -17,12 +17,12 @@ Location: City, Country. […]
 Name: name or url […]
 
 /* SITE */
-Last update: November 2016
+Last update: March 2017
 Standards: HTML5, CSS3, ECMA6
 Components: Semantic UI, jQuery
 Software/SAAS: Atom, Webstorm, Github, Bitbucket,
 Console, SourceTree, Photoshop, Illustrator, IA Writer,
-Dillinger, a11yproject
+Dillinger, a11yproject, Gulp
 
 /* IMAGES */
 Unsplash rocks, thanks to all contributors
