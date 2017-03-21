@@ -34,7 +34,7 @@
       font-size: 3vw;
       font-weight: normal;
       text-align: left;
-      text-transform: uppercase;
+      /*text-transform: uppercase;*/
     }
     .masthead h2 {
       font-size: 1.7em;
