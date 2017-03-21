@@ -34,40 +34,13 @@
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
-  <script src="assets/library/jquery.min.js"></script>
-  <script src="components/visibility.js"></script>
-  <script src="components/transition.js"></script>
-  <script>
-  $(document).ready(function() {
-
-    // fix menu when passed
-    $('.masthead')
-    .visibility({
-      once: false,
-      onBottomPassed: function() {
-        $('.fixed.menu').transition('fade in');
-      },
-      onBottomPassedReverse: function() {
-        $('.fixed.menu').transition('fade out');
-      }
-    });
-
-    // lazy load images
-    $('.image').visibility({
-      type: 'image',
-      transition: 'horizontal zoom pulse',
-      duration: 4000
-    });
-
-    $('.image').visibility('refresh');
-  });
-  </script>
+  <script src="/index.js"></script>
 
 </head>
 <body>
 
   <!-- Following Menu -->
-  <!-- <div class="ui large top fixed hidden menu">
+   <div class="ui large top fixed hidden menu">
     <div class="ui container">
       <a class="item black" href="index.html"><img id="logo" src="assets/images/buildit-logo-black.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
       <a class="active item" href="index.html" id="home">Home</a>
@@ -79,7 +52,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <!-- Page Contents -->
   <div class="pusher">

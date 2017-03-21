@@ -32,37 +32,7 @@
 
   <link rel="stylesheet" type="text/css" href="components/buildit.css">
 
-  <script src="assets/library/jquery.min.js"></script>
-  <script src="components/visibility.js"></script>
-  <script src="components/transition.js"></script>
-  <script>
-  $(document)
-    .ready(function() {
-
-      // fix menu when passed
-      $('.nomasta')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
-
-      // lazy load images
-      $('.image').visibility({
-        type: 'image',
-        duration: 4000
-      });
-      $('.image').visibility('refresh');
-
-    })
-  ;
-
-  </script>
+  <script src="/index.js"></script>
 </head>
 <body>
 

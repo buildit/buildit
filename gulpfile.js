@@ -1,30 +1,24 @@
-
-// Gulp Config
-// ===========
 'use strict';
-
-// REQUIRE
-// -------
-    var gulp    =   require('gulp'),
-    browserSync = 	require('browser-sync').create(),
-
-    // CSS
-    csslint     =   require('gulp-csslint'),
-
-    // JS
-    concat      = 	require('gulp-concat'),
-    uglify      = 	require('gulp-uglify'),
-    sourcemaps  = 	require('gulp-sourcemaps'),
-    jshint      =   require('gulp-jshint'),
-    stylish     =   require('jshint-stylish'),
-
-    // UTIL
-    plumber     =   require('gulp-plumber'),
-    bump        =   require('gulp-bump');
-
-// OTHER PLUGINS
-// -------------
-// var connect = require('gulp-connect'); -- a simple web server
+var gulp    =   require('gulp'),
+  browserSync = 	require('browser-sync').create(),
+  // CSS
+  csslint     =   require('gulp-csslint'),
+  // JS
+  watchify = require('watchify'),
+  browserify = require('browserify'),
+  concat      = 	require('gulp-concat'),
+  uglify      = 	require('gulp-uglify'),
+  sourcemaps  = 	require('gulp-sourcemaps'),
+  jshint      =   require('gulp-jshint'),
+  stylish     =   require('jshint-stylish'),
+  // UTIL
+  plumber     =   require('gulp-plumber'),
+  bump        =   require('gulp-bump'),
+  source = require('vinyl-source-stream'),
+  buffer = require('vinyl-buffer'),
+  gutil = require('gulp-util'),
+  assign = require('lodash.assign'),
+  del = require('del');
 
 
 // ENVIRONMENT
@@ -34,9 +28,6 @@
 var env = process.env.NODE_ENV || 'development';
 
 
-// TASKS
-// -----
-
 // HTML
 gulp.task('html', function(){
 	return gulp.src('./src/*.html')
@@ -45,7 +36,6 @@ gulp.task('html', function(){
 
 
 // CSS
-// Lint task - note normalize ignored as this causes errors
 gulp.task('css-lint', function() {
   gulp.src(['./src/components/*.css'])
   .pipe(plumber())
@@ -54,7 +44,7 @@ gulp.task('css-lint', function() {
   .pipe(csslint.reporter('fail'));
 });
 
-// css-lint removed
+//TODO css-lint removed, too many errors to debug
 gulp.task('css', function(){
 	return gulp.src('./src/components/*.css')
     .pipe(plumber())
@@ -63,46 +53,62 @@ gulp.task('css', function(){
 
 
 // JS
-// LINT the JS
 gulp.task('js-hint', function() {
-  return gulp.src('./src/components/*.js')
+  return gulp.src('./src/js/**/*.js')
   .pipe(plumber())
   .pipe(jshint())
   .pipe(jshint.reporter(stylish,{ verbose: true }))
   .pipe(jshint.reporter('fail'));
 });
 
-
-// Output JS files
-gulp.task('js',['js-hint'], function() {
-
-    // If environment is in 'development' (default) run source maps and do not minify
-    // Else If environment is in 'production' concat and minify
-    if(env === 'development'){
-
-        return gulp.src('./src/components/*.js')
-        .pipe(plumber())
-        .pipe(concat('scripts.js'))
-        .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./dist/components'));
-
-    } else if (env === 'production'){
-
-        return gulp.src('./src/components/*.js')
-        .pipe(plumber())
-        .pipe(concat('scripts.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist/components'));
-    }
-
-});
+// add custom browserify options here
+var customOpts = {
+  entries: ['./src/js/index.js'],
+  debug: true,
+  // shim: {
+  //   jquery: {
+  //     path: './node_modules/jquery/dist/jquery.js',
+  //     exports: '$'
+  //   }
+  }
+//
+var opts = assign({}, watchify.args, customOpts);
+var b = watchify(browserify(opts));
+//
+// // add transformations here
+// b.transform(['browserify-shim']);
+//
+gulp.task('js', bundle); // so you can run `gulp js` to build the file
+b.on('update', bundle); // on any dep update, runs the bundler
+b.on('log', gutil.log); // output build logs to terminal
+//
+function bundle() {
+  return b.bundle()
+  // log errors if they happen
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source('./index.js'))
+    // optional, remove if you don't need to buffer file contents
+    .pipe(buffer())
+    // optional, remove if you dont want sourcemaps
+    .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
+    // Add transformation tasks to the pipeline here.
+    .pipe(sourcemaps.write('./')) // writes .map file
+    .pipe(gulp.dest('./dist'));
+}
 
 // Additional assets move
 gulp.task('assets', function(){
 	return gulp.src('./src/assets/**')
 	.pipe(gulp.dest('./dist/assets'));
 });
+
+//Clean the build folder
+/*gulp.task('clean', function () {
+  console.log('-> Cleaning build folder');
+  del([
+    './dist/!**'
+  ]);
+});*/
 
 gulp.task('themes', function(){
 	return gulp.src('./src/themes/**')
@@ -117,7 +123,7 @@ browserSync.watch("./dist/components/*.js").on("change", browserSync.reload);
 
 
 // SERVE
-gulp.task('serve', ['html','css', 'assets','themes'], function () {
+gulp.task('serve', ['html','css', 'assets','themes', 'js'], function () {
 
     // Serve files from the root of this project
     browserSync.init({
@@ -137,10 +143,13 @@ gulp.task('serve', ['html','css', 'assets','themes'], function () {
     gulp.watch('./src/*.html',['html']);
     gulp.watch('./src/components/*.css',['css']);
     gulp.watch('./src/components/*.js',['js']);
+    gulp.watch('./src/js/*.js',['js']);
 
 });
 
-
+gulp.task('build', ['html', 'css', 'assets', 'themes', 'js' ], () => {
+  console.log('dist built!')
+})
 
 // DEFAULT GULP TASK
 gulp.task('default', [
