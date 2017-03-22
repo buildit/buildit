@@ -1766,3 +1766,13 @@ section.page {
 /*
 end of CSS for layout page
  */
+
+/*
+beginning of CSS for nested grid
+ */
+section.full-height {
+  height: 100%
+}
+/*
+end of CSS for nested grid
+ */
