@@ -1735,13 +1735,13 @@ i.icon img {
   background-image: url('../assets/images/innovate.jpg');
   display: block;
   width: 100%;
-  height: 600px;
+  height: 360px;
   background-size: cover;
 }
 
 .about-people-banner .about-header {
   float: right;
-  width: 45%;
+  /*width: 45%;*/
   padding-top: 8%;
   background-color: rgba(27,28,29,0.6);
   font-size: 1.8rem;
@@ -1780,5 +1780,11 @@ i.icon img {
     padding-top: 24px;
     padding-bottom: 24px;
     float: left;
+  }
+  .about-people-banner {
+    height: 450px;
+  }
+  .about-people-banner .about-header {
+    width: 45%;
   }
 }
