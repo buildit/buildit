@@ -4,6 +4,7 @@ const connect = require('gulp-connect');
 const concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
 const watch = require('gulp-watch');
+const open = require('gulp-open');
 
 const src = 'src';
 const target = 'dist';
@@ -13,7 +14,8 @@ gulp.task('serve', () => {
   connect.server({
     root: target,
     livereload: true
-  });
+  })
+  gulp.src('').pipe(open({uri: 'http://localhost:8080'}));
 });
 
 // File watcher
