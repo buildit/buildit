@@ -1694,3 +1694,85 @@
 *::-webkit-media-controls {
   display: none !important;
 }
+
+
+
+/*
+CSS for layout page
+ */
+
+/*.ui.fluid.image.b-r-padded {*/
+  /*padding: 0 10px 10px 0;*/
+/*}*/
+
+section.page {
+  margin-top: 2em;
+  /* TODO Change background color - invert color with body tag */
+  background-color: red;
+}
+
+.ui.header.padded {
+  margin-top: 2em;
+  padding: 10px;
+}
+
+.ui.header.colored {
+  /* TODO Change background color */
+ background-color: red;
+}
+
+.ui.header.label {
+  min-width: 25%;
+  max-width: 35%;
+}
+
+.column.no-padding {
+  position: relative !important;
+  padding: 0 !important;
+}
+
+.column .image-block {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-top: .5em;
+  padding-right: 1em;
+  padding-bottom: 2em;
+  text-align: right;
+  /* TODO Change background color */
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.image-block > h2 {
+  font-style: italic;
+}
+
+.image-block_text > h4 {
+  text-transform: uppercase;
+}
+
+/* media query mobile large */
+@media only screen and (max-width: 767px) {
+
+  .column .image-block {
+    padding-top: 1em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+  }
+
+}
+
+/*
+end of CSS for layout page
+ */
+
+/*
+beginning of CSS for nested grid
+ */
+section.full-height {
+  height: 100%
+}
+/*
+end of CSS for nested grid
+ */
