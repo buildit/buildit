@@ -19,7 +19,6 @@
       font-size: 3vw;
       font-weight: normal;
       text-align: left;
-      /*text-transform: uppercase;*/
     }
     .masthead h2 {
       font-size: 1.7em;
@@ -358,7 +357,8 @@
       min-height: 300px;
   }
   .masthead h1.ui.header {
-      font-size: 9vw;
+      font-size: 6vw;
+      max-width: 75%;
   }
 
   .ui.vertical.stripe h2 {
@@ -455,9 +455,9 @@
   .masthead.segment {
       min-height: 300px;
   }
-  .masthead h1.ui.header {
+  /*.masthead h1.ui.header {
     font-size: 9vw;
-  }
+  }*/
 
   .ui.vertical.stripe h3 {
     font-size: 18px;
@@ -545,9 +545,9 @@
   .masthead.segment {
       min-height: 300px;
   }
-  .masthead h1.ui.header {
+  /*.masthead h1.ui.header {
       font-size: 9vw;
-  }
+  }*/
   .ui.inverted.segment, .ui.primary.inverted.segment {
       background-size: 160%;
   }
@@ -589,13 +589,13 @@
   .masthead.segment {
     min-height: 350px;
   }
-  .masthead h1.ui.header {
+  /*.masthead h1.ui.header {
     font-size: 2em;
     margin-top: 1.5em;
-  }
-  .masthead h1.ui.header {
+  }*/
+  /*.masthead h1.ui.header {
     font-size: 8vw;
-  }
+  }*/
 
   .masthead h2 {
     margin-top: 0.5em;
@@ -641,9 +641,9 @@
 /* Tablet Large Only */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
-  .masthead h1.ui.header {
-      font-size: 8vw;
-  }
+  /*.masthead h1.ui.header {
+      font-size: 4vw;
+  }*/
 
   .ldn { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
   .nyc { left: 2.5vw; background-color:rgba(0,0,0,0); width:16vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
@@ -876,9 +876,9 @@
 
 /* Computer Only */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .masthead h1.ui.header {
+  /*.masthead h1.ui.header {
       font-size: 7vw;
-  }
+  }*/
   .row.partners {
     background-size: 50%;
     background-position: left bottom;
@@ -1112,9 +1112,9 @@
 /* Screen Large Only */
 @media only screen and (min-width: 1200px) and (max-width: 1919px) {
 
-  .masthead h1.ui.header {
+  /*.masthead h1.ui.header {
       font-size: 5vw;
-  }
+  }*/
 
   .ldn { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
   .nyc { left: 2.5vw; background-color:rgba(0,0,0,0); width:16vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
@@ -1360,9 +1360,9 @@
     padding-right: 25vw;
   }
 
-  .masthead h1.ui.header {
+  /*.masthead h1.ui.header {
     font-size: 3vw;
-  }
+  }*/
 
   .ldn { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
   .nyc { left: 2.5vw; background-color:rgba(0,0,0,0); width:16vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
