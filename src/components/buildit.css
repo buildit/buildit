@@ -1697,20 +1697,37 @@ i.icon img {
 
 /* Redesign Overides */
 /* - General */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .page-contents {
   width: 100%;
   background-color: #1b1c1d;
   color: white;
 }
 
-/* - About Page */
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
+.subheader {
+  font-size: 1.2rem;
+  line-height: 2.2rem;
 }
-.about-header-wrpper {
-  padding-bottom: 50px;
+
+.page-contents p {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  color: #cccccc;
+}
+
+.content-wrapper {
+  padding: 16px;
+}
+
+/* - About Page */
+
+.about-header-wrapper {
+  padding-bottom: 16px;
 }
 .about-header {
   font-size: 2.3rem;
@@ -1718,17 +1735,12 @@ i.icon img {
   padding: 16px;
   margin: 0;
 }
-.about-header-body {
+.content-half-body {
   padding: 16px;
 }
-.about-subheader {
-  font-size: 1.2rem;
-  line-height: 2.2rem;
-}
-.about-header-body p {
-  font-size: 1.2rem;
-  line-height: 2.3rem;
-  color: #cccccc;
+
+.about-half-content {
+  width: 100%;
 }
 
 .about-people-banner {
@@ -1741,12 +1753,19 @@ i.icon img {
 
 .about-people-banner .about-header {
   float: right;
-  /*width: 45%;*/
-  padding-top: 8%;
+  padding: 8%;
   background-color: rgba(27,28,29,0.6);
   font-size: 1.8rem;
   line-height: 2.6rem;
   height: 100%;
+}
+
+.our-approach-wrapper {
+    background-image: url('../assets/images/formula-bg.jpg');
+    display: block;
+    width: 100%;
+    height: 360px;
+    background-size: cover;
 }
 @media(min-width: 350px){
   .about-header {
@@ -1758,10 +1777,10 @@ i.icon img {
 @media(min-width: 400px){
   .about-header {
     font-size: 2.3rem;
-    line-height: 3rem;
+    line-height: 3.3rem;
     padding: 24px;
   }
-  .about-header-body {
+  .content-half-body {
     padding: 24px;
   }
 }
@@ -1769,14 +1788,12 @@ i.icon img {
 @media (min-width: 640px) {
   .about-header {
     width: 50%;
-    padding: 5%;
     padding-top: 24px;
     padding-bottom: 24px;
     float: left;
   }
-  .about-header-body {
+  .content-half-body {
     width: 50%;
-    padding: 5%;
     padding-top: 24px;
     padding-bottom: 24px;
     float: left;
@@ -1786,5 +1803,14 @@ i.icon img {
   }
   .about-people-banner .about-header {
     width: 45%;
+  }
+}
+
+@media (min-width: 1200px){
+  .about-header {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
