@@ -1,11 +1,10 @@
 /**
  * Created by jonlazarini on 21/03/17.
  */
-var $ = require('jquery')
-var visibility = require('../components/visibility.js');
-var transition = require('../components/transition.js');
-
-
+// var $ = require('jquery')
+// var visibility = require('../components/visibility.js');
+// var transition = require('../components/transition.js');
+//
 $(document).ready(function() {
 
   $('.masthead')
