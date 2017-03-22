@@ -18,7 +18,8 @@ gulp.task('serve', () => {
 
 // File watcher
 gulp.task('watch', () => {
-  gulp.watch([`${src}/**`], { ignoreInitial: false }, ['build']);
+  gulp.watch([`${src}/**`, `!${src}/**/*.css`], { ignoreInitial: false }, ['copy-files']);
+  gulp.watch([`${src}/**/*.css`], { ignoreInitial: false }, ['css']);
 });
 
 // Clean the output directory
@@ -30,7 +31,8 @@ gulp.task('clean', () => {
 // Copy everything except CSS
 gulp.task('copy-files', () => {
   return gulp.src([`${src}/**`, `!${src}/**/*.css`])
-    .pipe(gulp.dest(target));
+    .pipe(gulp.dest(target))
+    .pipe(connect.reload());
 });
 
 // Build the CSS
@@ -59,7 +61,8 @@ gulp.task('css', () => {
   return gulp.src(files.map(item => `${src}/${item}`))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(concatCss('bundle.css'))
-    .pipe(gulp.dest(target));
+    .pipe(gulp.dest(target))
+    .pipe(connect.reload());
 });
 
 gulp.task('build', ['copy-files', 'css']);
