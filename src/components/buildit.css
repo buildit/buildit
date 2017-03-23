@@ -1,4 +1,6 @@
 /*overrides*/
+
+
     .hidden.menu {
       display: none;
     }
@@ -16,7 +18,7 @@
       margin-top: 28vh;
       margin-bottom: 4vh;
       font-size: 3.5vw;
-      font-weight: normal;
+      font-weight: 700;
       text-align: left;
       max-width: 70vw;
     }
@@ -1708,16 +1710,16 @@ h1.ui.header > span {
   margin-left: 0.01em;
 }
 .typewriter span {
-	color: #fff;
+  color: rgba(255,255,255,0.8);
 }
 .concepts span {
-  color: #fff;
+  color: rgba(255,255,255,1);
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
 	width: 100%;
 }
-.tw-words-1 span {
+.concepts-animate span {
 	animation: typeWord 20s linear infinite;
 }
 .concepts span:nth-child(2) {
