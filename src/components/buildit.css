@@ -1,310 +1,307 @@
 /*overrides*/
+.hidden.menu {
+  display: none;
+}
 
+.masthead.segment {
+  padding: 1em 0em;
+}
+.masthead .logo.item img {
+  margin-right: 1em;
+}
+.ui.inverted.basic.grey.button {
+  margin-left: 1.8em;
+}
+.masthead h1.ui.header {
+  margin-top: 28vh;
+  margin-bottom: 4vh;
+  font-size: 3.5vw;
+  font-weight: 700;
+  text-align: left;
+  max-width: 70vw;
+}
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
 
-    .hidden.menu {
-      display: none;
-    }
+.ui.vertical.stripe {
+  padding: 4em 0em;
+}
 
-    .masthead.segment {
-      padding: 1em 0em;
-    }
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-    .ui.inverted.basic.grey.button {
-      margin-left: 1.8em;
-    }
-    .masthead h1.ui.header {
-      margin-top: 28vh;
-      margin-bottom: 4vh;
-      font-size: 3.5vw;
-      font-weight: 700;
-      text-align: left;
-      max-width: 70vw;
-    }
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
+.ui.vertical.stripe h2, .ui.vertical.stripe h3 {
+  font-size: 2.4rem;
+}
 
-    .ui.vertical.stripe {
-      padding: 4em 0em;
-    }
+.ui.vertical.stripe h4 {
+  font-size: 2rem;
+}
 
-    .ui.vertical.stripe h2, .ui.vertical.stripe h3 {
-      font-size: 2.4rem;
-    }
+.ui.vertical.stripe .button + h3,
+.ui.vertical.stripe p + h3 {
+  margin-top: 3em;
+}
+.ui.vertical.stripe .floated.image {
+  clear: both;
+}
+.ui.vertical.stripe p {
+  font-size: 1.33em;
+}
 
-    .ui.vertical.stripe h4 {
-      font-size: 2rem;
-    }
+.ui.vertical.stripe p span {
+  background-color: rgba(33,133,208,0.8);
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  color: white;
+}
 
-    .ui.vertical.stripe .button + h3,
-    .ui.vertical.stripe p + h3 {
-      margin-top: 3em;
-    }
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-    .ui.vertical.stripe p {
-      font-size: 1.33em;
-    }
+.ui.vertical.stripe .horizontal.divider {
+  margin: 3em 0em;
+}
 
-    .ui.vertical.stripe p span {
-      background-color: rgba(33,133,208,0.8);
-      padding-left: 0.3em;
-      padding-right: 0.3em;
-      color: white;
-    }
+.quote.stripe.segment {
+  padding: 0em;
+}
+.quote.stripe.segment .grid .column {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
 
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
+.footer.segment {
+  padding: 5em 0em;
+}
 
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
+.secondary.pointing.menu .toc.item {
+  display: none;
+}
 
-    .footer.segment {
-      padding: 5em 0em;
-    }
-
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
-
-  .letter {
+.letter {
   fill: #2185D0;
   stroke: #2185D0;
   stroke-width: 1;
-  }
-  .ui.secondary.menu .item > img:not(.ui) {
-      margin: 0em;
-      margin-left: -20px;
-  }
-  .ui.menu .item > img:not(.ui) {
+}
+.ui.secondary.menu .item > img:not(.ui) {
+  margin: 0em;
+  margin-left: -20px;
+}
+.ui.menu .item > img:not(.ui) {
   width: 8rem;
-  }
+}
 
-  .ui.secondary.menu .item::before {
-    -webkit-transition-property: transform opacity;
-    -moz-transition-property: transform opacity;
-    -o-transition-property: transform opacity;
-    transition-property: transform opacity;
-    -webkit-transition-duration: 240ms;
-    -moz-transition-duration: 240ms;
-    -o-transition-duration: 240ms;
-    transition-duration: 240ms;
-  }
+.ui.secondary.menu .item::before {
+  -webkit-transition-property: transform opacity;
+  -moz-transition-property: transform opacity;
+  -o-transition-property: transform opacity;
+  transition-property: transform opacity;
+  -webkit-transition-duration: 240ms;
+  -moz-transition-duration: 240ms;
+  -o-transition-duration: 240ms;
+  transition-duration: 240ms;
+}
 
-  .ui.inverted.segment, .ui.primary.inverted.segment {
-      background-image: /*url(../assets/images/simple.svg),*/ url(../assets/images/bg.jpg);
-      background-repeat: no-repeat, repeat-x;
-      background-color: rgba(0,0,0,1);
-      background-size: 100%;
-  }
-  .ui.inverted.segment.contact {
-      background-image: url(../assets/images/shutterstock_221064886.jpg), url(../assets/images/Globe_export.png);
-      background-color: rgba(0,0,0,1);
-      background-size: cover;
-  }
-  .ui.secondary.inverted.pointing.menu {
-      border-width: 0px;
-      /* border-color: rgba(34, 36, 38, 0.15); */
-  }
-
-
-  .ui.vertical.fractal.segment {
-    background-image: url(../assets/images/grid-buildit-01.svg);
+.ui.inverted.segment, .ui.primary.inverted.segment {
+    background-image: /*url(../assets/images/simple.svg),*/ url(../assets/images/bg.jpg);
+    background-repeat: no-repeat, repeat-x;
+    background-color: rgba(0,0,0,1);
     background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 10vw 20vh;
-    padding-top: 6em;
-  }
-  .ui.vertical.make.segment p  {
-    font-size: 90%
-  }
-
-  .ui.vertical.make.segment h4 {
-    font-size: 120%
-  }
-  .ui.animated.basic.button {
-    margin-top: 0.5em;
-    display: grid;
-  }
-
-  .white {
-    color: #fff !important;
-  }
-
-  .hidden.divider.values {
-    margin: 0.4em;
-  }
-
-  .ui.inverted.center.aligned.segment.a2o .ui.image {
-    width: 80%;
-    margin: auto 10vw;
-    margin-bottom: 6vh;
-  }
-
-  #googlemaps {
-    height: 100%;
-    width: 100%;
-    position:absolute;
-    top: 0;
-    left: 0;
-    z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
-  }
-
-  #mapson {
-    position: relative;
-    z-index: 1; /* The z-index should be higher than Google Maps */
-    width: 300px;
-    margin: 60px auto 0;
-    padding: 10px;
-    background: black;
-    height: auto;
-    opacity: .45; /* Set the opacity for a slightly transparent Google Form */
-    color: white;
-  }
-
-  .segment.strive {
-    background-image: url(../assets/images/grid-buildit-01.svg) !important;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border-radius: 0rem;
-    border: 0px solid rgba(34, 36, 38, 0.15);
-    box-shadow: 0px 0px 0px 0px;
-    border-bottom: 1px solid rgba(33,133,208,0.3);
-    font-size: 2rem;
-    font-style: italic;
-  }
-
-  .segment.strive h2 {
-    font-size: 250%;
-    color: rgba(33,133,208,1);
-    margin-bottom: 0.5em;
-  }
-
-
-  .row.partners {
-    background-image:url(../assets/images/partners.png);
-    background-size: 40%;
-    background-repeat: no-repeat;
-    max-height:60vh;
-    height:60vh;
-    text-align: right;
-  }
-
-  .row.partners h2 {
-    font-size:400%;
-    padding-top: 18vh;
-    padding-right: 4vw;
-  }
-
-
-
-  .row.careers {
-    background-image:url(../assets/images/grid-left-buildit.svg);
-    background-repeat:no-repeat
-  }
-    .row.careers > .column:first-child {
-      margin-bottom: -77px;
-    }
-
-  .ui.quote.segment.where {
-    height: 60vh;
-  }
-
-  .ui.inverted.center.aligned.segment.a2o {
-    min-height: 50vh;
-    padding-top: 5vh;
-    margin: 0rem !important;
-    border-radius: inherit;
-    border: none;
-  }
-
-
-  .where > .ui[class*="internally celled"].grid > .row > .column:first-child,
-  .where > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
+}
+.ui.inverted.segment.contact {
+    background-image: url(../assets/images/shutterstock_221064886.jpg), url(../assets/images/Globe_export.png);
+    background-color: rgba(0,0,0,1);
     background-size: cover;
-    font-size: 140%;
-    padding-top: 43vh;
-  }
+}
+.ui.secondary.inverted.pointing.menu {
+    border-width: 0px;
+    /* border-color: rgba(34, 36, 38, 0.15); */
+}
 
-  #london > .ui[class*="internally celled"].grid > .row > .column:first-child {
-    background-image:url(../assets/images/london1.jpg);
-  }
-  #london_wework > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
-    background-image:url(../assets/images/london2.jpg);
-  }
-  #newyork > .ui[class*="internally celled"].grid > .row > .column:first-child {
-    background-image:url(../assets/images/newyork.jpg);
-  }
-  #denver > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
-    background-image:url(../assets/images/denver.jpg);
-  }
-  #dublin > .ui[class*="internally celled"].grid > .row > .column:first-child {
-    background-image:url(../assets/images/dublin.jpg);
-  }
-  #edinburgh > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
-    background-image:url(../assets/images/edinburgh.jpg);
-  }
-  #bangalore > .ui[class*="internally celled"].grid > .row > .column:first-child {
-    background-image:url(../assets/images/bangalore2.jpg);
-  }
+.ui.vertical.fractal.segment {
+  background-image: url(../assets/images/grid-buildit-01.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 10vw 20vh;
+  padding-top: 6em;
+}
+.ui.vertical.make.segment p  {
+  font-size: 90%
+}
 
-  .cities {
-      text-align: initial;
-      font-size: 1.5rem;
-      min-height: 20vh;
-      line-height: 2.5rem;
-      margin-top: 2rem;
-      font-family: Helvetica, sans-serif;
-    }
+.ui.vertical.make.segment h4 {
+  font-size: 120%
+}
+.ui.animated.basic.button {
+  margin-top: 0.5em;
+  display: grid;
+}
 
-    .cities a {
-      color: white;
-    }
+.white {
+  color: #fff !important;
+}
 
-    .ldn { background-color:rgba(0,0,0,0); width:30vw; }
-    .nyc { background-color:rgba(0,0,0,0); width:30vw; }
-    .den { background-color:rgba(0,0,0,0); width:30vw; }
-    .dub { background-color:rgba(0,0,0,0); width:30vw; }
-    .edi { background-color:rgba(0,0,0,0); width:30vw; }
-    .ban { background-color:rgba(0,0,0,0); width:30vw; }
+.hidden.divider.values {
+  margin: 0.4em;
+}
+
+.ui.inverted.center.aligned.segment.a2o .ui.image {
+  width: 80%;
+  margin: auto 10vw;
+  margin-bottom: 6vh;
+}
+
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
+}
+
+#mapson {
+  position: relative;
+  z-index: 1; /* The z-index should be higher than Google Maps */
+  width: 300px;
+  margin: 60px auto 0;
+  padding: 10px;
+  background: black;
+  height: auto;
+  opacity: .45; /* Set the opacity for a slightly transparent Google Form */
+  color: white;
+}
+
+.segment.strive {
+  background-image: url(../assets/images/grid-buildit-01.svg) !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 0rem;
+  border: 0px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0px 0px 0px 0px;
+  border-bottom: 1px solid rgba(33,133,208,0.3);
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.segment.strive h2 {
+  font-size: 250%;
+  color: rgba(33,133,208,1);
+  margin-bottom: 0.5em;
+}
+
+
+.row.partners {
+  background-image:url(../assets/images/partners.png);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  max-height:60vh;
+  height:60vh;
+  text-align: right;
+}
+
+.row.partners h2 {
+  font-size:400%;
+  padding-top: 18vh;
+  padding-right: 4vw;
+}
+
+
+
+.row.careers {
+  background-image:url(../assets/images/grid-left-buildit.svg);
+  background-repeat:no-repeat
+}
+.row.careers > .column:first-child {
+  margin-bottom: -77px;
+}
+
+.ui.quote.segment.where {
+  height: 60vh;
+}
+
+.ui.inverted.center.aligned.segment.a2o {
+  min-height: 50vh;
+  padding-top: 5vh;
+  margin: 0rem !important;
+  border-radius: inherit;
+  border: none;
+}
+
+
+.where > .ui[class*="internally celled"].grid > .row > .column:first-child,
+.where > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
+  background-size: cover;
+  font-size: 140%;
+  padding-top: 43vh;
+}
+
+#london > .ui[class*="internally celled"].grid > .row > .column:first-child {
+  background-image:url(../assets/images/london1.jpg);
+}
+#london_wework > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
+  background-image:url(../assets/images/london2.jpg);
+}
+#newyork > .ui[class*="internally celled"].grid > .row > .column:first-child {
+  background-image:url(../assets/images/newyork.jpg);
+}
+#denver > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
+  background-image:url(../assets/images/denver.jpg);
+}
+#dublin > .ui[class*="internally celled"].grid > .row > .column:first-child {
+  background-image:url(../assets/images/dublin.jpg);
+}
+#edinburgh > .ui[class*="internally celled"].grid > .row > .column:nth-child(2) {
+  background-image:url(../assets/images/edinburgh.jpg);
+}
+#bangalore > .ui[class*="internally celled"].grid > .row > .column:first-child {
+  background-image:url(../assets/images/bangalore2.jpg);
+}
+
+.cities {
+  text-align: initial;
+  font-size: 1.5rem;
+  min-height: 20vh;
+  line-height: 2.5rem;
+  margin-top: 2rem;
+  font-family: Helvetica, sans-serif;
+}
+
+.cities a {
+  color: white;
+}
+
+.ldn { background-color:rgba(0,0,0,0); width:30vw; }
+.nyc { background-color:rgba(0,0,0,0); width:30vw; }
+.den { background-color:rgba(0,0,0,0); width:30vw; }
+.dub { background-color:rgba(0,0,0,0); width:30vw; }
+.edi { background-color:rgba(0,0,0,0); width:30vw; }
+.ban { background-color:rgba(0,0,0,0); width:30vw; }
 
 
 /* make */
 
-  .ui.big.list > .item::before {
-    content: "";
-  }
-  .ui.list .list > .item .description, .ui.list > .item .description {
-    padding-top: 0.4em;
-    line-height: 1.4em;
-    padding-bottom: 0.6em;
-  }
+.ui.big.list > .item::before {
+  content: "";
+}
+.ui.list .list > .item .description, .ui.list > .item .description {
+  padding-top: 0.4em;
+  line-height: 1.4em;
+  padding-bottom: 0.6em;
+}
 
-  .ui.big.list.toolbox {
-    margin-top: 15vh;
-  }
+.ui.big.list.toolbox {
+  margin-top: 15vh;
+}
 
-  .ui.inverted.segment.tools {
-    margin-top: 2vh;
-  }
+.ui.inverted.segment.tools {
+  margin-top: 2vh;
+}
 
-  i.icon img {
-    width: 18px;
-  }
+i.icon img {
+  width: 18px;
+}
 
-  .ui.vertical.stripe .horizontal.divider.howwemake {
-    margin: 1.5em;
-  }
+.ui.vertical.stripe .horizontal.divider.howwemake {
+  margin: 1.5em;
+}
 
 
 /* Mobile Vertical Only */
@@ -356,10 +353,10 @@
   }
 
   .masthead.segment {
-      min-height: 300px;
+    min-height: 300px;
   }
   .masthead h1.ui.header {
-      font-size: 6vw;
+    font-size: 6vw;
   }
 
   .ui.vertical.stripe h2 {
@@ -371,7 +368,7 @@
   }
 
   .ui.inverted.segment, .ui.primary.inverted.segment {
-      background-size: 160%;
+    background-size: 160%;
   }
 
   .ui.inverted.center.aligned.segment.a2o {
@@ -454,7 +451,7 @@
     display: none !important;
   }
   .masthead.segment {
-      min-height: 300px;
+    min-height: 300px;
   }
   /*.masthead h1.ui.header {
     font-size: 9vw;
@@ -544,13 +541,10 @@
     display: none !important;
   }
   .masthead.segment {
-      min-height: 300px;
+    min-height: 300px;
   }
-  /*.masthead h1.ui.header {
-      font-size: 9vw;
-  }*/
   .ui.inverted.segment, .ui.primary.inverted.segment {
-      background-size: 160%;
+    background-size: 160%;
   }
   .ui.inverted.center.aligned.segment.a2o {
     display: none;
@@ -603,48 +597,44 @@
     font-size: 1.5em;
   }
   .cities {
-      text-align: initial;
-      font-size: 1.5rem;
-      min-height: 20vh;
-      line-height: 2.5rem;
-      margin-top: 2rem;
-      font-family: Helvetica, sans-serif;
-    }
-    .ldn { background-color:rgba(0,0,0,0); width:30vw; }
-    .nyc { background-color:rgba(0,0,0,0); width:30vw; }
-    .den { background-color:rgba(0,0,0,0); width:30vw; }
-    .dub { background-color:rgba(0,0,0,0); width:30vw; }
-    .edi { background-color:rgba(0,0,0,0); width:30vw; }
-    .ban { background-color:rgba(0,0,0,0); width:30vw; }
+    text-align: initial;
+    font-size: 1.5rem;
+    min-height: 20vh;
+    line-height: 2.5rem;
+    margin-top: 2rem;
+    font-family: Helvetica, sans-serif;
+  }
+  .ldn { background-color:rgba(0,0,0,0); width:30vw; }
+  .nyc { background-color:rgba(0,0,0,0); width:30vw; }
+  .den { background-color:rgba(0,0,0,0); width:30vw; }
+  .dub { background-color:rgba(0,0,0,0); width:30vw; }
+  .edi { background-color:rgba(0,0,0,0); width:30vw; }
+  .ban { background-color:rgba(0,0,0,0); width:30vw; }
 
 
-    .ui.inverted.center.aligned.segment.a2o {
-      display: none;
-    }
+  .ui.inverted.center.aligned.segment.a2o {
+    display: none;
+  }
 
-    .ui.vertical.stripe.fractal.segment {
-      border-bottom: 0px solid white;
-    }
+  .ui.vertical.stripe.fractal.segment {
+    border-bottom: 0px solid white;
+  }
 
-    .row.partners {
-      background-size: 50%;
-      background-position: left bottom;
-      height: 30vh;
-      max-height: 30vh;
-    }
+  .row.partners {
+    background-size: 50%;
+    background-position: left bottom;
+    height: 30vh;
+    max-height: 30vh;
+  }
 
-    .row.partners h2 {
-      font-size: 280%;
-      padding-top: 4vh;
-    }
+  .row.partners h2 {
+    font-size: 280%;
+    padding-top: 4vh;
+  }
 }
 
 /* Tablet Large Only */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-  /*.masthead h1.ui.header {
-      font-size: 4vw;
-  }*/
 
   .ldn { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
   .nyc { left: 2.5vw; background-color:rgba(0,0,0,0); width:16vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
@@ -677,70 +667,70 @@
   }
 
   @keyframes noise-anim {
-      0% {
-        clip: rect(68px, 9999px, 16px, 0);
-      }
-      5% {
-        clip: rect(75px, 9999px, 94px, 0);
-      }
-      10% {
-        clip: rect(65px, 9999px, 45px, 0);
-      }
-      15% {
-        clip: rect(38px, 9999px, 45px, 0);
-      }
-      20% {
-        clip: rect(78px, 9999px, 13px, 0);
-      }
-      25% {
-        clip: rect(2px, 9999px, 100px, 0);
-      }
-      30% {
-        clip: rect(38px, 9999px, 68px, 0);
-      }
-      35% {
-        clip: rect(47px, 9999px, 88px, 0);
-      }
-      40% {
-        clip: rect(2px, 9999px, 80px, 0);
-      }
-      45% {
-        clip: rect(7px, 9999px, 18px, 0);
-      }
-      50% {
-        clip: rect(64px, 9999px, 52px, 0);
-      }
-      55% {
-        clip: rect(55px, 9999px, 45px, 0);
-      }
-      60% {
-        clip: rect(30px, 9999px, 28px, 0);
-      }
-      65% {
-        clip: rect(75px, 9999px, 98px, 0);
-      }
-      70% {
-        clip: rect(22px, 9999px, 33px, 0);
-      }
-      75% {
-        clip: rect(61px, 9999px, 72px, 0);
-      }
-      80% {
-        clip: rect(77px, 9999px, 4px, 0);
-      }
-      85% {
-        clip: rect(82px, 9999px, 42px, 0);
-      }
-      90% {
-        clip: rect(82px, 9999px, 20px, 0);
-      }
-      95% {
-        clip: rect(33px, 9999px, 16px, 0);
-      }
-      100% {
-        clip: rect(38px, 9999px, 24px, 0);
-      }
+    0% {
+      clip: rect(68px, 9999px, 16px, 0);
     }
+    5% {
+      clip: rect(75px, 9999px, 94px, 0);
+    }
+    10% {
+      clip: rect(65px, 9999px, 45px, 0);
+    }
+    15% {
+      clip: rect(38px, 9999px, 45px, 0);
+    }
+    20% {
+      clip: rect(78px, 9999px, 13px, 0);
+    }
+    25% {
+      clip: rect(2px, 9999px, 100px, 0);
+    }
+    30% {
+      clip: rect(38px, 9999px, 68px, 0);
+    }
+    35% {
+      clip: rect(47px, 9999px, 88px, 0);
+    }
+    40% {
+      clip: rect(2px, 9999px, 80px, 0);
+    }
+    45% {
+      clip: rect(7px, 9999px, 18px, 0);
+    }
+    50% {
+      clip: rect(64px, 9999px, 52px, 0);
+    }
+    55% {
+      clip: rect(55px, 9999px, 45px, 0);
+    }
+    60% {
+      clip: rect(30px, 9999px, 28px, 0);
+    }
+    65% {
+      clip: rect(75px, 9999px, 98px, 0);
+    }
+    70% {
+      clip: rect(22px, 9999px, 33px, 0);
+    }
+    75% {
+      clip: rect(61px, 9999px, 72px, 0);
+    }
+    80% {
+      clip: rect(77px, 9999px, 4px, 0);
+    }
+    85% {
+      clip: rect(82px, 9999px, 42px, 0);
+    }
+    90% {
+      clip: rect(82px, 9999px, 20px, 0);
+    }
+    95% {
+      clip: rect(33px, 9999px, 16px, 0);
+    }
+    100% {
+      clip: rect(38px, 9999px, 24px, 0);
+    }
+  }
 
   .glitch:after {
     content: attr(data-text);
@@ -877,9 +867,6 @@
 
 /* Computer Only */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  /*.masthead h1.ui.header {
-      font-size: 7vw;
-  }*/
   .row.partners {
     background-size: 50%;
     background-position: left bottom;
@@ -923,70 +910,70 @@
   }
 
   @keyframes noise-anim {
-      0% {
-        clip: rect(68px, 9999px, 16px, 0);
-      }
-      5% {
-        clip: rect(75px, 9999px, 94px, 0);
-      }
-      10% {
-        clip: rect(65px, 9999px, 45px, 0);
-      }
-      15% {
-        clip: rect(38px, 9999px, 45px, 0);
-      }
-      20% {
-        clip: rect(78px, 9999px, 13px, 0);
-      }
-      25% {
-        clip: rect(2px, 9999px, 100px, 0);
-      }
-      30% {
-        clip: rect(38px, 9999px, 68px, 0);
-      }
-      35% {
-        clip: rect(47px, 9999px, 88px, 0);
-      }
-      40% {
-        clip: rect(2px, 9999px, 80px, 0);
-      }
-      45% {
-        clip: rect(7px, 9999px, 18px, 0);
-      }
-      50% {
-        clip: rect(64px, 9999px, 52px, 0);
-      }
-      55% {
-        clip: rect(55px, 9999px, 45px, 0);
-      }
-      60% {
-        clip: rect(30px, 9999px, 28px, 0);
-      }
-      65% {
-        clip: rect(75px, 9999px, 98px, 0);
-      }
-      70% {
-        clip: rect(22px, 9999px, 33px, 0);
-      }
-      75% {
-        clip: rect(61px, 9999px, 72px, 0);
-      }
-      80% {
-        clip: rect(77px, 9999px, 4px, 0);
-      }
-      85% {
-        clip: rect(82px, 9999px, 42px, 0);
-      }
-      90% {
-        clip: rect(82px, 9999px, 20px, 0);
-      }
-      95% {
-        clip: rect(33px, 9999px, 16px, 0);
-      }
-      100% {
-        clip: rect(38px, 9999px, 24px, 0);
-      }
+    0% {
+      clip: rect(68px, 9999px, 16px, 0);
     }
+    5% {
+      clip: rect(75px, 9999px, 94px, 0);
+    }
+    10% {
+      clip: rect(65px, 9999px, 45px, 0);
+    }
+    15% {
+      clip: rect(38px, 9999px, 45px, 0);
+    }
+    20% {
+      clip: rect(78px, 9999px, 13px, 0);
+    }
+    25% {
+      clip: rect(2px, 9999px, 100px, 0);
+    }
+    30% {
+      clip: rect(38px, 9999px, 68px, 0);
+    }
+    35% {
+      clip: rect(47px, 9999px, 88px, 0);
+    }
+    40% {
+      clip: rect(2px, 9999px, 80px, 0);
+    }
+    45% {
+      clip: rect(7px, 9999px, 18px, 0);
+    }
+    50% {
+      clip: rect(64px, 9999px, 52px, 0);
+    }
+    55% {
+      clip: rect(55px, 9999px, 45px, 0);
+    }
+    60% {
+      clip: rect(30px, 9999px, 28px, 0);
+    }
+    65% {
+      clip: rect(75px, 9999px, 98px, 0);
+    }
+    70% {
+      clip: rect(22px, 9999px, 33px, 0);
+    }
+    75% {
+      clip: rect(61px, 9999px, 72px, 0);
+    }
+    80% {
+      clip: rect(77px, 9999px, 4px, 0);
+    }
+    85% {
+      clip: rect(82px, 9999px, 42px, 0);
+    }
+    90% {
+      clip: rect(82px, 9999px, 20px, 0);
+    }
+    95% {
+      clip: rect(33px, 9999px, 16px, 0);
+    }
+    100% {
+      clip: rect(38px, 9999px, 24px, 0);
+    }
+  }
 
   .glitch:after {
     content: attr(data-text);
@@ -1113,10 +1100,6 @@
 /* Screen Large Only */
 @media only screen and (min-width: 1200px) and (max-width: 1919px) {
 
-  /*.masthead h1.ui.header {
-      font-size: 5vw;
-  }*/
-
   .ldn { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
   .nyc { left: 2.5vw; background-color:rgba(0,0,0,0); width:16vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
   .den { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
@@ -1149,70 +1132,70 @@
   }
 
   @keyframes noise-anim {
-      0% {
-        clip: rect(68px, 9999px, 16px, 0);
-      }
-      5% {
-        clip: rect(75px, 9999px, 94px, 0);
-      }
-      10% {
-        clip: rect(65px, 9999px, 45px, 0);
-      }
-      15% {
-        clip: rect(38px, 9999px, 45px, 0);
-      }
-      20% {
-        clip: rect(78px, 9999px, 13px, 0);
-      }
-      25% {
-        clip: rect(2px, 9999px, 100px, 0);
-      }
-      30% {
-        clip: rect(38px, 9999px, 68px, 0);
-      }
-      35% {
-        clip: rect(47px, 9999px, 88px, 0);
-      }
-      40% {
-        clip: rect(2px, 9999px, 80px, 0);
-      }
-      45% {
-        clip: rect(7px, 9999px, 18px, 0);
-      }
-      50% {
-        clip: rect(64px, 9999px, 52px, 0);
-      }
-      55% {
-        clip: rect(55px, 9999px, 45px, 0);
-      }
-      60% {
-        clip: rect(30px, 9999px, 28px, 0);
-      }
-      65% {
-        clip: rect(75px, 9999px, 98px, 0);
-      }
-      70% {
-        clip: rect(22px, 9999px, 33px, 0);
-      }
-      75% {
-        clip: rect(61px, 9999px, 72px, 0);
-      }
-      80% {
-        clip: rect(77px, 9999px, 4px, 0);
-      }
-      85% {
-        clip: rect(82px, 9999px, 42px, 0);
-      }
-      90% {
-        clip: rect(82px, 9999px, 20px, 0);
-      }
-      95% {
-        clip: rect(33px, 9999px, 16px, 0);
-      }
-      100% {
-        clip: rect(38px, 9999px, 24px, 0);
-      }
+    0% {
+      clip: rect(68px, 9999px, 16px, 0);
     }
+    5% {
+      clip: rect(75px, 9999px, 94px, 0);
+    }
+    10% {
+      clip: rect(65px, 9999px, 45px, 0);
+    }
+    15% {
+      clip: rect(38px, 9999px, 45px, 0);
+    }
+    20% {
+      clip: rect(78px, 9999px, 13px, 0);
+    }
+    25% {
+      clip: rect(2px, 9999px, 100px, 0);
+    }
+    30% {
+      clip: rect(38px, 9999px, 68px, 0);
+    }
+    35% {
+      clip: rect(47px, 9999px, 88px, 0);
+    }
+    40% {
+      clip: rect(2px, 9999px, 80px, 0);
+    }
+    45% {
+      clip: rect(7px, 9999px, 18px, 0);
+    }
+    50% {
+      clip: rect(64px, 9999px, 52px, 0);
+    }
+    55% {
+      clip: rect(55px, 9999px, 45px, 0);
+    }
+    60% {
+      clip: rect(30px, 9999px, 28px, 0);
+    }
+    65% {
+      clip: rect(75px, 9999px, 98px, 0);
+    }
+    70% {
+      clip: rect(22px, 9999px, 33px, 0);
+    }
+    75% {
+      clip: rect(61px, 9999px, 72px, 0);
+    }
+    80% {
+      clip: rect(77px, 9999px, 4px, 0);
+    }
+    85% {
+      clip: rect(82px, 9999px, 42px, 0);
+    }
+    90% {
+      clip: rect(82px, 9999px, 20px, 0);
+    }
+    95% {
+      clip: rect(33px, 9999px, 16px, 0);
+    }
+    100% {
+      clip: rect(38px, 9999px, 24px, 0);
+    }
+  }
 
   .glitch:after {
     content: attr(data-text);
@@ -1373,15 +1356,15 @@
   .ban { left: 2.5vw; background-color:rgba(0,0,0,0); width:16vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7;}
 
   .ldn:hover,.nyc:hover,.den:hover,.dub:hover,.edi:hover, .ban:hover {
-      -webkit-filter: blur(0px);
-      filter: blur(0px);
-      opacity: 1;
-      width: 150%;
-      transition: width 1s ease-in-out, opacity 0.1s ease-in-out;
-      margin-left:-0.5vw;
-      border-left: 0.5vw solid rgba(80,80,255,0.2);
-      background-color: rgba(0,80,255,0.3);
-    }
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+    width: 150%;
+    transition: width 1s ease-in-out, opacity 0.1s ease-in-out;
+    margin-left:-0.5vw;
+    border-left: 0.5vw solid rgba(80,80,255,0.2);
+    background-color: rgba(0,80,255,0.3);
+  }
 
   .glitch {
     color: rgba(255,255,255,1);
@@ -1397,70 +1380,70 @@
   }
 
   @keyframes noise-anim {
-      0% {
-        clip: rect(68px, 9999px, 16px, 0);
-      }
-      5% {
-        clip: rect(75px, 9999px, 94px, 0);
-      }
-      10% {
-        clip: rect(65px, 9999px, 45px, 0);
-      }
-      15% {
-        clip: rect(38px, 9999px, 45px, 0);
-      }
-      20% {
-        clip: rect(78px, 9999px, 13px, 0);
-      }
-      25% {
-        clip: rect(2px, 9999px, 100px, 0);
-      }
-      30% {
-        clip: rect(38px, 9999px, 68px, 0);
-      }
-      35% {
-        clip: rect(47px, 9999px, 88px, 0);
-      }
-      40% {
-        clip: rect(2px, 9999px, 80px, 0);
-      }
-      45% {
-        clip: rect(7px, 9999px, 18px, 0);
-      }
-      50% {
-        clip: rect(64px, 9999px, 52px, 0);
-      }
-      55% {
-        clip: rect(55px, 9999px, 45px, 0);
-      }
-      60% {
-        clip: rect(30px, 9999px, 28px, 0);
-      }
-      65% {
-        clip: rect(75px, 9999px, 98px, 0);
-      }
-      70% {
-        clip: rect(22px, 9999px, 33px, 0);
-      }
-      75% {
-        clip: rect(61px, 9999px, 72px, 0);
-      }
-      80% {
-        clip: rect(77px, 9999px, 4px, 0);
-      }
-      85% {
-        clip: rect(82px, 9999px, 42px, 0);
-      }
-      90% {
-        clip: rect(82px, 9999px, 20px, 0);
-      }
-      95% {
-        clip: rect(33px, 9999px, 16px, 0);
-      }
-      100% {
-        clip: rect(38px, 9999px, 24px, 0);
-      }
+    0% {
+      clip: rect(68px, 9999px, 16px, 0);
     }
+    5% {
+      clip: rect(75px, 9999px, 94px, 0);
+    }
+    10% {
+      clip: rect(65px, 9999px, 45px, 0);
+    }
+    15% {
+      clip: rect(38px, 9999px, 45px, 0);
+    }
+    20% {
+      clip: rect(78px, 9999px, 13px, 0);
+    }
+    25% {
+      clip: rect(2px, 9999px, 100px, 0);
+    }
+    30% {
+      clip: rect(38px, 9999px, 68px, 0);
+    }
+    35% {
+      clip: rect(47px, 9999px, 88px, 0);
+    }
+    40% {
+      clip: rect(2px, 9999px, 80px, 0);
+    }
+    45% {
+      clip: rect(7px, 9999px, 18px, 0);
+    }
+    50% {
+      clip: rect(64px, 9999px, 52px, 0);
+    }
+    55% {
+      clip: rect(55px, 9999px, 45px, 0);
+    }
+    60% {
+      clip: rect(30px, 9999px, 28px, 0);
+    }
+    65% {
+      clip: rect(75px, 9999px, 98px, 0);
+    }
+    70% {
+      clip: rect(22px, 9999px, 33px, 0);
+    }
+    75% {
+      clip: rect(61px, 9999px, 72px, 0);
+    }
+    80% {
+      clip: rect(77px, 9999px, 4px, 0);
+    }
+    85% {
+      clip: rect(82px, 9999px, 42px, 0);
+    }
+    90% {
+      clip: rect(82px, 9999px, 20px, 0);
+    }
+    95% {
+      clip: rect(33px, 9999px, 16px, 0);
+    }
+    100% {
+      clip: rect(38px, 9999px, 24px, 0);
+    }
+  }
 
   .glitch:after {
     content: attr(data-text);
@@ -1629,8 +1612,8 @@
   transform-style: preserve-3d;
 }
 .atom:before {
-	content: '';
-	position: absolute;
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -1648,14 +1631,14 @@
   right: 0;
   bottom: 0;
   margin: auto;
-	width: 200px;
+  width: 200px;
   height: 200px;
   border-radius: 100px;
   border: 2px solid #2185d0;
   transform-style: preserve-3d;
 }
 .atom .electron:before {
-	content: '';
+  content: '';
   position: absolute;
   top: -4px;
   left: 0;
@@ -1762,3 +1745,204 @@ h1.ui.header > span {
 	  80% { opacity: 0; }
     100% { opacity: 0; }
 }
+/* Redesign Overides */
+/* - General */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-contents {
+  width: 100%;
+  background-color: #1b1c1d;
+  color: white;
+}
+
+.subheader {
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+}
+
+.page-contents p {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  color: #cccccc;
+}
+
+.content-wrapper {
+  padding: 16px;
+}
+
+/* - About Page */
+
+.about-header-wrapper {
+  padding-bottom: 16px;
+}
+.about-header {
+  font-size: 2.3rem;
+  line-height: 3rem;
+  padding: 16px;
+  margin: 0;
+}
+.content-half-body {
+  padding: 16px;
+}
+
+.about-half-content {
+  width: 100%;
+}
+
+.about-people-banner {
+  background-image: url('../assets/images/innovate.jpg');
+  display: block;
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+}
+
+.about-people-banner .about-header {
+  float: right;
+  padding: 8%;
+  background-color: rgba(27,28,29,0.6);
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  height: 100%;
+}
+
+.our-approach-wrapper {
+    background-image: url('../assets/images/formula-bg.jpg');
+    display: block;
+    width: 100%;
+    height: 360px;
+    background-size: cover;
+}
+@media(min-width: 350px){
+  .about-header {
+    font-size: 2.3rem;
+    line-height: 3rem;
+  }
+}
+
+@media(min-width: 400px){
+  .about-header {
+    font-size: 2.3rem;
+    line-height: 3.3rem;
+    padding: 24px;
+  }
+  .content-half-body {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 640px) {
+  .about-header {
+    width: 50%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    float: left;
+  }
+  .content-half-body {
+    width: 50%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    float: left;
+  }
+  .about-people-banner {
+    height: 450px;
+  }
+  .about-people-banner .about-header {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1000px){
+  .about-header {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+
+/*
+CSS for layout page
+ */
+
+/*.ui.fluid.image.b-r-padded {*/
+  /*padding: 0 10px 10px 0;*/
+/*}*/
+
+section.page {
+  margin-top: 2em;
+  /* TODO Change background color - invert color with body tag */
+  background-color: red;
+}
+
+.ui.header.padded {
+  margin-top: 2em;
+  padding: 10px;
+}
+
+.ui.header.colored {
+  /* TODO Change background color */
+ background-color: red;
+}
+
+.ui.header.label {
+  min-width: 25%;
+  max-width: 35%;
+}
+
+.column.no-padding {
+  position: relative !important;
+  padding: 0 !important;
+}
+
+.column .image-block {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-top: .5em;
+  padding-right: 1em;
+  padding-bottom: 2em;
+  text-align: right;
+  /* TODO Change background color */
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.image-block > h2 {
+  font-style: italic;
+}
+
+.image-block_text > h4 {
+  text-transform: uppercase;
+}
+
+/* media query mobile large */
+@media only screen and (max-width: 767px) {
+
+  .column .image-block {
+    padding-top: 1em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+  }
+
+}
+
+/*
+end of CSS for layout page
+ */
+
+/*
+beginning of CSS for nested grid
+ */
+section.full-height {
+  height: 100%
+}
+/*
+end of CSS for nested grid
+ */
