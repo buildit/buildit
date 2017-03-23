@@ -2,11 +2,4 @@
 
 This is the buildit website.
 
-To run it locally just run the `dev` script: `npm run dev`
-
-
----
-To use browserSync with watch use:
-`gulp serve`
-
-default set to localhost:8000
+To run it locally just run the `dev` script: `npm run dev`. Local hosting is at http://localhost:8080 and a browser window should open automatically.
