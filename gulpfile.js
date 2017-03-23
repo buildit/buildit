@@ -57,7 +57,8 @@ gulp.task('css', () => {
     'components/list.css',
     'components/icon.css',
     'components/transition.css',
-    'components/buildit.css'
+    'components/buildit.css',
+    'components/contacts-page.css',
   ];
 
   return gulp.src(files.map(item => `${src}/${item}`))

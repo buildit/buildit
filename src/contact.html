@@ -34,50 +34,71 @@
 </head>
 <body>
 
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a class="item black" href="index.html"><img id="logo" src="assets/images/buildit-logo-black.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
-    <a class="item" href="index.html" id="home">Home</a>
-    <a class="item" href="about.html">About</a>
-    <a class="item" href="careers.html">Careers</a>
-    <div class="right menu">
-      <div class="item">
-        <a class="ui primary button" href="https://github.com/buildit" id="github">Github</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
+  <!-- Following Menu -->
+  <div class="ui large top fixed hidden menu">
     <div class="ui container">
-      <div class="ui large secondary pointing inverted menu">
-        <a class="image item" href="index.html"><img id="logo" src="assets/images/buildit-logo-white.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
-        <div class="right item">
-          <a class="item" href="index.html">Home</a>
-          <a class="item" href="about.html">About</a>
-          <a class="last item" href="careers.html">Careers</a>
-          <a class="ui inverted basic grey button" href="contact.html">Where</a>
+      <a class="item black" href="index.html"><img id="logo" src="assets/images/buildit-logo-black.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
+      <a class="item" href="index.html" id="home">Home</a>
+      <a class="item" href="about.html">About</a>
+      <a class="item" href="careers.html">Careers</a>
+      <div class="right menu">
+        <div class="item">
+          <a class="ui primary button" href="https://github.com/buildit" id="github">Github</a>
         </div>
       </div>
     </div>
-    <!-- <div class="ui container">
-      <div class="three wide column">
-        <div class="cities">
-          <a href="#london"><div class="glitch2 ldn" data-text="LONDON">LONDON</div></a>
-          <a href="#newyork"><div class="glitch nyc" data-text="NEW YORK">NEW YORK</div></a>
-          <a href="#denver"><div class="glitch den" data-text="DENVER">DENVER</div></a>
-          <a href="#dublin"><div class="glitch dub" data-text="DUBLIN">DUBLIN</div></a>
-          <a href="#edinburgh"><div class="glitch2 edi" data-text="EDINBURGH">EDINBURGH</div></a>
-          <a href="#bangalore"><div class="glitch2 ban" data-text="BANGALORE">BANGALORE</div></a>
+  </div>
+
+
+  <!-- Page pusher -->
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment">
+      <div class="ui container">
+        <div class="ui large secondary pointing inverted menu">
+          <a class="image item" href="index.html"><img id="logo" src="assets/images/buildit-logo-white.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
+          <div class="right item">
+            <a class="item" href="index.html">Home</a>
+            <a class="item" href="about.html">About</a>
+            <a class="last item" href="careers.html">Careers</a>
+            <a class="ui inverted basic grey button" href="contact.html">Where</a>
+          </div>
+        </div>
+      </div> <!-- End Nav -->
+
+       <div class="ui container">
+        <div class="three wide column">
+          <div class="cities">
+            <a href="#london"><div class="glitch2 ldn" data-text="LONDON">LONDON</div></a>
+            <a href="#newyork"><div class="glitch nyc" data-text="NEW YORK">NEW YORK</div></a>
+            <a href="#denver"><div class="glitch den" data-text="DENVER">DENVER</div></a>
+            <a href="#dublin"><div class="glitch dub" data-text="DUBLIN">DUBLIN</div></a>
+            <a href="#edinburgh"><div class="glitch2 edi" data-text="EDINBURGH">EDINBURGH</div></a>
+            <a href="#bangalore"><div class="glitch2 ban" data-text="BANGALORE">BANGALORE</div></a>
+          </div>
+        </div> <!-- End Flashing cities-->
+      </div><!-- End Container -->
+    </div> <!-- End Masthead -->
+  </div><!-- End Page pusher -->
+
+  <!-- -->
+  <div>
+    <h1>Title</h1>
+    <!-- Section -->
+    <section class="full-height">
+      <div class="ui padded equal height stackable grid">
+        <div class="six wide purple column">
+          1
+        </div>
+        <div class="ten wide stretched column">
+          <div class="ui equal height grid">
+            <div class="sixteen wide red column">2</div>
+            <div class="sixteen wide orange column">3</div>
+          </div>
         </div>
       </div>
-    </div> -->
-  </div>
-</div>
+    </section><!-- end Section-->
+
+  </div><!-- End Content section -->
 
   <!-- <div class="ui inverted vertical stripe segment">
     <div class="ui top aligned stackable grid container">
@@ -188,6 +209,8 @@
     </div>
   </div> -->
 
+
+  <!-- Beginning footer -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
@@ -224,24 +247,23 @@
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- End footer -->
 
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="components/visibility.min.js"></script>
+  <script src="components/transition.min.js"></script>
+  <script src="js/index.js"></script>
 
-<script src="assets/library/jquery.min.js"></script>
-<script src="components/visibility.min.js"></script>
-<script src="components/transition.min.js"></script>
-<script src="js/index.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-78138413-2', 'auto');
+    ga('send', 'pageview');
 
-  ga('create', 'UA-78138413-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
+  </script>
 </body>
 
 </html>
