@@ -43,24 +43,26 @@ gulp.task('css', () => {
   // as the CSS files need cleaning up and there seems to be an issue
   // with the order of inclusion.
   const files = [
-    'components/reset.css',
-    'components/site.css',
-    'components/container.css',
-    'components/grid.css',
-    'components/header.css',
-    'components/image.css',
-    'components/menu.css',
-    'components/divider.css',
-    'components/dropdown.css',
-    'components/segment.css',
-    'components/button.css',
-    'components/list.css',
-    'components/icon.css',
-    'components/transition.css',
-    'components/buildit.css'
+    'reset.css',
+    'site.css',
+    'container.css',
+    'grid.css',
+    'header.css',
+    'image.css',
+    'menu.css',
+    'divider.css',
+    'dropdown.css',
+    'segment.css',
+    'button.css',
+    'list.css',
+    'icon.css',
+    'transition.css'
   ];
 
-  return gulp.src(files.map(item => `${src}/${item}`))
+  return gulp.src([
+      ...(files.map(item => `${src}/components/${item}`)),
+      `${src}/components/*-buildit.css`,
+      `${src}/components/buildit.css`])
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest(target))
