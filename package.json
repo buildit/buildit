@@ -20,6 +20,9 @@
     "url": "https://github.com/buildit/buildit/issues"
   },
   "homepage": "https://github.com/buildit/buildit#readme",
+  "engines": {
+    "node": ">= 6.9.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
