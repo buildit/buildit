@@ -1745,6 +1745,7 @@ h1.ui.header > span {
 	  80% { opacity: 0; }
     100% { opacity: 0; }
 }
+
 /* Redesign Overides */
 /* - General */
 .group:after {
