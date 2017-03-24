@@ -4,7 +4,6 @@
   "description": "Buildit website",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
     "clean": "gulp clean",
     "build": "npm run clean && gulp build",
     "serve": "gulp serve",
