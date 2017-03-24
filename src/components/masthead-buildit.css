@@ -2,6 +2,22 @@
          People Masthead
 *******************************/
 
+.ui.inverted.segment.people {
+    background-image: url(../assets/images/team-people.jpg);
+    background-color: rgba(0,0,0,1);
+    background-size: cover;
+}
+
+/*******************************
+         People Masthead
+*******************************/
+
+
+h1.ui.header.people > span {
+  color: rgba(0,0,0,0.6);
+  letter-spacing: -0.02em;
+}
+
 .concepts2 span {
   color: rgba(255,255,255,1);
 	position: absolute;
