@@ -1,0 +1,39 @@
+/* CORE TEAM */
+All Buildit, but specially...
+Paul Karsten, Matt Burgess, Claire Moore, Byron Wong,
+Jonathan Lazarini, James Nash, Mark Bishop, Shahzain Badruddin,
+Panos Voudouris, Marc Lucchini, David Moss, Sylvain Faucherand,
+Gisnalbert Spinola, Greg Pearman, Umry Urmston, Uros Rapajic,
+Mike Stone, Matt Coyle, Dirk Wood & me (@marcospeebles)
+
+/* REVIEWERS */
+Put all slack list commentators here.
+
+Site: email, link to a contact form, etc.
+Twitter: your Twitter username.
+Location: City, Country. […]
+
+/* THANKS */
+Name: name or url […]
+
+/* SITE */
+Last update: November 2016
+Standards: HTML5, CSS3, ECMA6
+Components: Semantic UI, jQuery
+Software/SAAS: Atom, Webstorm, Github, Bitbucket,
+Console, SourceTree, Photoshop, Illustrator, IA Writer,
+Dillinger, a11yproject
+
+/* IMAGES */
+Unsplash rocks, thanks to all contributors
+CC Unsplash https://unsplash.com/@oy Omar Yassen - Edinburgh
+CC Unsplash https://unsplash.com/@albertosaure Luis Llerena - London
+CC Unsplash https://unsplash.com/@jpease Jonathan Pease - New York
+
+Wikipedia Commons (rocks too)
+https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/VidhanaSoudha.JPG/1280px-VidhanaSoudha.JPG - User:Mouleesha
+https://commons.wikimedia.org/wiki/File:Wipro_floating_Learning_Center_view_1_EC2.jpg
+
+Copyright Shutterstock
+https://www.shutterstock.com/pic-221064886.html Rickyd's
+http://www.shutterstock.com/pic-158792681.html Sur

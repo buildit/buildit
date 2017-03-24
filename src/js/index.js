@@ -36,4 +36,24 @@ $(document).ready(function() {
 
   $('.image').visibility('refresh');
 
+  /**
+   * Beginning side links animation
+   * */
+      var $links;
+      var handler
+        ;
+      $links = $('.item.nav-link')
+
+      handler = {
+        activate: function() {
+          // console.log('this in handler', this)
+          $(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active')
+        }
+      }
+      // init
+      $links.on('click', handler.activate)
+  /** end side links animation **/
 })

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Buildit - Careers</title>
+
+  <!-- Favicons -->
+	<link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png" />
+	<link rel="icon" href="../assets/images/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="assets/images/apple-touch.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/images/apple-touch-72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/images/apple-touch-114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../assets/images/apple-touch-144.png">
+
+  <!-- Hello Humans -->
+  <link rel="author" href="humans.txt" />
+
+  <!-- FACEBOOK OPENGRAPH META -->
+  <meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Buildit Careers" />
+	<meta property="og:description" content="The future belongs to those who make." />
+	<meta property="og:url" content="https://buildit.digital/" />
+	<meta property="og:site_name" content="Buildit" />
+	<meta property="og:image" content="https://buildit.digital/assets/images/buildit-logo-white.png" />
+	<meta property="article:published_time" content="Fri Nov 11, 2016" />
+
+  <link rel="stylesheet" type="text/css" href="../components/buildit.css">
+
+  <script src="../assets/library/jquery.min.js"></script>
+  <script src="../components/visibility.js"></script>
+  <script src="../components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.nomasta')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+
+      // lazy load images
+       $('.image').visibility({
+           type: 'image'
+       });
+
+       $('.image').visibility('refresh');
+
+    })
+  ;
+
+  </script>
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="item black" href="index.html"><img id="logo" src="../assets/images/buildit-logo-black.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
+    <a class="item" href="index.html" id="home">Home</a>
+    <a class="item" href="buildit.html">We make</a>
+    <a class="active item" href="careers.html">Careers</a>
+    <div class="right menu">
+      <div class="item">
+        <a class="ui primary button" href="https://github.com/buildit" id="github">Github</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical center nomasta aligned segment">
+    <div class="ui container">
+      <div class="ui large secondary pointing inverted menu">
+        <a class="image item" href="index.html"><img id="logo" src="../assets/images/buildit-logo-white.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
+        <div class="right item">
+          <a class="item" href="index.html">Home</a>
+          <a class="item" href="buildit.html">We make</a>
+          <a class="last active item" href="careers.html">Careers</a>
+          <a class="ui inverted basic grey button" href="contact.html">Where</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui top aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">Why us?</h3>
+          <p>Do you think there’s something lacking in how many companies approach problems, whether it's people, process, or technology related?</p>
+          <p>Do you want to help them figure out how to think and work differently?</p>
+          <p>Do you love technology, and understand that real change comes from people doing different things, rather than people doing the same things differently?</p>
+          <p>These are the things that drive us. Do they drive you?</p>
+            <div class="ui animated fade basic medium button" tabindex="0">
+              <div class="visible content">
+                <i class="icon user"></i> Agile Delivery
+              </div>
+              <div class="hidden content">
+                <a href="https://github.com/buildit/org-design/blob/master/Recruitment/JobSpecs/2_why_you_agile_delivery_leader.md"><i class="right arrow icon"></i> See specs</a>
+              </div>
+            </div>
+            <div class="ui animated fade basic medium button" tabindex="0">
+              <div class="visible content">
+                <i class="icon user"></i>Javascript Dev
+              </div>
+              <div class="hidden content">
+                <a href="https://github.com/buildit/org-design/blob/master/Recruitment/JobSpecs/2_why_you_javascript_engineer.md"><i class="right arrow icon"></i> All rounder</a>
+              </div>
+            </div>
+            <div class="ui animated fade basic medium button" tabindex="0">
+              <div class="visible content">
+                <i class="icon user"></i>Mobile Dev
+              </div>
+              <div class="hidden content">
+                <a href="https://github.com/buildit/org-design/blob/master/Recruitment/JobSpecs/2_why_you_mobile_developer.md"><i class="right arrow icon"></i> iOS & Android</a>
+              </div>
+            </div>
+            <div class="ui animated fade basic medium button" tabindex="0">
+              <div class="visible content">
+                <i class="icon user"></i>Platform Dev
+              </div>
+              <div class="hidden content">
+                <a href="https://github.com/buildit/org-design/blob/master/Recruitment/JobSpecs/2_why_you_platform_engineer.md"><i class="right arrow icon"></i> Pipelines</a>
+              </div>
+            </div>
+      </div>
+      <div class="eight wide column">
+        <h3 class="ui header">Why you?</h3>
+        <p>We are looking for people who want to help us change the way companies think and approach problems; people who want to work with teams and individuals who share a passion for solving complex problems; people who want to own the entire problem, whether it’s about technology, ways of working, teams, or customer experience.</p>
+        <p>We are looking for people who want to be treated like adults; people who neither need, nor want, someone else to tell them what needs to be done, but instead who can look at what’s happening, what’s needed, and figure out how they fit into it; people who are comfortable finding their own place.</p>
+        <p>We are looking for people who want to work in cross-functional teams, and want to help others learn how to build them, and why they're valuable; people who understand when cloud technology is beneficial, and when it isn't; people with a grasp of a variety of technologies, languages, and methodologies, along with their pros and cons.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row careers">
+        <div class="column">
+          <h3>"What a company"</h3>
+          <p>That is what they all say about us</p>
+          <div class="ui tiny images">
+            <img data-src="assets/images/mike.png" class="ui image bottom aligned">
+            <img data-src="assets/images/yannis.png" class="ui image bottom aligned">
+            <img data-src="assets/images/david.png" class="ui image bottom aligned">
+            <img data-src="assets/images/mattc.png" class="ui image bottom aligned">
+            <img data-src="assets/images/dermot.png" class="ui image bottom aligned">
+            <img data-src="assets/images/punith.png" class="ui image bottom aligned">
+            <img data-src="assets/images/gisnalbert.png" class="ui image bottom aligned">
+            <img data-src="assets/images/jonathan.png" class="ui image bottom aligned">
+            <img data-src="assets/images/urmy.png" class="ui image bottom aligned">
+            <img data-src="assets/images/panos.png" class="ui image bottom aligned">
+            <img data-src="assets/images/avi.png" class="ui image bottom aligned">
+            <img data-src="assets/images/richard.png" class="ui image bottom aligned">
+            <img data-src="assets/images/rory.png" class="ui image bottom aligned">
+            <img data-src="assets/images/oli.png" class="ui image bottom aligned">
+            <img data-src="assets/images/lucio.png" class="ui image bottom aligned">
+            <img data-src="assets/images/uros.png" class="ui image bottom aligned">
+            <img data-src="assets/images/claire.png" class="ui image bottom aligned">
+            <img data-src="assets/images/james.png" class="ui image bottom aligned">
+            <img data-src="assets/images/marcos.png" class="ui image bottom aligned">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui top aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">Our clients</h3>
+          <p>Our clients deliver traditional software in traditional ways. They know there's a better way to do things, but aren't always sure what it is, or how to get there.</p>
+          <p>When they are ready to change, we help them.</p>
+          <p>Our clients are looking for people who understand delivery pipelines; people who know how to smooth the process of moving from development to production; people who are capable of adapting to whatever framework the client needs.</p>
+        </div>
+        <div class="eight wide column">
+          <h3 class="ui header">&nbsp;</h3>
+          <p>Our clients are looking for people who can advise them on different ways to approach problems; people who can offer pros and cons of a variety of different options, and then help the client figure out what's best for them, in their specific case.</p>
+          <p>Our clients are looking for people who know that it's often impossible to walk away completely from legacy systems; people who can help create new ways of working for new software, and better ways of working for existing software.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="sixteen wide column">
+          <h4>Above all, our clients want people who can help them deliver more business value, faster.</h4>
+          <a class="ui large button" href="https://github.com/buildit/org-design/tree/master/Recruitment/Exercises">Interested? Check our exercices</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header"><a href="buildit.html">About</a></h4>
+          <div class="ui inverted link list">
+            <a href="make.html" class="item">How we made this</a>
+            <a href="values.html" class="item">Our Values</a>
+            <a href="careers.html" class="item">Careers</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Buildit Galaxy</h4>
+          <div class="ui inverted link list">
+            <a href="http://www.wiprodigital.com" class="item"><i class="icon first order"></i> wipro digital</a>
+            <a href="http://www.wipro.com" class="item"><i class="icon empire"></i> Wipro</a>
+            <a href="http://www.designit.com" class="item"><img src="../assets/images/icon-sep.svg" width="13px">&nbsp;&nbsp;Designit</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Europe</h4>
+          <div class="ui inverted link list">
+            <a href="contact.html#london" class="item">London</a>
+            <a href="contact.html#dublin" class="item">Dublin</a>
+            <a href="contact.html#edinburgh" class="item">Edinburgh</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">USA</h4>
+          <div class="ui inverted link list">
+            <a href="contact.html#newyork" class="item">New York</a>
+            <a href="contact.html#denver" class="item">Denver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78138413-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>
