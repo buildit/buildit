@@ -63,11 +63,11 @@
 }
 
 .our-approach-wrapper {
-    background-image: url('../assets/images/formula-bg.jpg');
-    display: block;
-    width: 100%;
-    height: 440px;
-    background-size: cover;
+  background-image: url('../assets/images/formula-bg.jpg');
+  display: block;
+  width: 100%;
+  height: 440px;
+  background-size: cover;
 }
 
 /* Alpha to Omega story*/
@@ -109,6 +109,25 @@
   .content-half-body.our-approach {
     padding-top: 40px;
   }
+  .about-step-wrapper {
+    width:50%;
+    float: left;
+    padding: 16px;
+    min-height: 250px;
+  }
+  .about-step-wrapper img {
+    width: 60%;
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .about-step-wrapper p {
+    float: none;
+    width:100%;
+    padding-left: 0px;
+    padding-top: 16px;
+    text-align: center;
+  }
 }
 
 @media (min-width: 640px) {
@@ -129,6 +148,12 @@
   }
   .about-people-banner .about-header {
     width: 45%;
+  }
+
+  .about-step-wrapper {
+    width:25%;
+    float: left;
+    padding: 16px;
   }
 }
 
