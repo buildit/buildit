@@ -1,0 +1,41 @@
+.leading-quote {
+  /*padding:3em 3em 8em 3em;*/
+  padding: 3em;
+  margin-bottom: 8em;
+  text-align: left;
+  background-color: #2185d0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.leading-quote .title{
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.leading-quote .line{
+  margin-top: 1vh;
+  font-weight: 300;
+}
+
+.leading-address {
+  padding-bottom: 1em;
+  font-size: 3vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  color: #000;
+}
+
+.leading-address-line {
+  margin: 0;
+  color: rgba(0,0,0, .6);
+  font-size: 1.5vw;
+  font-weight: 300;
+  text-align: left;
+}
+
+.leading-address-line:last-child {
+  padding-bottom: 2em;
+}
+

@@ -5,6 +5,7 @@ const concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
 const watch = require('gulp-watch');
 const open = require('gulp-open');
+const uglify = require('gulp-uglify');
 
 const src = 'src';
 const target = 'dist';
@@ -30,11 +31,18 @@ gulp.task('clean', () => {
     .pipe(clean());
 });
 
-// Copy everything except CSS
+// Copy all assets except our JS and CSS
 gulp.task('copy-files', () => {
-  return gulp.src([`${src}/**`, `!${src}/**/*.css`])
+  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/js/**`])
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
+});
+
+// Minify our JS
+gulp.task('js', () => {
+  return gulp.src(`${src}/js/**`)
+    .pipe(uglify())
+    .pipe(gulp.dest(`${target}/js`));
 });
 
 // Build the CSS
@@ -43,29 +51,31 @@ gulp.task('css', () => {
   // as the CSS files need cleaning up and there seems to be an issue
   // with the order of inclusion.
   const files = [
-    'components/reset.css',
-    'components/site.css',
-    'components/container.css',
-    'components/grid.css',
-    'components/header.css',
-    'components/image.css',
-    'components/menu.css',
-    'components/divider.css',
-    'components/dropdown.css',
-    'components/segment.css',
-    'components/button.css',
-    'components/list.css',
-    'components/icon.css',
-    'components/transition.css',
-    'components/buildit.css'
+    'reset.css',
+    'site.css',
+    'container.css',
+    'grid.css',
+    'header.css',
+    'image.css',
+    'menu.css',
+    'divider.css',
+    'dropdown.css',
+    'segment.css',
+    'button.css',
+    'list.css',
+    'icon.css',
+    'transition.css'
   ];
 
-  return gulp.src(files.map(item => `${src}/${item}`))
+  return gulp.src([
+      ...(files.map(item => `${src}/components/${item}`)),
+      `${src}/components/*-buildit.css`,
+      `${src}/components/buildit.css`])
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
 });
 
-gulp.task('build', ['copy-files', 'css']);
+gulp.task('build', ['copy-files', 'js', 'css']);
 gulp.task('default', ['build', 'serve', 'watch']);
