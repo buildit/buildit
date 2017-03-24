@@ -73,6 +73,171 @@ span.bottom-underline  {
 }
 /** end CSS for contact2 page **/
 
+
+/** beginning CSS for contact3 page **/
+h1.ui.header>span {
+  color: #2185d0;
+}
+
+.typewriter {
+  margin: 0;
+  display: inline;
+  margin-left: .01em;
+}
+
+.typewriter span {
+  color: rgba(255,255,255,.8);
+}
+
+.concepts span {
+  color: rgba(255,255,255,1);
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.concepts-animate span {
+  animation: typeWord 20s linear infinite;
+}
+
+.concepts span:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.concepts span:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.concepts span:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.concepts span:nth-child(5) {
+  animation-delay: 16s;
+}
+
+@-webkit-keyframes typeWord {
+  0% {
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+  }
+
+  5% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+
+  25% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+
+  27% {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes typeWord {
+  0% {
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 0;
+    -ms-transform: translateX(-30px);
+  }
+
+  5% {
+    opacity: 1;
+    -ms-transform: translateX(0);
+  }
+
+  17% {
+    opacity: 1;
+    -ms-transform: translateX(0);
+  }
+
+  20% {
+    opacity: 0;
+    -ms-transform: translateX(30px);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typeWord {
+  0% {
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  5% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  17% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.ui.header.l-aligned {
+  text-align: left;
+  color: white;
+}
+
+.r-padded {
+  padding-right: 2em;
+}
+/** end CSS for contact3 page **/
+
+/** beginning CSS for contact4 page **/
+
+
+/** end CSS for contact4 page **/
+
 /** TODO Remove image .contact class in pusher div aligned segment contact**/
 /*.ui.inverted.segment.contact {*/
   /*background-image: url(../assets/images/shutterstock_221064886.jpg), url(../assets/images/Globe_export.png);*/
