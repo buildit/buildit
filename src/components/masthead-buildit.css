@@ -1,0 +1,81 @@
+/*******************************
+         People Masthead
+*******************************/
+
+.ui.inverted.segment.people {
+    background-image: url(../assets/images/team-people.jpg);
+    background-color: rgba(0,0,0,1);
+    background-size: cover;
+}
+
+/*******************************
+         People Masthead
+*******************************/
+
+
+h1.ui.header.people > span {
+  color: rgba(0,0,0,0.6);
+  letter-spacing: -0.02em;
+}
+
+.concepts2 span {
+  color: rgba(255,255,255,1);
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	width: 100%;
+}
+
+.concepts-animate2 span {
+	animation: typeWord 8s linear 1;
+}
+.concepts2 span:nth-child(2) {
+	animation-delay: 2s;
+}
+.concepts2 span:nth-child(3) {
+	animation-delay: 4s;
+}
+.concepts2 span:nth-child(4) {
+	animation-delay: 6s;
+}
+.concepts2 span:nth-child(5) {
+  animation: typeWord2 2s linear 1;
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+  color: rgba(255,255,255,1);
+}
+
+@-webkit-keyframes typeWord {
+     0% { opacity: 0; }
+     2% { opacity: 0; -webkit-transform: translateX(-30px); }
+	   5% { opacity: 1; -webkit-transform: translateX(0px); }
+    25% { opacity: 1; -webkit-transform: translateX(0px); }
+	  27% { opacity: 0; -webkit-transform: translateX(30px); }
+	  80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-ms-keyframes typeWord {
+     0% { opacity: 0; }
+     2% { opacity: 0; -ms-transform: translateX(-30px); }
+	   5% { opacity: 1; -ms-transform: translateX(0px); }
+    17% { opacity: 1; -ms-transform: translateX(0px); }
+	  20% { opacity: 0; -ms-transform: translateX(30px); }
+	  80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes typeWord {
+     0% { opacity: 0; }
+     2% { opacity: 0; -webkit-transform: translateX(-30px); transform: translateX(-30px); }
+	   5% { opacity: 1; -webkit-transform: translateX(0px); transform: translateX(0px); }
+    17% { opacity: 1; -webkit-transform: translateX(0px); transform: translateX(0px); }
+	  20% { opacity: 0; -webkit-transform: translateX(30px); transform: translateX(30px); }
+	  80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes typeWord2 {
+     0% { opacity: 0; }
+     2% { opacity: 0; -webkit-transform: translateX(-30px); transform: translateX(-30px); }
+     5% { opacity: 1; -webkit-transform: translateX(0px); transform: translateX(0px); }
+    100% { opacity: 1; }
+}

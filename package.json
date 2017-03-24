@@ -8,7 +8,8 @@
     "clean": "gulp clean",
     "build": "npm run clean && gulp build",
     "serve": "gulp serve",
-    "dev": "gulp",
+    "dev": "echo The dev script is deprecated, use npm start",
+    "start": "gulp",
     "deploy:staging": "aws s3 sync dist/ s3://staging-buildit-test.com --region eu-west-2"
   },
   "repository": {
@@ -21,6 +22,9 @@
     "url": "https://github.com/buildit/buildit/issues"
   },
   "homepage": "https://github.com/buildit/buildit#readme",
+  "engines": {
+    "node": ">= 6.9.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
@@ -29,6 +33,7 @@
     "gulp-concat-css": "^2.3.0",
     "gulp-connect": "^5.0.0",
     "gulp-open": "^2.0.0",
+    "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11"
   }
 }
