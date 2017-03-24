@@ -23,10 +23,10 @@
 	animation-delay: 6s;
 }
 .concepts2 span:nth-child(5) {
-  animation: typeWord2 4s linear 1;
+  animation: typeWord2 2s linear 1;
   animation-delay: 8s;
   animation-fill-mode: forwards;
-  color: rgba(255,255,255);
+  color: rgba(255,255,255,1);
 }
 
 @-webkit-keyframes typeWord {
@@ -61,6 +61,5 @@
      0% { opacity: 0; }
      2% { opacity: 0; -webkit-transform: translateX(-30px); transform: translateX(-30px); }
      5% { opacity: 1; -webkit-transform: translateX(0px); transform: translateX(0px); }
-    17% { opacity: 1; -webkit-transform: translateX(0px); transform: translateX(0px); }
     100% { opacity: 1; }
 }
