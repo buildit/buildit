@@ -1684,7 +1684,7 @@ i.icon img {
 *******************************/
 
 h1.ui.header > span {
-  color: #2185D0;
+  color: #2185D0;   letter-spacing: -0.02em;
 }
 
 .typewriter {
@@ -1774,99 +1774,6 @@ h1.ui.header > span {
 .content-wrapper {
   padding: 16px;
 }
-
-/* - About Page */
-
-.about-header-wrapper {
-  padding-bottom: 16px;
-}
-.about-header {
-  font-size: 2.3rem;
-  line-height: 3rem;
-  padding: 16px;
-  margin: 0;
-}
-.content-half-body {
-  padding: 16px;
-}
-
-.about-half-content {
-  width: 100%;
-}
-
-.about-people-banner {
-  background-image: url('../assets/images/innovate.jpg');
-  display: block;
-  width: 100%;
-  height: 360px;
-  background-size: cover;
-}
-
-.about-people-banner .about-header {
-  float: right;
-  padding: 8%;
-  background-color: rgba(27,28,29,0.6);
-  font-size: 1.8rem;
-  line-height: 2.6rem;
-  height: 100%;
-}
-
-.our-approach-wrapper {
-    background-image: url('../assets/images/formula-bg.jpg');
-    display: block;
-    width: 100%;
-    height: 360px;
-    background-size: cover;
-}
-@media(min-width: 350px){
-  .about-header {
-    font-size: 2.3rem;
-    line-height: 3rem;
-  }
-}
-
-@media(min-width: 400px){
-  .about-header {
-    font-size: 2.3rem;
-    line-height: 3.3rem;
-    padding: 24px;
-  }
-  .content-half-body {
-    padding: 24px;
-  }
-}
-
-@media (min-width: 640px) {
-  .about-header {
-    width: 50%;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    float: left;
-  }
-  .content-half-body {
-    width: 50%;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    float: left;
-  }
-  .about-people-banner {
-    height: 450px;
-  }
-  .about-people-banner .about-header {
-    width: 45%;
-  }
-}
-
-@media (min-width: 1000px){
-  .about-header {
-    font-size: 2.8rem;
-    line-height: 3.8rem;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-}
-
-
 
 /*
 CSS for layout page
