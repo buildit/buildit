@@ -5,6 +5,7 @@ const concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
 const watch = require('gulp-watch');
 const open = require('gulp-open');
+const uglify = require('gulp-uglify');
 
 const src = 'src';
 const target = 'dist';
@@ -30,11 +31,18 @@ gulp.task('clean', () => {
     .pipe(clean());
 });
 
-// Copy everything except CSS
+// Copy all assets except our JS and CSS
 gulp.task('copy-files', () => {
-  return gulp.src([`${src}/**`, `!${src}/**/*.css`])
+  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/js/**`])
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
+});
+
+// Minify our JS
+gulp.task('js', () => {
+  return gulp.src(`${src}/js/**`)
+    .pipe(uglify())
+    .pipe(gulp.dest(`${target}/js`));
 });
 
 // Build the CSS
@@ -69,5 +77,5 @@ gulp.task('css', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('build', ['copy-files', 'css']);
+gulp.task('build', ['copy-files', 'js', 'css']);
 gulp.task('default', ['build', 'serve', 'watch']);
