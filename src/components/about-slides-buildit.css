@@ -15,6 +15,7 @@
 .subheader {
   font-size: 1.2rem;
   line-height: 2.2rem;
+  padding-top: 32px;
 }
 
 .page-contents p {
@@ -70,6 +71,14 @@
   background-size: cover;
 }
 
+.ui.image.about-kke-img {
+  max-width: 400px;
+  width:100%;
+  float: right;
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
 /* Alpha to Omega story*/
 .about-step-wrapper {
   width:100%;
@@ -80,6 +89,9 @@
   padding-top: 0px;
   width: 30%;
   float: left;
+}
+.ui.image.about-icon{
+  max-width: 80px;
 }
 
 .about-step-wrapper p {
@@ -133,7 +145,7 @@
 @media (min-width: 640px) {
   .about-header {
     width: 50%;
-    padding-top: 24px;
+    padding-top: 52px;
     padding-bottom: 24px;
     float: left;
   }
@@ -161,7 +173,6 @@
   .about-header {
     font-size: 2.8rem;
     line-height: 3.8rem;
-    padding-top: 24px;
     padding-bottom: 24px;
   }
 }
@@ -172,4 +183,16 @@
     float: right;
     margin-right: 24px;
   }
+  .about-header,
+  .content-wrapper.content-half-body {
+    padding-bottom: 32px;
+  }
+
+}
+
+@media(min-width: 1400px){
+    .about-header {
+      font-size: 3.6rem;
+      line-height: 4.6rem;
+    }
 }
