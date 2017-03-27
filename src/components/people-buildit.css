@@ -1,86 +1,79 @@
-/*******************************
-         Jobs titles
-*******************************/
-
-.job-title {
-  font-size: 1.4rem;
- }
-
-.job-title, .truncate {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
- }
-
-.ui.vertical.stripe h3 {
-  font-size: 1.4rem !important;
- }
+/********************************************
+      People - restyle smartrecruiters
+********************************************/
 
 h3.details-title {
+  font-size: 1.4rem !important;
   display: block;
   line-height: 1.2;
   margin: 0;
   text-transform: none;
-  font-weight: 400;
+  font-weight: 300;
   padding-top: 0.5em;
- }
-
-.list--dotted {
-  list-style: none;
- }
-
-.list--dotted-item, .list--dotted>li {
-  display: inline;
-  margin-top: 2rem;
- }
+}
 
 .desc-item {
-  line-height: 1.4;
- }
+ line-height: 1.4;
+}
 
 .desc-item, .details-desc {
-  color: #888;
-  text-transform: none;
-  margin: 0;
-  padding: 0.5em;
-  padding-left: 0;
+ color: #888;
+ text-transform: none;
+ margin: 0;
+ padding: 0.5em;
+ padding-left: 0;
+ margin-right: -2px;
+}
+
+ul.opening-jobs  {
+ margin-left: -40px;
  }
+
+li.opening-job {
+ margin-top: 1rem;
+
+}
+
+li.opening-job {
+ -webkit-transition: 0.25s ease-in-out;
+ -moz-transition: 0.25s ease-in-out;
+ -ms-transition: 0.25s ease-in-out;
+ -o-transition: 0.25s ease-in-out;
+ transition: 0.25s ease-in-out;
+ border-left: 0px solid black;
+ padding-left: 0px;
+ color: rgba(0, 0, 0, 0.1);
+ overflow: hidden;
+}
+li.opening-job:hover {
+ color: white;
+ border-left: 1em solid black;
+ padding-left: 1em;
+ background-color: rgba(0,0,0,0.05);
+}
+
+.list--dotted {
+ list-style: none;
+}
+
+.list--dotted-item, .list--dotted>li {
+ display: inline;
+ margin-top: 2rem;
+}
+
+.list--dotted>li:nth-child(2) {
+color:black;
+font-weight: 600;
+}
 
 .list--dotted-item:before, .list--dotted>li:before {
   content: "\2022";
   padding: 0 .4rem;
+  margin-left: -.6rem;
+  color: #888;
  }
 
 .list--dotted-item:first-child:before, .list--dotted>li:first-child:before {
     content: "";
     padding: 0 .4rem;
   }
-
-ul.opening-jobs  {
-  margin-left: 0px;
-  }
-
-li.opening-job {
-  margin-top: 2rem;
-
-}
-
-li.opening-job {
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -ms-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-  border-left: 0px solid black;
-  padding-left: 0px;
-  color: rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-li.opening-job:hover {
-  color: white;
-  border-left: 1em solid black;
-  padding-left: 1em;
-  background-color: rgba(0,0,0,0.05);
-}
