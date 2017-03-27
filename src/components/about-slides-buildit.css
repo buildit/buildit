@@ -206,12 +206,14 @@
   .content-wrapper.content-half-body {
     padding-bottom: 32px;
   }
-
 }
 
 @media(min-width: 1400px){
   .about-header {
     font-size: 3.6rem;
     line-height: 4.6rem;
+  }
+  .about-people-banner {
+    height: 650px;
   }
 }
