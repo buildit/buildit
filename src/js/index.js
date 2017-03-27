@@ -29,9 +29,7 @@ $(document).ready(function() {
 
   // lazy load images
   $('.image').visibility({
-    type: 'image',
-    transition: 'horizontal zoom pulse',
-    duration: 4000
+    type: 'image'
   });
 
   $('.image').visibility('refresh');
