@@ -19,7 +19,7 @@
   text-indent: -9999px !important;
 }
 #home_mobile {
-  background: url("assets/images/buildit-favicon-black.png") no-repeat !important;
+  background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;
   background-size: contain !important;
 }
 #home_desktop {
@@ -39,6 +39,11 @@
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   #home_mobile {
     background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;
+    background-size: contain !important;
+
+  }
+  #home_desktop {
+    background: url("assets/images/buildit-logo-white.png") no-repeat !important;
     background-size: contain !important;
   }
 
@@ -65,6 +70,8 @@
   #home_mobile {
     width: 44px !important;
     font-size: large !important;
+    background: url("assets/images/buildit-favicon-black.png") no-repeat !important;
+    background-size: contain !important;
   }
 }
 
