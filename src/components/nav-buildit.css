@@ -1,0 +1,88 @@
+.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
+  font-size: small;
+}
+
+.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
+  font-size: small;
+}
+
+.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
+  font-size: small;
+}
+
+#home_desktop {
+  font-size: large !important;
+}
+
+#home_desktop, #home_mobile {
+  display: inline-block !important;
+  text-indent: -9999px !important;
+}
+#home_mobile {
+  background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;
+  background-size: contain !important;
+}
+#home_desktop {
+  background: transparent url("assets/images/buildit-logo-white.png") no-repeat right center !important;
+  background-size: contain!important;
+}
+
+
+/**
+* RWD Nav
+* //TODO Jon fixes for mobile nav
+* Quick fixes, will do it for now
+*
+**/
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #home_mobile {
+    background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;
+    background-size: contain !important;
+
+  }
+  #home_desktop {
+    background: url("assets/images/buildit-logo-white.png") no-repeat !important;
+    background-size: contain !important;
+  }
+
+}
+
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #home_mobile {
+    background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;
+    background-size: contain !important;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  #mobile_nav {
+    height: 44px !important;
+  }
+  /* hides github menu */
+  .right.menu {
+    display: none !important;
+  }
+
+  #home_mobile {
+    width: 44px !important;
+    font-size: large !important;
+    background: url("assets/images/buildit-favicon-black.png") no-repeat !important;
+    background-size: contain !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  #mobile_nav {
+    height: 44px !important;
+  }
+
+  .ui.inverted.basic.grey.button {
+    display: block !important;
+  }
+
+}

@@ -233,10 +233,27 @@ h1.ui.header>span {
 }
 /** end CSS for contact3 page **/
 
-/** beginning CSS for contact4 page **/
+/** beginning CSS for contact5 page **/
+.shadowed {
+  padding: 3.5vw 4vw !important;
+  border-top: 5px solid rgba(255, 255, 255, .1)!important;
+  background-color: #1b1c1d;
+  color: white !important;
+  -webkit-box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.3);
+  box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.3);
+}
 
+.thinned {
+  font-weight: 300;
+}
 
-/** end CSS for contact4 page **/
+@media only screen and (max-width:767px) {
+  .shadowed {
+    padding: 1vmin;
+  }
+}
+/** end CSS for contact5 page **/
 
 /** TODO Remove image .contact class in pusher div aligned segment contact**/
 /*.ui.inverted.segment.contact {*/
