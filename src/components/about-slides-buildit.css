@@ -19,9 +19,9 @@
 }
 
 .subheader-large-center {
-    font-size: 1.8rem;
-    padding: 32px 0;
-    text-align: center;
+  font-size: 1.8rem;
+  padding: 32px 0;
+  text-align: center;
 }
 
 .page-contents p {
@@ -39,6 +39,12 @@
   padding-bottom: 16px;
   border-bottom: 1px solid #ffffff;
 }
+
+.divider {
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 24px;
+}
+
 .about-header {
   font-size: 2.3rem;
   line-height: 3rem;
@@ -176,7 +182,7 @@
   .about-step-wrapper {
     width:25%;
     float: left;
-    padding: 16px;
+    padding: 8px;
   }
 }
 
@@ -184,6 +190,9 @@
   .about-header {
     font-size: 2.8rem;
     line-height: 3.8rem;
+  }
+  .about-step-wrapper {
+    padding: 16px;
   }
 }
 
@@ -201,8 +210,8 @@
 }
 
 @media(min-width: 1400px){
-    .about-header {
-      font-size: 3.6rem;
-      line-height: 4.6rem;
-    }
+  .about-header {
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+  }
 }
