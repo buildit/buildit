@@ -2,6 +2,10 @@
       People - restyle smartrecruiters
 ********************************************/
 
+.people.stripe {
+  border: none !important;
+}
+
 h3.details-title {
   font-size: 1.4rem !important;
   display: block;
