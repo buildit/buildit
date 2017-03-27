@@ -42,7 +42,8 @@
 
 .section-label {
   min-width: 15%;
-  width: 20%;
+  width: 25%;
+  max-width: 30%;
   padding: 1em .5em;
   background-color: #1b1c1d;
   color: #dedede;
@@ -171,4 +172,8 @@
 
 .clearfix {
   *zoom: 1;
+}
+
+div.ui.dividing.whited {
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
