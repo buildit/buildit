@@ -54,4 +54,34 @@ $(document).ready(function() {
       // init
       $links.on('click', handler.activate)
   /** end side links animation **/
+
+  $('button').on('click', function() {
+    $('.sidebar')
+      /*.sidebar({
+        dimPage: true,
+        scrollLock: true,
+        transition: {
+          computer: 'top'
+        }
+      })*/
+      .sidebar({
+        dimPage: true,
+        scrollLock: true,
+        closable: true,
+        transition: 'auto',
+        easing: 'easeInOutQuint',
+        // debug
+        debug: true,
+        performance: true,
+        silent: false,
+
+        duration: 2000,
+        onVisible: function() {console.log('opened')}
+      })
+      .sidebar('toggle')
+    ;
+  })
+
+  console.log('end scripts')
+
 })
