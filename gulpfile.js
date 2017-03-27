@@ -42,7 +42,8 @@ gulp.task('copy-files', () => {
 gulp.task('js', () => {
   return gulp.src(`${src}/js/**`)
     .pipe(uglify())
-    .pipe(gulp.dest(`${target}/js`));
+    .pipe(gulp.dest(`${target}/js`))
+    .pipe(connect.reload());
 });
 
 // Build the CSS
