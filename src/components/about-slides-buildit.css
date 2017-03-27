@@ -18,6 +18,12 @@
   padding-top: 32px;
 }
 
+.subheader-large-center {
+    font-size: 1.8rem;
+    padding: 32px 0;
+    text-align: center;
+}
+
 .page-contents p {
   font-size: 1.1rem;
   line-height: 1.8rem;
@@ -31,6 +37,7 @@
 /* - About Page */
 .about-header-wrapper {
   padding-bottom: 16px;
+  border-bottom: 1px solid #ffffff;
 }
 .about-header {
   font-size: 2.3rem;
@@ -94,6 +101,10 @@
   max-width: 80px;
 }
 
+.about-step-wrapper h3 {
+  text-align: center;
+}
+
 .about-step-wrapper p {
   float: left;
   width:70%;
@@ -114,6 +125,7 @@
     font-size: 2.3rem;
     line-height: 3.3rem;
     padding: 24px;
+    padding-left: 16px;
   }
   .content-half-body {
     padding: 24px;
@@ -132,12 +144,12 @@
     float: none;
     text-align: center;
     margin: 0 auto;
+    padding-bottom: 16px;
   }
   .about-step-wrapper p {
     float: none;
     width:100%;
     padding-left: 0px;
-    padding-top: 16px;
     text-align: center;
   }
 }
@@ -146,7 +158,6 @@
   .about-header {
     width: 50%;
     padding-top: 52px;
-    padding-bottom: 24px;
     float: left;
   }
   .content-half-body {
@@ -173,7 +184,6 @@
   .about-header {
     font-size: 2.8rem;
     line-height: 3.8rem;
-    padding-bottom: 24px;
   }
 }
 
