@@ -269,11 +269,11 @@
 }
 
 .ldn { background-color:rgba(0,0,0,0); width:30vw; }
-.nyc { background-color:rgba(0,0,0,0); width:30vw; }
+.nyc { background-color:rgba(0,0,0,0); width:35vw; }
 .den { background-color:rgba(0,0,0,0); width:30vw; }
 .dub { background-color:rgba(0,0,0,0); width:30vw; }
 .edi { background-color:rgba(0,0,0,0); width:30vw; }
-.ban { background-color:rgba(0,0,0,0); width:30vw; }
+.ban { background-color:rgba(0,0,0,0); width:30vw; margin-bottom: 1em;}
 
 
 /* make */
@@ -314,9 +314,9 @@ i.icon img {
     padding: 0;
   }
 
-  .ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
-    font-size: x-small;
-  }
+  /*.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {*/
+    /*font-size: x-small;*/
+  /*}*/
 
   .ui.secondary.inverted.menu a.item {
     margin: 0;
@@ -348,9 +348,9 @@ i.icon img {
     display: none !important;
   }
 
-  .ui.inverted.basic.grey.button {
-    display: none !important;
-  }
+  /*.ui.inverted.basic.grey.button {*/
+    /*!*display: none !important;*!*/
+  /*}*/
 
   .masthead.segment {
     min-height: 300px;
@@ -413,9 +413,9 @@ i.icon img {
     padding: 0;
   }
 
-  .ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
-    font-size: x-small;
-  }
+  /*.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {*/
+    /*font-size: x-small;*/
+  /*}*/
 
   .ui.secondary.inverted.menu a.item {
     margin: 0;
@@ -448,7 +448,7 @@ i.icon img {
   }
 
   .ui.inverted.basic.grey.button {
-    display: none !important;
+    /*display: none !important;*/
   }
   .masthead.segment {
     min-height: 300px;
@@ -503,9 +503,9 @@ i.icon img {
     padding: 0;
   }
 
-  .ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
-    font-size: x-small;
-  }
+  /*.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {*/
+    /*font-size: x-small;*/
+  /*}*/
 
   .ui.secondary.inverted.menu a.item {
     margin: 0;
@@ -538,7 +538,7 @@ i.icon img {
   }
 
   .ui.inverted.basic.grey.button {
-    display: none !important;
+    /*display: none !important;*/
   }
   .masthead.segment {
     min-height: 300px;
@@ -579,7 +579,7 @@ i.icon img {
     padding: 0;
   }
   .ui.inverted.basic.grey.button {
-    display: none !important;
+    /*display: none !important;*/
   }
   .masthead.segment {
     min-height: 350px;
@@ -605,7 +605,7 @@ i.icon img {
     font-family: Helvetica, sans-serif;
   }
   .ldn { background-color:rgba(0,0,0,0); width:30vw; }
-  .nyc { background-color:rgba(0,0,0,0); width:30vw; }
+  .nyc { background-color:rgba(0,0,0,0); width:35vw; }
   .den { background-color:rgba(0,0,0,0); width:30vw; }
   .dub { background-color:rgba(0,0,0,0); width:30vw; }
   .edi { background-color:rgba(0,0,0,0); width:30vw; }
@@ -637,7 +637,7 @@ i.icon img {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
   .ldn { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
-  .nyc { left: 2.5vw; background-color:rgba(0,0,0,0); width:16vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
+  .nyc { left: 2.5vw; background-color:rgba(0,0,0,0); width:18vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
   .den { left: -2vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6}
   .dub { left: 2.5vw; background-color:rgba(0,0,0,0); width:14vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.7}
   .edi { left: -2vw; background-color:rgba(0,0,0,0); width:18vw; -webkit-filter: blur(0.03em);filter: blur(0.03em); opacity:0.6;}

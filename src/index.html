@@ -37,35 +37,37 @@
 
   <!-- Following Menu -->
    <div class="ui large top fixed hidden menu">
-    <div class="ui container">
-      <a class="item black" href="index.html"><img id="logo" src="assets/images/buildit-logo-black.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
-      <a class="active item" href="index.html" id="home">Home</a>
-      <a class="item" href="about.html">About</a>
-      <a class="item" href="people.html">People</a>
-      <div class="right menu">
-        <div class="item">
-          <a class="ui primary button" href="https://github.com/buildit" id="github">Github</a>
-        </div>
-      </div>
-    </div>
-  </div>
+     <div class="ui container" id="mobile_nav">
+       <a class="item black" href="index.html" id="home_mobile">
+         Buildit
+       </a>
+       <a class="item" href="about.html" id="about">About</a>
+       <a class="item" href="people.html" id="people">People</a>
+       <a class="item" href="contact.html" id="find-us">Find us</a>
+       <div class="right menu">
+         <div class="item">
+           <a class="ui primary button" href="https://github.com/buildit" id="github">Github</a>
+         </div>
+       </div>
+     </div>
+   </div>
 
-  <!-- Page Contents -->
+
+  <!-- Page pusher -->
   <div class="pusher">
-
     <div class="ui inverted vertical masthead center aligned segment">
-      <!-- Nav -->
       <div class="ui container">
         <div class="ui large secondary pointing inverted menu">
-          <a class="image item" href="index.html"><img id="logo" src="assets/images/buildit-logo-white.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
+          <a class="image item" href="index.html" id="home_desktop">
+            Buildit
+          </a>
           <div class="right item">
-            <a class="active item" href="index.html">Home</a>
             <a class="item" href="about.html">About</a>
             <a class="last item" href="people.html">People</a>
-            <a class="ui inverted basic grey button" href="contact.html">Where</a>
+            <a class="ui inverted basic grey button" href="contact.html">Find us</a>
           </div>
         </div>
-      </div>
+      </div> <!-- End Nav -->
       <!-- Hero Banner -->
       <div class="ui container">
         <h1 class="ui inverted header">
@@ -167,7 +169,7 @@
           <p>Yes, we know you probably disregarded the earlier boasts as non-sequitur filler content,
             but its really true. It took years of gene splicing and combinatory DNA research to
             assemble this level of talent.</p>
-          <a class="ui large button" href="careers.html">I'm quite interested</a>
+          <a class="ui large button" href="people.html">I'm quite interested</a>
         </div>
       </div>
 
@@ -175,23 +177,20 @@
         <div class="ui container">
           <div class="ui stackable inverted divided equal height stackable grid">
             <div class="three wide column">
-              <h4 class="ui inverted header"><a href="about.html" class="primary">About</a></h4>
               <div class="ui inverted link list">
-                <a href="make.html" class="item">How we made this</a>
-                <a href="values.html" class="item">Our values</a>
-                <a href="careers.html" class="item">Careers</a>
+                <a href="index.html" class="item">Home</a>
+                <a href="about.html" class="item">About us</a>
+                <a href="people.html" class="item">People</a>
               </div>
             </div>
             <div class="three wide column">
-              <h4 class="ui inverted header">Buildit Galaxy</h4>
               <div class="ui inverted link list">
-                <a href="http://www.wiprodigital.com" class="item"><i class="icon first order"></i> Wipro Digital</a>
-                <a href="http://www.wipro.com" class="item"><i class="icon empire"></i> Wipro</a>
-                <a href="http://www.designit.com" class="item"><img src="assets/images/icon-sep.svg" width="13px" alt="Designit">&nbsp;&nbsp;Designit</a>
+                <a href="http://www.wiprodigital.com" class="item"><strong>wipro</strong> digital</a>
+                <a href="http://www.wipro.com" class="item">Wipro</a>
+                <a href="http://www.designit.com" class="item">Designit</a>
               </div>
             </div>
             <div class="three wide column">
-              <h4 class="ui inverted header">Europe</h4>
               <div class="ui inverted link list">
                 <a href="contact.html#london" class="item">London</a>
                 <a href="contact.html#dublin" class="item">Dublin</a>
@@ -199,10 +198,10 @@
               </div>
             </div>
             <div class="three wide column">
-              <h4 class="ui inverted header">USA</h4>
               <div class="ui inverted link list">
                 <a href="contact.html#newyork" class="item">New York</a>
                 <a href="contact.html#denver" class="item">Denver</a>
+                <a href="contact.html#bangalore" class="item">Bangalore</a>
               </div>
             </div>
           </div>
