@@ -1,0 +1,41 @@
+.buildit-value > span.lines {
+  height: 30px;
+  border-bottom: 5px solid black;
+  width: 48%;
+  min-width: 47%;
+}
+
+.buildit-value > span.circle {
+  position: relative;
+  height: 30px;
+  width: 3%;
+  min-width: 3%;
+}
+
+.buildit-value > span.circle i {
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* pull circle icon */
+  margin-left: -10px;
+  /* cover with bg color when overlaying */
+  background-color: white;
+}
+
+.t-b-marged {
+  margin: 1.2em 0;
+}
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .buildit-value > span {
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {}
