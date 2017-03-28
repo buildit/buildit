@@ -59,12 +59,24 @@
   width: 100%;
 }
 
+.about-banner-wrapper {
+  position: relative;
+  height: 0;
+  padding-bottom: 50%;
+}
+
 .about-people-banner {
   background-image: url('../assets/images/innovate.jpg');
   display: block;
   width: 100%;
   height: 360px;
   background-size: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .about-people-banner .about-header {
@@ -173,7 +185,7 @@
     float: left;
   }
   .about-people-banner {
-    height: 450px;
+    /*height: 450px;*/
   }
   .about-people-banner .about-header {
     width: 45%;
@@ -211,9 +223,11 @@
 @media(min-width: 1400px){
   .about-header {
     font-size: 3.6rem;
-    line-height: 4.6rem;
+    line-height: 4.1rem;
   }
-  .about-people-banner {
-    height: 650px;
+
+  .about-people-banner .about-header {
+    font-size: 2.2rem;
+    line-height: 3rem;
   }
 }

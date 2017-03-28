@@ -37,11 +37,15 @@
 
   <!-- Following Menu -->
   <div class="ui large top fixed hidden menu">
-    <div class="ui container">
-      <a class="item black" href="index.html"><img id="logo" src="assets/images/buildit-logo-black.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
+
+    <div class="ui container" id="mobile_nav">
+      <a class="item black" href="index.html" id="home_mobile">
+        Buildit
+      </a>
+      <!--<a class="item" href="index.html" id="home">Home</a>-->
       <a class="item" href="about.html" id="about">About</a>
       <a class="item" href="people.html" id="people">People</a>
-      <a class="item" href="contact.html" id="find-us">Find us</a>
+      <a class="item active" href="contact.html" id="find-us">Find us</a>
       <div class="right menu">
         <div class="item">
           <a class="ui primary button" href="https://github.com/buildit" id="github">Github</a>
@@ -50,20 +54,25 @@
     </div>
   </div>
 
-
   <!-- Page pusher -->
   <div class="pusher">
     <div class="ui inverted vertical masthead center aligned segment contact">
       <div class="ui container">
         <div class="ui large secondary pointing inverted menu">
-          <a class="image item" href="index.html"><img id="logo" src="assets/images/buildit-logo-white.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
+          <a class="image item" href="index.html" id="home_desktop">
+            Buildit
+          </a>
           <div class="right item">
             <a class="item" href="about.html">About</a>
             <a class="last item" href="people.html">People</a>
-            <a class="ui active inverted basic grey button" href="contact.html">Find us</a>
+            <a class="ui inverted basic grey button" href="contact.html">Find us</a>
           </div>
         </div>
       </div> <!-- End Nav -->
+
+
+
+
 
        <div class="ui container">
         <div class="three wide column">
@@ -80,140 +89,119 @@
     </div> <!-- End Masthead -->
   </div><!-- End Page pusher -->
 
-  <!-- Section -->
+  <!-- beginning Section -->
   <section>
-    <!-- title -->
-    <div class="ui inverted vertical stripe segment">
-      <div class="ui top aligned stackable grid container">
-        <div class="row">
-          <div class="eight wide column">
-            <h3 class="ui header white">UK / USA / IRELAND / INDIA</h3>
-          </div>
-        </div>
+    <div class="ui equal width stackable center aligned grid">
+      <div class="column no-padding" id="london">
+        <img class="ui fluid image" src="assets/images/london1.jpg">
+          <a href="https://www.google.com/maps/place/186+City+Rd,+London+EC1V+2NT,+UK/@51.525377,-0.087646,15z/data=!4m5!3m4!1s0x48761ca650dc3ba5:0x921df6363656512e!8m2!3d51.5277262!4d-0.0904569?hl=en-US" target="_blank">
+          <div class="image-block center-aligned">
+            <h2 class="uppercased">london</h2>
+            <div class="image-block_text">
+              <h3>City Road 186, EC1V 2NT</h3>
+              <h4>London, UK</h4>
+            </div><!-- end image-block-text -->
+          </div><!-- end london -->
+        </a>
       </div>
-    </div><!-- end title -->
+
+      <div class="column no-padding" id="newyork">
+        <img class="ui fluid image" src="assets/images/newyork.jpg">
+        <a href="https://www.google.com/maps?ll=40.703992,-74.011092&z=16&t=m&hl=en-US&gl=GB&mapclient=embed&q=85+Broad+St+New+York,+NY+10004+USA" target="_blank">
+          <div class="image-block center-aligned">
+            <h2 class="uppercased" >New york</h2>
+            <div class="image-block_text">
+              <h3>85 Broad Street, New York</h3>
+              <h4>USA</h4>
+            </div><!-- end image-block-text -->
+          </div><!-- end new-york -->
+        </a>
+      </div>
+
+      <div class="equal width row no-padding" style="padding: 0;">
+        <div class="column no-padding" id="denver">
+            <img class="ui fluid image" src="assets/images/denver.jpg">
+            <a href="https://www.google.com/maps?ll=39.752562,-105.002314&z=16&t=m&hl=en-US&gl=GB&mapclient=embed&q=1550+Wewatta+St+Denver,+CO+80202+USA" target="_blank">
+              <div class="image-block center-aligned">
+                <h2 class="uppercased" >Denver</h2>
+                <div class="image-block_text">
+                  <h3>1550 Wewatta Street, Denver</h3>
+                  <h4>CO 80202</h4>
+                </div><!-- end image-block-text -->
+              </div><!-- end denver -->
+            </a>
+        </div>
+
+        <div class="column no-padding" id="dublin">
+          <img class="ui fluid image" src="assets/images/dublin.jpg">
+          <a href="https://www.google.com/maps?ll=53.330506,-6.228374&z=16&t=m&hl=en-US&gl=GB&mapclient=embed&cid=3233598717796492272" target="_blank">
+            <div class="image-block center-aligned">
+              <h2 class="uppercased" >Dublin</h2>
+              <div class="image-block_text">
+                <h3>Alexandra House, 3 Ballsbridge Park, Dublin, 4</h3>
+                <h4>Ireland</h4>
+              </div><!-- end image-block-text -->
+            </div><!-- end dublin -->
+          </a>
+        </div>
+
+      </div> <!-- end row -->
+
+      <div class="equal width row no-padding" style="padding: 0;">
+
+        <div class="column no-padding" id="edinburgh">
+          <img class="ui fluid image" src="assets/images/edinburgh.jpg">
+          <a href="https://www.google.com/maps?ll=55.953468,-3.190324&z=17&t=m&hl=en-US&gl=GB&mapclient=embed&cid=784783760321878729" target="_blank">
+            <div class="image-block center-aligned">
+              <h2 class="uppercased" >EDINBURGH</h2>
+              <div class="image-block_text">
+                <h3>2 Castle Terrace, Edinburgh, EH1 2EL</h3>
+                <h4>UK</h4>
+              </div><!-- end image-block-text -->
+            </div><!-- end edinburgh -->
+          </a>
+        </div>
+
+        <div class="column no-padding" id="bangalore">
+          <img class="ui fluid image" src="assets/images/bangalore2.jpg">
+          <a href="https://www.google.com/maps/place/Hosur+Rd,+Electronic+City,+Bengaluru,+Karnataka+560100,+India/@12.850101,77.668808,16z/data=!4m5!3m4!1s0x3bae14494a8943f7:0x768d0f9874c48675!8m2!3d12.8501009!4d77.6689256?hl=en-US" target="_blank">
+            <div class="image-block center-aligned">
+              <h2 class="uppercased" >bangalore</h2>
+              <div class="image-block_text">
+                <h3>72 Hosur Road, Electronic City, Bangalore</h3>
+                <h4>560100, India</h4>
+              </div><!-- end image-block-text -->
+            </div><!-- end bangalore -->
+          </a>
+        </div> <!-- end bangalore-->
+
+      </div> <!-- end row -->
 
 
-    <div class="ui vertical inverted stripe quote segment where" id="london">
-      <div class="ui stackable internally celled grid">
-        <div class="right aligned row">
-          <div class="ten wide column">
-            <h3>LONDON</h3>
-            <p>City Road 186, EC1V 2NT, London, UK</p>
-          </div>
-          <div class="six wide column">
-            <div id="googlemaps"><iframe src="https://www.google.com/maps/embed?key=AIzaSyA6sewibZttvy8MGL3DulCWV361VBD-zpg&pb=!1m18!1m12!1m3!1d2482.2090097057862!2d-0.09264558422926679!3d51.52772617963846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ca650dc3ba5%3A0x921df6363656512e!2s186+City+Rd%2C+London+EC1V+2NT!5e0!3m2!1sen!2suk!4v1478811326601" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui vertical inverted stripe quote segment where" id="london_wework">
-      <div class="ui stackable internally celled grid">
-        <div class="left aligned row">
-          <div class="six wide column">
-            <div id="googlemaps"><iframe src="https://www.google.com/maps/embed?key=AIzaSyA6sewibZttvy8MGL3DulCWV361VBD-zpg&pb=!1m18!1m12!1m3!1d2482.733532994816!2d-0.0926756841061146!3d51.51810447963692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761cabae509b39%3A0x95ca5518bf8f075e!2s1+Fore+St%2C+London+EC2Y+5EJ!5e0!3m2!1sen!2suk!4v1478811448958" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-          </div>
-          <div class="ten wide column">
-            <h3>LONDON</h3>
-            <p>Fore Street 1, EC2Y 9DT, London, UK</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui vertical inverted stripe quote segment where" id="newyork">
-      <div class="ui stackable internally celled grid">
-        <div class="right aligned row">
-          <div class="ten wide column">
-            <h3>NEW YORK</h3>
-            <p>85 Broad Sreet, New York, NY 10018, USA</p>
-          </div>
-          <div class="six wide column">
-            <div id="googlemaps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.636822037431!2d-74.0132857491997!3d40.70399554594107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a141703be89%3A0x74c637bf3f5d8f7d!2s85+Broad+St%2C+New+York%2C+NY+10004%2C+USA!5e0!3m2!1sen!2suk!4v1478850198764" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui vertical inverted stripe quote segment where" id="denver">
-      <div class="ui stackable internally celled grid">
-        <div class="left aligned row">
-          <div class="six wide column">
-            <div id="googlemaps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.424970363536!2d-105.00450754922669!3d39.75256590358658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78c3e820592f%3A0x90768803980b4bb2!2s1550+Wewatta+St%2C+Denver%2C+CO+80202%2C+USA!5e0!3m2!1sen!2suk!4v1478850260462" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-          </div>
-          <div class="ten wide column">
-            <h3>DENVER</h3>
-            <p>1550 Wewatta Street, Denver, CO 80202, USA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui vertical inverted stripe quote segment where" id="dublin">
-      <div class="ui stackable internally celled grid">
-        <div class="right aligned row">
-          <div class="ten wide column">
-            <h3>DUBLIN</h3>
-            <p>Alexandra House, 3 Ballsbridge Park, Dublin 4, Ireland</p>
-          </div>
-          <div class="six wide column">
-            <div id="googlemaps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.712032773211!2d-6.230450048786214!3d53.33050918350043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670ec40c61b82b%3A0x2ce00ce6c86b23f0!2sRegus+Ballsbridge%2C+Dublin!5e0!3m2!1sen!2suk!4v1478850300167" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui vertical inverted stripe quote segment where" id="edinburgh">
-      <div class="ui stackable internally celled grid">
-        <div class="left aligned row">
-          <div class="six wide column">
-            <div id="googlemaps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1116.8841027688418!2d-3.190739220553377!3d55.95338933407775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c78e4afd8b73%3A0xae41cac0b7b1ac9!2sApple+Princes+Street!5e0!3m2!1sen!2suk!4v1478850379676" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-          </div>
-          <div class="ten wide column">
-            <h3>EDINBURGH</h3>
-            <p>Somewhere in Scotland, Edinburgh, UK</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui vertical inverted stripe quote segment where" id="bangalore">
-      <div class="ui stackable internally celled grid">
-        <div class="right aligned row">
-          <div class="ten wide column">
-            <h3>BANGALORE</h3>
-            <p>72 Hosur Road, Electronic City, Bangalore 560100, India</p>
-          </div>
-          <div class="six wide column">
-            <div id="googlemaps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.895985838177!2d77.66672981482066!3d12.849994190935782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14494a8943f7%3A0x768d0f9874c48675!2sHosur+Rd%2C+Electronic+City%2C+Bengaluru%2C+Karnataka+560100%2C+India!5e0!3m2!1sen!2suk!4v1480339526583" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- End Content section -->
+    </div><!-- end stackable grid-->
+  </section> <!-- end Section-->
 
   <!-- Beginning footer -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
+        <div class="four wide column">
           <h4 class="ui inverted header"><a href="about.html">About</a></h4>
           <div class="ui inverted link list">
             <a href="make.html" class="item">How we made this</a>
             <a href="values.html" class="item">Our Values</a>
-            <a href="careers.html" class="item">Careers</a>
+            <a href="people.html" class="item">People</a>
           </div>
         </div>
-        <div class="three wide column">
+        <div class="four wide column">
           <h4 class="ui inverted header">Buildit Galaxy</h4>
           <div class="ui inverted link list">
-            <a href="http://www.wiprodigital.com" class="item"><i class="icon first order"></i> wipro digital</a>
-            <a href="http://www.wipro.com" class="item"><i class="icon empire"></i> Wipro</a>
-            <a href="http://www.designit.com" class="item"><img src="assets/images/icon-sep.svg" width="13px">&nbsp;&nbsp;Designit</a>
+            <a href="http://www.wiprodigital.com" class="item"><strong>wipro</strong> digital</a>
+            <a href="http://www.wipro.com" class="item">Wipro</a>
+            <a href="http://www.designit.com" class="item">Designit</a>
           </div>
         </div>
-        <div class="three wide column">
+        <div class="four wide column">
           <h4 class="ui inverted header">Europe</h4>
           <div class="ui inverted link list">
             <a href="contact.html#london" class="item">London</a>
@@ -221,7 +209,7 @@
             <a href="contact.html#edinburgh" class="item">Edinburgh</a>
           </div>
         </div>
-        <div class="three wide column">
+        <div class="four wide column">
           <h4 class="ui inverted header">USA</h4>
           <div class="ui inverted link list">
             <a href="contact.html#newyork" class="item">New York</a>
