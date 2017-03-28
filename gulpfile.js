@@ -6,6 +6,7 @@ const cleanCSS = require('gulp-clean-css');
 const watch = require('gulp-watch');
 const open = require('gulp-open');
 const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 
 const src = 'src';
 const target = 'dist';
@@ -21,7 +22,8 @@ gulp.task('serve', () => {
 
 // File watcher
 gulp.task('watch', () => {
-  gulp.watch([`${src}/**`, `!${src}/**/*.css`], { ignoreInitial: false }, ['copy-files']);
+  gulp.watch([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`], { ignoreInitial: false }, ['copy-assets']);
+  gulp.watch([`${src}/js/*.js`], { ignoreInitial: false }, ['js']);
   gulp.watch([`${src}/**/*.css`], { ignoreInitial: false }, ['css']);
 });
 
@@ -32,15 +34,28 @@ gulp.task('clean', () => {
 });
 
 // Copy all assets except our JS and CSS
-gulp.task('copy-files', () => {
-  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/js/**`])
+gulp.task('copy-assets', () => {
+  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`])
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
 });
 
+// Bundle vendor JS
+gulp.task('vendor', () => {
+  const files = [
+    'assets/library/jquery.min.js',
+    'components/visibility.min.js',
+    'components/transition.min.js'
+  ];
+
+  return gulp.src(files.map(item => `${src}/${item}`))
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest(target));
+});
+
 // Minify our JS
 gulp.task('js', () => {
-  return gulp.src(`${src}/js/**`)
+  return gulp.src(`${src}/js/*.js`)
     .pipe(uglify())
     .pipe(gulp.dest(`${target}/js`))
     .pipe(connect.reload());
@@ -78,5 +93,5 @@ gulp.task('css', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('build', ['copy-files', 'js', 'css']);
+gulp.task('build', ['copy-assets', 'vendor', 'js', 'css']);
 gulp.task('default', ['build', 'serve', 'watch']);

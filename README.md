@@ -2,7 +2,7 @@
 
 This is the buildit website.
 
-To run it locally just run the `dev` script: `npm run dev`. Local hosting is at http://localhost:8080 and a browser window should open automatically.
+To run it locally just run the `start` script: `npm start`. Local hosting is at http://localhost:8080 and a browser window should open automatically.
 
 ## Requirements
 
