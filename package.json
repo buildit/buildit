@@ -7,7 +7,6 @@
     "clean": "gulp clean",
     "build": "npm run clean && gulp build",
     "serve": "gulp serve",
-    "dev": "echo The dev script is deprecated, use npm start",
     "start": "gulp",
     "deploy:staging": "aws s3 sync dist/ s3://staging-buildit-test.com --region eu-west-2"
   },
