@@ -27,8 +27,10 @@ Dillinger, a11yproject, Gulp
 /* IMAGES */
 Unsplash rocks, thanks to all contributors
 CC Unsplash https://unsplash.com/@oy Omar Yassen - Edinburgh
+CC Unsplash https://unsplash.com/@oy Omar Yassen - Edinburgh
 CC Unsplash https://unsplash.com/@albertosaure Luis Llerena - London
 CC Unsplash https://unsplash.com/@jpease Jonathan Pease - New York
+CC Flickr https://www.flickr.com/photos/drljohnson/ Larry Johnson - Denver
 
 Wikipedia Commons (rocks too)
 https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/VidhanaSoudha.JPG/1280px-VidhanaSoudha.JPG - User:Mouleesha
