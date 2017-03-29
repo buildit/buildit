@@ -3,9 +3,9 @@
 *******************************/
 
 .ui.inverted.segment.people {
-    background-image: url(../assets/images/team-people.jpg);
+    /*background-image: url(../assets/images/team-people.jpg);*/
     background-color: rgba(0,0,0,1);
-    background-size: cover;
+    /*background-size: cover;*/
 }
 
 /*******************************
