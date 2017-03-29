@@ -2,23 +2,45 @@
 
 /* New Code */
 .contact-cards {
-  text-align: left;
+    text-align: left;
+    font-size: 1.2em;
+    padding: 24px !important;
 }
 
-.contact-cards:nth-child() {
+.contact-cards h2 {
+    text-transform: uppercase;
+    font-family: "Neue Helvetica W01",sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+.contact-cards p {
+    font-family: "Leitura News W01", serif;
+    font-weight: 200;
+}
+
+.contact-cards a {
+    color: #1c1f22;
+}
+
+.contact-cards.card-white {
+    background-color: #ffffff;
+}
+
+.contact-cards.card-black {
     background-color: #141516;
 }
 
-.contact-cards:nth-child() {
+.contact-cards.card-grey {
     background-color: #1c1f22;
 }
 
-.contact-cards .h2 {
-
+.contact-cards.card-yellow {
+    background-color: #fcff00;
 }
 
-.contact-cards .h3 {
-
+.contact-cards.card-grey a, .contact-cards.card-black a {
+    color: #ffffff;
 }
 
 
