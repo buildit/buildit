@@ -353,7 +353,7 @@ i.icon img {
   /*}*/
 
   .masthead.segment {
-    min-height: 300px;
+    /*min-height: 300px;*/
   }
   .masthead h1.ui.header {
     font-size: 6vw;
@@ -451,7 +451,7 @@ i.icon img {
     /*display: none !important;*/
   }
   .masthead.segment {
-    min-height: 300px;
+    /*min-height: 300px;*/
   }
   /*.masthead h1.ui.header {
     font-size: 9vw;
@@ -541,7 +541,7 @@ i.icon img {
     /*display: none !important;*/
   }
   .masthead.segment {
-    min-height: 300px;
+    /*min-height: 300px;*/
   }
   .ui.inverted.segment, .ui.primary.inverted.segment {
     background-size: 160%;
@@ -582,7 +582,7 @@ i.icon img {
     /*display: none !important;*/
   }
   .masthead.segment {
-    min-height: 350px;
+    /*min-height: 350px;*/
   }
   /*.masthead h1.ui.header {
     font-size: 2em;
