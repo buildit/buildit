@@ -100,10 +100,10 @@
 }
 
 .ui.inverted.segment, .ui.primary.inverted.segment {
-    background-image: /*url(../assets/images/simple.svg),*/ url(../assets/images/bg.jpg);
-    background-repeat: no-repeat, repeat-x;
+    /*background-image: url(../assets/images/simple.svg), url(../assets/images/bg.jpg);*/
+    /*background-repeat: no-repeat, repeat-x;*/
     background-color: rgba(0,0,0,1);
-    background-size: 100%;
+    /*background-size: 100%;*/
 }
 .ui.inverted.segment.contact {
     background-image: url(../assets/images/shutterstock_221064886.jpg), url(../assets/images/Globe_export.png);
