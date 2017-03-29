@@ -24,7 +24,17 @@ body copy */
   line-height: 1.8rem;
   color: #cccccc;
 }
+.page-contents p.inverted {
+  color: #333333;
+}
 
+/*.page-contents h3.inverted {
+  color: #333333;
+}*/
+
+.inverted {
+  color: #333333;
+}
 /* ====================
 about-header section */
 .about-header-section {
@@ -198,4 +208,8 @@ Alpha to Omega story*/
 }
 .about-footer-lead {
   padding-bottom: 64px;
+}
+
+.about-banner-white {
+  background-color: white;
 }
