@@ -107,7 +107,14 @@ gulp.task('css', () => {
 // Process and minify HTML
 gulp.task('html', function() {
   return gulp.src(`${src}/**/*.html`)
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      caseSensitive: true,
+      html5: true,
+      keepClosingSlash: true,
+      removeComments: true
+    }))
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
 });
