@@ -1,5 +1,45 @@
 /** beginning contacts page **/
 
+/* New Code */
+.contact-cards {
+  text-align: left;
+}
+
+.contact-cards:nth-child() {
+    background-color: #141516;
+}
+
+.contact-cards:nth-child() {
+    background-color: #1c1f22;
+}
+
+.contact-cards .h2 {
+
+}
+
+.contact-cards .h3 {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*.bottom-underline {*/
   /*text-decoration: underline;*/
   /*padding-bottom: 3em !important;*/
