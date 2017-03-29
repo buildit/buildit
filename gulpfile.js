@@ -88,10 +88,11 @@ gulp.task('css', () => {
       ...(files.map(item => `${src}/components/${item}`)),
       `${src}/components/*-buildit.css`,
       `${src}/components/buildit.css`])
+    .pipe(concatCss('bundle.css'))
+    .pipe(gulp.dest(target))
     .pipe(sourcemaps.init())
     .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(sourcemaps.write())
-    .pipe(concatCss('bundle.css'))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
 });
