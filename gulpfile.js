@@ -7,6 +7,7 @@ const watch = require('gulp-watch');
 const open = require('gulp-open');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
 
 const src = 'src';
 const target = 'dist';
@@ -87,8 +88,11 @@ gulp.task('css', () => {
       ...(files.map(item => `${src}/components/${item}`)),
       `${src}/components/*-buildit.css`,
       `${src}/components/buildit.css`])
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(concatCss('bundle.css'))
+    .pipe(gulp.dest(target))
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
 });
