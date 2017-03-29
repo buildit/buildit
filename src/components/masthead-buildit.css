@@ -23,7 +23,7 @@ h1.ui.header.people > span {
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
-	width: 100%;
+	width: 33%;
 }
 
 .concepts-animate2 span {
