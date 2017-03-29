@@ -37,11 +37,14 @@
 
   <!-- Following Menu -->
   <div class="ui large top fixed hidden menu">
-    <div class="ui container">
-      <a class="item black" href="index.html"><img id="logo" src="assets/images/buildit-logo-black.svg" alt="Buildit" data-svg-fallback="assets/images/buildit-logo-white.png"></a>
-      <a class="item" href="index.html" id="home">Home</a>
-      <a class="item" href="about.html">About</a>
-      <a class="item" href="careers.html">Careers</a>
+    <div class="ui container" id="mobile_nav">
+      <a class="item black" href="index.html" id="home_mobile">
+        Buildit
+      </a>
+      <!--<a class="item" href="index.html" id="home">Home</a>-->
+      <a class="item" href="about.html" id="about">About</a>
+      <a class="active item" href="people.html" id="people">People</a>
+      <a class="item" href="contact.html" id="find-us">Find us</a>
       <div class="right menu">
         <div class="item">
           <a class="ui primary button" href="https://github.com/buildit" id="github">Github</a>
@@ -74,7 +77,6 @@
       </div>
 
     </div> <!-- End Masthead -->
-  </div><!-- End Page pusher -->
 
   <div class="sixteen wide center aligned column t-separator" style="background-color: #2E2F34">
      <div class="ui container">
@@ -114,9 +116,9 @@
           </div> <!-- end address section -->
 
           <div class="column center aligned" style="margin-top: 3em;">
-            <i class="linkedin square icon big"></i>
-            <i class="twitter square icon big"></i>
-            <i class="medium square icon big"></i>
+            <a href="https://www.linkedin.com/company/10803847" target="_blank"><i class="linkedin square icon big"></i></a>
+            <a href="https://twitter.com/_buildit" target="_blank"><i class="twitter square icon big"></i></a>
+            <a href="https://medium.com/buildit" target="_blank"><i class="medium square icon big"></i></a>
           </div> <!-- end icons section -->
 
         </div> <!-- end left column-->
@@ -136,7 +138,7 @@
     </div><!-- end stackable grid-->
 
 
-    <div class="sixteen wide column t-marged" style="background-color: #2D2D33;">
+    <div class="sixteen wide column t-marged b-padded" style="background-color: #2D2D33;">
       <div class="ui container">
         <div class="section-label" style="background-color: #2E3234">open positions for London</div>
       </div>
@@ -144,7 +146,28 @@
         <div class="column">
           <ul class="callout-block">
             <li class="ca-container">
-              <a href="#" class="item-button"><span>1 x UX Holicorn DesOps CT/PX</span><span class="clearfix" style="float: right"><i class="hand spock icon"></i></span></a>
+              <a href="https://jobs.smartrecruiters.com//WiproDigital/109983134-front-end-engineer?trid=4f98c6a8-b7c4-4ffc-b4b4-58dbdc5ad942" target="_blank" class="item-button">
+                <span>Front end engineer</span>
+                <span class="clearfix" style="float: right">
+                  <i class="hand spock icon"></i>
+                </span>
+              </a>
+            </li>
+            <li class="ca-container">
+              <a href="https://jobs.smartrecruiters.com//WiproDigital/110183663-devops-engineer?trid=4f98c6a8-b7c4-4ffc-b4b4-58dbdc5ad942" target="_blank" class="item-button">
+                <span>DevOps Engineer</span>
+                <span class="clearfix" style="float: right">
+                  <i class="hand spock icon"></i>
+                </span>
+              </a>
+            </li>
+            <li class="ca-container">
+              <a href="https://jobs.smartrecruiters.com//WiproDigital/109982171-platform-engineer" target="_blank" class="item-button">
+                <span>Platform Engineer</span>
+                <span class="clearfix" style="float: right">
+                  <i class="hand spock icon"></i>
+                </span>
+              </a>
             </li>
           </ul>
         </div>
@@ -153,46 +176,42 @@
 
   </div> <!-- end 16 cols colored-->
 
-
-
-  <!-- Beginning footer -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="four wide column">
-          <h4 class="ui inverted header"><a href="about.html">About</a></h4>
+        <div class="three wide column">
           <div class="ui inverted link list">
-            <a href="make.html" class="item">How we made this</a>
-            <a href="values.html" class="item">Our Values</a>
+            <a href="index.html" class="item">Home</a>
+            <a href="about.html" class="item">About us</a>
             <a href="people.html" class="item">People</a>
           </div>
         </div>
-        <div class="four wide column">
-          <h4 class="ui inverted header">Buildit Galaxy</h4>
+        <div class="three wide column">
           <div class="ui inverted link list">
-            <a href="http://www.wiprodigital.com" class="item"><i class="icon first order"></i> wipro digital</a>
-            <a href="http://www.wipro.com" class="item"><i class="icon empire"></i> Wipro</a>
-            <a href="http://www.designit.com" class="item"><img src="assets/images/icon-sep.svg" width="13px">&nbsp;&nbsp;Designit</a>
+            <a href="http://www.wiprodigital.com" class="item"><strong>wipro</strong> digital</a>
+            <a href="http://www.wipro.com" class="item">Wipro</a>
+            <a href="http://www.designit.com" class="item">Designit</a>
           </div>
         </div>
-        <div class="four wide column">
-          <h4 class="ui inverted header">Europe</h4>
+        <div class="three wide column">
           <div class="ui inverted link list">
             <a href="contact.html#london" class="item">London</a>
             <a href="contact.html#dublin" class="item">Dublin</a>
             <a href="contact.html#edinburgh" class="item">Edinburgh</a>
           </div>
         </div>
-        <div class="four wide column">
-          <h4 class="ui inverted header">USA</h4>
+        <div class="three wide column">
           <div class="ui inverted link list">
             <a href="contact.html#newyork" class="item">New York</a>
             <a href="contact.html#denver" class="item">Denver</a>
+            <a href="contact.html#bangalore" class="item">Bangalore</a>
           </div>
         </div>
       </div>
     </div>
   </div><!-- End footer -->
+  </div><!-- End Page pusher -->
+
 
   <script src="assets/library/jquery.min.js"></script>
   <script src="components/visibility.min.js"></script>
