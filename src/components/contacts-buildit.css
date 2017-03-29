@@ -4,11 +4,19 @@
 .contact-cards {
     text-align: left;
     font-size: 1.2em;
+    padding: 24px !important;
 }
 
 .contact-cards h2 {
     text-transform: uppercase;
     font-family: "Neue Helvetica W01",sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+.contact-cards p {
+    font-family: "Leitura News W01", serif;
+    font-weight: 200;
 }
 
 .contact-cards a {
