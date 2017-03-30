@@ -218,3 +218,7 @@ Alpha to Omega story*/
 .about-banner-white {
   background-color: white;
 }
+
+.we-are-text p {
+  line-height: 1.6rem;
+}
