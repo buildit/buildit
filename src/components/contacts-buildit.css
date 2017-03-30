@@ -44,6 +44,15 @@
     position: absolute;
     bottom: 18px;
     right: 24px;
+    -webkit-transition: -webkit-transform .2s ease-out;
+    transition: -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out;
+    transition: transform .2s ease-out,-webkit-transform .2s ease-out;
+}
+
+.map-marker:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .contact-cards.card-black .map-marker svg, .contact-cards.card-grey .map-marker svg, .contact-cards.card-blue .map-marker svg {
