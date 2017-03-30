@@ -10,6 +10,7 @@
 h1.ui.header.index-hero-text {
   font-size: 3rem;
   margin-top: 1.5rem;
+  font-weight: 100;
 }
 
 .index-hero-text a {
