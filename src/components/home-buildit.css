@@ -75,6 +75,7 @@ h1.ui.header.index-hero-text {
 
 .index-list ul {
   padding-left: 16px;
+  max-width: 350px;
 }
 .index-list ul li {
   margin-bottom:16px;
