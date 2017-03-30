@@ -602,7 +602,7 @@ i.icon img {
     min-height: 20vh;
     line-height: 2.5rem;
     margin-top: 2rem;
-    font-family: Helvetica, sans-serif;
+    /*font-family: Helvetica, sans-serif;*/
   }
   .ldn { background-color:rgba(0,0,0,0); width:30vw; }
   .nyc { background-color:rgba(0,0,0,0); width:35vw; }
@@ -1766,7 +1766,7 @@ h1.ui.header > span {
 
 .page-contents p {
   font-size: 1rem;
-  line-height: 1.8rem;
+  line-height: 1.6rem;
   color: #cccccc;
 }
 

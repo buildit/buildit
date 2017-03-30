@@ -21,7 +21,7 @@
 body copy */
 .page-contents p {
   font-size: 1.1rem;
-  line-height: 1.8rem;
+  line-height: 1.6rem;
   color: #cccccc;
 }
 .page-contents p.inverted {
@@ -29,7 +29,7 @@ body copy */
 }
 
 /*.page-contents h3.inverted {
-  color: #333333;
+color: #333333;
 }*/
 
 .inverted {
@@ -109,7 +109,9 @@ who we are */
 .about-who-we-are p {
   max-width: 320px;
   margin: 0 auto;
+  padding-bottom: 32px;
 }
+
 
 /* ======
 People */
@@ -202,14 +204,21 @@ Alpha to Omega story*/
   float: left;
 }
 .ui.image.about-icon{
-  max-width: 80px;
   margin: 0 auto;
-  padding-bottom: 24px;
+  height: 190px;
+  margin-bottom: -40px;
+  margin-top: -60px;
 }
+
+
 .about-footer-lead {
   padding-bottom: 64px;
 }
 
 .about-banner-white {
   background-color: white;
+}
+
+.we-are-text p {
+  line-height: 1.6rem;
 }

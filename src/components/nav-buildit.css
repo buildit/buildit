@@ -38,12 +38,13 @@
 /* Computer / Desktop / iPad Landscape */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   #home_mobile {
-    background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;
+    /*background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;*/
+    /*background: url("assets/images/assets/images/buildit-logo-black-wide.png") no-repeat !important;*/
     background-size: contain !important;
 
   }
   #home_desktop {
-    background: url("assets/images/buildit-logo-white.png") no-repeat !important;
+    background: url("assets/images/logo-w.png") no-repeat !important;
     background-size: contain !important;
   }
 
