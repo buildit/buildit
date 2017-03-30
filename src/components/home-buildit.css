@@ -31,11 +31,20 @@ h1.ui.header.index-hero-text {
 
 .subheader-large-center.index-header {
   padding-bottom: 0;
+  text-align: left;
 }
-.ui.segment.index-three-col {
+@media(min-width: 640px){
+  .subheader-large-center.index-header {
+    padding-bottom: 0;
+    text-align: center;
+  }
+}
+.ui.inverted.segment.index-three-col,
+.ui.primary.inverted.segment.index-three-col {
   margin: 0;
   border-radius: 0;
   background-color: #1b1c1d;
+  padding-bottom: 32px;
 }
 
 .text-constrain {
@@ -48,20 +57,32 @@ h1.ui.header.index-hero-text {
   font-weight: 200;
   line-height: 2.3rem;
   padding-bottom: 32px;
+  text-align: left;
+}
+@media(min-width:640px){
+  .text-constrain.hero p{
+    font-size: 1.5rem;
+    font-weight: 200;
+    line-height: 2.3rem;
+    padding-bottom: 32px;
+    text-align: center;
+  }
 }
 
 .index-list {
-  padding: 8px;
+  padding: 16px;
 }
 
 .index-list ul {
-  padding-left: 8px;
+  padding-left: 16px;
 }
 .index-list ul li {
-  margin-bottom:8px;
+  margin-bottom:16px;
 }
 
-
+.footer.segment.index-footer-emergency-override {
+  background: #000000;
+}
 
 
 
