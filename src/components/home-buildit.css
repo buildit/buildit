@@ -6,16 +6,33 @@
   background-position: 0vw 0vh;
 }
 
-
 h1.ui.header.index-hero-text {
   font-size: 3rem;
   margin-top: 1.5rem;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .index-hero-text a {
-  color: rgba(0,0,0,.87);
+  color: #4183c4;
 }
+
+.ui.vertical.stripe h2.index-header-text {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.ui.vertical.stripe p.index-header-text {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.6rem;
+  margin-top: 0;
+  margin: 0;
+}
+
+
+
+
+
 
 
 /*.buildit-value {
