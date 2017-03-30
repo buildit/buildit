@@ -153,8 +153,9 @@ input::selection {
 /*******************************
 Global Overrides
 *******************************/
-
-
+.u-hidden {
+    display: none !important;
+}
 
 /*******************************
 Site Overrides

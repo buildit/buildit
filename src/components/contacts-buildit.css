@@ -22,25 +22,29 @@
 
 .contact-cards.card-white {
     background-color: #ffffff;
-    color: #1c1f22;
 }
 
 .contact-cards.card-black {
     background-color: #141516;
-    color: #ffffff
 }
 
 .contact-cards.card-grey {
     background-color: #1c1f22;
-    color: #ffffff
 }
 
 .contact-cards.card-blue {
     background-color: #2185d0;
-    color: #ffffff
 }
 
-.map-marker {
+.contact-cards.card-white a {
+    color: #1c1f22;
+}
+ 
+.contact-cards.card-blue a, .contact-cards.card-black a, .contact-cards.card-grey a {
+    color: #ffffff;
+}
+
+.location svg {
     position: absolute;
     bottom: 18px;
     right: 24px;
@@ -50,14 +54,16 @@
     transition: transform .2s ease-out,-webkit-transform .2s ease-out;
 }
 
-.map-marker:hover {
+.location:hover svg {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-.contact-cards.card-black .map-marker svg, .contact-cards.card-grey .map-marker svg, .contact-cards.card-blue .map-marker svg {
+.contact-cards.card-black .location svg, .contact-cards.card-grey .location svg, .contact-cards.card-blue .location svg {
     fill: #ffffff;
 }
+
+
 
 
 
