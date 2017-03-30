@@ -54,6 +54,7 @@ h5 {
 h1 {
   min-height: 1rem;
   font-size: 2rem;
+  font-weight: 500;
 }
 h2 {
   font-size: 1.714rem;
