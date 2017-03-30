@@ -20,35 +20,35 @@
     font-weight: 200;
 }
 
-.contact-cards a {
-    color: #1c1f22;
-}
-
 .contact-cards.card-white {
     background-color: #ffffff;
+    color: #1c1f22;
 }
 
 .contact-cards.card-black {
     background-color: #141516;
+    color: #ffffff
 }
 
 .contact-cards.card-grey {
     background-color: #1c1f22;
+    color: #ffffff
 }
 
-.contact-cards.card-yellow {
-    background-color: #fcff00;
+.contact-cards.card-blue {
+    background-color: #2185d0;
+    color: #ffffff
 }
 
-.contact-cards.card-grey a, .contact-cards.card-black a {
-    color: #ffffff;
+.map-marker {
+    position: absolute;
+    bottom: 18px;
+    right: 24px;
 }
 
-
-
-
-
-
+.contact-cards.card-black .map-marker svg, .contact-cards.card-grey .map-marker svg, .contact-cards.card-blue .map-marker svg {
+    fill: #ffffff;
+}
 
 
 
