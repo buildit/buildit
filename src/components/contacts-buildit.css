@@ -5,17 +5,18 @@
     text-align: left;
     font-size: 1.2em;
     padding: 24px !important;
+    min-height: 280px;
 }
 
 .contact-cards h2 {
     text-transform: uppercase;
     font-family: "Neue Helvetica W01",sans-serif;
-    font-size: 1.8em;
-    font-weight: normal;
+    font-size: 1.875em;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .contact-cards p {
-    font-family: "Leitura News W01", serif;
     font-weight: 200;
 }
 
