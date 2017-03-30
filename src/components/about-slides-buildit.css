@@ -112,6 +112,14 @@ who we are */
 }
 
 /* ======
+We're looking for... (on About page)
+*/
+.about-looking-for {
+
+}
+
+
+/* ======
 People */
 .about-people {
   max-width: 1127px;
@@ -202,7 +210,8 @@ Alpha to Omega story*/
   float: left;
 }
 .ui.image.about-icon{
-  max-width: 80px;
+  height: 120px;
+  width: auto;
   margin: 0 auto;
   padding-bottom: 24px;
 }
