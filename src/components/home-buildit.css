@@ -1,68 +1,88 @@
-.buildit-value {
-  box-sizing: border-box;
-  color: #2E3234;
+.index-hero-banner {
+  background-image: url(../assets/images/grid-buildit-01.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 6rem 0;
+  background-position: 0vw 0vh;
+}
+
+
+h1.ui.header.index-hero-text {
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  font-weight: 100;
+}
+
+.index-hero-text a {
+  color: rgba(0,0,0,.87);
+}
+
+
+/*.buildit-value {
+box-sizing: border-box;
+color: #2E3234;
 }
 
 .buildit-value > span.lines {
-  height: 30px;
-  border-bottom: 5px solid #2D2D33;
-  width: 48%;
-  min-width: 47%;
+height: 30px;
+border-bottom: 5px solid #2D2D33;
+width: 48%;
+min-width: 47%;
 }
 
 .buildit-value > span.circle {
-  position: relative;
-  height: 30px;
-  width: 3%;
-  min-width: 3%;
-  color: #2D2D33;
+position: relative;
+height: 30px;
+width: 3%;
+min-width: 3%;
+color: #2D2D33;
 }
 
 .buildit-value > span.circle i {
-  margin: 0 auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* pull circle icon */
-  margin-left: -10px;
-  /* cover with bg color when overlaying */
-  background-color: white;
-  color: #2D2D33;
+margin: 0 auto;
+position: absolute;
+top: 0;
+left: 0;*/
+/* pull circle icon */
+/*margin-left: -10px;*/
+/* cover with bg color when overlaying */
+/*background-color: white;
+color: #2D2D33;
 }
 
 .value-card > h2 {
-  text-transform: capitalize;
+text-transform: capitalize;
 }
 
 .value-card > p {
-  text-transform: lowercase;
+text-transform: lowercase;
 }
 
 .t-b-marged {
-  margin: 1.2em 0;
+margin: 1.2em 0;
 }
 
 .t-marged.big {
-  margin-top: 3em !important;
+margin-top: 3em !important;
 }
 
 .padded {
-  padding: .5em 1em 1.5em 1em;
-}
+padding: .5em 1em 1.5em 1em;
+}*/
 
 /* Computer / Desktop / iPad Landscape */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-}
+/*@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}*/
 
 /* Tablet / iPad Portrait */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .buildit-value > span {
-  }
+/*@media only screen and (min-width: 768px) and (max-width: 991px) {
+.buildit-value > span {
 }
+}*/
 
 /* Mobile */
-@media only screen and (max-width: 767px) {
-  .row.buildit-value {
-    margin-top: 1.5em;
-  }
+/*@media only screen and (max-width: 767px) {
+.row.buildit-value {
+margin-top: 1.5em;
 }
+}*/

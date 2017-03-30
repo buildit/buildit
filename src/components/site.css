@@ -1,19 +1,19 @@
 /*!
- * # Semantic UI 2.2.4 - Site
- * http://github.com/semantic-org/semantic-ui/
- *
- *
- * Released under the MIT license
- * http://opensource.org/licenses/MIT
- *
- */
+* # Semantic UI 2.2.4 - Site
+* http://github.com/semantic-org/semantic-ui/
+*
+*
+* Released under the MIT license
+* http://opensource.org/licenses/MIT
+*
+*/
 
 
 /*******************************
-             Page
+Page
 *******************************/
 
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Roboto');
+/*@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Roboto');*/
 html,
 body {
   height: 100%;
@@ -27,7 +27,8 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   background: #FFFFFF;
-  font-family: 'PT Sans', serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  /*font-family: 'PT Sans', serif;*/
   font-size: 14px;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
@@ -36,7 +37,7 @@ body {
 
 
 /*******************************
-             Headers
+Headers
 *******************************/
 
 h1,
@@ -83,7 +84,7 @@ h5:last-child {
 
 
 /*******************************
-             Text
+Text
 *******************************/
 
 p {
@@ -98,7 +99,7 @@ p:last-child {
 }
 
 /*-------------------
-        Links
+Links
 --------------------*/
 
 a {
@@ -112,7 +113,7 @@ a:hover {
 
 
 /*******************************
-          Highlighting
+Highlighting
 *******************************/
 
 
@@ -149,11 +150,11 @@ input::selection {
 
 
 /*******************************
-        Global Overrides
+Global Overrides
 *******************************/
 
 
 
 /*******************************
-         Site Overrides
+Site Overrides
 *******************************/
