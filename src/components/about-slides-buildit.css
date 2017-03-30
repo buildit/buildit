@@ -109,7 +109,9 @@ who we are */
 .about-who-we-are p {
   max-width: 320px;
   margin: 0 auto;
+  padding-bottom: 32px;
 }
+
 
 /* ======
 People */
@@ -202,10 +204,18 @@ Alpha to Omega story*/
   float: left;
 }
 .ui.image.about-icon{
-  max-width: 80px;
+  height: 90px;
+  width: auto;
   margin: 0 auto;
   padding-bottom: 24px;
 }
+@media(min-width:600px){
+  .ui.image.about-icon{
+    height: 120px;
+  }
+}
+
+
 .about-footer-lead {
   padding-bottom: 64px;
 }
