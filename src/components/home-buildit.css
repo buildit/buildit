@@ -29,6 +29,37 @@ h1.ui.header.index-hero-text {
   margin: 0;
 }
 
+.subheader-large-center.index-header {
+  padding-bottom: 0;
+}
+.ui.segment.index-three-col {
+  margin: 0;
+  border-radius: 0;
+  background-color: #1b1c1d;
+}
+
+.text-constrain {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-constrain.hero p{
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 2.3rem;
+  padding-bottom: 32px;
+}
+
+.index-list {
+  padding: 8px;
+}
+
+.index-list ul {
+  padding-left: 8px;
+}
+.index-list ul li {
+  margin-bottom:8px;
+}
 
 
 
