@@ -21,7 +21,7 @@
 body copy */
 .page-contents p {
   font-size: 1.1rem;
-  line-height: 1.8rem;
+  line-height: 1.6rem;
   color: #cccccc;
 }
 .page-contents p.inverted {
@@ -29,7 +29,7 @@ body copy */
 }
 
 /*.page-contents h3.inverted {
-  color: #333333;
+color: #333333;
 }*/
 
 .inverted {
@@ -204,15 +204,10 @@ Alpha to Omega story*/
   float: left;
 }
 .ui.image.about-icon{
-  height: 90px;
-  width: auto;
   margin: 0 auto;
-  padding-bottom: 24px;
-}
-@media(min-width:600px){
-  .ui.image.about-icon{
-    height: 120px;
-  }
+  height: 190px;
+  margin-bottom: -40px;
+  margin-top: -60px;
 }
 
 
