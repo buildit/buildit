@@ -3,9 +3,9 @@
 *******************************/
 
 .ui.inverted.segment.people {
-    background-image: url(../assets/images/team-people.jpg);
+    /*background-image: url(../assets/images/team-people.jpg);*/
     background-color: rgba(0,0,0,1);
-    background-size: cover;
+    /*background-size: cover;*/
 }
 
 /*******************************
@@ -23,7 +23,7 @@ h1.ui.header.people > span {
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
-	width: 100%;
+	width: 33%;
 }
 
 .concepts-animate2 span {

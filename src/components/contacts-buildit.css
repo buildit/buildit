@@ -1,50 +1,128 @@
 /** beginning contacts page **/
 
+/* New Code */
+.contact-cards {
+    text-align: left;
+    font-size: 1.2em;
+    padding: 24px !important;
+    min-height: 280px;
+}
+
+.contact-cards h2 {
+    text-transform: uppercase;
+    font-family: "Neue Helvetica W01",sans-serif;
+    font-size: 1.875em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-cards p {
+    font-weight: 200;
+}
+
+.contact-cards.card-white {
+    background-color: #ffffff;
+}
+
+.contact-cards.card-black {
+    background-color: #141516;
+}
+
+.contact-cards.card-grey {
+    background-color: #1c1f22;
+}
+
+.contact-cards.card-blue {
+    background-color: #2185d0;
+}
+
+.contact-cards.card-white a {
+    color: #1c1f22;
+}
+ 
+.contact-cards.card-blue a, .contact-cards.card-black a, .contact-cards.card-grey a {
+    color: #ffffff;
+}
+
+.location svg {
+    position: absolute;
+    bottom: 18px;
+    right: 24px;
+    -webkit-transition: -webkit-transform .2s ease-out;
+    transition: -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out;
+    transition: transform .2s ease-out,-webkit-transform .2s ease-out;
+}
+
+.location:hover svg {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.contact-cards.card-black .location svg, .contact-cards.card-grey .location svg, .contact-cards.card-blue .location svg {
+    fill: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*.bottom-underline {*/
   /*text-decoration: underline;*/
   /*padding-bottom: 3em !important;*/
 /*}*/
 
-span.bottom-underline  {
+/*span.bottom-underline  {
   text-transform: uppercase;
   display:inline-block;
   margin-bottom: 2em;
-  padding: 1.3em 1em;
+  padding: 1.3em 1em;*/
   /** TODO Replace with the right colors **/
-  color: #616161;
+  /*color: #616161;
   border-bottom:6px solid #1e70bf;
   font-weight: 200;
-}
+}*/
 
-#contacts-nav {
+/*#contacts-nav {*/
   /** TODO change with appropriate color when decided **/
-  background-color: #1b1c1d;
+  /*background-color: #1b1c1d;
   -webkit-box-shadow: inset -1px 0px 1px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: inset -1px 0px 1px 0px rgba(0,0,0,0.3);
   box-shadow: inset -1px 0px 1px 0px rgba(0,0,0,0.3);
-}
+}*/
 
-.ui.link.list
-  a.item.nav-link {
+/*.ui.link.list
+  a.item.nav-link {*/
     /** TODO Change with the right color **/
-    padding: 20px;
+    /*padding: 20px;
     text-transform: capitalize;
     color: rgb(204, 204, 204);
-}
+}*/
 
-.ui.link.list
-  a.active.item.nav-link {
+/*.ui.link.list
+  a.active.item.nav-link {*/
     /** TODO Change with the right color **/
-    color: white;
-}
+    /*color: white;
+}*/
 
-@media only screen and (max-width:767px) {
+/*@media only screen and (max-width:767px) {*/
   /*.column .image-block {*/
     /*padding-top: 1em;*/
     /*padding-right: 2em;*/
     /*padding-bottom: 2em;*/
   /*}*/
-  #contacts-nav {
+  /*#contacts-nav {
     display: none;
   }
 }
@@ -52,14 +130,14 @@ span.bottom-underline  {
 .image-block > h2.uppercased {
   text-transform: uppercase;
   font-style: normal;
-}
+}*/
 
 /** beginning CSS for contact2 page **/
-.image-block.center-aligned {
-  text-align: center !important;
+/*.image-block.center-aligned {
+  text-align: center !important;*/
   /*padding-top: 2em !important;*/
   /*padding-bottom: 2em !important;*/
-}
+/*}
 
 @media only screen and (max-width: 767px) {
   .ui.stackable.grid>.column:not(.row).no-padding {
@@ -70,12 +148,12 @@ span.bottom-underline  {
   .ui.stackable.grid>.row>.column.no-padding {
     padding: 0 !important;
   }
-}
+}*/
 /** end CSS for contact2 page **/
 
 
 /** beginning CSS for contact3 page **/
-h1.ui.header>span {
+/*h1.ui.header>span {
   color: #2185d0;
 }
 
@@ -94,7 +172,7 @@ h1.ui.header>span {
   position: absolute;
   opacity: 0;
   overflow: hidden;
-  width: 100%;
+  width: 33%;
 }
 
 .concepts-animate span {
@@ -230,11 +308,11 @@ h1.ui.header>span {
 
 .r-padded {
   padding-right: 2em;
-}
+}*/
 /** end CSS for contact3 page **/
 
 /** beginning CSS for contact5 page **/
-.shadowed {
+/*.shadowed {
   padding: 3.5vw 4vw !important;
   border-top: 5px solid rgba(255, 255, 255, .1)!important;
   background-color: #1b1c1d;
@@ -252,7 +330,7 @@ h1.ui.header>span {
   .shadowed {
     padding: 1vmin;
   }
-}
+}*/
 /** end CSS for contact5 page **/
 
 /** TODO Remove image .contact class in pusher div aligned segment contact**/
