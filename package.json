@@ -8,7 +8,7 @@
     "build": "npm run clean && gulp build",
     "serve": "gulp serve",
     "start": "gulp",
-    "deploy:staging": "aws s3 sync dist/ s3://staging-buildit-test.com --region eu-west-2"
+    "deploy:staging": "aws s3 sync dist/ s3://staging-buildit-test.com --region eu-west-2 --acl public-read"
   },
   "repository": {
     "type": "git",
