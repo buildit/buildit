@@ -29,10 +29,10 @@ gulp.task('watch', () => {
     `!${src}/**/*.css`,
     `!${src}/**/*.js`,
     `!${src}/**/*.html`
-    ], { ignoreInitial: false }, ['copy-assets']);
-  gulp.watch([`${src}/js/*.js`], { ignoreInitial: false }, ['js']);
-  gulp.watch([`${src}/**/*.css`], { ignoreInitial: false }, ['css']);
-  gulp.watch([`${src}/**/*.html`], { ignoreInitial: false }, ['html']);
+    ], ['copy-assets']);
+  gulp.watch([`${src}/js/*.js`], ['js']);
+  gulp.watch([`${src}/**/*.css`], ['css']);
+  gulp.watch([`${src}/**/*.html`], ['html']);
 });
 
 // Clean the output directory
