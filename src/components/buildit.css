@@ -100,10 +100,10 @@
 }
 
 .ui.inverted.segment, .ui.primary.inverted.segment {
-    background-image: /*url(../assets/images/simple.svg),*/ url(../assets/images/bg.jpg);
-    background-repeat: no-repeat, repeat-x;
+    /*background-image: url(../assets/images/simple.svg), url(../assets/images/bg.jpg);*/
+    /*background-repeat: no-repeat, repeat-x;*/
     background-color: rgba(0,0,0,1);
-    background-size: 100%;
+    /*background-size: 100%;*/
 }
 .ui.inverted.segment.contact {
     background-image: url(../assets/images/shutterstock_221064886.jpg), url(../assets/images/Globe_export.png);
@@ -353,7 +353,7 @@ i.icon img {
   /*}*/
 
   .masthead.segment {
-    min-height: 300px;
+    /*min-height: 300px;*/
   }
   .masthead h1.ui.header {
     font-size: 6vw;
@@ -451,7 +451,7 @@ i.icon img {
     /*display: none !important;*/
   }
   .masthead.segment {
-    min-height: 300px;
+    /*min-height: 300px;*/
   }
   /*.masthead h1.ui.header {
     font-size: 9vw;
@@ -541,7 +541,7 @@ i.icon img {
     /*display: none !important;*/
   }
   .masthead.segment {
-    min-height: 300px;
+    /*min-height: 300px;*/
   }
   .ui.inverted.segment, .ui.primary.inverted.segment {
     background-size: 160%;
@@ -582,7 +582,7 @@ i.icon img {
     /*display: none !important;*/
   }
   .masthead.segment {
-    min-height: 350px;
+    /*min-height: 350px;*/
   }
   /*.masthead h1.ui.header {
     font-size: 2em;
@@ -602,7 +602,7 @@ i.icon img {
     min-height: 20vh;
     line-height: 2.5rem;
     margin-top: 2rem;
-    font-family: Helvetica, sans-serif;
+    /*font-family: Helvetica, sans-serif;*/
   }
   .ldn { background-color:rgba(0,0,0,0); width:30vw; }
   .nyc { background-color:rgba(0,0,0,0); width:35vw; }
@@ -1766,7 +1766,7 @@ h1.ui.header > span {
 
 .page-contents p {
   font-size: 1rem;
-  line-height: 1.8rem;
+  line-height: 1.6rem;
   color: #cccccc;
 }
 

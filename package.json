@@ -1,6 +1,6 @@
 {
   "name": "buildit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Buildit website",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "npm run clean && gulp build",
     "serve": "gulp serve",
     "start": "gulp",
-    "deploy:staging": "aws s3 sync dist/ s3://staging-buildit-test.com --region eu-west-2"
+    "deploy:staging": "aws s3 sync dist/ s3://staging-buildit-test.com --region eu-west-2 --acl public-read"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "gulp-connect": "^5.0.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-open": "^2.0.0",
+    "gulp-sourcemaps": "^2.5.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11"
   }
