@@ -11,6 +11,11 @@ h1.ui.header.index-hero-text {
   margin-top: 1.5rem;
   font-weight: 300;
 }
+@media (min-width:800px){
+  h1.ui.header.index-hero-text {
+    font-size: 4.5rem;
+  }
+}
 
 .index-hero-text a {
   color: #4183c4;
