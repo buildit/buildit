@@ -72,16 +72,19 @@ h4:last-child { margin-bottom: .5em; }
 section.full-height {
   height: 100%;
 }
-
 .padded {
-  padding: 0 24px 16px 24px;
+  padding: 0 24px;
 }
 
+@media(min-width:768px){
+  .padded {
+    padding: 0 8px 32px 8px;
+  }
+}
 .fixed-width {
   max-width: 320px;
   margin: 0 auto;
 }
-
-.unpadded {
-  padding: 0;
+.wrapper {
+  padding: 42px 0;
 }
