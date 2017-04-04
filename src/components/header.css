@@ -735,8 +735,9 @@ a.ui.inverted.grey.header:hover {
   color: #4183c4;
 }
 
-.header-main-wrapper {
-  padding: 32px 0 0 0;
+.header-main-wrapper,
+.container-padding {
+  padding: 24px 0 0 0;
 }
 .header-main {
   font-size: 1.8rem;
