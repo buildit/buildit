@@ -743,6 +743,7 @@ Site Overrides
   font-size: 1.8rem;
   /*font-weight: 300;*/
   margin-bottom: 24px;
+  padding-bottom: 8px;
 }
 
 .lead-paragraph {
