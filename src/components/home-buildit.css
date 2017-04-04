@@ -6,24 +6,7 @@
   background-position: 0vw 0vh;
 }
 
-h1.ui.header.index-hero-text {
-  font-size: 3rem;
-  margin-top: 1.5rem;
-  font-weight: 300;
-}
-@media (min-width:800px){
-  h1.ui.header.index-hero-text {
-    font-size: 4.5rem;
-  }
-}
-.index-hero-text a {
-  color: #4183c4;
-}
 
-.ui.vertical.stripe h2.index-header-text {
-  font-size: 2.4rem;
-  font-weight: 300;
-}
 
 .ui.vertical.stripe p.index-header-text {
   font-size: 1.6rem;
@@ -87,4 +70,10 @@ h1.ui.header.index-hero-text {
 
 .footer.segment.index-footer-emergency-override {
   background: #000000;
+}
+
+
+.test {
+  background-color: cyan;
+  height: 300px;
 }

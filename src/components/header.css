@@ -719,3 +719,27 @@ a.ui.inverted.grey.header:hover {
 /*******************************
          Site Overrides
 *******************************/
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 3rem;
+}
+@media (min-width:800px){
+  .hero-heading {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
+}
+.hero-heading a {
+  color: #4183c4;
+}
+
+.header-main-wrapper {
+  padding: 32px 0 0 0;
+}
+.header-main {
+  font-size: 1.8rem;
+  /*font-weight: 300;*/
+  margin-bottom: 24px;
+}
