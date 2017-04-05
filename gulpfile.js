@@ -39,7 +39,7 @@ gulp.task('clean', () => {
 
 // Copy all assets except our JS, CSS and Pug templates
 gulp.task('copy-assets', () => {
-  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`])
+  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`, `!${src}/includes`, `!${src}/components`])
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
 });
