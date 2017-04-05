@@ -7,6 +7,7 @@ const watch = require('gulp-watch');
 const open = require('gulp-open');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const htmlmin = require('gulp-htmlmin');
 const sourcemaps = require('gulp-sourcemaps');
 
 const src = 'src';
@@ -23,9 +24,15 @@ gulp.task('serve', () => {
 
 // File watcher
 gulp.task('watch', () => {
-  gulp.watch([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`], { ignoreInitial: false }, ['copy-assets']);
-  gulp.watch([`${src}/js/*.js`], { ignoreInitial: false }, ['js']);
-  gulp.watch([`${src}/**/*.css`], { ignoreInitial: false }, ['css']);
+  gulp.watch([
+    `${src}/**`,
+    `!${src}/**/*.css`,
+    `!${src}/**/*.js`,
+    `!${src}/**/*.html`
+    ], ['copy-assets']);
+  gulp.watch([`${src}/js/*.js`], ['js']);
+  gulp.watch([`${src}/**/*.css`], ['css']);
+  gulp.watch([`${src}/**/*.html`], ['html']);
 });
 
 // Clean the output directory
@@ -36,7 +43,11 @@ gulp.task('clean', () => {
 
 // Copy all assets except our JS and CSS
 gulp.task('copy-assets', () => {
-  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`])
+  return gulp.src([
+      `${src}/**`,
+      `!${src}/**/*.css`,
+      `!${src}/**/*.js`,
+      `!${src}/**/*.html`])
     .pipe(gulp.dest(target))
     .pipe(connect.reload());
 });
@@ -97,5 +108,20 @@ gulp.task('css', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('build', ['copy-assets', 'vendor', 'js', 'css']);
+// Process and minify HTML
+gulp.task('html', function() {
+  return gulp.src(`${src}/**/*.html`)
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      caseSensitive: true,
+      html5: true,
+      keepClosingSlash: true,
+      removeComments: true
+    }))
+    .pipe(gulp.dest(target))
+    .pipe(connect.reload());
+});
+
+gulp.task('build', ['copy-assets', 'vendor', 'js', 'css', 'html']);
 gulp.task('default', ['build', 'serve', 'watch']);
