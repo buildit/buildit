@@ -4,5 +4,63 @@ block head
   - var title = 'Buildit'
 
 block content
-  ui.container.index-hero-banner
+  .ui.container.index-hero-banner
+    h1.ui.sixteen.wide.padded.centered.aligned.header.index-hero-text
+      a(href='people.html') We're hiring&hellip; Check us out!
+
+  .ui.vertical.stripe.segment.inverted
+    .ui.top.aligned.stackable.grid.container
+      .row
+        section.sixteen.wide.column
+          p.index-header-text We build software
+          p.index-header-text We build teams
+          p.index-header-text We build new ways of working
+          p.index-header-text We build better organisations
+        
+  .ui.vertical.stripe.segment
+    .ui.top.aligned.stackable.grid.container
+      .row
+        section.nine.wide.column
+          h2 What drives you?
+          p Do you think there’s something lacking in how many companies approach problems, whether it's people, process, or technology related?
+          p Do you want to help them figure out how to think and work differently?
+          p Do you love technology, and understand that real change comes from people doing different things, rather than doing the same things differently?
+          p These are the things that drive us. 
+            strong Do they drive you?
+          p Success in an ever-changing world requires experimentation and learning; experimentation and learning require trust.
+          p Trust allows autonomy. 
+            strong Autonomy rocks.
     
+  section.ui.inverted.segment.index-three-col
+    .ui.container.equal.width.height.stackable.grid
+      .sixteen.wide.column.center.aligned
+        h2.subheader-large-center.index-header What do we do?
+        .text-constrain.hero
+          p We recognise digital transformation is far more than the tech. Digital transformation is, ultimately, about people. People determine whether change is adopted or fails, and it is only through collaborating with people, whether each other, clients, or partner organisations, that changes can become lasting improvements.
+      .column.index-list
+        h3 Improving:
+        ul
+          li Work with clients to identify where and how to change, and  how to develop, test, and support solutions
+          li Identify the right business and IT metrics and how to work with them
+          li Develop resilient, repeatable, redundant processes that consistently deliver working software to customers
+          li Introduce new ways of thinking that prioritise customers and their experiences
+      .column.index-list
+        h3 Means:
+        ul
+          li Thinking about problems from the customer’s viewpoint
+          li Breaking down internal client barriers that stop people from working together
+          li Seeing the entire organisation as a system, rather than a collection of independent, isolated parts
+          li Using metrics as a way to allow data-driven decision-making
+          li Reducing waste in current processes
+          li Creating new processes
+      .column.index-list
+        h3 Through:
+        ul
+          li Application design with reduced dependence on costly commercial software
+          li Infrastructure agnostic decoupled application solutions
+          li Automated delivery pipelines
+          li Reduced handoffs between different parts of the organisation
+          li The value of shifting to newer technologies, with emphasis on security, scalability and resilience
+
+      .sixteen.wide.column.center.aligned
+        a.ui.primary.button.big(href='/about.html') Curious?
