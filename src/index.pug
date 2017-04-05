@@ -1,6 +1,8 @@
-doctype html
-html
-  include includes/head.pug
+extends layout.pug
 
-  body
-    h1 Hello, World 
+block head
+  - var title = 'THE HOME PAGE'
+  
+block content
+  h1 Hello, World
+  p= title

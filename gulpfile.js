@@ -37,7 +37,7 @@ gulp.task('clean', () => {
     .pipe(clean());
 });
 
-// Copy all assets except our JS and CSS
+// Copy all assets except our JS, CSS and Pug templates
 gulp.task('copy-assets', () => {
   return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`])
     .pipe(gulp.dest(target))
@@ -46,9 +46,10 @@ gulp.task('copy-assets', () => {
 
 // Compile HTML from Pug templates
 gulp.task('compile-html', () => {
-  return gulp.src([`${src}/**/*.pug`, `!${src}/includes/**/*.pug`])
+  return gulp.src([`${src}/**/*.pug`, `!${src}/layout.pug`, `!${src}/includes/**/*.pug`])
     .pipe(pug({}))
-    .pipe(gulp.dest(`${target}`));
+    .pipe(gulp.dest(`${target}`))
+    .pipe(connect.reload());
 });
 
 // Bundle vendor JS
