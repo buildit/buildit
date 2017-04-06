@@ -1,3 +1,5 @@
+.ui.menu {background-color: transparent;}
+
 .ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
   font-size: small;
 }
