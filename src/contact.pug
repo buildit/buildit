@@ -1,0 +1,94 @@
+extends layout.pug
+
+block head
+  - var title = 'Buildit - Where to find us'
+
+block content
+  svg.u-hidden
+    symbol(id='map' viewbox='0 0 46 46')
+      path(d='M23 0C10.3 0 0 10.3 0 23s10.3 23 23 23s23-10.3 23-23S35.7 0 23 0z M23.5 36C18.7 27.7 15 24.2 15 19.5 s3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5C32 24.3 28.3 27.8 23.5 36z')
+
+  section.ui.container.contact-info
+    .ui.padded.equal.height.center.aligned.grid
+      .sixteen.wide.stretched.column
+        .ui.equal.height.stackable.grid
+          .sixteen.wide.column
+            h2.subheader-large-center Studio Locations
+          .eight.wide.column.contact-cards.card-white
+            a.location(href='https://www.google.com/maps/place/186+City+Rd,+London+EC1V+2NT,+UK/@51.525377,-0.087646,15z/data=!4m5!3m4!1s0x48761ca650dc3ba5:0x921df6363656512e!8m2!3d51.5277262!4d-0.0904569?hl=en-US', target='_blank')
+              h2 London
+              p
+                | 186 City Road
+                br
+                |  London
+                br
+                |  EC1V 2NT
+                br
+                |  UK
+              svg(height='46', width='46')
+                use(xlink:href='#map')
+          .eight.wide.column.contact-cards.card-black
+            a.location(href='https://goo.gl/maps/6aGyowWaMLz', target='_blank')
+              h2 New york
+              p
+                | 77 Sands Street
+                br
+                |  Brooklyn
+                br
+                |  NY 11201
+                br
+                |  USA
+              svg(height='46', width='46')
+                use(xlink:href='#map')
+          .eight.wide.column.contact-cards.card-grey
+            a.location(href='https://www.google.com/maps?ll=39.752562,-105.002314&z=16&t=m&hl=en-US&gl=GB&mapclient=embed&q=1550+Wewatta+St+Denver,+CO+80202+USA', target='_blank')
+              h2 Denver
+              p
+                | 1550 Wewatta Street
+                br
+                |  Denver
+                br
+                |  CO 80202
+                br
+                |  USA
+              svg(height='46', width='46')
+                use(xlink:href='#map')
+          .eight.wide.column.contact-cards.card-white
+            a.location(href='https://www.google.com/maps?ll=53.330506,-6.228374&z=16&t=m&hl=en-US&gl=GB&mapclient=embed&cid=3233598717796492272', target='_blank')
+              h2 Dublin
+              p
+                | Alexandra House
+                br
+                |  3 Ballsbridge Park
+                br
+                |  Dublin 4
+                br
+                |  Ireland
+              svg(height='46', width='46')
+                use(xlink:href='#map')
+          .eight.wide.column.contact-cards.card-blue
+            a.location(href='https://www.google.co.uk/maps/place/2+Castle+Terrace,+Edinburgh+EH1+2EL/@55.9486955,-3.2083261,17z/data=!3m1!4b1!4m5!3m4!1s0x4887c79842eb1771:0xaa89ab9f8cf5e689!8m2!3d55.9486955!4d-3.2061374', target='_blank')
+              h2 Edinburgh
+              p
+                | 2 Castle Terrace
+                br
+                |  Edinburgh
+                br
+                |  EH1 2EL
+                br
+                |  UK
+              svg(height='46', width='46')
+                use(xlink:href='#map')
+          .eight.wide.column.contact-cards.card-black
+            a.location(href='https://www.google.com/maps/place/Hosur+Rd,+Electronic+City,+Bengaluru,+Karnataka+560100,+India/@12.850101,77.668808,16z/data=!4m5!3m4!1s0x3bae14494a8943f7:0x768d0f9874c48675!8m2!3d12.8501009!4d77.6689256?hl=en-US', target='_blank')
+              h2 Bangalore
+              p
+                | 72 Electronic City
+                br
+                |  Hosur Road
+                br
+                |  Bangalore 560100
+                br
+                |  India
+              svg(height='46', width='46')
+                use(xlink:href='#map')
