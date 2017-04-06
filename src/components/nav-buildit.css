@@ -11,9 +11,38 @@
 }
 
 #home_desktop {
+  width:25%;
+  padding-top: 6px;
+  padding-bottom: 30px;
   font-size: large !important;
 }
-
+@media (min-width: 550px){
+  #home_desktop {
+    width: 45%;
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+@media (min-width: 650px){
+  #home_desktop {
+    width: 35%;
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+@media (min-width: 992px){
+  #home_desktop {
+    width: 25%;
+    padding-top: 0px;
+    padding-bottom: 24px;
+  }
+}
+@media (min-width: 1200px){
+  #home_desktop {
+    padding-top: 0px;
+    padding-bottom: 32px;
+  }
+}
 #home_desktop, #home_mobile {
   display: inline-block !important;
   text-indent: -9999px !important;
@@ -23,7 +52,7 @@
   background-size: contain !important;
 }
 #home_desktop {
-  background: transparent url("assets/images/logo-w.png") no-repeat right center !important;
+  background: transparent url("assets/images/logo-w.svg") no-repeat right center !important;
   background-size: contain!important;
 }
 
@@ -44,7 +73,7 @@
 
   }
   #home_desktop {
-    background: url("assets/images/logo-w.png") no-repeat !important;
+    background: url("assets/images/logo-w.svg") no-repeat !important;
     background-size: contain !important;
   }
 
@@ -53,7 +82,7 @@
 /* Tablet / iPad Portrait */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   #home_mobile {
-    background: url("assets/images/buildit-logo-black-wide.png") no-repeat !important;
+    background: url("assets/images/logo-w.svg") no-repeat !important;
     background-size: contain !important;
   }
 }
