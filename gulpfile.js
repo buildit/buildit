@@ -1,12 +1,14 @@
 const gulp = require('gulp');
 const clean = require('gulp-clean');
-const connect = require('gulp-connect');
-const concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
-const watch = require('gulp-watch');
-const open = require('gulp-open');
-const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const concatCss = require('gulp-concat-css');
+const connect = require('gulp-connect');
+const open = require('gulp-open');
+const pug = require('gulp-pug');
+const uglify = require('gulp-uglify');
+const watch = require('gulp-watch');
+
 const sourcemaps = require('gulp-sourcemaps');
 
 const src = 'src';
@@ -23,7 +25,8 @@ gulp.task('serve', () => {
 
 // File watcher
 gulp.task('watch', () => {
-  gulp.watch([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`], { ignoreInitial: false }, ['copy-assets']);
+  gulp.watch([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`], { ignoreInitial: false }, ['copy-assets']);
+  gulp.watch([`${src}/**/*.pug`], { ignoreInitial: false }, ['compile-html']);
   gulp.watch([`${src}/js/*.js`], { ignoreInitial: false }, ['js']);
   gulp.watch([`${src}/**/*.css`], { ignoreInitial: false }, ['css']);
 });
@@ -34,10 +37,18 @@ gulp.task('clean', () => {
     .pipe(clean());
 });
 
-// Copy all assets except our JS and CSS
+// Copy all assets except our JS, CSS and Pug templates
 gulp.task('copy-assets', () => {
-  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`])
+  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`, `!${src}/includes`, `!${src}/components`])
     .pipe(gulp.dest(target))
+    .pipe(connect.reload());
+});
+
+// Compile HTML from Pug templates
+gulp.task('compile-html', () => {
+  return gulp.src([`${src}/**/*.pug`, `!${src}/layout.pug`, `!${src}/includes/**/*.pug`])
+    .pipe(pug({}))
+    .pipe(gulp.dest(`${target}`))
     .pipe(connect.reload());
 });
 
@@ -97,5 +108,5 @@ gulp.task('css', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('build', ['copy-assets', 'vendor', 'js', 'css']);
+gulp.task('build', ['copy-assets', 'compile-html', 'vendor', 'js', 'css']);
 gulp.task('default', ['build', 'serve', 'watch']);

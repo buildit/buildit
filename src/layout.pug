@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+  block head
+  include includes/head.pug
+
+  body
+    include includes/menu.pug
+    .pusher
+      block content
+      include includes/footer.pug
+
+  include includes/scripts.pug

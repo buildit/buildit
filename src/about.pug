@@ -1,0 +1,54 @@
+extends layout.pug
+
+block head
+  - var title = 'Buildit - The future belongs to those who Make'
+  - var currentPage = 'About'
+
+block content
+  .page-contents
+    section.about-who-we-are.about-banner-white
+      .ui.container
+        .ui.equal.height.center.aligned.grid
+          .sixteen.wide.stretched.column
+            .ui.equal.height.stackable.grid.we-are-text
+              .sixteen.wide.column
+                h2.subheader-large-center.inverted We are
+
+              .four.wide.column
+                img.ui.image.about-icon(data-src='assets/images/Innovative-01.svg' src='assets/images/Innovative-01.svg' alt='astronaut')
+                h3.inverted Innovative
+                p.inverted Self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact
+
+              .four.wide.column
+                img.ui.image.about-icon(data-src='assets/images/Problem_solvers.svg' src='assets/images/Problem_solvers.svg' alt='problem solvers')
+                h3.inverted Problem solvers
+                p.inverted Managing complexity is our raison d’etre, adapting to users, building within frameworks, and maintaining the big picture
+
+              .four.wide.column
+                img.ui.image.about-icon(data-src='assets/images/No_bull.svg' src='assets/images/No_bull.svg' alt='beta')
+                h3.inverted No 'bull'
+                p.inverted From open-minded to open source, as natural collaborators we are not afraid to 'do the right thing' for our clients and their customers
+
+              .four.wide.column
+                img.ui.image.about-icon(data-src='assets/images/Battle_tested.svg' src='assets/images/Battle_tested.svg' alt='droid')
+                h3.inverted Battle-tested
+                p.inverted Resilience is our most valuable quality, with teams that have ownership, commitment and the ability to adapt to unique organisational aspirations and challenges
+
+    section.ui.container.about-footer-lead
+      .ui.equal.width.height.stackable.grid
+        .sixteen.wide.column.center.aligned
+          h2.subheader-large-center We're looking for&hellip;
+        .column
+          p Colleagues who want to help us change the way companies think and approach problems;
+          p who work with teams and individuals who share a passion for solving complex problems;
+          p who own the problem, whether it&rsquo;s about technology, ways of working, teams, or customer experience.
+        .column
+          p Individuals who want to be treated like adults;
+          p who neither need, nor want, someone else to tell them what needs to be done, but instead can look at what&rsquo;s happening, what&rsquo;s needed, and figure out how they fit into it;
+          p who are comfortable finding their own place.
+        .column
+          p People who work in cross-functional teams, and want to help others learn how to build them, and why they're valuable;
+          p who understand when a technology is right, and when it isn't;
+          p who have a grasp of a variety of technologies, languages, and methodologies, along with their pros and cons.
+        .sixteen.wide.column.center.aligned
+          a.ui.primary.button.big(href='/people.html') and we're hiring&hellip;

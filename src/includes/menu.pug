@@ -1,0 +1,24 @@
+- var menuItems = { 'About': '/about.html', 'People': '/people.html' };
+
+.ui.large.top.fixed.hidden.menu
+  .ui.container#mobile_nav
+    a.item.black#home_mobile(href='index.html') Buildit
+    a.item#about(href='about.html') About
+    a.item#people(href='people.html') People
+    a.item#find-us(href='contact.html') Find us
+
+    .right.menu
+      .item
+        a.ui.primary.button#github(href='https://github.com/buildit') Github
+
+.ui.inverted.vertical.masthead.center.aligned.segment
+  .ui.container
+    .ui.large.secondary.pointing.inverted.menu
+      a.item.image#home_desktop(href='index.html') Buildit
+      .right.item
+        each link, title in menuItems
+          if currentPage === title
+            a.item.active(href=link)= title
+          else
+            a.item(href=link)= title
+        a.ui.inverted.basic.grey.button(href='contact.html') Find us

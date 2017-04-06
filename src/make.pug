@@ -1,0 +1,173 @@
+extends layout.pug
+
+block head
+  - var title = 'Buildit'
+
+block content
+  .ui.vertical.stripe
+    .ui.top.aligned.stackable.grid.container
+      .row
+        .eight.wide.column
+          h3.ui.header How we made this site
+          p
+            | A company website is the front door to any modern business, a unique platform on which to promote ideas, content and identity.
+            br
+            |  As Buildit formed, a new website was required to represent the company in the global marketplace.
+          p The process of building buildit.digital was an interesting process and the opportunity to apply many of Buildit&apos;s core concepts.
+          p Given the technical challenges and incremental development we felt the journey might be of interest to a wider audience.
+          p This is our journey of delivering the web site, detailing the challenges and technical achievements that lead to the birth of a new website and brand.
+        .eight.wide.column
+          img.ui.fluid.image(src='assets/images/the-stoner.png', alt='Buildit Cookie')
+  .ui.vertical.stripe
+    .ui.top.aligned.stackable.grid.container
+      .row
+        .eleven.wide.column
+          h3.ui.header Why are we doing this?
+          p So where to begin? Before starting the team decided on the founding goals of the website.
+          p These goals would guide a design that would support the company message.
+          p The following goals were outlined:
+          .item(style='font-size:larger')
+            .middle.aligned.content
+              i.anchor.icon
+              |  Be an &quot;anchor&quot; that lets the world know Buildit exists.
+          .item(style='font-size:larger; margin-top:1.2rem')
+            .middle.aligned.content
+              i.rocket.icon
+              |  Help recruitment by attracting candidates and publishing job specs.
+          .item(style='font-size:larger; margin-top:1.2rem')
+            .middle.aligned.content
+              i.terminal.icon
+              |  Share white papers with the world to showcase our skills and knowledge.
+          .item(style='font-size:larger; margin-top:1.2rem')
+            .middle.aligned.content
+              i.lab.icon
+              |  Be a place to start / participate in discussions (e.g. via a blog).
+        .five.wide.column
+          h3.ui.header The team
+          p In line with Buildit core principals a small cross functional team was formed to work on the site.
+          p The team consisted of designers, engineers, scrum masters, creative technologists and UX specialists working in agile sprints leading to an incremental delivery of features.
+      .row
+        h4.ui.horizontal.header.divider.howwemake
+          a(href='#') How we make
+        .eight.wide.column
+          p
+            | An incremental process was outlined as pivotal to success.
+            br
+            | Such staged releases would allow the design and architecture emerge in conjunction with the new brand and site
+          p
+        .eight.wide.column
+          .ui.inverted.center.aligned.segment.tools
+            p
+              i.configure.icon
+              |  Then someone asked, all good, but where are the tools?
+      .row
+        .eight.wide.column
+          h2 The Buildit toolbox
+          p At the time of undertaking the project, Buildit had already established its own demonstration space, featuring many tools.
+          ul.ui.big.list
+            li.item
+              i.git.icon
+              .content
+                a.header(href='https://github.com/buildit')
+                  | [ Git ]
+                  i.bitbucket.icon
+                  |  Bitbucket
+                  i.github.icon
+                  |  Github
+                .description Git has become the de facto standard for collaborative source control. The protocol suits the cross functional teams and distributed arrangement of the company.
+            li.item
+              i.icon
+                img(src='assets/images/atlassian.svg', alt='Atlassian icon')
+              .content
+                a.header(href='https://www.atlassian.com/jira') [ JIRA / Confluence ]
+                .description JIRA was chosen as the mechanism for tackling sprint development. Its sister product Confluence also suited the need for project workspaces.
+            li.item
+              i.icon
+                img(src='assets/images/jenkins.svg', alt='Jenkins icon')
+              .content
+                a.header(href='https://jenkins.io/') [ Jenkins ]
+                .description Jenkins would allow the addition of new automation pipelines for the website as well as support for any newer build features.
+            li.item
+              i.amazon.icon
+              .content
+                a.header(href='https://aws.amazon.com/')
+                  | [ AWS VPC
+                  i.cubes.icon
+                  |  ]
+                .description Provides virtual machines, physical storage, registries, hosting and DNS. AWS offers a huge range of capabilities as well as a low cost mechanism for experimentation and prototyping concepts.
+        .eight.wide.column
+          ul.ui.big.list.toolbox
+            li.item
+              i.icon
+                img(src='assets/images/docker.svg', alt='Docker icon')
+              .content
+                a.header(href='https://github.com/docker') [ Docker ]
+                .description A tool for the creation and execution of software containers.
+            li.item
+              i.selected.radio.icon
+              .content
+                a.header(href='https://github.com/convox') [ Convox ]
+                .description A tool for orchestrating Docker images / containers for the creation of various environments.
+            li.item
+              i.icon
+                img(src='assets/images/nodejs.svg', alt='Nodejs icon')
+              .content
+                a.header(href='https://github.com/nodejs') [ Node ]
+                .description Node.js is a JavaScript runtime built on Chrome&apos;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
+            li.item
+              i.icon
+                img(src='assets/images/gulp.svg', alt='Gulp icon')
+              .content
+                a.header(href='https://github.com/gulpjs') [ Gulp.js ]
+                .description The streaming build system
+            li.item
+              i.icon
+                img(src='assets/images/semantic-ui.svg', alt='Semantic-ui icon')
+              .content
+                a.header(href='http://semantic.io') [ Semantic.io ]
+                .description Semantic is a development framework that helps create beautiful, responsive layouts using human-friendly HTML.
+            li.item
+              i.icon
+                img(src='assets/images/jquery.svg', alt='JQuery icon')
+              .content
+                a.header(href='https://github.com/jquery') [ jQuery ] - duh
+      .row
+        .sixteen.wide.column
+          h2 Early architectural decisions
+          p Following an introductory meeting the team made some early decisions regarding the architectural principals for the proposed site:
+          p
+            span A living style guide
+            |  - Buildit is a transformation studio, delivering great user experience with solid engineering principals. Dialog between developer and designer is a crucial part of transforming Buildit customers. A living style guide would allow designers and engineers to collaborate closely using real code and assets rather than static design interpretation. The style guide facilitates clear communication of ideas, a physical repository of assets and the opportunity to reuse code.
+          p
+            | Modern website with
+            span modern code standards
+            |  - The website should adhere to as many modern standards as possible without sacrificing usability or access.
+          p
+            span Progressive enhancement
+            |  and graceful degradation - The website should fail gracefully when rendered on devices or browsers incapable of displaying the intended content.
+          p
+            | Design similar to our sister company, Designit - within Wipro, Buildit combines into
+            span great partnerships
+            | , Buildit, Designit and Wipro digital. Designit maintained an existing website. Therefore, as a starting point, it was decided to adopt Designit&apos;s general styling and evolve it as the new brand developed.
+          p
+            | Project
+            span growth and enhancements in an agile fashion
+            |  - A founding principal of Buildit is to utilise Continuous Delivery and automation. As the site would be an evolutionary process, a pipeline would be required, early on, to facilitate releases. This would mean iterations could be developed, demonstrated and published in gradual increments.
+      .row
+        .eight.wide.column
+          h3 What is a living style guide?
+          p One of the first tasks was to produce the basis for a living style guide.
+          p A living style guide is design implemented as functional code.
+          p This is the complete opposite of more traditional design methods, with assets delivered as pictures or manifests. A living style guide has the huge advantage in that designs can be realised and demonstrated as they would be viewed in production (the same code). It also means designers and developers can communicate fluently in a single, physical design space. Designs represented in a living style guide cannot be lost in translation or scattered over requirements documents. All designs reside and grow in a single style guide, which is used directly by all team members and downstream products.
+          h2 Atomic Design
+          .atom
+            .electron
+            .electron
+            .electron
+          p To aid development, Atomic Design and CSS principals were employed from the start. Atomic principals, conceived by Brad Frost, break potentially complex design into smaller building blocks.
+          p These building blocks are then used to compose a full design. This concept, especially when combined with a living style guide, makes design easier to understand, test and reuse.
+          p Buildit &gt; The making of the Buildit website &gt; atomic-design.png
+        .eight.wide.column
+          h3 Patternlab: an Open Source Living Style Guide
+          p Patternlab is an open source tool facilitating Atomic design. It allows designers / developers to write, demonstrate and share components. Operating on NodeJs, PatternLab is simple, lightweight and powerful. It also provides the means to start work with minimal cost and effort.
+          p Please visit the Buildit style guide, implemented using Patternlab, to view all the Atomic elements comprising the Buildit website.
