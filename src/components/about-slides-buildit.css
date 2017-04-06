@@ -96,6 +96,7 @@ Sub headings */
 .subheader-large-center {
   font-size: 1.8rem;
   padding: 32px 0;
+  padding-bottom: 12px;
 }
 .category-header {
   font-size: 0.8rem;
@@ -111,7 +112,9 @@ who we are */
   margin: 0 auto;
   padding-bottom: 32px;
 }
-
+h3.icon-text {
+  margin-bottom: 8px;
+}
 
 /* ======
 People */

@@ -52,7 +52,8 @@ h1.ui.header.index-hero-text {
   margin: 0 auto;
 }
 
-.text-constrain.hero p{
+.text-constrain.hero p,
+.text-constrain.hero h3{
   font-size: 1.5rem;
   font-weight: 200;
   line-height: 2.3rem;
@@ -60,7 +61,8 @@ h1.ui.header.index-hero-text {
   text-align: left;
 }
 @media(min-width:640px){
-  .text-constrain.hero p{
+  .text-constrain.hero p,
+  .text-constrain.hero h3{
     font-size: 1.5rem;
     font-weight: 200;
     line-height: 2.3rem;
