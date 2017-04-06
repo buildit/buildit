@@ -8,6 +8,7 @@ const open = require('gulp-open');
 const pug = require('gulp-pug');
 const uglify = require('gulp-uglify');
 const watch = require('gulp-watch');
+const less = require('gulp-less');
 
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -28,6 +29,7 @@ gulp.task('watch', () => {
   gulp.watch([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`], { ignoreInitial: false }, ['copy-assets']);
   gulp.watch([`${src}/**/*.pug`], { ignoreInitial: false }, ['compile-html']);
   gulp.watch([`${src}/js/*.js`], { ignoreInitial: false }, ['js']);
+  gulp.watch([`${src}/**/*.less`], { ignoreInitial: false }, ['less']);
   gulp.watch([`${src}/**/*.css`], { ignoreInitial: false }, ['css']);
 });
 
@@ -74,7 +76,13 @@ gulp.task('js', () => {
 });
 
 // Build the CSS
-gulp.task('css', () => {
+gulp.task('less', () => {
+    return gulp.src('./src/components/main.less')
+    .pipe(less())
+    .pipe(gulp.dest('./src/components/'));
+});
+
+gulp.task( 'css', () => {
   // Normally we shouldn't have to do this. For now we have to
   // as the CSS files need cleaning up and there seems to be an issue
   // with the order of inclusion.
@@ -92,7 +100,8 @@ gulp.task('css', () => {
     'button.css',
     'list.css',
     'icon.css',
-    'transition.css'
+    'transition.css',
+    'main.css'
   ];
 
   return gulp.src([
