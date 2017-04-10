@@ -1,6 +1,6 @@
 - var menuItems = { 'Approach': '/about.html', 'Careers': '/careers.html' };
 
-//- This is the one that fades in once you go past a certain point
+//- Sticky menu that fades in once you scroll down
 .ui.large.top.fixed.hidden.menu
   .ui.container#mobile_nav
     a.item.black#home_mobile(href='index.html') Buildit
@@ -11,33 +11,7 @@
         a.item#careers(href='careers.html') Careers
         a.item#find-us(href='contact.html') Find us
 
-//- This is the main menu (the style of this one should replace the version in layout.pug)
-//- .ui.inverted.vertical.masthead.center.aligned.segment
-//-   .ui.container
-//-     .ui.large.secondary.pointing.inverted.menu
-//-       a.item.image#home_desktop(href='index.html') Buildit
-//-       .right.item
-//-         each link, title in menuItems
-//-           if currentPage === title
-//-             a.item.active(href=link)= title
-//-           else
-//-             a.item(href=link)= title
-//-         a.ui.inverted.basic.grey.button(href='contact.html') Find us
-
-//- .ui.inverted.vertical.masthead.center.aligned.segment
-//-   .ui.container
-//-     .ui.large.secondary.pointing.inverted.menu.nav-container
-//-       span.nav-container__logo BuildIt
-//-       a.toc.item.right
-//-         i.sidebar.icon
-//-       |  
-//-       a.active.item Approach
-//-       |  
-//-       a.item Careers
-//-       |  
-//-       a.item Find Us
-
-//- This is the one that slides in from the right
+//- Mobile menu that slides in from right
 .ui.vertical.inverted.sidebar.menu.push.right
   a.active.item Home
   |  

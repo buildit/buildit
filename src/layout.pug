@@ -6,17 +6,7 @@ html(lang='en')
   body
     include includes/menu.pug
     .pusher
-      //- .ui.container
-      //-   .ui.large.secondary.inverted.pointing.menu.nav-container
-      //-     span.nav-container__logo BuildIt
-      //-     a.toc.item.right
-      //-       i.sidebar.icon
-      //-     |  
-      //-     a.active.item Approach
-      //-     |  
-      //-     a.item Careers
-      //-     |  
-      //-     a.item Find Us
+      //- Full menu displayed at larger resolutions
       .ui.inverted.vertical.masthead.center.aligned.segment
         .ui.container
           .ui.large.secondary.pointing.inverted.menu.nav-container
@@ -29,7 +19,7 @@ html(lang='en')
             a.item Careers
             |  
             a.item Find Us
-            
+
       block content
       include includes/footer.pug
 
