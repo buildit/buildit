@@ -138,7 +138,7 @@
   }
   /* hides github menu */
   .right.menu {
-    display: none !important;
+    /*display: none !important;*/
   }
 
   #home_mobile {
