@@ -6,19 +6,20 @@ html(lang='en')
   body
     include includes/menu.pug
     .pusher
-      //- Full menu displayed at larger resolutions
+      //- Menu displayed on initial page load at top of page
       .ui.inverted.vertical.masthead.center.aligned.segment
         .ui.container
           .ui.large.secondary.pointing.inverted.menu.nav-container
-            span.nav-container__logo BuildIt
-            a.toc.item.right
-              i.sidebar.icon
-            |  
-            a.active.item Approach
-            |  
-            a.item Careers
-            |  
-            a.item Find Us
+            a.item.image#home_desktop(href='index.html') Buildit
+            .right.item
+              a.toc.item
+                i.sidebar.icon
+              |  
+              a.active.item Approach
+              |  
+              a.item Careers
+              |  
+              a.item Find Us
 
       block content
       include includes/footer.pug
