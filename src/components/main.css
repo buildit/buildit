@@ -1,0 +1,9 @@
+.nav-container {
+  position: relative;
+  justify-content: flex-end;
+}
+.nav-container__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

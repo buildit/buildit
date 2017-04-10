@@ -1,23 +1,36 @@
 - var menuItems = { 'Approach': '/about.html', 'Careers': '/careers.html' };
 
-.ui.large.top.fixed.hidden.menu
-  .ui.container#mobile_nav
-    a.item.black#home_mobile(href='index.html') Buildit
+//- .ui.large.top.fixed.hidden.menu
+//-   .ui.container#mobile_nav
+//-     a.item.black#home_mobile(href='index.html') Buildit
 
-    .right.menu
-      .item
-        a.item#about(href='about.html') Approach
-        a.item#careers(href='careers.html') Careers
-        a.item#find-us(href='contact.html') Find us
+//-     .right.menu
+//-       .item
+//-         a.item#about(href='about.html') Approach
+//-         a.item#careers(href='careers.html') Careers
+//-         a.item#find-us(href='contact.html') Find us
 
-.ui.inverted.vertical.masthead.center.aligned.segment
-  .ui.container
-    .ui.large.secondary.pointing.inverted.menu
-      a.item.image#home_desktop(href='index.html') Buildit
-      .right.item
-        each link, title in menuItems
-          if currentPage === title
-            a.item.active(href=link)= title
-          else
-            a.item(href=link)= title
-        a.ui.inverted.basic.grey.button(href='contact.html') Find us
+//- .ui.inverted.vertical.masthead.center.aligned.segment
+//-   .ui.container
+//-     .ui.large.secondary.pointing.inverted.menu
+//-       a.item.image#home_desktop(href='index.html') Buildit
+//-       .right.item
+//-         each link, title in menuItems
+//-           if currentPage === title
+//-             a.item.active(href=link)= title
+//-           else
+//-             a.item(href=link)= title
+//-         a.ui.inverted.basic.grey.button(href='contact.html') Find us
+
+.ui.vertical.inverted.sidebar.menu.push
+  a.active.item Home
+  |  
+  a.item Work
+  |  
+  a.item Company
+  |  
+  a.item Careers
+  |  
+  a.item Login
+  |  
+  a.item Signup

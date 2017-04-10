@@ -59,7 +59,8 @@ gulp.task('vendor', () => {
   const files = [
     'assets/library/jquery.min.js',
     'components/visibility.min.js',
-    'components/transition.min.js'
+    'components/transition.min.js',
+    'components/sidebar.min.js'
   ];
 
   return gulp.src(files.map(item => `${src}/${item}`))
@@ -101,6 +102,7 @@ gulp.task( 'css', ['less'], () => {
     'list.css',
     'icon.css',
     'transition.css',
+    'sidebar.css',
     'main.css'
   ];
 
