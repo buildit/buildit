@@ -8,7 +8,8 @@
     "build": "npm run clean && gulp build",
     "serve": "gulp serve",
     "start": "gulp",
-    "deploy:staging": "aws s3 sync dist/ s3://staging.buildit.digital --region eu-west-2 --acl public-read"
+    "deploy:staging": "aws s3 sync dist/ s3://staging.buildit.digital --region eu-west-2 --acl public-read --delete",
+    "deploy:production": "aws s3 sync s3://staging.buildit.digital s3://buildit.wiprodigital.com --region eu-west-2 --acl public-read --delete"
   },
   "repository": {
     "type": "git",
