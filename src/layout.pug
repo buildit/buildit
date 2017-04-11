@@ -15,11 +15,13 @@ html(lang='en')
               a.toc.item
                 i.sidebar.icon
               |  
-              a.active.item(href='about.html') Approach
-              |  
-              a.item(href='careers.html') Careers
-              |  
-              a.item(href='contact.html') Find Us
+              each link, title in menuItems
+                if currentPage === title
+                  a.item.active(href=link)= title
+                  |  
+                else
+                  a.item(href=link)= title
+                  |  
 
       block content
       include includes/footer.pug
