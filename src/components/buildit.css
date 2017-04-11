@@ -1,17 +1,16 @@
-/*overrides*/
-.hidden.menu {
-  display: none;
-}
-
+/* Overrides */
 .masthead.segment {
   padding: 1em 0em;
 }
+
 .masthead .logo.item img {
   margin-right: 1em;
 }
+
 .ui.inverted.basic.grey.button {
   margin-left: 1.8em;
 }
+
 .masthead h1.ui.header {
   margin-top: 28vh;
   margin-bottom: 4vh;
@@ -71,10 +70,6 @@
   padding: 5em 0em;
 }
 
-.secondary.pointing.menu .toc.item {
-  display: none;
-}
-
 .letter {
   fill: #2185D0;
   stroke: #2185D0;
@@ -88,22 +83,8 @@
   width: 8rem;
 }
 
-.ui.secondary.menu .item::before {
-  -webkit-transition-property: transform opacity;
-  -moz-transition-property: transform opacity;
-  -o-transition-property: transform opacity;
-  transition-property: transform opacity;
-  -webkit-transition-duration: 240ms;
-  -moz-transition-duration: 240ms;
-  -o-transition-duration: 240ms;
-  transition-duration: 240ms;
-}
-
 .ui.inverted.segment, .ui.primary.inverted.segment {
-    /*background-image: url(../assets/images/simple.svg), url(../assets/images/bg.jpg);*/
-    /*background-repeat: no-repeat, repeat-x;*/
     background-color: rgba(0,0,0,1);
-    /*background-size: 100%;*/
 }
 .ui.inverted.segment.contact {
     background-image: url(../assets/images/shutterstock_221064886.jpg), url(../assets/images/Globe_export.png);
@@ -112,7 +93,6 @@
 }
 .ui.secondary.inverted.pointing.menu {
     border-width: 0px;
-    /* border-color: rgba(34, 36, 38, 0.15); */
 }
 
 .ui.vertical.fractal.segment {
@@ -187,7 +167,6 @@
   margin-bottom: 0.5em;
 }
 
-
 .row.partners {
   background-image:url(../assets/images/partners.png);
   background-size: 40%;
@@ -202,8 +181,6 @@
   padding-top: 18vh;
   padding-right: 4vw;
 }
-
-
 
 .row.careers {
   background-image:url(../assets/images/grid-left-buildit.svg);
@@ -277,7 +254,6 @@
 
 
 /* make */
-
 .ui.big.list > .item::before {
   content: "";
 }
@@ -295,10 +271,6 @@
   margin-top: 2vh;
 }
 
-i.icon img {
-  width: 18px;
-}
-
 .ui.vertical.stripe .horizontal.divider.howwemake {
   margin: 1.5em;
 }
@@ -307,54 +279,6 @@ i.icon img {
 /* Mobile Vertical Only */
 @media only screen and (max-width: 320px) {
 
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    display: flex !important;
-    margin: 0;
-    padding: 0;
-  }
-
-  /*.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {*/
-    /*font-size: x-small;*/
-  /*}*/
-
-  .ui.secondary.inverted.menu a.item {
-    margin: 0;
-    padding: 0;
-  }
-
-  .ui.secondary.inverted.menu a.image.item {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 27px;
-  }
-
-  .ui.secondary.menu .item > img:not(.ui) {
-    margin: 0em;
-    width: 20vw;
-  }
-
-  .ui.secondary.inverted.pointing.menu .right.item {
-    float: right;
-    margin-left: 20vw !important;
-  }
-
-  .ui.secondary.inverted.pointing.menu .right.item > .item {
-    padding-left: 0.8em;
-  }
-
-  .ui.secondary.inverted.pointing.menu .active.item {
-    display: none !important;
-  }
-
-  /*.ui.inverted.basic.grey.button {*/
-    /*!*display: none !important;*!*/
-  /*}*/
-
-  .masthead.segment {
-    /*min-height: 300px;*/
-  }
   .masthead h1.ui.header {
     font-size: 6vw;
   }
@@ -396,67 +320,6 @@ i.icon img {
 /* Mobile Horizontal Only */
 @media only screen and (min-width: 321px) and (max-width: 375px) {
 
-  #home {
-    display: none;
-  }
-
-  .ui.menu:not(.vertical) .right.menu {
-    display: none;
-  }
-
-
-
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    display: flex !important;
-    margin: 0;
-    padding: 0;
-  }
-
-  /*.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {*/
-    /*font-size: x-small;*/
-  /*}*/
-
-  .ui.secondary.inverted.menu a.item {
-    margin: 0;
-    padding: 0;
-  }
-
-  .ui.secondary.inverted.menu a.image.item {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 27px;
-  }
-
-  .ui.secondary.menu .item > img:not(.ui) {
-    margin: 0em;
-    width: 20vw;
-  }
-
-  .ui.secondary.inverted.pointing.menu .right.item {
-    float: right;
-    margin-left: 20vw !important;
-  }
-
-  .ui.secondary.inverted.pointing.menu .right.item > .item {
-    padding-left: 0.8em;
-  }
-
-  .ui.secondary.inverted.pointing.menu .active.item {
-    display: none !important;
-  }
-
-  .ui.inverted.basic.grey.button {
-    /*display: none !important;*/
-  }
-  .masthead.segment {
-    /*min-height: 300px;*/
-  }
-  /*.masthead h1.ui.header {
-    font-size: 9vw;
-  }*/
-
   .ui.vertical.stripe h3 {
     font-size: 18px;
   }
@@ -488,61 +351,6 @@ i.icon img {
 /* Mobile Large Only */
 @media only screen and (min-width: 376px) and (max-width: 428px) {
 
-  #home {
-    display: none;
-  }
-
-  .ui.menu:not(.vertical) .right.menu {
-    display: none;
-  }
-
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    display: flex !important;
-    margin: 0;
-    padding: 0;
-  }
-
-  /*.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {*/
-    /*font-size: x-small;*/
-  /*}*/
-
-  .ui.secondary.inverted.menu a.item {
-    margin: 0;
-    padding: 0;
-  }
-
-  .ui.secondary.inverted.menu a.image.item {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 27px;
-  }
-
-  .ui.secondary.menu .item > img:not(.ui) {
-    margin: 0em;
-    width: 20vw;
-  }
-
-  .ui.secondary.inverted.pointing.menu .right.item {
-    float: right;
-    margin-left: 20vw !important;
-  }
-
-  .ui.secondary.inverted.pointing.menu .right.item > .item {
-    padding-left: 0.8em;
-  }
-
-  .ui.secondary.inverted.pointing.menu .active.item {
-    display: none !important;
-  }
-
-  .ui.inverted.basic.grey.button {
-    /*display: none !important;*/
-  }
-  .masthead.segment {
-    /*min-height: 300px;*/
-  }
   .ui.inverted.segment, .ui.primary.inverted.segment {
     background-size: 160%;
   }
@@ -569,29 +377,6 @@ i.icon img {
 
 /* Tablet Only */
 @media only screen and (min-width: 429px) and (max-width: 767px) {
-  .ui.fixed.menu {
-    display: none !important;
-  }
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    display: flex !important;
-    margin: 0;
-    padding: 0;
-  }
-  .ui.inverted.basic.grey.button {
-    /*display: none !important;*/
-  }
-  .masthead.segment {
-    /*min-height: 350px;*/
-  }
-  /*.masthead h1.ui.header {
-    font-size: 2em;
-    margin-top: 1.5em;
-  }*/
-  /*.masthead h1.ui.header {
-    font-size: 8vw;
-  }*/
-
   .masthead h2 {
     margin-top: 0.5em;
     font-size: 1.5em;
@@ -602,7 +387,6 @@ i.icon img {
     min-height: 20vh;
     line-height: 2.5rem;
     margin-top: 2rem;
-    /*font-family: Helvetica, sans-serif;*/
   }
   .ldn { background-color:rgba(0,0,0,0); width:30vw; }
   .nyc { background-color:rgba(0,0,0,0); width:35vw; }
