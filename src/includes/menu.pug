@@ -1,15 +1,14 @@
 - var menuItems = { 'Approach': '/about.html', 'Careers': '/careers.html' };
 
 //- Sticky menu that fades in once you scroll down
-.ui.large.top.fixed.hidden.menu
+.ui.large.secondary.pointing.inverted.menu.top.fixed.hidden
   .ui.container#mobile_nav
     a.item.black#home_mobile(href='index.html') Buildit
-
     .right.menu
       .item
-        a.item#about(href='about.html') Approach
-        a.item#careers(href='careers.html') Careers
-        a.item#find-us(href='contact.html') Find us
+        a.item.active(href='about.html') Approach
+        a.item(href='careers.html') Careers
+        a.item(href='contact.html') Find us
 
 //- Mobile menu that slides in from right
 .ui.vertical.inverted.sidebar.menu.push.right

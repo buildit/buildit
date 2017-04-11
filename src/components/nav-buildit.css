@@ -16,6 +16,11 @@
   padding-bottom: 30px;
   font-size: large !important;
 }
+
+#mobile_nav {
+  padding-bottom: 12px;
+}
+
 @media (min-width: 550px){
   #home_desktop {
     width: 45%;
