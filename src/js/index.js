@@ -22,23 +22,4 @@ $(document).ready(function () {
   });
 
   $('.image').visibility('refresh');
-
-  /**
-   * Beginning side links animation
-   * */
-  var $links;
-  var handler;
-  $links = $('.item.nav-link');
-
-  handler = {
-    activate: function () {
-      $(this)
-        .addClass('active')
-        .siblings()
-        .removeClass('active')
-    }
-  }
-
-  $links.on('click', handler.activate)
-  /** end side links animation **/
 });
