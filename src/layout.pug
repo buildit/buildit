@@ -4,25 +4,9 @@ html(lang='en')
   include includes/head.pug
 
   body
-    include includes/menu.pug
+    include includes/sidebar.pug
     .pusher
-      //- Menu displayed on initial page load at top of page
-      .ui.inverted.vertical.masthead.center.aligned.segment
-        .ui.container
-          .ui.large.secondary.pointing.inverted.menu.nav-container
-            a.item.image#home_desktop(href='index.html') Buildit
-            .right.item
-              a.toc.item
-                i.sidebar.icon
-              |  
-              each link, title in menuItems
-                if currentPage === title
-                  a.item.active(href=link)= title
-                  |  
-                else
-                  a.item(href=link)= title
-                  |  
-
+      include includes/menu.pug
       block content
       include includes/footer.pug
 

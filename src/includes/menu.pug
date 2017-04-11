@@ -1,23 +1,14 @@
 - var menuItems = { 'Approach': '/about.html', 'Careers': '/careers.html', 'Find us': '/contact.html' };
 
-//- Sticky menu that fades in once you scroll down
-.ui.large.secondary.pointing.inverted.menu.top.fixed.hidden
-  .ui.container#mobile_nav
-    a.item.black#home_mobile(href='index.html') Buildit
-    .right.menu
-      .item
-        each link, title in menuItems
-          if currentPage === title
-            a.item.active(href=link)= title
-          else
-            a.item(href=link)= title
+span.navigation-spacer
 
-- var mobileMenuItems = { 'Home': '/index.html', 'Approach': '/about.html', 'Careers': '/careers.html', 'Find us': '/contact.html' };
-
-//- Mobile menu that slides in from right
-.ui.vertical.inverted.sidebar.menu.push.right
-  each link, title in mobileMenuItems
-    if currentPage === title
-      a.item.active(href=link)= title
-    else
-      a.item(href=link)= title
+.ui.secondary.pointing.menu.inverted.segment.fixed.navigation.hidden
+  a.item.navigation__logo Home
+  .right.menu
+    a.toc.item
+      i.sidebar.icon
+    each link, title in menuItems
+      if currentPage === title
+        a.item.active(href=link)= title
+      else
+        a.item(href=link)= title

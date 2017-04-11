@@ -1,10 +1,26 @@
-.nav-container {
-    position: relative;
-    justify-content: flex-end;
+.navigation-spacer {
+    display: block;
+    height: 66px;
 }
 
-.nav-container__logo {
-    position: absolute;
-    top: 0;
-    left: 0;
+.ui.secondary.pointing.menu .navigation__logo {
+    text-indent: -9999px !important;
+    background: url("assets/images/logo-w.svg") no-repeat;
+    background-size: contain;
+    width: 35%;
+    margin-top: 10px;
+}
+
+.ui.secondary.pointing.menu .toc.item {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .ui.secondary.pointing.menu .item {
+        display: none;
+    }
+
+    .ui.secondary.pointing.menu .item.toc, .ui.secondary.pointing.menu .item.navigation__logo {
+        display: block;
+    }
 }
