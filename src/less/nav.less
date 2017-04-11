@@ -3,12 +3,22 @@
     height: 66px;
 }
 
-.ui.secondary.pointing.menu .navigation__logo {
+.ui.secondary.pointing.menu.inverted.segment.navigation {
+    background: #000;
+}
+
+.ui.secondary.pointing.menu a.item.navigation__logo {
     text-indent: -9999px !important;
-    background: url("assets/images/logo-w.svg") no-repeat;
+    background: url("assets/images/logo-w.svg") no-repeat; 
     background-size: contain;
-    width: 35%;
-    margin-top: 10px;
+    width: 250px;
+    padding-bottom: 4px;
+}
+
+.ui.secondary.pointing.menu a.item.navigation__logo:visited,
+.ui.secondary.pointing.menu a.item.navigation__logo:hover,
+.ui.secondary.pointing.menu a.item.navigation__logo:active {
+    background: url("assets/images/logo-w.svg") no-repeat;
 }
 
 .ui.secondary.pointing.menu .toc.item {

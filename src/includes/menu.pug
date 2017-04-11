@@ -3,12 +3,13 @@
 span.navigation-spacer
 
 .ui.secondary.pointing.menu.inverted.segment.fixed.navigation.hidden
-  a.item.navigation__logo Home
-  .right.menu
-    a.toc.item
-      i.sidebar.icon
-    each link, title in menuItems
-      if currentPage === title
-        a.item.active(href=link)= title
-      else
-        a.item(href=link)= title
+  .ui.container
+    a.item.navigation__logo(href='index.html') Home
+    .right.menu
+      a.toc.item
+        i.sidebar.icon
+      each link, title in menuItems
+        if currentPage === title
+          a.item.active(href=link)= title
+        else
+          a.item(href=link)= title
