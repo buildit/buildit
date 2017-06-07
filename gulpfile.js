@@ -20,8 +20,8 @@ gulp.task('serve', () => {
   connect.server({
     root: target,
     livereload: true
-  })
-  gulp.src('').pipe(open({uri: 'http://localhost:8080'}));
+  });
+  gulp.src('').pipe(open({ uri: 'http://localhost:8080' }));
 });
 
 // File watcher
@@ -78,12 +78,12 @@ gulp.task('js', () => {
 
 // Build the CSS
 gulp.task('less', () => {
-    return gulp.src('./src/less/main.less')
+  return gulp.src('./src/less/main.less')
     .pipe(less())
     .pipe(gulp.dest('./src/components/'));
 });
 
-gulp.task( 'css', ['less'], () => {
+gulp.task('css', ['less'], () => {
   // Normally we shouldn't have to do this. For now we have to
   // as the CSS files need cleaning up and there seems to be an issue
   // with the order of inclusion.
@@ -107,9 +107,9 @@ gulp.task( 'css', ['less'], () => {
   ];
 
   return gulp.src([
-      ...(files.map(item => `${src}/components/${item}`)),
-      `${src}/components/*-buildit.css`,
-      `${src}/components/buildit.css`])
+    ...(files.map(item => `${src}/components/${item}`)),
+    `${src}/components/*-buildit.css`,
+    `${src}/components/buildit.css`])
     .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest(target))
     .pipe(sourcemaps.init())
