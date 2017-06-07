@@ -7,7 +7,7 @@ node {
     currentBuild.result = "SUCCESS"
 
     try {
-      stage "Set Up"
+      stage("Set Up") {
 
         sendNotifications = !env.DEV_MODE
 
@@ -35,8 +35,9 @@ node {
         appName = "buildit-website"
         slackChannel = "test-shahzain"
         gitUrl = "https://github.com/buildit/buildit"
+      }
 
-      stage "Checkout"
+      stage("Checkout") {
         checkout scm
 
         sh "git clean -ffdx"
@@ -45,33 +46,42 @@ node {
         shortCommitHash = gitInst.getShortCommit()
         commitMessage = gitInst.getCommitMessage()
         version = npmInst.getVersion()
+      }
 
-      stage "Build"
+      stage("Install") {
+        sh "npm install"
+      }
+      
+      stage("Build") {
         sh "npm run build"
+      }
 
-      //stage "Lint"
+      //stage("Lint") {
       //build.lint()
+      //}
 
-      //stage "Test"
+      //stage("Test") {
        // build.test()
        // step([$class: 'JUnitResultArchiver', testResults: 'reports/test-results.xml'])
        // publishHTML(target: [reportDir: 'reports', reportFiles: 'test-results.html', reportName: 'Test Results'])
        // publishHTML(target: [reportDir: 'reports/coverage', reportFiles: 'index.html', reportName: 'Coverage Results'])
-
-      //stage "Analysis"
+       //}
+      //stage("Analysis") {
       //  sh "/usr/local/sonar-scanner-2.6.1/bin/sonar-scanner -e -Dsonar.projectVersion=${version}"
+      //}
 
-      //stage "Docker Image Build"
+      //stage("Docker Image Build") {
         //def tag = "${version}-${shortCommitHash}-${env.BUILD_NUMBER}"
         //def image = docker.build("${appName}:${tag}", '.')
         //ecrInst.authenticate(env.AWS_REGION)
+      //}
 
-      //stage "Docker Push"
+      //stage("Docker Push") {
         //docker.withRegistry(registry) {
           //image.push("${tag}")
         //}
-
-      stage "Deploy To Staging"
+      //}
+      stage("Deploy To Staging") {
         sh "aws s3 sync dist/ s3://staging.buildit.digital --region eu-west-2 --acl public-read --delete"
         //def tmpFile = UUID.randomUUID().toString() + ".tmp"
         //def ymlData = templateInst.transform(readFile("docker-compose.yml.template"), [tag: tag, registryBase: registryBase])
@@ -82,19 +92,21 @@ node {
         // wait until the app is deployed
         //convoxInst.waitUntilDeployed("${appName}-staging")
         //convoxInst.ensureSecurityGroupSet("${appName}-staging", env.CONVOX_SECURITYGROUP)
+      }
 
-      //stage "Promote Build to latest"
+      //stage("Promote Build to latest") {
       //  docker.withRegistry(registry) {
        //   image.push("latest")
        // }
-
-      stage "Cleanup"
+      //}
+      stage("Cleanup") {
         //build.clean()
         if (sendNotifications) slackInst.notify("Deployed to Staging", "Commit '<${gitUrl}/commits/${shortCommitHash}|${shortCommitHash}>' has been deployed to <${appUrl}|${appUrl}>\n\n${commitMessage}", "good", "http://i296.photobucket.com/albums/mm200/kingzain/the_eye_of_sauron_by_stirzocular-d86f0oo_zpslnqbwhv2.png", slackChannel)
+      }
     }
     catch (err) {
       currentBuild.result = "FAILURE"
-      slack.notify("Error while deploying to Staging", "Commit <${gitUrl}/commits/\'${shortCommitHash}\'|\'${shortCommitHash}\'> failed to deploy.", "danger", "http://i296.photobucket.com/albums/mm200/kingzain/the_eye_of_sauron_by_stirzocular-d86f0oo_zpslnqbwhv2.png", slackChannel)
+      slackInst.notify("Error while deploying to Staging", "Commit <${gitUrl}/commits/\'${shortCommitHash}\'|\'${shortCommitHash}\'> failed to deploy.", "danger", "http://i296.photobucket.com/albums/mm200/kingzain/the_eye_of_sauron_by_stirzocular-d86f0oo_zpslnqbwhv2.png", slackChannel)
       throw err
     }
   }

@@ -4,12 +4,10 @@
   "description": "Buildit website",
   "main": "index.js",
   "scripts": {
-    "clean": "gulp clean",
-    "build": "npm run clean && gulp build",
-    "serve": "gulp serve",
-    "start": "gulp",
-    "deploy:staging": "aws s3 sync dist/ s3://staging.buildit.digital --region eu-west-2 --acl public-read --delete",
-    "deploy:production": "aws s3 sync s3://staging.buildit.digital s3://buildit.wiprodigital.com --region eu-west-2 --acl public-read --delete"
+    "clean": "./node_modules/.bin/gulp clean",
+    "build": "npm run clean && ./node_modules/.bin/gulp build",
+    "serve": "./node_modules/.bin/gulp serve",
+    "start": "./node_modules/.bin/gulp"
   },
   "repository": {
     "type": "git",
