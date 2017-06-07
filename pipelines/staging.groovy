@@ -31,9 +31,9 @@ node {
         domain = env.RIG_DOMAIN ? "riglet" : "buildit.tools"
         registryBase = "006393696278.dkr.ecr.${env.AWS_REGION}.amazonaws.com"
         registry = "https://${registryBase}"
-        appUrl = "http://website.${domain}/"
+        appUrl = "http://staging.buildit.digital/"
         appName = "buildit-website"
-        slackChannel = "test-shahzain"
+        slackChannel = "buildit-website"
         gitUrl = "https://github.com/buildit/buildit"
       }
 
@@ -51,7 +51,7 @@ node {
       stage("Install") {
         sh "npm install"
       }
-      
+
       stage("Build") {
         sh "npm run build"
       }
