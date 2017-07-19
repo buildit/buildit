@@ -58,6 +58,8 @@ gulp.task('compile-html', () => {
 gulp.task('vendor', () => {
   const files = [
     'assets/library/jquery.min.js',
+    'assets/library/promise.min.js',
+    'assets/library/fetch.js',
     'components/visibility.min.js',
     'components/transition.min.js',
     'components/sidebar.min.js'
