@@ -25,6 +25,7 @@ $(document).ready(function () {
 
   // Template for jobs data on careers page
   function tpl(jobData) {
+    console.log(jobData);
     var template = '<li class="opening-job job column eight wide">';
     template += '<a href="https://jobs.smartrecruiters.com/ni/WiproDigital/' + jobData.uuid + '" class="link--block details">';
     template += '<h3 class="details-title job-title link--block-target">' + jobData.name + '</h3>';
@@ -37,6 +38,13 @@ $(document).ready(function () {
     return template;
   }
 
+  function divideByCountry(obj, job) {
+    if (!obj[job.location.country]) {
+      obj[job.location.country] = [];
+    }
+    obj[job.location.country].push(job);
+    return obj;
+  }
   // const matchCity = city => data => data.location.city === city;
   // Filter by city
   // function matchCity(city) {
@@ -46,9 +54,19 @@ $(document).ready(function () {
   // }
 
   // Sort By Country
-  function sortCountry(a, b) {
-    var x = a.location.country;
-    var y = b.location.country;
+  function sortCountry(x, y) {
+    if (x > y) {
+      return 1;
+    }
+    if (x < y) {
+      return -1;
+    }
+    return 0;
+  }
+
+  function sortByCity(a, b) {
+    var x = a.location.city;
+    var y = b.location.city;
 
     if (x > y) {
       return 1;
@@ -79,10 +97,28 @@ $(document).ready(function () {
           var wrapper = $('ul.opening-jobs');
 
           // .filter(matchCity('uk'))
+          data = data.reduce(divideByCountry, {});
+          var countries = Object.keys(data);
+          formattedData = countries
+            .map(function(country, index) {
+              data[country].sort(sortByCity);
+              if (country === 'gb') {
+                return 'uk';
+              }
+              return country;
+            })
+            .sort(sortCountry)
+            .map(function(country, index) {
+              if (country === 'uk') {
+                return data['gb'];
+              }
+              return data[country];
+            });
+          formattedData = [].concat.apply([], formattedData);
           wrapper.append(
-            data.sort(sortCountry)
-                .map(tpl)
-                .join('')
+            formattedData
+              .map(tpl)
+              .join('')
           );
         })
         .catch(function (error) {
