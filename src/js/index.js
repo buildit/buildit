@@ -25,7 +25,6 @@ $(document).ready(function () {
 
   // Template for jobs data on careers page
   function tpl(jobData) {
-    console.log(jobData);
     var template = '<li class="opening-job job column eight wide">';
     template += '<a href="https://jobs.smartrecruiters.com/ni/WiproDigital/' + jobData.uuid + '" class="link--block details">';
     template += '<h3 class="details-title job-title link--block-target">' + jobData.name + '</h3>';
@@ -92,12 +91,10 @@ $(document).ready(function () {
       })
         .then(function (response) {
           var data = response.content;
-
-          // console.log(data);
           var wrapper = $('ul.opening-jobs');
 
-          // .filter(matchCity('uk'))
           data = data.reduce(divideByCountry, {});
+
           var countries = Object.keys(data);
           formattedData = countries
             .map(function(country, index) {
