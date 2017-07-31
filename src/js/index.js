@@ -16,14 +16,12 @@ $(document).ready(function () {
 
   $('.ui.sidebar').sidebar('attach events', '.toc.item');
 
-  // lazy load images
   $('.image').visibility({
     type: 'image'
   });
 
   $('.image').visibility('refresh');
 
-  // Template for jobs data on careers page
   function tpl(jobData) {
     var template = '<li class="opening-job job column eight wide">';
     template += '<a href="https://jobs.smartrecruiters.com/ni/WiproDigital/' + jobData.uuid + '" class="link--block details">';
@@ -39,7 +37,6 @@ $(document).ready(function () {
 
   function processJobData(data) {
 
-    // compare Fn
     function sortCity(jobA, jobB) {
       if (jobA.location.city > jobB.location.city) {
         return 1;
@@ -50,7 +47,6 @@ $(document).ready(function () {
       return 0;
     }
 
-    // group by country
     var jobs = data.reduce(function (accumulator, currentItem) {
       if (currentItem.location.country === 'gb') {
         currentItem.location.country = 'uk';
@@ -62,23 +58,20 @@ $(document).ready(function () {
       return accumulator;
     }, {});
 
-    // sort by city
     Object.keys(jobs).map(function (currentItem) {
       jobs[currentItem].sort(sortCity);
     });
 
-    // combine country arrays
-    var conbinedJobs = Object.keys(jobs).sort().reduce(function (accumulator, currentItem) {
+    var combinedJobs = Object.keys(jobs).sort().reduce(function (accumulator, currentItem) {
       return accumulator.concat(jobs[currentItem]);
     }, []);
 
-    return conbinedJobs;
+    return combinedJobs;
   }
 
   if ($('ul#jobs-board').length) {
 
     var url = "https://api.smartrecruiters.com/v1/companies/WiproDigital/postings?";
-    // get jobs that are Buildit not WD
     var getBrand = 'custom_field.5880c55be4b0cfde272956ad=83455af9-c888-4221-9312-4750b5a09bf5';
 
     fetch(url + getBrand).then(function (response) {
