@@ -35,40 +35,6 @@ $(document).ready(function () {
     return template;
   }
 
-  function processJobData(data) {
-
-    function sortCity(jobA, jobB) {
-      if (jobA.location.city > jobB.location.city) {
-        return 1;
-      }
-      if (jobA.location.city < jobB.location.city) {
-        return -1;
-      }
-      return 0;
-    }
-
-    var jobs = data.reduce(function (accumulator, currentItem) {
-      if (currentItem.location.country === 'gb') {
-        currentItem.location.country = 'uk';
-      }
-      if (!accumulator[currentItem.location.country]) {
-        accumulator[currentItem.location.country] = [];
-      }
-      accumulator[currentItem.location.country].push(currentItem);
-      return accumulator;
-    }, {});
-
-    Object.keys(jobs).map(function (currentItem) {
-      jobs[currentItem].sort(sortCity);
-    });
-
-    var combinedJobs = Object.keys(jobs).sort().reduce(function (accumulator, currentItem) {
-      return accumulator.concat(jobs[currentItem]);
-    }, []);
-
-    return combinedJobs;
-  }
-
   if ($('ul#jobs-board').length) {
 
     var url = "https://api.smartrecruiters.com/v1/companies/WiproDigital/postings?";
@@ -82,10 +48,38 @@ $(document).ready(function () {
     })
       .then(function (response) {
         var wrapper = $('ul.opening-jobs');
-        var combinedData = processJobData(response.content);
+
+        function sortCity(jobA, jobB) {
+          if (jobA.location.city > jobB.location.city) {
+            return 1;
+          }
+          if (jobA.location.city < jobB.location.city) {
+            return -1;
+          }
+          return 0;
+        }
+
+        var jobs = response.content.reduce(function (accumulator, currentItem) {
+          if (currentItem.location.country === 'gb') {
+            currentItem.location.country = 'uk';
+          }
+          if (!accumulator[currentItem.location.country]) {
+            accumulator[currentItem.location.country] = [];
+          }
+          accumulator[currentItem.location.country].push(currentItem);
+          return accumulator;
+        }, {});
+
+        Object.keys(jobs).map(function (currentItem) {
+          jobs[currentItem].sort(sortCity);
+        });
+
+        var combinedJobs = Object.keys(jobs).sort().reduce(function (accumulator, currentItem) {
+          return accumulator.concat(jobs[currentItem]);
+        }, []);
 
         wrapper.append(
-          combinedData
+          combinedJobs
             .map(tpl)
             .join('')
         );
