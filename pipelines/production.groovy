@@ -27,7 +27,7 @@ node {
           convoxInst = load "lib/convox.groovy"
           templateInst = load "lib/template.groovy"
         }
-
+        shortCommitHash = gitInst.getShortCommit()
         registryBase = "006393696278.dkr.ecr.${env.AWS_REGION}.amazonaws.com"
         registry = "https://${registryBase}"
         appUrl = "http://buildit.wiprodigital.com/"
