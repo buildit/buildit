@@ -11,6 +11,11 @@ node {
 
         sendNotifications = !env.DEV_MODE
 
+        if(fileExists('.git')) {
+          echo 'Perform workspace cleanup'
+          sh "git clean -ffdx"
+        }
+
         if (env.USE_GLOBAL_LIB) {
           ecrInst = new ecr()
           gitInst = new git()
