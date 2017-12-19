@@ -15,8 +15,6 @@ install:
 script:
   - npm run-script build
 
-# TODO deploy only from `master` 
-
 deploy:
   provider: s3
   access_key_id: ${AWS_ACCESS_KEY_ID}
@@ -25,5 +23,8 @@ deploy:
   skip_cleanup: true
   region: "us-east-1"
   local_dir: dist
+  on:
+    all_branches: true # TODO remove: by default deploys `master` only
+    condition: "-v FORCE_DEPLOY" # TODO Remove condition
 
 # TODO S3 deploy doesn't sync the directory, only adds new files: use AWS CLI to sync
