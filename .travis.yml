@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - "6"
+cache:
+  directories:
+    - "node_modules"
+
+before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+
+install:
+  - npm install
+
+script:
+  - npm run-script build
+
+# TODO deploy only from `master` 
+
+deploy:
+  provider: s3
+  access_key_id: ${AWS_ACCESS_KEY_ID}
+  secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+  bucket: "staging-website.buildit.tools" # TODO switch bucket depending on target env
+  skip_cleanup: true
+  region: "us-east-1"
+  local_dir: dist
+
+# TODO S3 deploy doesn't sync the directory, only adds new files: use AWS CLI to sync
