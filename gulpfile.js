@@ -9,11 +9,14 @@ const pug = require('gulp-pug');
 const uglify = require('gulp-uglify');
 const watch = require('gulp-watch');
 const less = require('gulp-less');
+const gulpIf = require('gulp-if');
 
 const sourcemaps = require('gulp-sourcemaps');
 
 const src = 'src';
 const target = 'dist';
+
+let PRODUCTION = false;
 
 // Web server
 gulp.task('serve', () => {
