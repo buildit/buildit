@@ -27,7 +27,7 @@ $(document).ready(function () {
   function tpl(jobData) {
     var template = '<li class="opening-job job column eight wide">';
     template += '<a href="https://jobs.smartrecruiters.com/ni/WiproDigital/' + jobData.uuid + '" class="link--block details">';
-    template += '<h3 class="details-title job-title link--block-target">' + jobData.name + '</h3>';
+    template += '<h4 class="details-title job-title link--block-target">' + jobData.name + '</h4>';
     template += '<ul class="details-desc desc-items list--dotted">';
     template += '<li class="desc-item">' + jobData.location.city + ', ' + jobData.customField[1].valueLabel + '</li>';
     template += '<li class="desc-item">' + jobData.typeOfEmployment.label + '</li>';

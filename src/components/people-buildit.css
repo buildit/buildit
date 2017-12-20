@@ -6,7 +6,7 @@
   border: none !important;
 }
 
-h3.details-title {
+.details-title {
   font-size: 1.4rem !important;
   display: block;
   line-height: 1.2;
