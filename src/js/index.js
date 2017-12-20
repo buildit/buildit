@@ -72,16 +72,16 @@ $(document).ready(function () {
         return response.json();
       })
         .then(function (response) {
-          let data = response.content;
-          const wrapper = $('div.opening-jobs');
-          const title = $('<h3>')
-          const countryCodes = {
+          var data = response.content;
+          var wrapper = $('div.opening-jobs');
+          var title = $('<h3>')
+          var countryCodes = {
             'gb': 'United Kingdom',
             'ie': 'Ireland',
             'in': 'India',
             'us': 'United States'
           };
-          const listing = $('<ul class="grid--gutter padding--none opening-jobs">');
+          var listing = $('<ul class="grid--gutter padding--none opening-jobs">');
 
           data = data.reduce(divideByCountry, {});
 

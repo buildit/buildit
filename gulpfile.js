@@ -10,6 +10,7 @@ const uglify = require('gulp-uglify');
 const watch = require('gulp-watch');
 const less = require('gulp-less');
 const gulpIf = require('gulp-if');
+const pump = require('pump');
 
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -74,11 +75,14 @@ gulp.task('vendor', () => {
 });
 
 // Minify our JS
-gulp.task('js', () => {
-  return gulp.src(`${src}/js/*.js`)
-    .pipe(uglify())
-    .pipe(gulp.dest(`${target}/js`))
-    .pipe(connect.reload());
+gulp.task('js', (cb) => {
+  pump([
+      gulp.src(`${src}/js/*.js`),
+      uglify(),
+      gulp.dest(`${target}/js`),
+      connect.reload()
+    ],
+    cb);
 });
 
 // Build the CSS
