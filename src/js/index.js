@@ -85,7 +85,6 @@ $(document).ready(function () {
 
           data = data.reduce(divideByCountry, {});
 
-          // var countries = Object.keys(data);
           for (country in data) {
             if (data.hasOwnProperty(country) && data[country].length > 0) {
               wrapper.append(title.clone().append(countryCodes[country]));
