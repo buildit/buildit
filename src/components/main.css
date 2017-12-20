@@ -29,3 +29,11 @@
     display: block;
   }
 }
+.opening-jobs {
+  margin-bottom: 6rem;
+}
+.opening-jobs::after {
+  content: '';
+  display: table;
+  clear: both;
+}

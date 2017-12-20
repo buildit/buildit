@@ -44,24 +44,6 @@ $(document).ready(function () {
     obj[job.location.country].push(job);
     return obj;
   }
-  // const matchCity = city => data => data.location.city === city;
-  // Filter by city
-  // function matchCity(city) {
-  //   return function (data) {
-  //     return data.location.city.toLowerCase() === city;
-  //   }
-  // }
-
-  // Sort By Country
-  function sortCountry(x, y) {
-    if (x > y) {
-      return 1;
-    }
-    if (x < y) {
-      return -1;
-    }
-    return 0;
-  }
 
   function sortByCity(a, b) {
     var x = a.location.city;
@@ -76,7 +58,7 @@ $(document).ready(function () {
     return 0;
   }
 
-  if ($('ul#jobs-board').length) {
+  if ($('div#jobs-board').length) {
     (function () {
 
       var url = "https://api.smartrecruiters.com/v1/companies/WiproDigital/postings?";
@@ -90,33 +72,26 @@ $(document).ready(function () {
         return response.json();
       })
         .then(function (response) {
-          var data = response.content;
-          var wrapper = $('ul.opening-jobs');
+          let data = response.content;
+          const wrapper = $('div.opening-jobs');
+          const title = $('<h3>')
+          const countryCodes = {
+            'gb': 'United Kingdom',
+            'ie': 'Ireland',
+            'in': 'India',
+            'us': 'United States'
+          };
+          const listing = $('<ul class="grid--gutter padding--none opening-jobs">');
 
           data = data.reduce(divideByCountry, {});
 
-          var countries = Object.keys(data);
-          formattedData = countries
-            .map(function(country, index) {
-              data[country].sort(sortByCity);
-              if (country === 'gb') {
-                return 'uk';
-              }
-              return country;
-            })
-            .sort(sortCountry)
-            .map(function(country, index) {
-              if (country === 'uk') {
-                return data['gb'];
-              }
-              return data[country];
-            });
-          formattedData = [].concat.apply([], formattedData);
-          wrapper.append(
-            formattedData
-              .map(tpl)
-              .join('')
-          );
+          // var countries = Object.keys(data);
+          for (country in data) {
+            if (data.hasOwnProperty(country) && data[country].length > 0) {
+              wrapper.append(title.clone().append(countryCodes[country]));
+              wrapper.append(listing.clone().append(data[country].sort(sortByCity).map(tpl).join('')));
+            }
+          }
         })
         .catch(function (error) {
           console.log(error);
