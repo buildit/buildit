@@ -39,9 +39,14 @@
 .contact-cards.card-white a {
     color: #1c1f22;
 }
- 
-.contact-cards.card-blue a, .contact-cards.card-black a, .contact-cards.card-grey a {
+
+.contact-cards.card-blue, .contact-cards.card-black, .contact-cards.card-grey,
+.contact-cards.card-blue a, .contact-cards.card-black a, .contact-cards.card-grey a  {
     color: #ffffff;
+}
+
+.contact-cards a {
+  text-decoration: underline;
 }
 
 .location svg {
