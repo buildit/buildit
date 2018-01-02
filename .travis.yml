@@ -15,14 +15,18 @@ install:
 script:
   - npm run-script build
 
+before_deploy:
+ - source ./scripts/deploytarget.sh
+
 deploy:
   provider: s3
   access_key_id: ${AWS_ACCESS_KEY_ID}
   secret_access_key: ${AWS_SECRET_ACCESS_KEY}
-  bucket: "staging-website.buildit.tools" # TODO switch bucket depending on target env
+  bucket: ${DEPLOY_TARGET}
   skip_cleanup: true
   region: "us-east-1"
   local_dir: dist
-  # Deploys `master` only
+  on: 
+    condition: -n "${DEPLOY_TARGET}"
 
 # TODO S3 deploy doesn't sync the directory, only adds new files: use AWS CLI to sync
