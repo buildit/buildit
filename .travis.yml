@@ -28,5 +28,6 @@ deploy:
   local_dir: dist
   on: 
     condition: -n "${DEPLOY_TARGET}"
+    all_branches: true # Leave to the above condition the decision whether deploying
 
 # TODO S3 deploy doesn't sync the directory, only adds new files: use AWS CLI to sync
