@@ -5,6 +5,9 @@ cache:
   directories:
     - "node_modules"
 
+env:
+  - PROD_TAG_REGEXP="^rel(ease)?-.+$"
+
 install:
   - npm install
 
@@ -18,11 +21,18 @@ before_deploy:
   - pip install --user awscli
 
 deploy:
-  provider: script
-  script: ~/.local/bin/aws s3 sync dist s3://${DEPLOY_TARGET} --delete --region=us-east-1
-  skip_cleanup: true
-  on: 
-    condition: -n "${DEPLOY_TARGET}"
-    all_branches: true # Leave to the above condition the decision whether deploying
+  # deploy master to Staging
+  - provider: script
+    script: ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=us-east-1
+    skip_cleanup: true
+    on:
+      branch: master
 
-# TODO S3 deploy doesn't sync the directory, only adds new files: use AWS CLI to sync
+  # deploy tags matching rel-* or release-* to Production
+  - provider: script
+    script: ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=us-east-1
+    skip_cleanup: true
+    on:
+      tags: true
+      all_branches: true
+      condition: $TRAVIS_TAG =~ $PROD_TAG_REGEXP
