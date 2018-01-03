@@ -11,16 +11,25 @@ To build the static website: `npm run-script build`. Distribution goes into `./d
 node v6.9 or higher is required.
 
 
-## Travis CI setup
+## Travis CI
 
-To build on Travis CI setup the following environment variables:
+### Pipeline
+
+- Any pushed commit got build (`npm run-script build`)
+- Any successful build of `master` branch get deployed to Staging
+- Any successful build of a Tag  matching the pattern `rel-*` or `release-*` (case-sensitive) get deployed to Production
+
+### Travis CI Setup
+
+Travis CI build expects the following environment variables:
 
 - `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`: AWS credentials used for deploying
-- `STAGING_BUCKET` and `PROD_BUCKET`: S3 bucket names used for Staging and Prod, respectively
+- `STAGING_BUCKET` and `STAGING_BUCKET_REGION`: S3 bucket and Region for Staging environment
+- `PROD_BUCKET` and `PROD_BUCKET_REGION`: S3 bucket and Region for Production environment
 
-Deploy target:
 
-- Pending PRs are never deployed
-- Any commit to `master` not tagged, get deployed to Staging
-- Any commit with a Tag matching `rel-*` or `release-*` (case-sensitive) get deployed to Production
-- Any other commit is not deployed
+### Deployment
+
+Currently, deployment only means sync'ing the output of the build (`./dist`) with an S3 bucket.
+
+The S3 bucket, DNS, CloudFront etc have to be set up manually.
