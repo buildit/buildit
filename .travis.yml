@@ -6,16 +6,13 @@ cache:
     - "node_modules"
 
 env:
-  - PROD_TAG_REGEXP="^rel(ease)?-.+$"
+  - PROD_TAG_REGEXP="^rel(ease)?-.+$" #Regexp for release (deploy to Prod) tags
 
 install:
   - npm install
 
 script:
   - npm run-script build
-
-after_success:
-  - source ./scripts/deploytarget.sh
 
 before_deploy:
   - pip install --user awscli

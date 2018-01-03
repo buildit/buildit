@@ -22,5 +22,5 @@ Deploy target:
 
 - Pending PRs are never deployed
 - Any commit to `master` not tagged, get deployed to Staging
-- Any commit with a Tag matching `rel-*` or `release-*` (case-insensitive) get deployed to Production
+- Any commit with a Tag matching `rel-*` or `release-*` (case-sensitive) get deployed to Production
 - Any other commit is not deployed
