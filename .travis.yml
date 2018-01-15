@@ -32,3 +32,9 @@ deploy:
     on:
       tags: true
       condition: $TRAVIS_TAG =~ $PROD_TAG_REGEXP
+  # deploy beta to Beta Website
+  - provider: script
+    script: ~/.local/bin/aws s3 sync dist s3://${BETA_BUCKET} --delete --region=${BETA_BUCKET_REGION} && ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${BETA_DISTRIBUTION_ID} --paths /*
+    skip_cleanup: true
+    on:
+      branch: beta

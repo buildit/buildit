@@ -24,6 +24,8 @@ node v6.9 or higher is required.
 Travis CI build expects the following environment variables:
 
 - `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`: AWS credentials used for deploying
+- `BETA_BUCKET` and `PROD_BUCKET_REGION`: S3 bucket and Region for Beta environment
+- `BETA_DISTRIBUTION_ID`: CloudFront Distribution ID for Beta
 - `STAGING_BUCKET` and `STAGING_BUCKET_REGION`: S3 bucket and Region for Staging environment
 - `STAGING_DISTRIBUTION_ID`: CloudFront Distribution ID for Staging
 - `PROD_BUCKET` and `PROD_BUCKET_REGION`: S3 bucket and Region for Production environment
