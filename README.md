@@ -25,6 +25,7 @@ Travis CI build expects the following environment variables:
 
 - `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`: AWS credentials used for deploying
 - `STAGING_BUCKET` and `STAGING_BUCKET_REGION`: S3 bucket and Region for Staging environment
+- `STAGING_DISTRIBUTION_ID`: CloudFront Distribution ID for Staging
 - `PROD_BUCKET` and `PROD_BUCKET_REGION`: S3 bucket and Region for Production environment
 - `PROD_DISTRIBUTION_ID`: CloudFront Distribution ID for Production
 
@@ -32,6 +33,6 @@ Travis CI build expects the following environment variables:
 ### Deployment
 
 Currently, deployment only means sync'ing the output of the build (`./dist`) with an S3 bucket.
-Production deployment also invalidate the CloudFormation cache for all objects in the distribution.
+Deployment also invalidate the CloudFormation cache for all objects in the distribution.
 
 The S3 bucket, DNS, CloudFront etc have to be set up manually.

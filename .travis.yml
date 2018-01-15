@@ -20,14 +20,14 @@ before_deploy:
 deploy:
   # deploy master to Staging
   - provider: script
-    script: scripts/deploy.sh staging
+    script: ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} && ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} --paths /*
     skip_cleanup: true
     on:
       branch: master
 
   # deploy tags matching rel-* or release-* to Production
   - provider: script
-    script: scripts/deploy.sh production
+    script: ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} && ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --paths /*
     skip_cleanup: true
     on:
       tags: true
