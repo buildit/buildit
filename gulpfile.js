@@ -9,19 +9,23 @@ const pug = require('gulp-pug');
 const uglify = require('gulp-uglify');
 const watch = require('gulp-watch');
 const less = require('gulp-less');
+const gulpIf = require('gulp-if');
+const pump = require('pump');
 
 const sourcemaps = require('gulp-sourcemaps');
 
 const src = 'src';
 const target = 'dist';
 
+let PRODUCTION = false;
+
 // Web server
 gulp.task('serve', () => {
   connect.server({
     root: target,
     livereload: true
-  })
-  gulp.src('').pipe(open({uri: 'http://localhost:8080'}));
+  });
+  gulp.src('').pipe(open({ uri: 'http://localhost:8080' }));
 });
 
 // File watcher
@@ -58,8 +62,11 @@ gulp.task('compile-html', () => {
 gulp.task('vendor', () => {
   const files = [
     'assets/library/jquery.min.js',
+    'assets/library/promise.min.js',
+    'assets/library/fetch.js',
     'components/visibility.min.js',
-    'components/transition.min.js'
+    'components/transition.min.js',
+    'components/sidebar.min.js'
   ];
 
   return gulp.src(files.map(item => `${src}/${item}`))
@@ -68,21 +75,24 @@ gulp.task('vendor', () => {
 });
 
 // Minify our JS
-gulp.task('js', () => {
-  return gulp.src(`${src}/js/*.js`)
-    .pipe(uglify())
-    .pipe(gulp.dest(`${target}/js`))
-    .pipe(connect.reload());
+gulp.task('js', (cb) => {
+  pump([
+      gulp.src(`${src}/js/*.js`),
+      uglify(),
+      gulp.dest(`${target}/js`),
+      connect.reload()
+    ],
+    cb);
 });
 
 // Build the CSS
 gulp.task('less', () => {
-    return gulp.src('./src/less/main.less')
+  return gulp.src('./src/less/main.less')
     .pipe(less())
     .pipe(gulp.dest('./src/components/'));
 });
 
-gulp.task( 'css', ['less'], () => {
+gulp.task('css', ['less'], () => {
   // Normally we shouldn't have to do this. For now we have to
   // as the CSS files need cleaning up and there seems to be an issue
   // with the order of inclusion.
@@ -101,13 +111,14 @@ gulp.task( 'css', ['less'], () => {
     'list.css',
     'icon.css',
     'transition.css',
+    'sidebar.css',
     'main.css'
   ];
 
   return gulp.src([
-      ...(files.map(item => `${src}/components/${item}`)),
-      `${src}/components/*-buildit.css`,
-      `${src}/components/buildit.css`])
+    ...(files.map(item => `${src}/components/${item}`)),
+    `${src}/components/*-buildit.css`,
+    `${src}/components/buildit.css`])
     .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest(target))
     .pipe(sourcemaps.init())

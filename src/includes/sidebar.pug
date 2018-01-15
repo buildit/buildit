@@ -1,0 +1,8 @@
+- var sidebarItems = { 'Home': '/', 'Approach': '/about.html', 'Careers': '/careers.html', 'Find us': '/contact.html' };
+
+.ui.vertical.inverted.sidebar.menu.push.right
+  each link, title in sidebarItems
+    if currentPage === title
+      a.item.active(href=link)= title
+    else
+      a.item(href=link)= title

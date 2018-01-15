@@ -4,11 +4,10 @@
   "description": "Buildit website",
   "main": "index.js",
   "scripts": {
-    "clean": "gulp clean",
-    "build": "npm run clean && gulp build",
-    "serve": "gulp serve",
-    "start": "gulp",
-    "deploy:staging": "aws s3 sync dist/ s3://staging.buildit.digital --region eu-west-2 --acl public-read"
+    "clean": "./node_modules/.bin/gulp clean",
+    "build": "npm run clean && ./node_modules/.bin/gulp build",
+    "serve": "./node_modules/.bin/gulp serve",
+    "start": "./node_modules/.bin/gulp"
   },
   "repository": {
     "type": "git",
@@ -26,16 +25,18 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
-    "gulp-clean-css": "^3.0.3",
-    "gulp-cli": "^1.2.2",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-cli": "^1.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
     "gulp-connect": "^5.0.0",
-    "gulp-less": "^3.3.0",
+    "gulp-if": "^2.0.2",
+    "gulp-less": "^3.3.2",
     "gulp-open": "^2.0.0",
     "gulp-pug": "^3.3.0",
-    "gulp-sourcemaps": "^2.5.0",
-    "gulp-uglify": "^2.1.2",
-    "gulp-watch": "^4.3.11"
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "pump": "^2.0.0"
   }
 }

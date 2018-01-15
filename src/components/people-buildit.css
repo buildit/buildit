@@ -6,7 +6,7 @@
   border: none !important;
 }
 
-h3.details-title {
+.details-title {
   font-size: 1.4rem !important;
   display: block;
   line-height: 1.2;
@@ -34,21 +34,29 @@ ul.opening-jobs  {
  }
 
 li.opening-job {
- margin-top: 1rem;
+ margin-bottom: 1rem;
 
 }
 
 li.opening-job {
- -webkit-transition: 0.25s ease-in-out;
- -moz-transition: 0.25s ease-in-out;
- -ms-transition: 0.25s ease-in-out;
- -o-transition: 0.25s ease-in-out;
- transition: 0.25s ease-in-out;
- border-left: 0px solid black;
- padding-left: 0px;
- color: rgba(0, 0, 0, 0.1);
- overflow: hidden;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -ms-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  border-left: 0px solid black;
+  padding-left: 16px;
+  color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  float: left;
 }
+@media (min-width: 640px){
+  li.opening-job {
+    width: 50%;
+  }
+}
+
 li.opening-job:hover {
  color: white;
  border-left: 1em solid black;
