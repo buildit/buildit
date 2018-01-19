@@ -23,10 +23,13 @@ $(document).ready(function () {
 
   $('.image').visibility('refresh');
 
+  // "buildit website" Custom Source TRID from SmartRecruiters
+  var sourceTrackingId = '2f4a2735-7172-45dd-aca7-63618dca8aff';
+
   // Template for jobs data on careers page
   function tpl(jobData) {
     var template = '<li class="opening-job job column eight wide">';
-    template += '<a href="https://jobs.smartrecruiters.com/ni/WiproDigital/' + jobData.uuid + '" class="link--block details">';
+    template += '<a href="https://jobs.smartrecruiters.com/ni/WiproDigital/' + jobData.uuid + '?trid=' + sourceTrackingId + '" class="link--block details">';
     template += '<h4 class="details-title job-title link--block-target">' + jobData.name + '</h4>';
     template += '<ul class="details-desc desc-items list--dotted">';
     template += '<li class="desc-item">' + jobData.location.city + ', ' + jobData.customField[1].valueLabel + '</li>';
