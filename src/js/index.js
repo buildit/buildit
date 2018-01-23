@@ -82,7 +82,8 @@ $(document).ready(function () {
             'gb': 'United Kingdom',
             'ie': 'Ireland',
             'in': 'India',
-            'us': 'United States'
+            'us': 'United States',
+            'pl': 'Poland'
           };
           var listing = $('<ul class="grid--gutter padding--none opening-jobs">');
 
