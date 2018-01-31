@@ -17,7 +17,7 @@ node v6.9 or higher is required.
 
 - Any pushed commit got build (`npm run-script build`)
 - Any successful build of `master` branch get deployed to Staging
-- Any successful build of a Tag  matching the pattern `rel-*` or `release-*` (case-sensitive) get deployed to Production
+- Any successful build of a Tag matching a valid SemVer pattern (`vX.Y.Z`) (case-sensitive) gets deployed to Production
 
 ### Travis CI Setup
 
