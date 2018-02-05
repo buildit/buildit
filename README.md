@@ -38,3 +38,8 @@ Currently, deployment only means sync'ing the output of the build (`./dist`) wit
 Deployment also invalidate the CloudFormation cache for all objects in the distribution.
 
 The S3 bucket, DNS, CloudFront etc have to be set up manually.
+
+## Decisions
+
+Decisions linked to implementation details, have not been catalogued. Many of those decisions are now lost.  
+Therefore, although late, we have decided to start logging all new decisions.  These decisions will now be catalogued in the [Decision Log](docs/DECISIONLOG.md)
