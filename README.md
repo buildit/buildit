@@ -43,3 +43,15 @@ The S3 bucket, DNS, CloudFront etc have to be set up manually.
 
 Decisions linked to implementation details, have not been catalogued. Many of those decisions are now lost.  
 Therefore, although late, we have decided to start logging all new decisions.  These decisions will now be catalogued in the [Decision Log](docs/DECISIONLOG.md)
+
+## Logs
+
+Currently we are not using CloudWatch or any other system to aggregate logs.  
+AWS S3 splits activity logs into several files, which can make it hard to consume and search. The [Log Aggregator Script] (./logAggregator.sh) pulls down the logs for a given day and combines them into a file that is easily consumed.
+
+To run the script, simply type  
+`$ ./s3LogAggregator.sh`  
+and follow the instructions on screen.
+
+The date should be entered in YYYY-mm-dd format (e.g. 2018-03-01), when prompted by the script.
+
