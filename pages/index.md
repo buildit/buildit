@@ -1,8 +1,7 @@
 ---
-title: Homepage
 description: This is Buildit homepage
 draft: false
-layout: index.hbs
+layout: homepage.hbs
 ---
 
 Welcome to the Buildit homepage!
