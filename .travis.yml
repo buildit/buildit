@@ -57,4 +57,4 @@ notifications:
     on_pull_requests: true
     on_success: change
 after_deploy:
-  - ./scripts/notify.sh $TRAVIS_TAG $TRAVIS_REPO_SLUG $SLACK_NOTIFICATION_URL $PROD_TAG_REGEXP
+  - ./scripts/notify.sh
