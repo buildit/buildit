@@ -1,9 +1,13 @@
 const gulp = require('gulp');
+
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const csso = require('gulp-csso');
 const gulpIf = require('gulp-if');
+const hash = require('gulp-hash');
+const sass = require('gulp-sass');
 const size = require('gulp-size');
 const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
 
 // internal gulp plugins
 const metalsmith = require('./gulp/metalsmith');
@@ -29,6 +33,9 @@ function images (done) {
 // Compile all required styles
 // If in PRODUCTION perform some magic
 function styles (done) {
+  gulp.src(paths.styles.src)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(paths.styles.dest));
   done();
 }
 
@@ -47,7 +54,7 @@ function assets () {
 }
 
 function clean (done) {
-  del([ paths.pages.dest ]);
+  del([ `${paths.pages.dest}/**/*` ]);
   done();
 }
 

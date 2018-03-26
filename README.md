@@ -8,7 +8,7 @@ To build the static website: `npm run-script build`. Distribution goes into `./d
 
 ## Requirements
 
-node v6.9 or higher is required.
+node v8.10.0 or higher is required.
 
 
 ## Travis CI
