@@ -8,6 +8,7 @@ const sass = require('gulp-sass');
 const size = require('gulp-size');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const autoprefixer = require('gulp-autoprefixer');
 
 // internal gulp plugins
 const metalsmith = require('./gulp/metalsmith');
@@ -39,6 +40,14 @@ const sassOptions = {
 function styles (done) {
   gulp.src(paths.styles.src)
     .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(csso({
+      restructure: PRODUCTION,
+      debug: !PRODUCTION
+    }))
     .pipe(gulp.dest(paths.styles.dest));
   done();
 }
