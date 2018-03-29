@@ -4,7 +4,12 @@
   {{>head}}
 </head>
 <body>
-  {{{contents}}}
+  <main>
+    {{#title}}
+    <h1>{{title}}</h1>
+    {{/title}}
+    {{{contents}}}
+  </main>
   {{>page-footer}}
 </body>
 </html>
