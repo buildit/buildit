@@ -28,6 +28,7 @@ function reloadCSS (done) {
  */
 function initTask (done) {
   browserSync.init({
+    port: 8080,
     server: {
       baseDir: paths.pages.dest
     },
