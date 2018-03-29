@@ -20,6 +20,7 @@ const debug = require('metalsmith-debug');
 const discoverPartials = require('metalsmith-discover-partials');
 
 const gravityAssets = require('./gravity-assets.js');
+const jobListings = require('./metalsmith-job-listings.js');
 
 function metalsmith () {
   // filter out files with front matter
@@ -50,6 +51,7 @@ function metalsmith () {
             'title': config.title
           }
         })
+        .use(jobListings())
         .use(pageTitles())
         .use(markdown())
         .use(permalinks(':title'))
