@@ -30,11 +30,15 @@ function images (done) {
   done();
 }
 
+const sassOptions = {
+  eyeglass: {}
+};
+
 // Compile all required styles
 // If in PRODUCTION perform some magic
 function styles (done) {
   gulp.src(paths.styles.src)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
     .pipe(gulp.dest(paths.styles.dest));
   done();
 }
