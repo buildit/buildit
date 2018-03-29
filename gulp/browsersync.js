@@ -19,7 +19,7 @@ function reload (done) {
  * Reloads BrowserSync, with CSS injection.
  */
 function reloadCSS (done) {
-  browserSync.reload('*.css');
+  browserSync.stream({match: '**/*.css'});
   done();
 }
 
@@ -31,10 +31,6 @@ function initTask (done) {
     port: 8080,
     server: {
       baseDir: paths.pages.dest
-    },
-    snippetOptions: {
-      // Ignore all HTML files within the templates folder
-      blacklist: ['/index.html', '/', '/?*']
     },
     notify: {
       styles: [
@@ -54,8 +50,8 @@ function initTask (done) {
         'text-align: center'
       ]
     }
-  },
-  done);
+  });
+  done();
 }
 
 initTask.displayName = taskNamePrefix + 'init';
