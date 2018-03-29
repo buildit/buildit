@@ -8,8 +8,26 @@ To build the static website: `npm run-script build`. Distribution goes into `./d
 
 ## Requirements
 
-node v6.9 or higher is required.
+Node v8.10.0 or higher is required.
 
+If you use [NVM](https://github.com/creationix/nvm) for managing Node, you can just issue the following command to install the right node version
+
+    $ nvm install
+
+and before running any other npm command, run
+
+    $ nvm use
+
+## Website technolgies
+
+Behind the scenes the website is using the following technologies, so be sure you know what you're doing before starting to change anything.
+
+- [Metalsmith](http://metalsmith.io) for the core of the website,
+- [HandlebarJS](https://handlebarsjs.com/) as templating engine,
+- [`SCSS`](http://sass-lang.com/), with the addition of 
+  - [autoprefixer](https://github.com/postcss/autoprefixer) 
+  - [csso](https://github.com/css/csso)
+  - [eyeglass](https://github.com/sass-eyeglass/eyeglass)
 
 ## Travis CI
 

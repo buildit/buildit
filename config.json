@@ -1,0 +1,32 @@
+
+{
+  "title": "buildit @ wipro digital",
+  "description": "buildit@wiprodigital",
+  "URL": "//buildit.wiprodigital.com",
+  "paths": {
+    "styles": {
+      "src": [ "src/sass/**/*.scss" ],
+      "dest": "dist/styles/"
+    },
+    "scripts": {
+      "src": [ "src/scripts/**/*.js" ],
+      "dest": "dist/scripts/"
+    },
+    "images": {
+      "src": "static/images/",
+      "dest": "dist/images/"
+    },
+    "pages": {
+      "src": "pages/**/*.md",
+      "dest": "dist/"
+    },
+    "templates": {
+      "src": "templates/",
+      "partials": "partials/"
+    },
+    "assets": {
+      "src": [ "static/assets/*", "static/images/*.gif" ],
+      "dest": "dist/"
+    }
+  }
+}
