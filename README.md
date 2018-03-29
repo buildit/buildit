@@ -24,7 +24,10 @@ Behind the scenes the website is using the following technologies, so be sure yo
 
 - [Metalsmith](http://metalsmith.io) for the core of the website,
 - [HandlebarJS](https://handlebarsjs.com/) as templating engine,
-- [`SCSS`](http://sass-lang.com/), with the addition of [autoprefixer](https://github.com/postcss/autoprefixer) and [csso](https://github.com/css/csso).
+- [`SCSS`](http://sass-lang.com/), with the addition of 
+  - [autoprefixer](https://github.com/postcss/autoprefixer) 
+  - [csso](https://github.com/css/csso)
+  - [eyeglass](https://github.com/sass-eyeglass/eyeglass)
 
 ## Travis CI
 
