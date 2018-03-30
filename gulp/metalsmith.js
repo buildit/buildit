@@ -18,9 +18,13 @@ const sitemap = require('metalsmith-mapsite');
 const debug = require('metalsmith-debug');
 const discoverPartials = require('metalsmith-discover-partials');
 
+// Placeholder for the environment sniffing variable
+const isProduction = process.env.IS_PRODUCTION || false;
+const siteUrl = process.env.SITE_URL || config.url;
+
 function metalsmith () {
   // filter out files with front matter
-  const fmFilter = filter('**/*.{html,md,htb}', { restore: true });
+  const fmFilter = filter('**/*.{html,md,txt}', { restore: true });
 
   // register Handlebars helpers
   handlebars.registerHelper('moment', require('helper-moment'));
@@ -40,7 +44,11 @@ function metalsmith () {
       gulpsmith()
         .metadata({
           'site': {
-            'title': config.title
+            'title': config.title,
+            'url': siteUrl
+          },
+          'build': {
+            'production': isProduction
           }
         })
         .use(pageTitles())
@@ -53,7 +61,7 @@ function metalsmith () {
           'directory': `${paths.templates.src}`
         }))
         .use(sitemap({
-          'hostname': `https:${config.URL}`,
+          'hostname': siteUrl,
           'omitIndex': true
         }))
         .use(htmlMinifier())

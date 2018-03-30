@@ -2,7 +2,7 @@
 {
   "title": "buildit @ wipro digital",
   "description": "buildit@wiprodigital",
-  "URL": "//buildit.wiprodigital.com",
+  "url": "https://buildit.wiprodigital.com",
   "paths": {
     "styles": {
       "src": [ "src/sass/**/*.scss" ],
@@ -17,7 +17,7 @@
       "dest": "dist/images/"
     },
     "pages": {
-      "src": "pages/**/*.md",
+      "src": "pages/**/*",
       "dest": "dist/"
     },
     "templates": {
