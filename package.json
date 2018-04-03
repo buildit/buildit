@@ -6,20 +6,18 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "npm run clean && gulp build",
-    "start": "gulp"
+    "start": "npm run clean && gulp"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/buildit/buildit.git"
   },
   "author": "",
-  "contributors": [
-    "Matteo Pescarin",
-    "James Nash"
-  ],
+  "contributors": ["Matteo Pescarin", "James Nash"],
   "license": "ISC",
   "bugs": {
-    "url": "https://digitalrig.atlassian.net/secure/RapidBoard.jspa?rapidView=229"
+    "url":
+      "https://digitalrig.atlassian.net/secure/RapidBoard.jspa?rapidView=229"
   },
   "homepage": "https://buildit.wiprodigital.com",
   "engines": {
@@ -64,6 +62,5 @@
     "rollup-plugin-babel": "^3.0.3"
   },
   "private": true,
-  "dependencies": {
-  }
+  "dependencies": {}
 }

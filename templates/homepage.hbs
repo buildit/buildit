@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   {{>head}}
 </head>
+
 <body>
-  
+
   <main>
     {{#title}}
     <h1>{{title}}</h1>
-    {{/title}}
-    {{{contents}}}
+    {{/title}} {{{contents}}}
   </main>
-  {{>page-footer}}
+  {{>page-anchors}} {{>page-footer}} {{>scripts-footer}}
 
 </body>
+
 </html>
