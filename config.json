@@ -9,7 +9,9 @@
       "dest": "dist/styles/"
     },
     "scripts": {
-      "src": [ "src/scripts/**/*.js" ],
+      "main": "src/scripts/main.js",
+      "modules": "src/scripts/**/*.js",
+      "src": "src/scripts/",
       "dest": "dist/scripts/"
     },
     "images": {
