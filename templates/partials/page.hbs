@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>head}}
+</head>
+<body>
+  {{>page-header}}
+  <main>
+    {{#block "main"}}
+      {{!-- Fallback to render "contents" --}}
+      {{{contents}}}
+    {{/block}}
+  </main>
+  {{>page-footer}}
+
+  {{!-- Gravity's inline SVG symbol definitions --}}
+  {{>gravity-svg-symbols}}
+</body>
+</html>
