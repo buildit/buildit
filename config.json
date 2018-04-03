@@ -2,7 +2,24 @@
 {
   "title": "buildit @ wipro digital",
   "description": "buildit@wiprodigital",
-  "url": "https://buildit.wiprodigital.com",
+  "envs": {
+    "local-dev": {
+      "url": "http://localhost:8080",
+      "excludeRobots": true
+    },
+    "beta": {
+      "url": "https://www-beta.buildit.digital",
+      "excludeRobots": true
+    },
+    "staging": {
+      "url": "https://www-staging.buildit.digital",
+      "excludeRobots": true
+    },
+    "production": {
+      "url": "https://buildit.wiprodigital.com",
+      "excludeRobots": false
+    }
+  },
   "paths": {
     "styles": {
       "src": [ "src/sass/**/*.scss" ],

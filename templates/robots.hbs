@@ -1,13 +1,13 @@
 Sitemap: {{site.url}}/sitemap.xml
 
-{{#if build.production}}
-User-agent: *
-Disallow:
-{{else}}
+{{#if build.excludeRobots }}
 # Non-production environment
 # Prevent search engines from indexing
 User-agent: *
 Disallow: /
+{{else}}
+User-agent: *
+Disallow:
 {{/if}}
 
 {{{contents}}}

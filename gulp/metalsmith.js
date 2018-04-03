@@ -1,6 +1,7 @@
 // run metalsmith (static site generator)
 const config = require('../config.json');
 const paths = config.paths;
+const envs = require('./envs.js');
 
 const gulp = require('gulp');
 const gulpsmith = require('gulpsmith');
@@ -18,11 +19,11 @@ const sitemap = require('metalsmith-mapsite');
 const debug = require('metalsmith-debug');
 const discoverPartials = require('metalsmith-discover-partials');
 
-// Placeholder for the environment sniffing variable
-const isProduction = process.env.IS_PRODUCTION || false;
-const siteUrl = process.env.SITE_URL || config.url;
-
 function metalsmith () {
+  // config for the site environment we're building
+  const siteEnv = envs.getCurrentEnvInfo();
+  console.log('Current env:\n', siteEnv);
+
   // filter out files with front matter
   const fmFilter = filter('**/*.{html,md,txt}', { restore: true });
 
@@ -43,12 +44,12 @@ function metalsmith () {
     .pipe(
       gulpsmith()
         .metadata({
-          'site': {
-            'title': config.title,
-            'url': siteUrl
+          site: {
+            title: config.title,
+            url: siteEnv.url
           },
-          'build': {
-            'production': isProduction
+          build: {
+            excludeRobots: siteEnv.excludeRobots
           }
         })
         .use(pageTitles())
@@ -61,7 +62,7 @@ function metalsmith () {
           'directory': `${paths.templates.src}`
         }))
         .use(sitemap({
-          'hostname': siteUrl,
+          'hostname': siteEnv.url,
           'omitIndex': true
         }))
         .use(htmlMinifier())

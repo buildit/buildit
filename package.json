@@ -56,6 +56,7 @@
     "metalsmith-markdown": "^0.2.2",
     "metalsmith-page-titles": "^1.0.2",
     "metalsmith-permalinks": "^0.5.0",
+    "minimist": "^1.2.0",
     "node-sass": "^4.7.2",
     "normalize-scss": "^7.0.1"
   },
