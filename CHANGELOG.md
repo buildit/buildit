@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Inlining Gravity's SVG symbol definitions
 - Static header & footer templates
+- Dynamic `robots.txt` that can be configured per deployment environment
 
 
 ## [0.3.x and earlier] - 2018-01-31
