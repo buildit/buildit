@@ -5,7 +5,7 @@
 </head>
 <body>
   {{>page-header}}
-  <main>
+  <main{{#if main-classnames}} class="{{main-classnames}}"{{/if}}>
     {{#block "main"}}
       {{!-- Fallback to render "contents" --}}
       {{{contents}}}
