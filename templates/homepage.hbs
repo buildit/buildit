@@ -6,6 +6,168 @@
 <body>
   
   <main>
+
+{{!-- TEST MARKUP - TO BE DELETED --}}
+<style>
+
+.large-header {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    max-height: 500px;
+}
+
+.demo-1 .large-header {
+    background: linear-gradient(180deg, #287A95 0%, #012B3D 100%);
+}
+
+.main-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #f9f1e9;
+    text-align: center;
+    z-index: 1000;
+    width: 100%;
+    top: 28%;
+}
+
+.demo-1 .main-title {
+    font-size: 150%;
+}
+
+.thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.not-too-thick {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.thick {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+
+.btn {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 0px 0px 2px 0px;
+    text-decoration: none;
+    width: 112px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 0px solid rgba(255, 121, 19, .1);
+    border-right: 0px solid rgba(255, 121, 19, .1);
+    border-left: 0px solid rgba(255, 121, 19, .1);
+    border-bottom: 4px solid rgba(255, 121, 19, 1);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    animation: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+.btn:hover {
+    text-decoration: none;
+    border-top: 0px solid rgba(255, 255, 255, .1);
+    border-right: 0px solid rgba(255, 255, 255, .1);
+    border-left: 0px solid rgba(255, 255, 255, .1);
+    border-bottom: 4px solid rgba(255, 255, 255, 0.75);
+}
+
+.demo-1 .large-header a {
+    color: #fff;
+    animation: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+.demo-1 .large-header a:visited {
+    color: #fff;
+}
+
+
+#js-demo-canvas {
+    width: 100%;
+    min-height: 100%;
+    margin-top: -10%;
+}
+
+section + section {
+    margin-top: 0rem;
+}
+
+
+section {
+    padding: 1em;
+    text-align: center;
+}
+
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+p.ref {
+    text-align: center;
+    padding: 2em 1em;
+}
+
+#pre-footer {
+/*    background-image: url("../../images/dots-bg.svg");*/
+    background-size: cover;
+    background-color: #D5E9F0;
+    color: #012B3D;
+    padding-top:90px;
+    padding-bottom:90px;
+    font-weight: 400;
+}
+
+footer {
+    margin-top: 0!IMPORTANT;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 768px) {
+    .demo-1 .main-title {
+        font-size: 1.58em;
+        padding: 0.5em;
+        top: 22%;
+    }
+    #js-demo-canvas {
+        width: 100%;
+        margin-top: -10%;
+    }
+
+}
+
+</style>
+
+    <div class="container demo-1">
+      <div id="js-large-header" class="large-header">
+        <canvas id="js-demo-canvas"></canvas>
+        <blockquote class="grav-c-pullout main-title"><span class="thin">We are a</span> <span class="thick">global network of transformation studios</span>.<br><span class="thin">We help</span> <span class="thick">connect the dots in an ever-changing world.</span><br><br>
+          <div class="btn"><a href="/patterns/05-pages-01-about/05-pages-01-about.rendered.html">About us</a></div>
+        </blockquote>
+      </div>
+    </div>
+
+    <script src="/scripts/hero-animation/EasePack.min.js"></script>
+    <script src="/scripts/hero-animation/rAF.js"></script>
+    <script src="/scripts/hero-animation/TweenLite.min.js"></script>
+    <script src="/scripts/hero-animation/hero.js"></script>
+{{!-- END OF TEST MARKUP --}}
+
     {{#title}}
     <h1>{{title}}</h1>
     {{/title}}
