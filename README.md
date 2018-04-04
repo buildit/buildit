@@ -2,10 +2,6 @@
 
 This is the buildit website.
 
-To run it locally just `npm install` then run the `start` script: `npm start`. Local hosting is at http://localhost:8080 and a browser window should open automatically.
-
-To build the static website: `npm run-script build`. Distribution goes into `./dist`
-
 ## Requirements
 
 Node v8.10.0 or higher is required.
@@ -17,6 +13,22 @@ If you use [NVM](https://github.com/creationix/nvm) for managing Node, you can j
 and before running any other npm command, run
 
     $ nvm use
+
+## Build and development
+
+To run it locally just `npm install` then run the `start` script: `npm start`. Local hosting is at http://localhost:8080 and a browser window should open automatically.
+
+To build the static website: `npm run-script build`. Distribution goes into `./dist`.
+
+### Environments
+
+Some of the files produced by the build, for example `sitemap.xml`, need to contain the website's absolute URL. Others, such as `robots.txt`, need to have different contents depending on where the build will be deployed to (so that we can prevent search engines indexing our staging environments).
+
+To facilitate this, multiple environments can be defined in the `envs` section of [`config.json`](./config.json). Both the `npm start` and `npm run-script build` commands support an additional `--env` argument which takes the name of the desired environment for that build as its parameter (note that you need to proceed it with `--` so that `npm` passes that argument through to the underlying build script). For example:
+
+    $ npm run-script build -- --env production
+
+
 
 ## Website technolgies
 
