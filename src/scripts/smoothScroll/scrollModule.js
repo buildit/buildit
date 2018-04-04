@@ -1,9 +1,10 @@
 import easingOptions from "./easingOptions.js";
+import { getScrollPosition } from "./windowHelpers.js";
 
 const defaultOptions = {
   duration: 2500,
   animation: easingOptions.easeOutCubic,
-  time: { start: null, now: null },
+  resetTime: () => ({ start: null, now: null }),
   position: { start: 0, end: null, current: null },
 };
 
@@ -13,8 +14,17 @@ function Scroll(opts) {
     animation: opts.animation || defaultOptions.animation,
     duration: opts.duration || defaultOptions.duration,
   };
-  this._time = defaultOptions.time;
+  this._time = defaultOptions.resetTime();
   this._position = defaultOptions.position;
+}
+
+function getElementPosition(element, scrollY = getScrollPosition().y) {
+  const destinationElement = document.getElementById(element.dataset.scrolldestination);
+  return {
+    start: scrollY,
+    end: destinationElement.offsetTop,
+    current: scrollY,
+  };
 }
 
 Scroll.prototype.init = function() {
@@ -29,27 +39,29 @@ Scroll.prototype.init = function() {
 };
 
 Scroll.prototype.onScroll = function(element) {
-  element.addEventListener("click", () =>
-    window.requestAnimationFrame(() => {
-      this._position.start = window.screenY;
-      this._position.end = window.scrollY;
-      this._position.current = this._position.start;
-      this.updateState();
-    })
-  );
+  element.addEventListener("click", () => {
+    this._position = getElementPosition(element);
+    window.requestAnimationFrame(() => { this.updateState(); });
+  });
 };
 
 Scroll.prototype.updateState = function() {
   const now = new Date();
 
-  this._time.start === null
-    ? ((this._time.start = now), (this._time.now = now))
-    : (this._time.now = now);
+  if (this._time.start === null) {
+    this._time.start = now;
+    this._time.now = now;
+  } else {
+    this._time.now = now;
+  }
 
-  this._position.current < this._position.end
-    ? (this.onChange(), window.requestAnimationFrame(() => this.updateState()))
-    : this._setDefaults(),
+  if (this._position.current < this._position.end) {
+    this.onChange();
+    window.requestAnimationFrame(() => this.updateState());
+  } else {
+    this._time = defaultOptions.resetTime();
     window.cancelAnimationFrame(this.updateState);
+  }
 };
 
 // See https://github.com/cferdinandi/smooth-scroll/blob/master/dist/js/smooth-scroll.js
@@ -62,14 +74,6 @@ Scroll.prototype.onChange = function() {
     this._position.start +
     this._position.end * this.options.animation(progress);
   window.scrollTo(0, this._position.current);
-};
-
-Scroll.prototype._setDefaults = function() {
-  this.options.animation = this.options.animation || defaultOptions.animation;
-  this.options.duration = this.options.duration || defaultOptions.duration;
-
-  this._time = defaultOptions.time;
-  this._position = defaultOptions.position;
 };
 
 export default Scroll;
