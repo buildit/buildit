@@ -3,20 +3,21 @@ import easingOptions from "./easingOptions.js";
 const defaultOptions = {
   duration: 2500,
   animation: easingOptions.easeOutCubic,
+  time: { start: null, now: null },
+  position: { start: 0, end: null, current: null },
 };
 
 function Scroll(opts) {
   this.options = {
     class: opts.class,
-    animation: opts.animation,
-    duration: opts.duration,
+    animation: opts.animation || defaultOptions.animation,
+    duration: opts.duration || defaultOptions.duration,
   };
-  this._time = {};
-  this._position = {};
+  this._time = defaultOptions.time;
+  this._position = defaultOptions.position;
 }
 
 Scroll.prototype.init = function() {
-  this._setDefaults();
   document.querySelectorAll(this.options.class).forEach(element => {
     if (
       element.href.indexOf(window.location.origin) !== -1 &&
@@ -67,8 +68,8 @@ Scroll.prototype._setDefaults = function() {
   this.options.animation = this.options.animation || defaultOptions.animation;
   this.options.duration = this.options.duration || defaultOptions.duration;
 
-  this._time = { start: null, now: null };
-  this._position = { start: 0, end: null, current: null };
+  this._time = defaultOptions.time;
+  this._position = defaultOptions.position;
 };
 
 export default Scroll;
