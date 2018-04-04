@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/buildit/buildit.git"
   },
-  "author": "",
+  "author": "Buildit @ Wipro Digital (https://buildit.wiprodigital.com)",
   "contributors": [
     "Matteo Pescarin",
     "James Nash"
@@ -44,6 +44,7 @@
     "gulp-uglify": "^3.0.0",
     "gulpsmith": "^0.6.0",
     "handlebars": "^4.0.11",
+    "handlebars-layouts": "^3.1.4",
     "helper-moment": "^0.2.0",
     "jstransformer-handlebars": "^1.1.0",
     "lodash.assign": "^4.2.0",

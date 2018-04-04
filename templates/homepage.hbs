@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {{>head}}
-</head>
-<body>
-  
-  <main>
-    {{#title}}
-    <h1>{{title}}</h1>
-    {{/title}}
-    {{{contents}}}
-  </main>
-  {{>page-footer}}
+{{#extend "page"}}
+{{#content "main"}}
 
-</body>
-</html>
+  {{#title}}
+    <h1>{{title}}</h1>
+  {{/title}}
+  {{{contents}}}
+
+{{/content}}
+{{/extend}}
