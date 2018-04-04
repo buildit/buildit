@@ -28,6 +28,34 @@ To facilitate this, multiple environments can be defined in the `envs` section o
 
     $ npm run-script build -- --env production
 
+Where `production` corresponds to the key of the desired environment defined in `config.json`:
+
+```js
+{
+  // ...
+  "envs": {
+
+    "production": {
+
+      // The absolute URL that this site is deployed to
+      "url": "https://buildit.foo.bar",
+
+      // Whether or not search engine bots should be
+      // prevented from indexing this site
+      "excludeRobots": true
+
+    },
+
+    "other-env": {
+      // ...
+    },
+    // ...
+  },
+  // ...
+}
+```
+
+If no `--env` argument is provided to the builds, then the first environment defined in `config.json` will be used.
 
 
 ## Website technolgies
