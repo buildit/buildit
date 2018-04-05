@@ -1,3 +1,4 @@
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
 export function getScrollPosition() {
   const supportPageOffset = window.pageXOffset !== undefined;
   const isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
