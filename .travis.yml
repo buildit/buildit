@@ -14,10 +14,10 @@ install:
   - npm install
 
 script:
-  - if [ $TRAVIS_TAG =~ $PROD_TAG_REGEXP ]; npm run-script build -- --env production; fi
-  - if [ $TRAVIS_BRANCH =~ 'master' && $TRAVIS_PULL_REQUEST == 'false' ]; npm run-script build -- --env staging; fi
-  - if [ $TRAVIS_BRANCH =~ 'beta' ]; npm run-script build -- --env beta; fi
-  - if [ $TRAVIS_PULL_REQUEST != 'false' ]; npm run-script build; fi
+  - if [ $TRAVIS_TAG =~ $PROD_TAG_REGEXP ]; then npm run-script build -- --env production; fi
+  - if [ $TRAVIS_BRANCH =~ 'master' && $TRAVIS_PULL_REQUEST == 'false' ]; then npm run-script build -- --env staging; fi
+  - if [ $TRAVIS_BRANCH =~ 'beta' ]; then npm run-script build -- --env beta; fi
+  - if [ $TRAVIS_PULL_REQUEST != 'false' ]; then npm run-script build; fi
 
 before_deploy:
   - pip install --user awscli
