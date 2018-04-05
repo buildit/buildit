@@ -1,37 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {{>head}}
-</head>
-<body>
-  
-  <main>
-    {{!-- <div class="container demo-1">
-      <div id="js-large-header" class="large-header">
-        <canvas id="js-demo-canvas"></canvas>
-        <blockquote class="grav-c-pullout main-title"><span class="thin">We are a</span> <span class="thick">global network of transformation studios</span>.<br><span class="thin">We help</span> <span class="thick">connect the dots in an ever-changing world.</span><br><br>
-          <div class="btn"><a href="/patterns/05-pages-01-about/05-pages-01-about.rendered.html">About us</a></div>
-        </blockquote>
-      </div>
+{{#extend "page"}}
+{{#content "main"}}
+  {{!-- <div class="container demo-1">
+    <div id="js-large-header" class="large-header">
+      <canvas id="js-demo-canvas"></canvas>
+      <blockquote class="grav-c-pullout main-title"><span class="thin">We are a</span> <span class="thick">global network of transformation studios</span>.<br><span class="thin">We help</span> <span class="thick">connect the dots in an ever-changing world.</span><br><br>
+        <div class="btn"><a href="/patterns/05-pages-01-about/05-pages-01-about.rendered.html">About us</a></div>
+      </blockquote>
     </div>
+  </div>
 
-    <br>&nbsp;<br> --}}
+  <br>&nbsp;<br> --}}
 
-    <section class="grav-c-hero">
-      <canvas></canvas>
-      <blockquote class="grav-c-pullout">Buildit is a global network of transformation studios.<br>We help connect the dots in an ever-changing world.</blockquote>
-    </section>
+  <section class="grav-c-hero">
+    <canvas></canvas>
+    <blockquote class="grav-c-pullout">Buildit is a global network of transformation studios.<br>We help connect the dots in an ever-changing world.</blockquote>
+  </section>
 
-    {{#title}}
+  {{#title}}
     <h1>{{title}}</h1>
-    {{/title}}
-    {{{contents}}}
-  </main>
-  {{>page-footer}}
+  {{/title}}
+  {{{contents}}}
+  {{>page-anchors}}
+  {{>scripts-footer}}
 
-  <script src="/scripts/hero-animation/EasePack.min.js"></script>
-  <script src="/scripts/hero-animation/rAF.js"></script>
-  <script src="/scripts/hero-animation/TweenLite.min.js"></script>
-  <script src="/scripts/hero-animation/hero.js"></script>
-</body>
-</html>
+{{/content}}
+{{/extend}}
