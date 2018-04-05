@@ -13,6 +13,7 @@ const autoprefixer = require("gulp-autoprefixer");
 // internal gulp plugins
 const metalsmith = require("./gulp/metalsmith");
 const browserSync = require("./gulp/browsersync");
+const scripts = require("./gulp/scripts");
 
 // non-gulp plugins
 const del = require("del");
@@ -57,12 +58,6 @@ function styles(done) {
   done();
 }
 
-// Transpile all required client-side scripts
-// If in PRODUCTION perform some magic
-function scripts(done) {
-  done();
-}
-
 // Grab static assets (fonts, etc.) and move them to the build folder
 // No file mangling should be done in this directory
 function assets() {
@@ -78,7 +73,10 @@ function clean(done) {
 }
 
 function watch(done) {
-  gulp.watch(paths.scripts.src, gulp.series(scripts, browserSync.reload));
+  gulp.watch(
+    paths.scripts.modules,
+    gulp.series(scripts.copyModules, scripts.bundle, browserSync.reload)
+  );
   gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
   gulp.watch(paths.images.src, gulp.series(images, browserSync.reload));
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
@@ -92,9 +90,14 @@ function watch(done) {
 // registering main tasks
 gulp.task(
   "build",
-  gulp.series(
-    clean,
-    gulp.parallel(assets, styles, scripts, images, metalsmith.build)
+
+  gulp.parallel(
+    assets,
+    styles,
+    scripts.copyModules,
+    scripts.bundle,
+    images,
+    metalsmith.build
   )
 );
 
