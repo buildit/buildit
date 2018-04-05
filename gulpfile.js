@@ -33,7 +33,7 @@ function images(done) {
 }
 
 const sassOptions = {
-  eyeglass: {},
+  eyeglass: {}
 };
 
 // Compile all required styles
@@ -45,13 +45,13 @@ function styles(done) {
     .pipe(
       autoprefixer({
         browsers: ["last 2 versions"],
-        cascade: false,
+        cascade: false
       })
     )
     .pipe(
       csso({
         restructure: PRODUCTION,
-        debug: !PRODUCTION,
+        debug: !PRODUCTION
       })
     )
     .pipe(gulp.dest(paths.styles.dest));
@@ -90,6 +90,7 @@ function watch(done) {
 // registering main tasks
 gulp.task(
   "build",
+
   gulp.parallel(
     assets,
     styles,

@@ -32,6 +32,9 @@
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eyeglass": "^1.4.1",
     "gulp": "github:gulpjs/gulp",
     "gulp-autoprefixer": "^5.0.0",
@@ -64,6 +67,7 @@
     "metalsmith-permalinks": "^0.5.0",
     "node-sass": "^4.7.2",
     "normalize-scss": "^7.0.1",
+    "prettier": "1.11.1",
     "rollup-plugin-babel": "^3.0.3"
   },
   "private": true,
