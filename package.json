@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "npm run clean && gulp build",
-    "start": "gulp"
+    "start": "npm run clean && gulp"
   },
   "repository": {
     "type": "git",

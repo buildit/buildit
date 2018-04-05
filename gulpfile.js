@@ -54,8 +54,9 @@ function styles (done) {
 
 // Transpile all required client-side scripts
 // If in PRODUCTION perform some magic
-function scripts (done) {
-  done();
+function scripts () {
+  return gulp.src(paths.scripts.src)
+    .pipe(gulp.dest(paths.scripts.dest));
 }
 
 // Grab static assets (fonts, etc.) and move them to the build folder
