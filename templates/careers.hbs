@@ -1,10 +1,12 @@
 {{#extend "page"}}
 {{#content "main"}}
-  <h1>{{title}}</h1>
-  {{{contents}}}
-  <p>
-    <a href="#the-hiring-process" class="grav-c-cta">Learn about our hiring process</a>
-  </p>
+  <section>
+    <h1>{{title}}</h1>
+    {{{contents}}}
+    <p>
+      <a href="#the-hiring-process" class="grav-c-cta">Learn about our hiring process</a>
+    </p>
+  </section>
 
   {{#each jobLocations}}
     {{>organism-job-list}}
