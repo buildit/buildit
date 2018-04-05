@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "npm run clean && gulp build",
-    "start": "gulp"
+    "start": "npm run clean && gulp"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
   "author": "Buildit @ Wipro Digital (https://buildit.wiprodigital.com)",
   "contributors": [
     "Matteo Pescarin",
-    "James Nash"
+    "James Nash",
+    "Valerio Francescangeli"
   ],
   "license": "ISC",
   "bugs": {
@@ -23,21 +24,30 @@
   },
   "homepage": "https://buildit.wiprodigital.com",
   "engines": {
-    "node": ">= 8.10.0"
+    "node": ">= 8.10.0",
+    "npm": ">= 5.8.0"
   },
   "devDependencies": {
     "@buildit/gravity-ui-sass": "^0.4.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eyeglass": "^1.4.1",
     "gulp": "github:gulpjs/gulp",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-better-rollup": "^3.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
     "gulp-filter": "^5.1.0",
     "gulp-front-matter": "^1.3.0",
     "gulp-hash": "^4.2.2",
     "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
@@ -59,7 +69,9 @@
     "metalsmith-permalinks": "^0.5.0",
     "minimist": "^1.2.0",
     "node-sass": "^4.7.2",
-    "normalize-scss": "^7.0.1"
+    "normalize-scss": "^7.0.1",
+    "prettier": "1.11.1",
+    "rollup-plugin-babel": "^3.0.3"
   },
   "private": true,
   "dependencies": {}

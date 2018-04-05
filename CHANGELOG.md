@@ -9,7 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Inlining Gravity's SVG symbol definitions
 - Static header & footer templates
 - Dynamic `robots.txt` that can be configured per deployment environment
+- ESLint with Prettier
 
+## Changed
+- Replaced `npm install` with `npm ci` in `.travis.yml`
 
 ## [0.3.x and earlier] - 2018-01-31
 Unfortunately, we did not keep a changelog for these older releases.
