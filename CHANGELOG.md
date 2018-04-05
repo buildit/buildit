@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Static header & footer templates
 - ESLint with Prettier
 
+## Changed
+- Replaced `npm install` with `npm ci` in `.travis.yml`
 
 ## [0.3.x and earlier] - 2018-01-31
 Unfortunately, we did not keep a changelog for these older releases.
