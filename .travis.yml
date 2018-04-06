@@ -15,7 +15,7 @@ env:
 install:
   - npm ci
 
-script:
+script: |
     if [[ "$TRAVIS_TAG" =~ "$PROD_TAG_REGEXP" ]]; then
       npm run-script build -- --env production;
     elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
