@@ -1,6 +1,8 @@
 (function() {
 
-  var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+  var width, height, ctx, points, target, animateHeader = true;
+  const canvas = document.getElementById('js-canvas-hero');
+  const container = document.querySelector('.grav-c-hero');
 
   // Main
   initHeader();
@@ -8,28 +10,31 @@
   addListeners();
 
   function initHeader() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      target = {x: width/2, y: height/2};
+    resizeCanvas();
+    width = container.clientWidth;
+    height = container.clientHeight;
 
-      largeHeader = document.getElementById('js-large-header');
-      largeHeader.style.height = height+'px';
+    if (typeof canvas.getContext !== 'function') {
+      console.info('the thingy bob doesn\'t support canvas. Bailing out.');
+      return;
+    }
 
-      canvas = document.getElementById('js-demo-canvas');
-      canvas.width = width;
-      canvas.height = height;
-      ctx = canvas.getContext('2d');
+    ctx = canvas.getContext('2d');
+    target = {
+      x: width/2,
+      y: height/2
+    };
 
-      // create points
-      points = [];
-      for(var x = 0; x < width; x = x + width/12) {
-          for(var y = 0; y < height; y = y + height/12) {
-              var px = x + Math.random()*width/12;
-              var py = y + Math.random()*height/12;
-              var p = {x: px, originX: px, y: py, originY: py };
-              points.push(p);
-          }
+    // create points
+    points = [];
+    for(var x = 0; x < width; x = x + width/25) {
+      for(var y = 0; y < height; y = y + height/25) {
+        var px = x + Math.random()*width/25;
+        var py = y + Math.random()*height/25;
+        var p = {x: px, originX: px, y: py, originY: py };
+        points.push(p);
       }
+    }
 
       // for each point find the 5 closest points
       for(var i = 0; i < points.length; i++) {
@@ -74,7 +79,7 @@
           window.addEventListener('mousemove', mouseMove);
       }
       window.addEventListener('scroll', scrollCheck);
-      window.addEventListener('resize', resize);
+      window.addEventListener('resize', resizeCanvas);
   }
 
   function mouseMove(e) {
@@ -92,16 +97,15 @@
   }
 
   function scrollCheck() {
-      if(document.body.scrollTop > height) animateHeader = false;
-      else animateHeader = true;
+      if (document.body.scrollTop > height) {
+        animateHeader = false;
+      } else {
+        animateHeader = true;
+      }
   }
 
-  function resize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      largeHeader.style.height = height+'px';
-      canvas.width = width;
-      canvas.height = height;
+  function resizeCanvas() {
+    canvas.setAttribute('style', `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`);
   }
 
   // animation
@@ -120,10 +124,10 @@
               if(Math.abs(getDistance(target, points[i])) < 8000) {
                   points[i].active = 0.3;
                   points[i].circle.active = 0.75;
-              } else if(Math.abs(getDistance(target, points[i])) < 25000) {
+              } else if(Math.abs(getDistance(target, points[i])) < 250000) {
                   points[i].active = 0.1;
                   points[i].circle.active = 0.3;
-              } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+              } else if(Math.abs(getDistance(target, points[i])) < 400000) {
                   points[i].active = 0.04;
                   points[i].circle.active = 0.1;
               } else {
