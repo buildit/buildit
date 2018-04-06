@@ -1,8 +1,9 @@
 ---
-description: Locations
+description: List of Buildit's global studios with addresses and directions.
 draft:       false
 layout:      locations.hbs
-title:       locations
+title:       We are global
+page-url:    locations
 locations: 
   - name:         Bengaluru
     addressline1: "72 Electronic City"

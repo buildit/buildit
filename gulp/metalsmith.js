@@ -57,7 +57,7 @@ function metalsmith() {
           })
           .use(pageTitles())
           .use(markdown())
-          .use(permalinks(":title"))
+          .use(permalinks(":page-url"))
           .use(
             discoverPartials({
               directory: `${paths.templates.src}${paths.templates.partials}`
