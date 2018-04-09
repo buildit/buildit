@@ -20,6 +20,7 @@ const debug = require("metalsmith-debug");
 const discoverPartials = require("metalsmith-discover-partials");
 
 const gravityAssets = require("./gravity-assets.js");
+const markdownHelper = require("helper-markdown");
 
 function metalsmith() {
   // filter out files with front matter
@@ -28,6 +29,7 @@ function metalsmith() {
   // register Handlebars helpers
   handlebars.registerHelper("moment", require("helper-moment"));
   handlebars.registerHelper(handlebarsLayouts(handlebars));
+  handlebars.registerHelper("markdown", markdownHelper);
 
   // register special partials
   gravityAssets.registerSvgSymbolsAsPartial(handlebars);
