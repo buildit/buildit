@@ -1,0 +1,12 @@
+{{#extend "page"}} {{#content "main"}}
+<section>
+  <main class="grav-o-container">
+    <h1>{{title}}</h1>
+    <div class="grav-c-two-columns-block">
+      {{#each locations}}
+        {{>molecule-location-card}}
+      {{/each}}
+    </div>
+  </main>
+</section>
+{{/content}} {{/extend}}
