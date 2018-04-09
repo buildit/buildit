@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Inlining Gravity's SVG symbol definitions
 - Static header & footer templates
 - ESLint with Prettier
+- Metalsmith build now fetches job listings from SmartRecruiters (via the `job-listings` lib)
+- Careers page template
 
 ## Changed
 - Replaced `npm install` with `npm ci` in `.travis.yml`

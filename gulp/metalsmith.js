@@ -9,6 +9,7 @@ const filter = require("gulp-filter");
 const assign = require("lodash.assign");
 const handlebars = require("handlebars");
 const handlebarsLayouts = require("handlebars-layouts");
+const markdownHelper = require("helper-markdown");
 
 const htmlMinifier = require("metalsmith-html-minifier");
 const markdown = require("metalsmith-markdown");
@@ -20,7 +21,7 @@ const debug = require("metalsmith-debug");
 const discoverPartials = require("metalsmith-discover-partials");
 
 const gravityAssets = require("./gravity-assets.js");
-const markdownHelper = require("helper-markdown");
+const jobListings = require("./metalsmith-job-listings.js");
 
 function metalsmith() {
   // filter out files with front matter
@@ -57,6 +58,7 @@ function metalsmith() {
               title: config.title
             }
           })
+          .use(jobListings())
           .use(pageTitles())
           .use(markdown())
           .use(permalinks(":page-url"))

@@ -1,0 +1,21 @@
+{{#extend "page"}}
+{{#content "main"}}
+  <section>
+    <h1>{{title}}</h1>
+    {{{contents}}}
+    <p>
+      <a href="#the-hiring-process" class="grav-c-cta">Learn about our hiring process</a>
+    </p>
+  </section>
+
+  {{#each jobLocations}}
+    {{>organism-job-list}}
+  {{/each}}
+
+  <section>
+    <h2 id="the-hiring-process">The hiring process</h2>
+    <p>We want to have a simple process that will allow both us and you to bring out the best of all parties. We want to make sure that we are right for you as much as the other way around. The typical hiring process is as follows:</p>
+    {{>molecule-steps}}
+  </section>
+{{/content}}
+{{/extend}}
