@@ -29,7 +29,10 @@ const PRODUCTION = false;
 // Copy all images
 // If in PRODUCTION perform some magic
 function images(done) {
-  done();
+  return gulp
+    .src(paths.images.src, { dot: true })
+    .pipe(gulp.dest(paths.images.dest))
+    .pipe(size());
 }
 
 const sassOptions = {
