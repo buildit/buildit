@@ -1,0 +1,12 @@
+{{#extend "page"}}
+{{#content "main"}}
+  {{#title}}
+    <h1>{{title}}</h1>
+  {{/title}}
+  {{{contents}}}
+   {{#each sections}}
+      {{>organisms-section}}
+    {{/each}}
+  {{>scripts-footer}}
+{{/content}}
+{{/extend}}

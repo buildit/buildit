@@ -1,0 +1,26 @@
+<section{{#class}} class="{{class}}"{{/class}}>
+    <h2>{{{title}}}</h2>
+
+    {{#if paragraph}}
+    <p>{{{paragraph}}}</p>
+    {{/if}}
+
+    {{#if blockquote}}
+    <blockquote>{{{blockquote}}}</blockquote>
+    {{/if}}
+
+    {{#if imgCards}}
+        {{>organisms-list-img-cards}}
+    {{/if}}
+
+    {{#if inlineRow}}
+        {{>organisms-list-inline-row}}
+    {{/if}}    
+    {{#if twoColumnsList}}
+        <ul class="grav-c-two-columns-text">
+            {{#each items}}
+                <li>{{.}}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</section>
