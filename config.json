@@ -32,7 +32,7 @@
       "dest": "dist/scripts/"
     },
     "images": {
-      "src": "static/images/",
+      "src": "static/images/*",
       "dest": "dist/images/"
     },
     "pages": {

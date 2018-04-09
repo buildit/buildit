@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Static header & footer templates
 - Dynamic `robots.txt` that can be configured per deployment environment
 - ESLint with Prettier
+- Metalsmith build now fetches job listings from SmartRecruiters (via the `job-listings` lib)
+- JavaScript unit tests using Jest
+- About page template
+- Careers page template
+- Locations page template
 
 ## Changed
 - Replaced `npm install` with `npm ci` in `.travis.yml`
