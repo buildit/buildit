@@ -1,12 +1,13 @@
 $color-grey-mercury: rgb(233, 233, 233);
 $color-grey-alto: rgb(211, 211, 211);
 $color-grey-iron: rgb(229, 229, 229);
+
 body {
   overflow-x: hidden;
 }
 
-footer {
-  margin-top: 0 !important;
+.js-reveal-element {
+  visibility: hidden;
 }
 
 .has-flourish-top {
@@ -29,11 +30,13 @@ footer {
   position: relative;
   margin: 0 auto;
   z-index: -1;
+ 
   >div {
     position: absolute;
     margin: 0;
     z-index: -1;
   }
+ 
   .stop-1,
   .stop-2 {
     stop-color: $color-grey-alto;
@@ -144,7 +147,11 @@ footer {
 }
 
 .flourish-pullquote-wrap {
-  padding: 50px 0;
+  padding: 25px 0 50px 0;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 }
 
 .flourish-pullquote {
