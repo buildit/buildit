@@ -4,8 +4,24 @@
   {{#title}}
     <h1>{{title}}</h1>
   {{/title}}
-  {{{contents}}}
-  {{>page-anchors}}
+
+  <section class="grav-c-hero"></section>
+
+  <section class="grav-o-container">
+    <blockquote>{{{blockquote}}}</blockquote>
+  </section>
+  
+  <section class="grav-o-container grav-u-text-centered">
+    <p>Some areas of practice we are passionate about: </p>
+    <ul class="grav-c-two-columns-text">
+      {{#each items}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    <p>To learn more, check out our <a href="https://medium.com/buildit/">blog</a>.</p>
+  </section>
+
+  {{>scripts-footer}}
 
 {{/content}}
 {{/extend}}
