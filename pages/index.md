@@ -10,4 +10,5 @@ items:
     - Agile coaching
     - Experiental learning
 layout: homepage.hbs
+header-light: true
 ---
