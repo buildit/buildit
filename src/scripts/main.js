@@ -6,6 +6,9 @@
  */
 
 import Scroll from "./smoothScroll/scrollModule.js";
-
 const scroll = new Scroll({ class: ".grav-c-cta" });
 scroll.init();
+
+import ScrollReveal from "./scrollReveal/scrollRevealModule.js";
+const scrollReveal = new ScrollReveal();
+scrollReveal.init();

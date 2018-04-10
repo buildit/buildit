@@ -61,7 +61,10 @@
     "handlebars-layouts": "^3.1.4",
     "helper-markdown": "^1.0.0",
     "helper-moment": "^0.2.0",
+<<<<<<< HEAD
     "jest": "^22.4.3",
+=======
+>>>>>>> Add flourish scroll reveal animation
     "jstransformer-handlebars": "^1.1.0",
     "lodash.assign": "^4.2.0",
     "metalsmith": "^2.3.0",
@@ -79,5 +82,11 @@
     "rollup-plugin-babel": "^3.0.3"
   },
   "private": true,
+<<<<<<< HEAD
   "dependencies": {}
+=======
+  "dependencies": {
+    "scrollreveal": "^3.4.0"
+  }
+>>>>>>> Add flourish scroll reveal animation
 }
