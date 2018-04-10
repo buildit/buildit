@@ -1,7 +1,6 @@
 $color-grey-mercury: rgb(233, 233, 233);
 $color-grey-alto: rgb(211, 211, 211);
 $color-grey-iron: rgb(229, 229, 229);
-
 body {
   overflow-x: hidden;
 }
@@ -11,7 +10,6 @@ footer {
 }
 
 .has-flourish-top {
-
   margin-top: -150px;
 }
 
@@ -31,13 +29,11 @@ footer {
   position: relative;
   margin: 0 auto;
   z-index: -1;
-  
   >div {
     position: absolute;
     margin: 0;
     z-index: -1;
   }
-  
   .stop-1,
   .stop-2 {
     stop-color: $color-grey-alto;
@@ -46,36 +42,29 @@ footer {
 
 .flourish-top {
   min-width: 500px;
-  
   &__polygon-shape-4 {
     width: 500px;
     height: 150px;
     top: -45%;
     right: 0;
-  
     .shape {
       fill: url('#polygon-shape-4-gradient');
     }
-  
     .stop-1 {
       stop-color: $color-grey-mercury;
     }
-  
     .stop-2 {
       stop-opacity: 0;
     }
   }
-  
   &__hatching-pattern-3 {
     width: 1000px;
     height: 100px;
     top: -5%;
     right: -30%;
-  
     .shape {
       fill: url('#hatching-pattern-3-gradient');
     }
-  
     .stop-2 {
       stop-opacity: 0;
     }
@@ -84,7 +73,6 @@ footer {
 
 .flourish-tail {
   min-width: 500px;
-  
   &__polygon-shape-4 {
     width: 500px;
     height: 150px;
@@ -93,32 +81,26 @@ footer {
     fill: $color-grey-alto;
     opacity: 0.2;
   }
-  
   &__hatching-pattern-2 {
     width: 1000px;
     height: 130px;
     bottom: -3%;
     left: -40%;
-  
     .shape {
       fill: url('#hatching-pattern-2-gradient');
     }
-  
     .stop-1 {
       stop-opacity: 0.1;
     }
   }
-  
   &__polygon-shape-3 {
     width: 1000px;
     height: 120px;
     bottom: -8%;
     left: -25%;
-  
     .shape {
       fill: url('#polygon-shape-3-gradient');
     }
-  
     .stop-1 {
       stop-color: $color-grey-iron;
       stop-opacity: 0;
@@ -128,42 +110,33 @@ footer {
 
 .flourish-tail-2 {
   min-width: 500px;
-  
   &__polygon-shape-4 {
     width: 690px;
     bottom: -20%;
     left: 5%;
-  
     svg {
       transform: rotate(0deg);
     }
-  
     .shape {
       fill: url('#polygon-shape-4-gradient');
     }
-  
     .stop-1 {
       stop-color: $color-grey-mercury;
     }
-  
     .stop-2 {
       stop-opacity: 0;
     }
   }
-  
   &__hatching-pattern-3 {
     width: 1300px;
     bottom: -10%;
     left: -20%;
-  
     svg {
       transform: rotate(180deg);
     }
-  
     .shape {
       fill: url('#hatching-pattern-3-gradient');
     }
-  
     .stop-2 {
       stop-opacity: 0;
     }
@@ -175,7 +148,6 @@ footer {
 }
 
 .flourish-pullquote {
-
   &__text {
     display: inline-block;
     font-weight: 400;
@@ -183,36 +155,28 @@ footer {
     padding: 0 20%;
     font-size: 30px;
   }
-  
   &__hatching-pattern-1 {
     width: 1200px;
     top: 25%;
-
     .shape {
       fill: url('#hatching-pattern-1-gradient');
     }
-
     .stop-1 {
       stop-color: $color-grey-mercury;
     }
-
     .stop-2 {
       stop-opacity: 0;
     }
   }
-
   &__polygon-shape-1 {
     width: 691px;
     right: 0;
-
     .shape {
       fill: url('#polygon-shape-1-gradient');
     }
-
     .stop-1 {
       stop-opacity: 0;
     }
-
     .stop-2 {
       stop-opacity: 0.5;
       stop-color: $color-grey-mercury;
