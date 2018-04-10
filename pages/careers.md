@@ -15,5 +15,6 @@ steps:
   - title: Welcome to Buildit!
     description: That's pretty much it. There will be one more phone call to confirm transfer details with you, and possible start dates.
 layout: careers.hbs
+page-url: careers
 ---
 We are hiring for various roles in these locations. If you don't see the role you're looking for, please feel free to get in touch with us.

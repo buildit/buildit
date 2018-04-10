@@ -31,5 +31,6 @@ inlineRow:
     title: Designit
     content: <svg role="img" class="grav-c-logo" width="178" height="33"><use xlink:href="#logo-designit"></use></svg>
 layout: about.hbs
+page-url: about
 ---
 # About us
