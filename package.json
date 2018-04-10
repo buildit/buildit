@@ -79,5 +79,7 @@
     "rollup-plugin-babel": "^3.0.3"
   },
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "scrollreveal": "^3.4.0"
+  }
 }

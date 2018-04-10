@@ -1,8 +1,24 @@
 {{#extend "page"}}
+
+{{#content "flourish-top"}}
+  <div class="flourish-wrap">
+    <div class="flourish flourish-top">
+      <div class="flourish-top__polygon-shape-4 js-reveal-element" data-exclude="bottom">
+        {{>background-elements polygon-shape-4=true}}
+      </div>
+      <div class="flourish-top__hatching-pattern-3 js-reveal-element" data-exclude="bottom">
+        {{>background-elements hatching-pattern-3=true}}
+      </div>
+    </div>
+  </div>
+{{/content}}
+
 {{#content "main"}}
+  
   {{#title}}
     <h1>{{title}}</h1>
   {{/title}}
+
   {{{contents}}}
 
   <section{{#class}} class="{{class}}"{{/class}}>
@@ -21,8 +37,23 @@
   True transformation only happens when change touches all areas of a company. We believe that change must be holistic and consider all aspects of the organisational stack, from recruitment to procurement, from operations to engineering, and from sales to support. We call this vertical transformation.
 
   Read more about some of the [technical challenges](https://medium.com/buildit/technology/home) we've faced, and our thoughts on [Design Systems](https://medium.com/buildit/design-systems/home) on our Medium blog.
-
-
+  {{/markdown}}
+  
+  <div class="flourish-pullquote-wrap">
+    <div class="flourish flourish-pullquote">
+      <div class="flourish-pullquote__hatching-pattern-1 js-reveal-element" data-exclude="bottom">
+        {{>background-elements hatching-pattern-1=true}}  
+      </div>
+      <div class="flourish-pullquote__polygon-shape-1 js-reveal-element" data-exclude="bottom">
+        {{>background-elements polygon-shape-1=true}}
+      </div>
+      <span class="flourish-pullquote__text">
+        We are problem solvers who hone our craft through experimentation, continuous improvement and systems thinking.
+      </span>
+    </div>
+  </div>
+  
+  {{#markdown}}
   ## How we do it
   We are problem solvers who hone our craft through experimentation, continuous improvement and systems thinking.
 
@@ -43,5 +74,24 @@
 
   {{>organisms-list-inline-row}}
   </section>
+
+  {{>scripts-footer}}
 {{/content}}
+
+{{#content "flourish-tail"}}
+  <div class="flourish-wrap">
+    <div class="flourish flourish-tail">
+      <div class="flourish-tail__polygon-shape-4 js-reveal-element" data-exclude="top">
+        {{>background-elements polygon-shape-4=true}}
+      </div>
+      <div class="flourish-tail__hatching-pattern-2 js-reveal-element" data-exclude="top">
+        {{>background-elements hatching-pattern-2=true}}
+      </div>
+      <div class="flourish-tail__polygon-shape-3 js-reveal-element" data-exclude="top">
+        {{>background-elements polygon-shape-3=true}}
+      </div>
+    </div>
+  </div>
+{{/content}}
+
 {{/extend}}
