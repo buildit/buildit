@@ -41,7 +41,7 @@
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "eyeglass": "^1.4.1",
+    "eyeglass": "^1.5.0",
     "gulp": "github:gulpjs/gulp",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-better-rollup": "^3.1.0",
@@ -79,5 +79,7 @@
     "rollup-plugin-babel": "^3.0.3"
   },
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "scrollreveal": "^3.4.0"
+  }
 }
