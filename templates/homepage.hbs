@@ -5,7 +5,12 @@
     <h1>{{title}}</h1>
   {{/title}}
 
-  <section class="grav-c-hero"></section>
+  <section class="grav-c-hero">
+    <canvas></canvas>
+    {{#if hero.pullout}}<blockquote class="grav-c-pullout">{{hero.pullout}}</blockquote>{{/if}}
+    {{#if hero.paragraph}}<p>{{hero.paragraph}}</p>{{/if}}
+    {{#if hero.cta-label}}<a href="{{hero.url}}" class="grav-c-cta grav-c-cta--inverted">{{hero.cta-label}}</a>{{/if}}
+  </section>
 
   <section class="grav-o-container">
     <blockquote>{{{blockquote}}}</blockquote>
