@@ -4,3 +4,6 @@ node_modules
 dist
 npm-debug.log
 .secrets
+
+# Coverage directory used by tools like istanbul
+coverage

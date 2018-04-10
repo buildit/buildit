@@ -5,15 +5,18 @@
 </head>
 <body>
   {{>page-header}}
-  <main>
-    {{#block "main"}}
-      {{!-- Fallback to render "contents" --}}
-      {{{contents}}}
-    {{/block}}
+  <main
+    {{#if main-classnames}} class="{{main-classnames}}"{{/if}}>
+      {{#block "main"}}
+        {{!-- Fallback to render "contents" --}}
+        {{{contents}}}
+      {{/block}}
   </main>
   {{>page-footer}}
 
   {{!-- Gravity's inline SVG symbol definitions --}}
   {{>gravity-svg-symbols}}
+
+  {{> scripts-footer }}
 </body>
 </html>
