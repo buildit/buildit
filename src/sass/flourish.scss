@@ -35,6 +35,7 @@ footer {
   >div {
     position: absolute;
     margin: 0;
+    z-index: -1;
   }
   
   .stop-1,
@@ -142,7 +143,6 @@ footer {
     }
   
     .stop-1 {
-  
       stop-color: $color-grey-mercury;
     }
   
@@ -170,3 +170,52 @@ footer {
   }
 }
 
+.flourish-pullquote-wrap {
+  padding: 50px 0;
+}
+
+.flourish-pullquote {
+
+  &__text {
+    display: inline-block;
+    font-weight: 400;
+    font-style: italic;
+    padding: 0 20%;
+    font-size: 30px;
+  }
+  
+  &__hatching-pattern-1 {
+    width: 1200px;
+    top: 25%;
+
+    .shape {
+      fill: url('#hatching-pattern-1-gradient');
+    }
+
+    .stop-1 {
+      stop-color: $color-grey-mercury;
+    }
+
+    .stop-2 {
+      stop-opacity: 0;
+    }
+  }
+
+  &__polygon-shape-1 {
+    width: 691px;
+    right: 0;
+
+    .shape {
+      fill: url('#polygon-shape-1-gradient');
+    }
+
+    .stop-1 {
+      stop-opacity: 0;
+    }
+
+    .stop-2 {
+      stop-opacity: 0.5;
+      stop-color: $color-grey-mercury;
+    }
+  }
+}
