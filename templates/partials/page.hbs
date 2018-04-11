@@ -5,6 +5,8 @@
 </head>
 <body>
   {{>page-header}}
+  {{#if "flourish-top"}} {{#block "flourish-top"}}{{/block}} {{/if}}
+  
   <main
     {{#if main-classnames}} class="{{main-classnames}}"{{/if}}>
       {{#block "main"}}
@@ -12,9 +14,13 @@
         {{{contents}}}
       {{/block}}
   </main>
+  
+  {{#if "flourish-tail"}} {{#block "flourish-tail"}}{{/block}} {{/if}}
   {{>page-footer}}
 
   {{!-- Gravity's inline SVG symbol definitions --}}
   {{>gravity-svg-symbols}}
+
+  {{> scripts-footer }}
 </body>
 </html>

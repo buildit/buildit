@@ -1,1 +1,7 @@
 @import 'gravity-ui-sass';
+@import 'flourish';
+
+// Temporary override - TODO: Move to gravity
+.grav-c-hero > :not(canvas) {
+  position: relative;
+}
