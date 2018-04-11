@@ -36,7 +36,7 @@ function metalsmith() {
   handlebars.registerHelper("moment", require("helper-moment"));
   handlebars.registerHelper(handlebarsLayouts(handlebars));
   handlebars.registerHelper("markdown", markdownHelper);
-  handlebars.registerHelper("compare", function (a, b, options) {
+  handlebars.registerHelper("compare", function(a, b, options) {
     if (a !== b) {
       return options.fn(this);
     }
