@@ -76,7 +76,12 @@ function metalsmith() {
           .use(jobListings())
           .use(pageTitles())
           .use(markdown())
-          .use(permalinks(":page-url"))
+          .use(
+            permalinks({
+              pattern: ":page-url",
+              relative: false
+            })
+          )
           .use(
             discoverPartials({
               directory: `${paths.templates.src}${paths.templates.partials}`

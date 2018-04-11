@@ -1,4 +1,5 @@
 ---
 draft: false
+permalink: false
 layout: robots.hbs
 ---
