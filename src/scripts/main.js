@@ -6,9 +6,14 @@
  */
 
 import Scroll from "./smoothScroll/scrollModule.js";
+import ScrollReveal from "./scrollReveal/scrollRevealModule.js";
+import ToogleSwitch from "./toogleSwitch/toogleSwitch.js";
+
 const scroll = new Scroll({ class: ".grav-c-cta" });
 scroll.init();
 
-import ScrollReveal from "./scrollReveal/scrollRevealModule.js";
 const scrollReveal = new ScrollReveal();
 scrollReveal.init();
+
+const toogleSwitch = new ToogleSwitch("[type=button][aria-pressed]");
+toogleSwitch.init();
