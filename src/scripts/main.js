@@ -12,3 +12,7 @@ scroll.init();
 import ScrollReveal from "./scrollReveal/scrollRevealModule.js";
 const scrollReveal = new ScrollReveal();
 scrollReveal.init();
+
+import HeroAnimation from './heroAnimation/hero.js';
+const heroAnimation = new HeroAnimation();
+heroAnimation.init();
