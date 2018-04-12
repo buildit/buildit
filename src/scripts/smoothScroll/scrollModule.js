@@ -26,12 +26,17 @@ function Scroll(opts) {
 }
 
 function _getElementPosition(element, scrollY = getScrollPosition().y) {
+  const destinationElement = document.getElementById(element.dataset.href);
+
   return {
     start: scrollY,
     end: element.offsetTop,
     current: scrollY
   };
 }
+
+// scrollY: the distance of the current element relative to the top of the offsetParent node
+// offsetTop: the distance of the current element relative to the top of the offsetParent node
 
 Scroll.prototype.init = function() {
   document.querySelectorAll(this.options.class).forEach(element => {
@@ -47,6 +52,7 @@ Scroll.prototype.init = function() {
 Scroll.prototype.onScroll = function(element) {
   element.addEventListener("click", () => {
     this._position = _getElementPosition(element);
+
     window.requestAnimationFrame(() => {
       this.updateState();
     });
