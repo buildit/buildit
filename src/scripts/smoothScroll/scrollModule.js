@@ -26,17 +26,17 @@ function Scroll(opts) {
 }
 
 function _getElementPosition(element, scrollY = getScrollPosition().y) {
-  const destinationElement = document.getElementById(element.dataset.href);
+  const destinationTarget = element.href.substring(
+    element.href.indexOf("#") + 1
+  );
+  const destinationElement = document.getElementById(destinationTarget);
 
   return {
     start: scrollY,
-    end: element.offsetTop,
+    end: destinationElement.offsetTop,
     current: scrollY
   };
 }
-
-// scrollY: the distance of the current element relative to the top of the offsetParent node
-// offsetTop: the distance of the current element relative to the top of the offsetParent node
 
 Scroll.prototype.init = function() {
   document.querySelectorAll(this.options.class).forEach(element => {
