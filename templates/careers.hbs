@@ -1,4 +1,18 @@
 {{#extend "page"}}
+
+{{#content "flourish-top"}}
+  <div class="flourish-wrap">
+    <div class="flourish flourish-top-2">
+      <div class="flourish-top-2__polygon-shape-4 js-reveal-element" data-exclude="bottom">
+        {{>background-elements polygon-shape-4=true}}
+      </div>
+      <div class="flourish-top-2__hatching-pattern-2 js-reveal-element" data-exclude="bottom">
+        {{>background-elements hatching-pattern-2=true}}
+      </div>
+    </div>
+  </div>
+{{/content}}
+
 {{#content "main"}}
   <section>
     <h1>{{title}}</h1>
@@ -18,4 +32,21 @@
     {{>molecule-steps}}
   </section>
 {{/content}}
+
+{{#content "flourish-tail"}}
+<div class="flourish-wrap">
+  <div class="flourish flourish-tail-2">
+    <div class="flourish-tail-2__hatching-pattern-3 js-reveal-element" data-exclude="top">
+      {{>background-elements hatching-pattern-3=true}}
+    </div>
+    <div class="flourish-tail-2__polygon-shape-3a js-reveal-element" data-exclude="top">
+      {{>background-elements polygon-shape-3=true}}
+    </div>
+    <div class="flourish-tail-2__polygon-shape-3b js-reveal-element" data-exclude="top">
+      {{>background-elements polygon-shape-3=true}}
+    </div>
+  </div>
+</div>
+{{/content}}
+
 {{/extend}}
