@@ -9,13 +9,18 @@ const formatBuilditJobPostings = require("./formatBuilditJobPostings");
 
 module.exports = function plugin() {
   return function(files, metalsmith, done) {
+    const metadata = metalsmith.metadata();
+
     debug("Fetching Buildit job postings from SmartRecruiters...");
     jobListings
       .getBuilditJobPostings()
       .then(allJobs => {
-        metalsmith.metadata({
+        // Add job listings to existing metadata
+        Object.assign(metadata, {
           jobLocations: formatBuilditJobPostings(allJobs)
         });
+
+        metalsmith.metadata(metadata);
         done();
       })
       .catch(err => {

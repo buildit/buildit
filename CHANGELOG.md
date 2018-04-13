@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Client-side JavaScript transpilation and bundling (using Babel and Rollup)
 - JavaScript unit tests using Jest
 - ESLint with Prettier
+- Templated `robots.txt` that can be configured per deployment environment
 
 ### Changed
 - Site build now uses Metalsmith
