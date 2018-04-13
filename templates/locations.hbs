@@ -1,14 +1,15 @@
 {{#extend "page"}}
 {{#content "main"}}
-<section>
-  <main class="grav-o-container">
-    <h1>{{title}}</h1>
+ 
+  <h1>{{title}}</h1>
+ 
+  <section>
     <div class="grav-c-two-columns-block">
       {{#each locations}}
-        {{>molecule-location-card}}
+        {{>molecule-location-card}} 
       {{/each}}
     </div>
-  </main>
-</section>
+  </section>
+
 {{/content}}
 {{/extend}}

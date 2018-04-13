@@ -3,6 +3,7 @@ description: List of Buildit's global studios with addresses and directions.
 draft:       false
 layout:      locations.hbs
 title:       We are global
+main-classnames: grav-o-container
 page-url:    locations
 locations: 
   - name:         Bengaluru
