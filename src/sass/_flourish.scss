@@ -2,14 +2,9 @@ $color-grey-mercury: rgb(233, 233, 233);
 $color-grey-alto: rgb(211, 211, 211);
 $color-grey-iron: rgb(229, 229, 229);
 
-
 // $color-grey-mercury:#241c1c;
 // $color-grey-alto:#241c1c;
 // $color-grey-iron:#241c1c;
-
-
-
-
 
 body {
   overflow-x: hidden;
@@ -57,5 +52,9 @@ main {
   .stop-1,
   .stop-2 {
     stop-color: $color-grey-alto;
+  }
+
+  &--flip {
+    transform: rotate(180deg);
   }
 }
