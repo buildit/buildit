@@ -1,6 +1,3 @@
-import TweenLite from 'gsap/TweenLite';
-import EasePack from 'gsap/EasePack';
-
 let width, height, ctx, points, target, animateHeader = true;
 const canvas = document.getElementById('js-canvas-hero');
 const container = document.querySelector('.grav-c-hero');
@@ -17,11 +14,99 @@ const resizeCanvas = () => {
   canvas.setAttribute('style', `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`);
 };
 
+const drawLines = (p) => {
+  if (!p.active) return;
+  for (var i in p.closest) {
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    ctx.lineTo(p.closest[i].x, p.closest[i].y);
+    ctx.strokeStyle = 'rgba(94, 161, 184,' + p.active + ')';
+    ctx.stroke();
+  }
+}
+
+function Circle(pos, rad, color) {
+  var _this = this;
+
+  // constructor
+  (function () {
+    _this.pos = pos || null;
+    _this.radius = rad || null;
+    _this.color = color || null;
+  })();
+
+  this.draw = function () {
+    if (!_this.active) return;
+    ctx.beginPath();
+    ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+    ctx.fillStyle = 'rgba(94, 161, 184,' + _this.active + ')';
+    ctx.fill();
+  };
+}
+
+const animate = () => {
+  if (animateHeader) {
+    ctx.clearRect(0, 0, width, height);
+    for (var i in points) {
+      // detect points in range
+      if (Math.abs(getDistance(target, points[i])) < 8000) {
+        points[i].active = 0.3;
+        points[i].circle.active = 0.75;
+      } else if (Math.abs(getDistance(target, points[i])) < 40000) {
+        points[i].active = 0.1;
+        points[i].circle.active = 0.3;
+      } else if (Math.abs(getDistance(target, points[i])) < 80000) {
+        points[i].active = 0.04;
+        points[i].circle.active = 0.1;
+      } else {
+        points[i].active = 0.03;
+        points[i].circle.active = 0.03;
+      }
+
+      drawLines(points[i]);
+      points[i].circle.draw();
+    }
+  }
+  requestAnimationFrame(animate);
+}
+
+const shiftPoint = (p) => {
+  TweenLite.to(p, 1 + 1 * Math.random(), {
+    x: p.originX - 0 + Math.random() * 20,
+    y: p.originY - 0 + Math.random() * 20,
+    ease: Circ.easeInOut,
+    onComplete: function () {
+      shiftPoint(p);
+    }
+  });
+}
+
+const mouseMove = (e) => {
+  let posy = 0;
+  let pageX = 0;
+  let pageY = 0;
+  let posx = posy = 0;
+  
+  if (e.pageX || e.pageY) {
+    posx = e.pageX;
+    posy = e.pageY;
+  } else if (e.clientX || e.clientY) {
+    posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+  }
+  target.x = posx;
+  target.y = posy;
+}
+
+const getDistance = (p1, p2) => {
+  return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+}
+
 
 class HeroAnimation {
   constructor() {
     if (!('ontouchstart' in window)) {
-      //window.addEventListener('mousemove', this.mouseMove());
+      window.addEventListener('mousemove', mouseMove);
     }
 
     window.addEventListener('scroll', scrollCheck);
@@ -32,11 +117,10 @@ class HeroAnimation {
   init() {
     this.initHeader();
     this.initAnimation();
-    this.addListeners();
   }
 
   initHeader() {
-    this.resizeCanvas;
+    resizeCanvas();
     width = container.clientWidth;
     height = container.clientHeight;
     canvas.width = width;
@@ -109,7 +193,7 @@ class HeroAnimation {
 
           for (var k = 0; k < 5; k++) {
             if (!placed) {
-              if (this.getDistance(p1, p2) < this.getDistance(p1, closest[k])) {
+              if (getDistance(p1, p2) < getDistance(p1, closest[k])) {
                 closest[k] = p2;
                 placed = true;
               }
@@ -122,111 +206,19 @@ class HeroAnimation {
 
     // assign a circle to each point
     for (var i in points) {
-      var c = new this.Circle(points[i], 2 + Math.random() * 2.5, 'rgba(255,255,255,0.3)');
+      var c = new Circle(points[i], 2 + Math.random() * 2.5, 'rgba(255,255,255,0.3)');
       points[i].circle = c;
     }
   }
 
-  // mouseMove(e) {
-
-  //   let posy = 0;
-  //   let pageX = 0;
-  //   let pageY = 0;
-  //   let posx = posy = 0;
-    
-  //   if (e.pageX || e.pageY) {
-  //     posx = e.pageX;
-  //     posy = e.pageY;
-  //   } else if (e.clientX || e.clientY) {
-  //     posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-  //     posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-  //   }
-  //   target.x = posx;
-  //   target.y = posy;
-  // }
-
   // animation
   initAnimation() {
-    this.animate();
+    animate();
 
     for (var i in points) {
-      this.shiftPoint(points[i]);
+      shiftPoint(points[i]);
     }
   }
-
-  animate() {
-    if (animateHeader) {
-      ctx.clearRect(0, 0, width, height);
-      for (var i in points) {
-        // detect points in range
-        if (Math.abs(this.getDistance(target, points[i])) < 8000) {
-          points[i].active = 0.3;
-          points[i].circle.active = 0.75;
-        } else if (Math.abs(this.getDistance(target, points[i])) < 40000) {
-          points[i].active = 0.1;
-          points[i].circle.active = 0.3;
-        } else if (Math.abs(this.getDistance(target, points[i])) < 80000) {
-          points[i].active = 0.04;
-          points[i].circle.active = 0.1;
-        } else {
-          points[i].active = 0.03;
-          points[i].circle.active = 0.03;
-        }
-
-        this.drawLines(points[i]);
-        points[i].circle.draw();
-      }
-    }
-    requestAnimationFrame(this.animate);
-  }
-
-  shiftPoint(p) {
-    TweenLite.to(p, 1 + 1 * Math.random(), {
-      x: p.originX - 0 + Math.random() * 20,
-      y: p.originY - 0 + Math.random() * 20,
-      ease: Circ.easeInOut,
-      onComplete: function () {
-        this.shiftPoint(p);
-      }
-    });
-  }
-
-  // Canvas manipulation
-  drawLines(p) {
-    if (!p.active) return;
-    for (var i in p.closest) {
-      ctx.beginPath();
-      ctx.moveTo(p.x, p.y);
-      ctx.lineTo(p.closest[i].x, p.closest[i].y);
-      ctx.strokeStyle = 'rgba(94, 161, 184,' + p.active + ')';
-      ctx.stroke();
-    }
-  }
-
-  Circle(pos, rad, color) {
-    var _this = this;
-
-    // constructor
-    (function () {
-      _this.pos = pos || null;
-      _this.radius = rad || null;
-      _this.color = color || null;
-    })();
-
-    this.draw = function () {
-      if (!_this.active) return;
-      ctx.beginPath();
-      ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-      ctx.fillStyle = 'rgba(94, 161, 184,' + _this.active + ')';
-      ctx.fill();
-    };
-  }
-
-  // Util
-  getDistance(p1, p2) {
-    return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
-  }
-
 }
 
 export default HeroAnimation;
