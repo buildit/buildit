@@ -17,16 +17,8 @@ install:
 
 script:
   - npm run-script test
-  - |
-    if [[ "$TRAVIS_TAG" =~ "$PROD_TAG_REGEXP" ]]; then
-      npm run-script build -- --env production;
-    elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-      npm run-script build -- --env staging;
-    elif [ "$TRAVIS_BRANCH" == "beta" ]; then
-      npm run-script build -- --env beta;
-    else
-      npm run-script build;
-    fi
+  - npm run-script build
+  - npm run cypress:travis
 
 before_deploy:
   - pip install --user awscli
