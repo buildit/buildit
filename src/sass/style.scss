@@ -24,10 +24,11 @@ $color-grey-iron: rgb(229, 229, 229);
 /********************/
 /* Base             */
 /********************/
-
+html,
 body {
-  overflow-x: hidden;
+  overflow-x: hidden
 }
+
 
 /********************/
 /* Objects          */
@@ -52,6 +53,10 @@ body {
 // Temporary override - TODO: Move to gravity
 .grav-c-hero> :not(canvas) {
   position: relative;
+}
+
+.grav-o-container {
+  z-index: 1;
 }
 
 /********************/

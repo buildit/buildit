@@ -3,6 +3,7 @@ description: Open job positions at Buildit.
 draft: false
 title: Careers
 main-classnames: grav-o-container
+footerModifierClass: grav-c-footer-no-margin
 steps:
   - title: Let's chat
     description: One of the Buildit talent team will call you for a quick chat to find out a little bit about you. For some roles we would ask you to complete an exercise after but we will let you know at this stage for sure!

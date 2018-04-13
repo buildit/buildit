@@ -4,6 +4,7 @@ draft:       false
 layout:      locations.hbs
 title:       We are global
 main-classnames: grav-o-container
+footerModifierClass: grav-c-footer-no-margin
 page-url:    locations
 locations: 
   - name:         Bengaluru

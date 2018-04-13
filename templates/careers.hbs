@@ -14,8 +14,8 @@
 {{/content}}
 
 {{#content "main"}}
-  <section>
-    <h1>{{title}}</h1>
+  <h1>{{title}}</h1>
+  
 
   {{#markdown}}      
   Doing things differently requires strength of character, empathy for those around you, good judgement, as well as being able to explain why to do something differently in the customer's language and at the right time. 
@@ -42,11 +42,10 @@
   If that sounds interesting to you, why don't you look at one of the job descriptions below and join our team?
   {{/markdown}}
 
-    {{{contents}}}
-    <p class="grav-u-text-centered">
-      <a href="#the-hiring-process" class="grav-c-cta">Our hiring process</a>
-    </p>
-  </section>
+  {{{contents}}}
+  <p class="grav-u-text-centered">
+    <a href="#the-hiring-process" class="grav-c-cta">Our hiring process</a>
+  </p>
 
   {{#each jobLocations}}
     {{>organism-job-list}}
