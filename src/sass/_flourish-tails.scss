@@ -1,5 +1,6 @@
 .flourish-tail {
   min-width: 500px;
+  
   &__polygon-shape-4 {
     width: 500px;
     height: 150px;
@@ -7,7 +8,16 @@
     left: -15%;
     fill: $color-grey-alto;
     opacity: 0.2;
+
+    .shape {
+      fill: url('#hatching-pattern-2-gradient');
+    }
+
+    .stop-2 {
+      stop-opacity: 0;
+    }
   }
+  
   &__hatching-pattern-2 {
     width: 1000px;
     height: 130px;
@@ -20,14 +30,17 @@
       stop-opacity: 0.1;
     }
   }
+  
   &__polygon-shape-3 {
     width: 1000px;
     height: 120px;
     bottom: -8%;
     left: -25%;
+    
     .shape {
       fill: url('#polygon-shape-3-gradient');
     }
+    
     .stop-1 {
       stop-color: $color-grey-iron;
       stop-opacity: 0;
@@ -84,6 +97,50 @@
     
     .shape {
       fill: url('#polygon-shape-3-gradient');
+    }
+  }
+}
+
+.flourish-tail-3 {
+  min-width: 500px;
+  
+  &__polygon-shape-4 {
+    width: 690px;
+    bottom: -20%;
+    left: 5%;
+  
+    svg {
+      transform: rotate(0deg);
+    }
+  
+    .shape {
+      fill: url('#polygon-shape-4-gradient');
+    }
+  
+    .stop-1 {
+      stop-color: $color-grey-mercury;
+    }
+  
+    .stop-2 {
+      stop-opacity: 0;
+    }
+  }
+  
+  &__hatching-pattern-3 {
+    width: 1300px;
+    bottom: -10%;
+    left: -20%;
+  
+    svg {
+      transform: rotate(180deg);
+    }
+  
+    .shape {
+      fill: url('#hatching-pattern-3-gradient');
+    }
+  
+    .stop-2 {
+      stop-opacity: 0;
     }
   }
 }
