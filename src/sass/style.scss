@@ -1,10 +1,59 @@
+/********************/
+/* Dependencies     */
+/********************/
 @import 'gravity-ui-sass';
+
+/********************/
+/* Settings         */
+/********************/
+
+$color-grey-mercury: rgb(233, 233, 233);
+$color-grey-alto: rgb(211, 211, 211);
+$color-grey-iron: rgb(229, 229, 229);
+
+/********************/
+/* Tools            */
+/********************/
+
+
+/********************/
+/* Generics         */
+/********************/
+
+
+/********************/
+/* Base             */
+/********************/
+
+body {
+  overflow-x: hidden;
+}
+
+/********************/
+/* Objects          */
+/********************/
+
+
+/********************/
+/* Components       */
+/********************/
+
+// flourishes
 @import 'flourish';
 @import 'flourish-tops';
 @import 'flourish-tails';
 @import 'flourish-pullquotes';
 
+// reveal plugin animtaions
+.js-reveal-element {
+  visibility: hidden;
+}
+
 // Temporary override - TODO: Move to gravity
-.grav-c-hero > :not(canvas) {
+.grav-c-hero> :not(canvas) {
   position: relative;
 }
+
+/********************/
+/* Trumps           */
+/********************/
