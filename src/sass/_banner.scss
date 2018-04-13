@@ -1,0 +1,30 @@
+// custom rules applied to gravity ui scss
+header[role=banner] {
+
+  .medium-logo {
+    fill: #ece9e9; // medium off-white
+  }
+
+  &.is-light {
+    .medium-logo {
+      fill: #000; // medium black
+    }
+  }
+
+  .grav-c-nav-menu__external-link {
+    .grav-c-block-link {
+      border-color: transparent;
+    }
+  }
+
+  .grav-c-block-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .grav-c-block-link:hover {
+    .medium-logo {
+      fill: $grav-co-neutral-ashtray;
+    }
+  }
+}
