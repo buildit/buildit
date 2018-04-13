@@ -1,3 +1,10 @@
+/**
+ * @param { String || Array<string> } CSSClass
+ * @param { string } Animation
+ * @param { number } Duration
+ * @returns { Object } Handles the scroll to an anchor on the same page
+ */
+
 import easingOptions from "./easingOptions.js";
 import { getScrollPosition } from "./windowHelpers.js";
 
@@ -5,25 +12,29 @@ const defaultOptions = {
   duration: 2500,
   animation: easingOptions.easeOutCubic,
   resetTime: () => ({ start: null, now: null }),
-  position: { start: 0, end: null, current: null },
+  position: { start: 0, end: null, current: null }
 };
 
 function Scroll(opts) {
   this.options = {
     class: opts.class,
     animation: opts.animation || defaultOptions.animation,
-    duration: opts.duration || defaultOptions.duration,
+    duration: opts.duration || defaultOptions.duration
   };
   this._time = defaultOptions.resetTime();
   this._position = defaultOptions.position;
 }
 
-function getElementPosition(element, scrollY = getScrollPosition().y) {
-  const destinationElement = document.getElementById(element.dataset.scrolldestination);
+function _getElementPosition(element, scrollY = getScrollPosition().y) {
+  const destinationTarget = element.href.substring(
+    element.href.indexOf("#") + 1
+  );
+  const destinationElement = document.getElementById(destinationTarget);
+
   return {
     start: scrollY,
     end: destinationElement.offsetTop,
-    current: scrollY,
+    current: scrollY
   };
 }
 
@@ -40,8 +51,11 @@ Scroll.prototype.init = function() {
 
 Scroll.prototype.onScroll = function(element) {
   element.addEventListener("click", () => {
-    this._position = getElementPosition(element);
-    window.requestAnimationFrame(() => { this.updateState(); });
+    this._position = _getElementPosition(element);
+
+    window.requestAnimationFrame(() => {
+      this.updateState();
+    });
   });
 };
 

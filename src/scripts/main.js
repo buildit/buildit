@@ -3,9 +3,8 @@ import ScrollReveal from "./scrollReveal/scrollRevealModule.js";
 import toogleSwitch from "./toogleSwitch/toogleSwitch.js";
 
 const scroll = new Scroll({ class: ".grav-c-cta" });
-scroll.init();
-
 const scrollReveal = new ScrollReveal();
-scrollReveal.init();
 
+scroll.init();
+scrollReveal.init();
 toogleSwitch();
