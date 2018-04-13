@@ -15,4 +15,3 @@ scrollReveal.init();
 
 import HeroAnimation from './heroAnimation/hero.js';
 const heroAnimation = new HeroAnimation();
-heroAnimation.init();
