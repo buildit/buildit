@@ -1,6 +1,11 @@
 .flourish-wrap {
   margin: 0;
   overflow: hidden;
+
+  + main {
+    margin-top: -200px;
+    margin-bottom: -100px;
+  }
 }
 
 .flourish {
