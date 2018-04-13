@@ -1,4 +1,5 @@
-import { TweenLite, EasePack } from "gsap";
+import TweenLite from 'gsap/TweenLite';
+import EasePack from 'gsap/EasePack';
 
 let width, height, ctx, points, target, animateHeader = true;
 const canvas = document.getElementById('js-canvas-hero');
