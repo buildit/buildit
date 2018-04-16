@@ -1,13 +1,19 @@
 ---
+# Meta-data
 description: This is Buildit homepage
-draft: false
+
+# Display
+layout: homepage.hbs
+header-light: true
 footerModifierClass: grav-c-footer-no-margin
-blockquote: We partner with our clients to solve hard problems, and help them deliver world-class products.
+
+# Content
 hero:
   pullout: Buildit is a global network of transformation studios.
   paragraph: We help connect the dots in an ever-changing world.
   cta-label: About us
   url: /about/
+blockquote: We partner with our clients to solve hard problems, and help them deliver world-class products.
 items:
   - System thinking
   - Continuous delivery
@@ -81,6 +87,4 @@ imgLinksItems:
     alt: TD Bank
   href: https://www.tdbank.com/
   title: TD Bank
-layout: homepage.hbs
-header-light: true
 ---

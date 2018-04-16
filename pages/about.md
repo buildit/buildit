@@ -1,8 +1,15 @@
 ---
+# Meta-data
+title: About us
 description: Buildit about page
-draft: false
+page-url: about
+
+# Display
+layout: about.hbs
 main-classnames: grav-o-container has-flourish-top has-flourish-tail
 footerModifierClass: grav-c-footer-no-margin
+
+# Content
 imgCards:
     - title: Innovative
       content: Self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.
@@ -31,7 +38,5 @@ inlineRow:
   - href: https://designit.com
     title: Designit
     content: <svg role="img" class="grav-c-logo" width="178" height="33"><use xlink:href="#logo-designit"></use></svg>
-layout: about.hbs
-page-url: about
 ---
 # About us
