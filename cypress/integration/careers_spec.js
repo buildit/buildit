@@ -4,11 +4,15 @@ describe("Careers page", () => {
   beforeEach(() => {
     route = "Careers";
     anchor = "the-hiring-process";
-    cy.visit("/careers");
+    cy.visit(`/${route}`);
   });
 
   it("should render the page title", () => {
     cy.title().should("include", route);
+  });
+
+  it("should render current route as active navigation option", () => {
+    cy.activeRoute(".grav-c-block-link", route);
   });
 
   it("renders an anchor that uses the smoothScroll feature", () => {
