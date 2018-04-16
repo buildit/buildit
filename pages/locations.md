@@ -77,7 +77,7 @@ locations:
     "img-alt":    "New York static map"
     "map-link":   "https://www.google.com/maps/place/77+Sands+St,+Brooklyn,+NY+11201,+USA/@40.7004244,-73.9896711,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a346b0a6f41:0xe60dd10638023226!8m2!3d40.7003578!4d-73.9873581"
 flourish-top:
-  baseClass: flourish-tail
+  baseClass: flourish-group-b
   flip: true
   shapes:
   - shape: polygon-shape-4
@@ -93,7 +93,7 @@ flourish-top:
     reveal: true
     exclude: bottom
 flourish-tail:
-  baseClass: flourish-tail-3
+  baseClass: flourish-group-e
   shapes:
   - shape: polygon-shape-4
     shapeClass: polygon-shape-4

@@ -18,7 +18,7 @@ steps:
 layout: careers.hbs
 page-url: careers
 flourish-top:
-  baseClass: flourish-top-2
+  baseClass: flourish-group-c
   shapes:
   - shape: polygon-shape-4
     shapeClass: polygon-shape-4
@@ -29,7 +29,7 @@ flourish-top:
     reveal: true
     exclude: top
 flourish-tail:
-  baseClass: flourish-tail-2
+  baseClass: flourish-group-d
   shapes:
   - shape: hatching-pattern-3
     shapeClass: hatching-pattern-3

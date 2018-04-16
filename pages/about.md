@@ -34,7 +34,7 @@ inlineRow:
 layout: about.hbs
 page-url: about
 flourish-top:
-  baseClass: flourish-top
+  baseClass: flourish-group-a
   shapes:
   - shape: polygon-shape-4
     shapeClass: polygon-shape-4
@@ -45,7 +45,7 @@ flourish-top:
     reveal: true
     exclude: top
 flourish-tail:
-  baseClass: flourish-tail
+  baseClass: flourish-group-b
   shapes:
   - shape: polygon-shape-4
     shapeClass: polygon-shape-4
@@ -70,6 +70,5 @@ pullquote-what-we-do:
     shapeClass: polygon-shape-1
     reveal: true
     exclude: top
-
 ---
 # About us
