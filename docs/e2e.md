@@ -9,5 +9,5 @@
 
 ## Write tests
 
-* Create a file under integration folder
+* Create a file under ./cypress/integration/
 * Learn more about [Cypress](https://www.cypress.io/support/)
