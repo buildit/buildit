@@ -20,11 +20,11 @@ header[role=banner] {
   .grav-c-block-link {
     display: flex;
     align-items: center;
-  }
 
-  .grav-c-block-link:hover {
-    .medium-logo {
-      fill: $grav-co-neutral-ashtray;
+    &:hover {
+      .medium-logo {
+        fill: $grav-co-neutral-ashtray;
+      }
     }
   }
 }
