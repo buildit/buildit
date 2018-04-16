@@ -3,9 +3,11 @@ const canvas = document.getElementById('js-canvas-hero');
 const container = document.querySelector('.grav-c-hero');
 
 function HeroAnimation() {
-  addListeners();
-  initHeader();
-  initAnimation();
+  if (container !== null) {
+    addListeners();
+    initHeader();
+    initAnimation();
+  }
 }
 
 function setTimer() {

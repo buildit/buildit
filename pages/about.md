@@ -2,6 +2,7 @@
 description: Buildit about page
 draft: false
 main-classnames: grav-o-container has-flourish-top has-flourish-tail
+footerModifierClass: grav-c-footer-no-margin
 imgCards:
     - title: Innovative
       content: Self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.

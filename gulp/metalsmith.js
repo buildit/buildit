@@ -1,6 +1,7 @@
 // run metalsmith (static site generator)
 const config = require("../config.json");
 const paths = config.paths;
+const envs = require("./envs.js");
 
 const gulp = require("gulp");
 const gulpsmith = require("gulpsmith");
@@ -24,14 +25,18 @@ const gravityAssets = require("./gravity-assets.js");
 const jobListings = require("./metalsmith-job-listings.js");
 
 function metalsmith() {
+  // config for the site environment we're building
+  const siteEnv = envs.getCurrentEnvInfo();
+  console.log("Current env:\n", siteEnv);
+
   // filter out files with front matter
-  const fmFilter = filter("**/*.{html,md,htb}", { restore: true });
+  const fmFilter = filter("**/*.{html,md,txt}", { restore: true });
 
   // register Handlebars helpers
   handlebars.registerHelper("moment", require("helper-moment"));
   handlebars.registerHelper(handlebarsLayouts(handlebars));
   handlebars.registerHelper("markdown", markdownHelper);
-  handlebars.registerHelper("compare", function (a, b, options) {
+  handlebars.registerHelper("compare", function(a, b, options) {
     if (a !== b) {
       return options.fn(this);
     }
@@ -61,13 +66,22 @@ function metalsmith() {
         gulpsmith()
           .metadata({
             site: {
-              title: config.title
+              title: config.title,
+              url: siteEnv.url
+            },
+            build: {
+              excludeRobots: siteEnv.excludeRobots
             }
           })
           .use(jobListings())
           .use(pageTitles())
           .use(markdown())
-          .use(permalinks(":page-url"))
+          .use(
+            permalinks({
+              pattern: ":page-url",
+              relative: false
+            })
+          )
           .use(
             discoverPartials({
               directory: `${paths.templates.src}${paths.templates.partials}`
@@ -80,7 +94,7 @@ function metalsmith() {
           )
           .use(
             sitemap({
-              hostname: `https:${config.URL}`,
+              hostname: siteEnv.url,
               omitIndex: true
             })
           )
