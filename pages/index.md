@@ -1,8 +1,7 @@
 ---
 # Meta-data
-description: This is Buildit homepage
-og:
-  title: Buildit
+description: Buildit is a global network of transformation studios. We help connect the dots in an ever-changing world.
+ogTitle: Buildit
 
 # Display
 layout: homepage.hbs

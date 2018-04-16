@@ -4,12 +4,14 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <meta name="description" content="{{description}}">
-<meta property="og:title" content="{{#if og.title }}{{og.title}}{{else}}{{title}}{{/if}}">
+<meta property="og:title" content="{{#if ogTitle }}{{ogTitle}}{{else}}{{title}}{{/if}}">
 <meta property="og:site_name" content="{{site.title}}">
-<meta property="og:type" content="{{og.type}}">
+<meta property="og:type" content="{{ogType}}">
 <meta property="og:url" content="{{site.url}}/{{#if path}}{{path}}/{{/if}}">
+<meta property="og:image" content="{{site.url}}/images/{{ogImage}}">
+<meta property="og:image:alt" content="{{ogImageAlt}}">
 
-<meta name="twitter:card" content="{{twitter.card}}" />
-<meta name="twitter:site" content="{{twitter.site}}" />
+<meta name="twitter:card" content="{{twitterCard}}" />
+<meta name="twitter:site" content="{{twitterSite}}" />
 
 <link rel="stylesheet" href="/styles/style.css">
