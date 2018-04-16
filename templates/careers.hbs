@@ -1,16 +1,7 @@
 {{#extend "page"}}
 
 {{#content "flourish-top"}}
-  <div class="flourish-wrap">
-    <div class="flourish flourish-top-2">
-      <div class="flourish-top-2__polygon-shape-4">
-        {{>background-elements polygon-shape-4=true}}
-      </div>
-      <div class="flourish-top-2__hatching-pattern-2">
-        {{>background-elements hatching-pattern-2=true}}
-      </div>
-    </div>
-  </div>
+  {{> flourish flourish-top }}
 {{/content}}
 
 {{#content "main"}}
@@ -21,20 +12,7 @@
   Doing things differently requires strength of character, empathy for those around you, good judgement, as well as being able to explain why to do something differently in the customer's language and at the right time. 
   {{/markdown}}
 
-  <div class="flourish-pullquote-wrap">
-    <div class="flourish flourish-pullquote">
-      <div class="flourish-pullquote__hatching-pattern-1 js-reveal-element" data-exclude="bottom">
-        {{>background-elements hatching-pattern-1=true}}
-      </div>
-      <div class="flourish-pullquote__polygon-shape-1 js-reveal-element" data-exclude="bottom">
-        {{>background-elements polygon-shape-1=true}}
-      </div>
-      <span class="flourish-pullquote__text">
-         This requires not just being able to do what good looks like but to stand in the middle of something not good and influence
-        the outcome incrementally day to day to make it better
-      </span>
-    </div>
-  </div>
+  {{> pullquote pullquote-main }}
 
   {{#markdown}}
   Our people are at the core of this process. Trust in our people underpins everything we do. Talented, passionate, hard-working, and some of the sharpest people you will ever meet. The best thing about working here is the people you get to work with while solving hard problems. 
@@ -60,19 +38,7 @@
 {{/content}}
 
 {{#content "flourish-tail"}}
-<div class="flourish-wrap">
-  <div class="flourish flourish-tail-2">
-    <div class="flourish-tail-2__hatching-pattern-3 js-reveal-element" data-exclude="top">
-      {{>background-elements hatching-pattern-3=true}}
-    </div>
-    <div class="flourish-tail-2__polygon-shape-3a js-reveal-element" data-exclude="top">
-      {{>background-elements polygon-shape-3=true}}
-    </div>
-    <div class="flourish-tail-2__polygon-shape-3b js-reveal-element" data-exclude="top">
-      {{>background-elements polygon-shape-3=true}}
-    </div>
-  </div>
-</div>
+  {{> flourish flourish-tail }}
 {{/content}}
 
 {{/extend}}

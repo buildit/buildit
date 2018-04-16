@@ -33,5 +33,43 @@ inlineRow:
     content: <svg role="img" class="grav-c-logo" width="178" height="33"><use xlink:href="#logo-designit"></use></svg>
 layout: about.hbs
 page-url: about
+flourish-top:
+  baseClass: flourish-top
+  shapes:
+  - shape: polygon-shape-4
+    shapeClass: polygon-shape-4
+    reveal: true
+    exclude: top
+  - shape: hatching-pattern-3
+    shapeClass: hatching-pattern-3
+    reveal: true
+    exclude: top
+flourish-tail:
+  baseClass: flourish-tail
+  shapes:
+  - shape: polygon-shape-4
+    shapeClass: polygon-shape-4
+    reveal: true
+    exclude: top
+  - shape: hatching-pattern-2
+    shapeClass: hatching-pattern-2
+    reveal: true
+    exclude: top
+  - shape: polygon-shape-3
+    shapeClass: polygon-shape-3
+    reveal: true
+    exclude: top
+pullquote-what-we-do: 
+  quote: We are problem solvers who hone our craft through experimentation, continuous improvement and systems thinking
+  shapes:
+  - shape: hatching-pattern-1
+    shapeClass: hatching-pattern-1
+    reveal: true
+    exclude: top
+  - shape: polygon-shape-1
+    shapeClass: polygon-shape-1
+    reveal: true
+    exclude: top
+
 ---
 # About us

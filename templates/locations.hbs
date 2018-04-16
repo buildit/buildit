@@ -1,7 +1,7 @@
 {{#extend "page"}}
 
 {{#content "flourish-top"}}
-<div class="flourish-wrap flourish--flip">
+{{!-- <div class="flourish-wrap flourish--flip">
   <div class="flourish flourish-tail">
     <div class="flourish-tail__polygon-shape-4">
       {{>background-elements polygon-shape-4=true}}
@@ -13,7 +13,8 @@
       {{>background-elements polygon-shape-3=true}}
     </div>
   </div>
-</div>
+</div> --}}
+  {{> flourish flourish-top }}
 {{/content}}
 
 {{#content "main"}}
@@ -31,7 +32,7 @@
 {{/content}}
 
 {{#content "flourish-tail"}}
-  <div class="flourish-wrap">
+  {{!-- <div class="flourish-wrap">
     <div class="flourish flourish-tail-3">
       <div class="flourish-tail-3__polygon-shape-4 js-reveal-element" data-exclude="top">
         {{>background-elements polygon-shape-4=true}}
@@ -40,7 +41,8 @@
         {{>background-elements hatching-pattern-3=true}}
       </div>
     </div>
-  </div>
+  </div> --}}
+  {{> flourish flourish-tail }}
 {{/content}}
 
 {{/extend}}
