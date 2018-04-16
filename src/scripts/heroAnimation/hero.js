@@ -138,10 +138,11 @@ function addListeners() {
     container.addEventListener("mousemove", mouseMove);
     container.addEventListener("mouseout", mouseOut);
     container.addEventListener("mouseenter", mouseEnter);
+    window.addEventListener("resize", resizeCanvas);
   }
 
   window.addEventListener("scroll", scrollCheck);
-  window.addEventListener("resize", resizeCanvas);
+
   window.onresize = function() {
     location.reload();
   };
