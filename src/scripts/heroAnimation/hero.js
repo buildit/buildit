@@ -1,6 +1,13 @@
-let width, height, ctx, points, target, canvasTop, animateHeader = true, timer = null;
-const canvas = document.getElementById('js-canvas-hero');
-const container = document.querySelector('.grav-c-hero');
+let width,
+  height,
+  ctx,
+  points,
+  target,
+  canvasTop,
+  animateHeader = true,
+  timer = null;
+const canvas = document.getElementById("js-canvas-hero");
+const container = document.querySelector(".grav-c-hero");
 
 function HeroAnimation() {
   if (container !== null) {
@@ -11,7 +18,7 @@ function HeroAnimation() {
 }
 
 function setTimer() {
-  window.clearTimeout(timer); 
+  window.clearTimeout(timer);
   timer = null;
   timer = window.setTimeout(initHeader, 60000);
 }
@@ -26,8 +33,11 @@ function scrollCheck() {
 
 function resizeCanvas() {
   canvasTop = canvas.getBoundingClientRect().top;
-  canvas.setAttribute('style', `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`);
-};
+  canvas.setAttribute(
+    "style",
+    `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`
+  );
+}
 
 function drawLines(p) {
   if (!p.active) return;
@@ -35,7 +45,7 @@ function drawLines(p) {
     ctx.beginPath();
     ctx.moveTo(p.x, p.y);
     ctx.lineTo(p.closest[i].x, p.closest[i].y);
-    ctx.strokeStyle = 'rgba(94, 161, 184,' + p.active + ')';
+    ctx.strokeStyle = "rgba(94, 161, 184," + p.active + ")";
     ctx.stroke();
   }
 }
@@ -44,17 +54,17 @@ function Circle(pos, rad, color) {
   var _this = this;
 
   // constructor
-  (function () {
+  (function() {
     _this.pos = pos || null;
     _this.radius = rad || null;
     _this.color = color || null;
   })();
 
-  this.draw = function () {
+  this.draw = function() {
     if (!_this.active) return;
     ctx.beginPath();
     ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-    ctx.fillStyle = 'rgba(94, 161, 184,' + _this.active + ')';
+    ctx.fillStyle = "rgba(94, 161, 184," + _this.active + ")";
     ctx.fill();
   };
 }
@@ -90,7 +100,7 @@ function shiftPoint(p) {
     x: p.originX - 0 + Math.random() * 20,
     y: p.originY - 0 + Math.random() * 20,
     ease: Circ.easeInOut,
-    onComplete: function () {
+    onComplete: function() {
       shiftPoint(p);
     }
   });
@@ -98,8 +108,8 @@ function shiftPoint(p) {
 
 function mouseMove(e) {
   let posy = 0;
-  let posx = posy = 0;
-  
+  let posx = (posy = 0);
+
   posx = e.pageX;
   posy = e.pageY - canvasTop;
 
@@ -123,16 +133,18 @@ function getDistance(p1, p2) {
 
 function addListeners() {
   let timer = null;
-  
-  if (!('ontouchstart' in window)) {
-    container.addEventListener('mousemove', mouseMove);
-    container.addEventListener('mouseout', mouseOut);
-    container.addEventListener('mouseenter', mouseEnter);
+
+  if (!("ontouchstart" in window)) {
+    container.addEventListener("mousemove", mouseMove);
+    container.addEventListener("mouseout", mouseOut);
+    container.addEventListener("mouseenter", mouseEnter);
   }
 
-  window.addEventListener('scroll', scrollCheck);
-  window.addEventListener('resize', resizeCanvas);
-  window.onresize = function(){ location.reload(); }
+  window.addEventListener("scroll", scrollCheck);
+  window.addEventListener("resize", resizeCanvas);
+  window.onresize = function() {
+    location.reload();
+  };
   setTimer();
 }
 
@@ -147,19 +159,19 @@ function initHeader() {
     y: height * 2
   };
 
-  if (typeof canvas.getContext !== 'function') {
-    console.info('the thingy bob doesn\'t support canvas. Bailing out.');
+  if (typeof canvas.getContext !== "function") {
+    console.info("the thingy bob doesn't support canvas. Bailing out.");
     return;
   }
 
-  ctx = canvas.getContext('2d');
+  ctx = canvas.getContext("2d");
   target = {
     x: width * 2,
     y: height * 2
   };
 
   // create points - added breakpoint with less nodes displayed as on smaller screens as it can look very dense
-  if (window.matchMedia('screen and (min-width:768px)').matches) {
+  if (window.matchMedia("screen and (min-width:768px)").matches) {
     points = [];
     for (var x = 0; x < width; x = x + width / 9) {
       for (var y = 0; y < height; y = y + height / 9) {
@@ -196,7 +208,7 @@ function initHeader() {
     var closest = [];
     var p1 = points[i];
     for (var j = 0; j < points.length; j++) {
-      var p2 = points[j]
+      var p2 = points[j];
       if (!(p1 == p2)) {
         var placed = false;
         for (var k = 0; k < 5; k++) {
@@ -223,7 +235,11 @@ function initHeader() {
 
   // assign a circle to each point
   for (var i in points) {
-    var c = new Circle(points[i], 2 + Math.random() * 2.5, 'rgba(255,255,255,0.3)');
+    var c = new Circle(
+      points[i],
+      2 + Math.random() * 2.5,
+      "rgba(255,255,255,0.3)"
+    );
     points[i].circle = c;
   }
 }
