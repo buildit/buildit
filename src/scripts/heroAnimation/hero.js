@@ -1,4 +1,4 @@
-let width, height, ctx, points, target, headerHeight, animateHeader = true;
+let width, height, ctx, points, target, canvasTop, animateHeader = true, timer = null;
 const canvas = document.getElementById('js-canvas-hero');
 const container = document.querySelector('.grav-c-hero');
 
@@ -6,6 +6,12 @@ function HeroAnimation() {
   addListeners();
   initHeader();
   initAnimation();
+}
+
+function setTimer() {
+  window.clearTimeout(timer); 
+  timer = null;
+  timer = window.setTimeout(initHeader, 60000);
 }
 
 function scrollCheck() {
@@ -17,7 +23,7 @@ function scrollCheck() {
 }
 
 function resizeCanvas() {
-  headerHeight = canvas.getBoundingClientRect().top;
+  canvasTop = canvas.getBoundingClientRect().top;
   canvas.setAttribute('style', `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`);
 };
 
@@ -93,16 +99,20 @@ function mouseMove(e) {
   let posx = posy = 0;
   
   posx = e.pageX;
-  posy = e.pageY - headerHeight;
+  posy = e.pageY - canvasTop;
 
   target.x = posx;
   target.y = posy;
-
 }
 
-function mouseOut(e) {
-  target.x = container.clientHeight;
-  target.y = container.clientWidth;
+function mouseEnter() {
+  initAnimation();
+}
+
+function mouseOut() {
+  target.x = container.clientHeight * 2;
+  target.y = container.clientHeight * 2;
+  setTimer();
 }
 
 function getDistance(p1, p2) {
@@ -110,15 +120,18 @@ function getDistance(p1, p2) {
 }
 
 function addListeners() {
+  let timer = null;
+  
   if (!('ontouchstart' in window)) {
-    canvas.addEventListener('mousemove', mouseMove);
-    canvas.addEventListener('mouseout', mouseOut);
+    container.addEventListener('mousemove', mouseMove);
+    container.addEventListener('mouseout', mouseOut);
+    container.addEventListener('mouseenter', mouseEnter);
   }
 
   window.addEventListener('scroll', scrollCheck);
   window.addEventListener('resize', resizeCanvas);
   window.onresize = function(){ location.reload(); }
-  window.setTimeout(initHeader, 60000);
+  setTimer();
 }
 
 function initHeader() {
@@ -128,8 +141,8 @@ function initHeader() {
   canvas.width = width;
   canvas.height = height;
   target = {
-    x: width / 2,
-    y: height / 2
+    x: width * 2,
+    y: height * 2
   };
 
   if (typeof canvas.getContext !== 'function') {
@@ -139,8 +152,8 @@ function initHeader() {
 
   ctx = canvas.getContext('2d');
   target = {
-    x: width / 2,
-    y: height / 2
+    x: width * 2,
+    y: height * 2
   };
 
   // create points - added breakpoint with less nodes displayed as on smaller screens as it can look very dense
