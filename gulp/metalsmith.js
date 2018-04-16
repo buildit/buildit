@@ -71,6 +71,19 @@ function metalsmith() {
             },
             build: {
               excludeRobots: siteEnv.excludeRobots
+            },
+
+            // Defaults for Twitter card meta tags
+            // (See: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
+            twitter: {
+              card: "summary",
+              site: "@Buildit_tech"
+            },
+
+            // Defaults for OpenGraph Protocol (OGP) meta tags
+            // (See: http://ogp.me/)
+            og: {
+              type: "website"
             }
           })
           .use(jobListings())

@@ -1,6 +1,15 @@
-<title>{{#if pageTitle }}{{pageTitle}}{{else}}{{site.title}}{{/if}}</title>
 <meta charset="UTF-8">
+<title>{{#if pageTitle }}{{pageTitle}}{{else}}{{site.title}}{{/if}}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <meta name="description" content="{{description}}">
+<meta property="og:title" content="{{#if og.title }}{{og.title}}{{else}}{{title}}{{/if}}">
+<meta property="og:site_name" content="{{site.title}}">
+<meta property="og:type" content="{{og.type}}">
+<meta property="og:url" content="{{site.url}}/{{#if path}}{{path}}/{{/if}}">
+
+<meta name="twitter:card" content="{{twitter.card}}" />
+<meta name="twitter:site" content="{{twitter.site}}" />
+
 <link rel="stylesheet" href="/styles/style.css">

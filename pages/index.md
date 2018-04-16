@@ -1,6 +1,8 @@
 ---
 # Meta-data
 description: This is Buildit homepage
+og:
+  title: Buildit
 
 # Display
 layout: homepage.hbs
