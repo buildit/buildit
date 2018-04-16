@@ -1,4 +1,4 @@
-let width, height, ctx, points, target, animateHeader = true;
+let width, height, ctx, points, target, headerHeight, animateHeader = true;
 const canvas = document.getElementById('js-canvas-hero');
 const container = document.querySelector('.grav-c-hero');
 
@@ -17,6 +17,7 @@ function scrollCheck() {
 }
 
 function resizeCanvas() {
+  headerHeight = canvas.getBoundingClientRect().top;
   canvas.setAttribute('style', `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`);
 };
 
@@ -90,13 +91,18 @@ function shiftPoint(p) {
 function mouseMove(e) {
   let posy = 0;
   let posx = posy = 0;
-
   
   posx = e.pageX;
-  posy = e.pageY - canvas.getBoundingClientRect().top;
+  posy = e.pageY - headerHeight;
 
   target.x = posx;
   target.y = posy;
+
+}
+
+function mouseOut(e) {
+  target.x = container.clientHeight;
+  target.y = container.clientWidth;
 }
 
 function getDistance(p1, p2) {
@@ -106,10 +112,13 @@ function getDistance(p1, p2) {
 function addListeners() {
   if (!('ontouchstart' in window)) {
     canvas.addEventListener('mousemove', mouseMove);
+    canvas.addEventListener('mouseout', mouseOut);
   }
 
   window.addEventListener('scroll', scrollCheck);
   window.addEventListener('resize', resizeCanvas);
+  window.onresize = function(){ location.reload(); }
+  window.setTimeout(initHeader, 60000);
 }
 
 function initHeader() {
