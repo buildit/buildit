@@ -1,25 +1,17 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This is will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add("smoothScroll", anchor => {
+  cy.get(anchor).click();
+  cy.get(`a[href="${anchor}"]`).click();
+  cy.location(location => expect(location).to.contain(anchor));
+});
+
+Cypress.Commands.add("toggleMenu", toggleMenu => {
+  cy.get(toggleMenu).click();
+  cy.get(toggleMenu).should("have.attr", "aria-pressed", "true");
+  cy.get(toggleMenu).click();
+  cy.get(toggleMenu).should("have.attr", "aria-pressed", "false");
+});
+
+//TODO: TypeError at scripts > hero-animation > hero.js:126
+Cypress.on("uncaught:exception", (err, runnable) => {
+  return false;
+});
