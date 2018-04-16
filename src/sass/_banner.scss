@@ -3,6 +3,10 @@ header[role=banner] {
 
   .medium-logo {
     fill: #ece9e9; // medium off-white
+    width: 1.4rem;
+    min-width: 1.4rem;
+    height: 1.4rem;
+    min-height: 1.4rem;
   }
 
   &.is-light {
