@@ -39,11 +39,11 @@ flourish-top:
   - shape: polygon-shape-4
     shapeClass: polygon-shape-4
     reveal: true
-    exclude: top
+    exclude: bottom
   - shape: hatching-pattern-3
     shapeClass: hatching-pattern-3
     reveal: true
-    exclude: top
+    exclude: bottom
 flourish-tail:
   baseClass: flourish-group-b
   shapes:
