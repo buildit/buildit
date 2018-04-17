@@ -1,7 +1,6 @@
-Cypress.Commands.add("smoothScroll", anchor => {
-  cy.get(anchor).click();
-  cy.get(`a[href="${anchor}"]`).click();
-  cy.location(location => expect(location).to.contain(anchor));
+//TODO: TypeError at scripts > hero-animation > hero.js:126
+Cypress.on("uncaught:exception", (err, runnable) => {
+  return false;
 });
 
 Cypress.Commands.add("isActiveRoute", (selector, route) => {
@@ -20,14 +19,32 @@ Cypress.Commands.add("toggleMenu", toggleMenu => {
 
 Cypress.Commands.add("scrollReveal", selector => {
   cy.get(selector).then($el => {
-    let start = $el.position();
+    const start = $el.position();
     cy.scrollTo("0%", "60%");
     cy.wait(1000);
     expect(start).to.not.equal($el.position());
   });
 });
 
-//TODO: TypeError at scripts > hero-animation > hero.js:126
-Cypress.on("uncaught:exception", (err, runnable) => {
-  return false;
+Cypress.Commands.add("smoothScroll", anchor => {
+  cy.get(anchor).click();
+  cy.get(`a[href="${anchor}"]`).click();
+  cy.location(location => expect(location).to.contain(anchor));
+});
+
+Cypress.Commands.add("animatedHero", selector => {
+  let cursor;
+
+  cy
+    .get(selector)
+    .invoke(
+      "click",
+      position =>
+        (cursor = {
+          x: position.clientX,
+          y: position.clientY
+        })
+    )
+    .click({ force: true })
+    .then(canvas => expect(cursor.x).to.equal(canvas.width() / 2));
 });
