@@ -21,11 +21,13 @@
   "contributors": [
     "Matteo Pescarin",
     "James Nash",
-    "Valerio Francescangeli"
+    "Valerio Francescangeli",
+    "Ana Escontrela"
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://digitalrig.atlassian.net/secure/RapidBoard.jspa?rapidView=229"
+    "url":
+      "https://digitalrig.atlassian.net/secure/RapidBoard.jspa?rapidView=229"
   },
   "homepage": "https://buildit.wiprodigital.com",
   "engines": {
