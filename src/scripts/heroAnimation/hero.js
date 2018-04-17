@@ -17,7 +17,7 @@ function HeroAnimation() {
   }
 }
 
-function setTimer() {
+function resetTimer() {
   window.clearTimeout(timer);
   timer = null;
   timer = window.setTimeout(initHeader, 60000);
@@ -124,7 +124,7 @@ function mouseEnter() {
 function mouseOut() {
   target.x = container.clientHeight * 2;
   target.y = container.clientHeight * 2;
-  setTimer();
+  resetTimer();
 }
 
 function getDistance(p1, p2) {
@@ -146,7 +146,7 @@ function addListeners() {
   window.onresize = function() {
     location.reload();
   };
-  setTimer();
+  resetTimer();
 }
 
 function initHeader() {
