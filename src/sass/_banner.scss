@@ -1,18 +1,10 @@
 // custom rules applied to gravity ui scss
 header[role=banner] {
-
   .medium-logo {
-    fill: #ece9e9; // medium off-white
-    width: 1.4rem;
-    min-width: 1.4rem;
-    height: 1.4rem;
-    min-height: 1.4rem;
-  }
-
-  &.is-light {
-    .medium-logo {
-      fill: #000; // medium black
-    }
+    width: 1.3rem;
+    min-width: 1.3rem;
+    height: 1.3rem;
+    min-height: 1.3rem;
   }
 
   .grav-c-nav-menu__external-link {
@@ -24,11 +16,5 @@ header[role=banner] {
   .grav-c-block-link {
     display: flex;
     align-items: center;
-
-    &:hover {
-      .medium-logo {
-        fill: $grav-co-neutral-ashtray;
-      }
-    }
   }
 }
