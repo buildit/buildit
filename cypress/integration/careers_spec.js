@@ -12,7 +12,7 @@ describe("Careers page", () => {
   });
 
   it("should render current route as active navigation option", () => {
-    cy.activeRoute(".grav-c-block-link", route);
+    cy.isActiveRoute(".grav-c-block-link", route);
   });
 
   it("renders an anchor that uses the smoothScroll feature", () => {

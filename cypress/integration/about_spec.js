@@ -11,15 +11,10 @@ describe("About page", () => {
   });
 
   it("should render current route as active navigation option", () => {
-    cy.activeRoute(".grav-c-block-link", route);
+    cy.isActiveRoute(".grav-c-block-link", route);
   });
 
   it("renders a pullquote animation", () => {
-    cy.get(".js-reveal-element").then($el => {
-      let start = $el.position();
-      cy.scrollTo("0%", "60%");
-      cy.wait(1000);
-      expect(start).to.not.equal($el.position());
-    });
+    cy.scrollReveal(".js-reveal-element");
   });
 });

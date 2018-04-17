@@ -11,7 +11,7 @@ describe("Locations page", () => {
   });
 
   it("should render current route as active navigation option", () => {
-    cy.activeRoute(".grav-c-block-link", route);
+    cy.isActiveRoute(".grav-c-block-link", route);
   });
 
   it("should render a map for each location that opens a new window", () => {
