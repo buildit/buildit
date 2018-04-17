@@ -4,6 +4,8 @@ node_modules
 dist
 npm-debug.log
 .secrets
+cypress/videos
+cypress/screenshots
 
 # Coverage directory used by tools like istanbul
 coverage
