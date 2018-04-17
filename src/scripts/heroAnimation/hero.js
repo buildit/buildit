@@ -161,7 +161,7 @@ function initHeader() {
   };
 
   if (typeof canvas.getContext !== "function") {
-    console.info("the thingy bob doesn't support canvas. Bailing out.");
+    console.warn("the thingy bob doesn't support canvas. Bailing out.");
     return;
   }
 
