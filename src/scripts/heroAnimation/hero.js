@@ -84,8 +84,8 @@ function animate() {
         points[i].active = 0.04;
         points[i].circle.active = 0.1;
       } else {
-        points[i].active = 0.03;
-        points[i].circle.active = 0.03;
+        points[i].active = 0.06;
+        points[i].circle.active = 0.06;
       }
 
       drawLines(points[i]);
