@@ -11,10 +11,10 @@ const container = document.querySelector(".grav-c-hero");
 
 function HeroAnimation() {
   if (container !== null) {
-    addListeners();
+    canvasTop = canvas.getBoundingClientRect().top;
     initHeader();
-    resizeCanvas();
     initAnimation();
+    addListeners();
   }
 }
 
@@ -252,6 +252,8 @@ function initHeader() {
     );
     points[i].circle = c;
   }
+
+  initAnimation();
 }
 
 function initAnimation() {

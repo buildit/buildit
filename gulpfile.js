@@ -98,6 +98,7 @@ gulp.task(
     assets,
     styles,
     scripts.copyModules,
+    scripts.copyNodeModules,
     scripts.bundle,
     images,
     metalsmith.build
