@@ -13,6 +13,7 @@ function HeroAnimation() {
   if (container !== null) {
     addListeners();
     initHeader();
+    resizeCanvas();
     initAnimation();
   }
 }
@@ -31,13 +32,25 @@ function scrollCheck() {
   }
 }
 
-function resizeCanvas() {
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+const resizeCanvas = debounce(function() {
+  initHeader();
   canvasTop = canvas.getBoundingClientRect().top;
-  canvas.setAttribute(
-    "style",
-    `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`
-  );
-}
+}, 250);
 
 function drawLines(p) {
   if (!p.active) return;
@@ -143,14 +156,10 @@ function addListeners() {
 
   window.addEventListener("scroll", scrollCheck);
 
-  window.onresize = function() {
-    initHeader();
-  };
   resetTimer();
 }
 
 function initHeader() {
-  resizeCanvas();
   width = container.clientWidth;
   height = container.clientHeight;
   canvas.width = width;
