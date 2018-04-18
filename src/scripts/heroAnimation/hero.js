@@ -33,10 +33,6 @@ function scrollCheck() {
 
 function resizeCanvas() {
   canvasTop = canvas.getBoundingClientRect().top;
-  canvas.setAttribute(
-    "style",
-    `width: ${container.clientWidth}px; height: ${container.clientHeight}px;`
-  );
 }
 
 function drawLines(p) {
