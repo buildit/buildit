@@ -50,7 +50,7 @@ function debounce(func, wait, immediate) {
 const resizeCanvas = debounce(function() {
   initHeader();
   canvasTop = canvas.getBoundingClientRect().top;
-}, 250);
+}, 150);
 
 function drawLines(p) {
   if (!p.active) return;
