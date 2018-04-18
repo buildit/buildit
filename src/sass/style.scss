@@ -5,3 +5,7 @@
 .grav-c-hero > :not(canvas) {
   position: relative;
 }
+
+.grav-c-two-columns-block {
+  justify-content: space-between;
+}
