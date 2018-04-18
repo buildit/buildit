@@ -6,6 +6,24 @@ header[role=banner] {
     height: 20px;
     min-height: 20px;
     margin-right: $grav-sp-xs;
+
+    rect {
+      fill: $medium-monogram-white;
+    }
+    path {
+      fill: $medium-monogram-black;
+    }
+  }
+
+  &.is-light {
+    .medium-logo {
+      rect {
+        fill: $medium-monogram-black;
+      }
+      path {
+        fill: $medium-monogram-white;
+      }
+    }
   }
 
   .grav-c-nav-menu__external-link {
