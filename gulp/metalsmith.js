@@ -55,7 +55,7 @@ function metalsmith() {
     }
     return null;
   });
-  handlebars.registerHelper("flourishShapes", function(name, options) {
+  handlebars.registerHelper("flourishShapes", function(name) {
     const template = flourishTemplate(flourishShapes[name]);
     return new handlebars.SafeString(template);
   });

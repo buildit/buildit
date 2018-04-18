@@ -1,8 +1,7 @@
-<div class="flourish-pullquote-wrap">
+<blockquote class="flourish-pullquote-wrap">
   <div class="flourish flourish-pullquote">
-     {{#each shapes}}
-      <div class="flourish-pullquote__{{shape}} {{#if reveal}}js-reveal-element{{/if}}" {{#if exclude}}data-exclude="{{exclude}}"
-        {{/if}}>
+    {{#each shapes}}
+      <div class="flourish-pullquote__{{shape}} {{#if reveal}}js-reveal-element{{/if}}" {{#if exclude}}data-exclude="{{exclude}}"{{/if}}>
         {{ flourishShapes shape }}
       </div>
     {{/each}}
@@ -10,4 +9,4 @@
       {{quote}}
     </span>
   </div>
-</div>
+</blockquote>
