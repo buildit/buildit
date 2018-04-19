@@ -9,7 +9,6 @@ page-url:    locations
 layout:      locations.hbs
 main-classnames: grav-o-container
 footerModifierClass: grav-c-footer-no-margin
-page-url:    locations
 
 # Content
 locations: 
