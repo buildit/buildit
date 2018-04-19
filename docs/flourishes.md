@@ -1,0 +1,95 @@
+# Flourish Docs
+
+A flourish is a design patten used for creating ambient background elements to liven up pages and page components. Flourishes are a group of SVG elements (hatching patterns and polygons) that are controlled using CSS for styling and JavaScript for optional animation.
+
+### Flourish top and tail group quick-start
+
+To use an existing flourish group use the `flourish` partial inside the `content` partial block using either the `top` or `tail` postfix ie:
+
+```handlebars
+{{#content "flourish-top"}}
+  {{> flourish flourish-top }}
+{{/content}}
+```
+
+The argument passed to `flourish` partial is `flourish-top` markdown content (currently in YMAL format) ie:
+
+```yaml
+flourish-top:
+  baseClass: flourish-group-a
+  shapes:
+  - shape: polygon-shape-4
+    shapeClass: polygon-shape-4
+    reveal: true
+    exclude: bottom
+  - shape: hatching-pattern-3
+    shapeClass: hatching-pattern-3
+    reveal: true
+    exclude: bottom
+```
+
+**Note:** To reuse a flourish that has been configured for the opposite end add `flip: true`
+
+### Options
+
+```yaml
+baseClass: {string} - Class name for Flourish group to control group style
+shape: {string} - The SVG shape to apply
+shapeClass: {string} - Class name to control shape style
+
+# Optional
+flip: {boolean} - Rotates a tail to be a top and vice versa
+reveal: {boolean} - Animate into viewport on page scroll
+exclude: {string} - Position property values to exclude from animation direction
+```
+
+### Animation
+
+**reveal**
+
+Using `reveal: true` will animate the flourish into position as scroll into viewport occurs using the ScrollReveall library. Each flourish will have randomly generated animation parameters. To check these settings see `scrollRevealModule.js`
+
+**exclude**
+
+The `top` `right` `bottom` `left` strings passed to `exclude` are to ensure the flourish animates in from off the page. An example of this is a top group only animating in from the top, right or left ie: `exclude: bottom`
+
+**Note**: Animations are cannot be applied to SVG elements directly so we wrap them in a container element.
+
+### Current implementation of flourishes in codebase
+
+To better understand how these components function or before creating new flourishes it's worth understanding how the files link together in the codebase.
+
+1.  `{page}.hbs` template calls the `flourish.hbs` partial in the inside a `#content` partial block.
+2.  `flourish.hbs` partial consumes data from `pages.md`
+3.  `flourish.hbs` partial also calls `flourishShapes` helper function passing through a `shape` label.
+4.  `flourishShapes` helper function (a metalsmith gulp script) will return an SVG element which is a combination of shape data (called using the `shape` label) from `shapes.json` and a `presentation-svg.hbs` template.
+
+### Creating new flourish groups
+
+To create a new flourish group you will need to create a new unique group name and styling in `flourish-group.scss` using any combination of SVG shapes stored in `src/flourishes/shapes.json`
+
+### Adding new flourishes
+
+To add new SVG shapes you can simply extract the attribute values and add to `src/flourishes/shapes.json` and call as you would for any other flourish.
+
+### Styling flourishes
+
+Flourishes are absolutely positioned inside the group container. Each SVG is wrapped in a `div` which requires a width in absolute units (px) and position in relative units (%).
+
+Rules that concern **size and scale** should be on the `div` that wraps each SVG shape while rules for **colour and gradients** should be on the SVG itself.
+
+You can optionally apply the horizontal linear gradient (using a `fill` on the `.shape` class) with custom colours or transparency (using a `stop-color` on `.stop-1` and/or `.stop-2` classes) ie:
+
+```css
+.shape {
+  fill: url("#hatching-pattern-2-gradient");
+}
+.stop-1 {
+  stop-color: #fecb00; // yellow on the left
+}
+.stop-2 {
+  stop-opacity: 0; // fade to transpartent on the right
+}
+```
+
+**Do not apply** `transform` to the `div` that wraps each SVG shape as the ScrollReveal library inlines this rule to provide animation. If you require `transform` simply apply to the SVG directly.
