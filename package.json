@@ -8,7 +8,10 @@
     "build": "npm run clean && gulp build",
     "start": "npm run clean && gulp",
     "test": "jest",
-    "test-watch": "jest --coverage --watch"
+    "test-watch": "jest --coverage --watch",
+    "cypress:open": "cypress open",
+    "cypress:cli": "cypress run",
+    "cypress:travis": "http-server dist -c-1 -s & cypress run"
   },
   "repository": {
     "type": "git",
@@ -32,10 +35,12 @@
   "devDependencies": {
     "@buildit/gravity-ui-sass": "^0.6.1",
     "@buildit/job-listings": "^1.0.2",
+    "ajv": "^5.5.2",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
+    "cypress": "^2.1.0",
     "debug": "^3.1.0",
     "del": "^3.0.0",
     "eslint": "^4.19.1",
@@ -61,6 +66,7 @@
     "handlebars-layouts": "^3.1.4",
     "helper-markdown": "^1.0.0",
     "helper-moment": "^0.2.0",
+    "http-server": "^0.11.1",
     "jest": "^22.4.3",
     "jstransformer-handlebars": "^1.1.0",
     "lodash.assign": "^4.2.0",

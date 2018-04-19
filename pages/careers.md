@@ -1,9 +1,15 @@
 ---
-description: Open job positions at Buildit.
-draft: false
+# Meta-data
 title: Careers
+description: Open job positions at Buildit.
+page-url: careers
+
+# Display
+layout: careers.hbs
 main-classnames: grav-o-container
 footerModifierClass: grav-c-footer-no-margin
+
+# Content
 steps:
   - title: Let's chat
     description: One of the Buildit talent team will call you for a quick chat to find out a little bit about you. For some roles we would ask you to complete an exercise after but we will let you know at this stage for sure!
@@ -15,8 +21,6 @@ steps:
     description: This involves a visit to one of our studios, where you get to meet a few of the team if haven't done so in the process. We'll get to talk in more detail about what we do, your experiences and ambitions. If you are an Engineer we will also spend a bit of time talking about your tech submission and we will pair program building a few more features.
   - title: Welcome to Buildit!
     description: That's pretty much it. There will be one more phone call to confirm transfer details with you, and possible start dates.
-layout: careers.hbs
-page-url: careers
 flourish-top:
   baseClass: flourish-group-c
   shapes:

@@ -27,6 +27,8 @@ script:
     else
       npm run-script build;
     fi
+  - npm run-script build
+  - npm run cypress:travis
 
 before_deploy:
   - pip install --user awscli
