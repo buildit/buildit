@@ -1,14 +1,28 @@
 {{#extend "page"}}
-{{#content "main"}}
 
+{{#content "flourish-top"}}
+  {{> flourish flourish-top }}
+{{/content}}
+
+{{#content "main"}}
   <h1>{{title}}</h1>
   
-  <section>
-    {{{contents}}}
-    <p class="grav-u-text-centered">
-      <a href="#the-hiring-process" class="grav-c-cta">Our hiring process</a>
-    </p>
-  </section>
+  {{#markdown}}      
+  Doing things differently requires strength of character, empathy for those around you, good judgement, as well as being able to explain why to do something differently in the customer's language and at the right time. 
+  {{/markdown}}
+
+  {{> pullquote pullquote-main }}
+
+  {{#markdown}}
+  Our people are at the core of this process. Trust in our people underpins everything we do. Talented, passionate, hard-working, and some of the sharpest people you will ever meet. The best thing about working here is the people you get to work with while solving hard problems. 
+  
+  If that sounds interesting to you, why don't you look at one of the job descriptions below and join our team?
+  {{/markdown}}
+
+  {{{contents}}}
+  <p class="grav-u-text-centered">
+    <a href="#the-hiring-process" class="grav-c-cta">Our hiring process</a>
+  </p>
 
   {{#each jobLocations}}
     {{>organism-job-list}}
@@ -21,4 +35,9 @@
   </section>
 
 {{/content}}
+
+{{#content "flourish-tail"}}
+  {{> flourish flourish-tail }}
+{{/content}}
+
 {{/extend}}
