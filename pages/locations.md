@@ -1,10 +1,15 @@
 ---
+# Meta-data
+title:       Locations
+ogTitle:     We are global
 description: List of Buildit's global studios with addresses and directions.
-draft:       false
-layout:      locations.hbs
-title:       We are global
-main-classnames: grav-o-container
 page-url:    locations
+
+# Display
+layout:      locations.hbs
+main-classnames: grav-o-container
+
+# Content
 locations: 
   - name:         Bengaluru
     addressline1: "72 Electronic City"

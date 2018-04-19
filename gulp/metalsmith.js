@@ -71,7 +71,18 @@ function metalsmith() {
             },
             build: {
               excludeRobots: siteEnv.excludeRobots
-            }
+            },
+
+            // Defaults for Twitter card meta tags
+            // (See: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
+            twitterCard: "summary",
+            twitterSite: "@Buildit_tech",
+
+            // Defaults for OpenGraph Protocol (OGP) meta tags
+            // (See: http://ogp.me/)
+            ogType: "website",
+            ogImage: "builidt-default-sharing-img.png",
+            ogImageAlt: "buildit @ wipro digital"
           })
           .use(jobListings())
           .use(pageTitles())
