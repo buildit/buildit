@@ -3,13 +3,13 @@
 /********************/
 @import 'gravity-ui-sass';
 
+
 /********************/
 /* Settings         */
 /********************/
+@import 'colours';
+@import 'banner';
 
-$color-grey-mercury: rgb(233, 233, 233);
-$color-grey-alto: rgb(211, 211, 211);
-$color-grey-iron: rgb(229, 229, 229);
 
 /********************/
 /* Tools            */
@@ -48,6 +48,7 @@ body {
 .js-reveal-element {
   visibility: hidden;
 }
+
 
 // Temporary override - TODO: Move to gravity
 .grav-c-hero> :not(canvas) {

@@ -1,0 +1,46 @@
+// custom rules applied to gravity ui scss
+header[role=banner] {
+  .medium-logo {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    margin-right: $grav-sp-xs;
+
+    rect {
+      fill: $medium-monogram-white;
+    }
+    path {
+      fill: $medium-monogram-black;
+    }
+  }
+
+  &.is-light {
+    .medium-logo {
+      rect {
+        fill: $medium-monogram-black;
+      }
+      path {
+        fill: $medium-monogram-white;
+      }
+    }
+  }
+
+  .grav-c-nav-menu__external-link {
+    .grav-c-block-link {
+      border-color: transparent;
+    }
+
+    &:hover {
+      rect {
+        fill: $grav-co-neutral-ashtray;
+      }
+    }
+  }
+
+  .grav-c-block-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
