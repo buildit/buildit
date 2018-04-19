@@ -16,11 +16,11 @@ hero:
   url: /about/
 blockquote: We partner with our clients to solve hard problems, and help them deliver world-class products.
 items:
-  - System thinking
-  - Continuous delivery
-  - Lean UX
+  - Systems thinking
+  - Agile coaching  
+  - Engineering transformation  
   - Design systems
-  - Agile coaching
+  - Lean UX  
   - Experiental learning
 imgLinksItems:
 - image:
