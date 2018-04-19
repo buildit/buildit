@@ -1,10 +1,67 @@
+/********************/
+/* Dependencies     */
+/********************/
 @import 'gravity-ui-sass';
+
+
+/********************/
+/* Settings         */
+/********************/
 @import 'colours';
-@import 'flourish';
 @import 'banner';
 
 
+/********************/
+/* Tools            */
+/********************/
+
+
+/********************/
+/* Generics         */
+/********************/
+
+
+/********************/
+/* Base             */
+/********************/
+html,
+body {
+  overflow-x: hidden
+}
+
+
+/********************/
+/* Objects          */
+/********************/
+
+
+/********************/
+/* Components       */
+/********************/
+
+// flourishes
+@import 'flourish';
+@import 'flourish-groups';
+@import 'flourish-pullquotes';
+
+// reveal plugin animtaions
+.js-reveal-element {
+  visibility: hidden;
+}
+
+
 // Temporary override - TODO: Move to gravity
-.grav-c-hero > :not(canvas) {
+.grav-c-hero> :not(canvas) {
   position: relative;
+}
+
+.grav-o-container {
+  z-index: 1;
+}
+
+/********************/
+/* Trumps           */
+/********************/
+.grav-c-two-columns-block {
+  justify-content: space-between;
 }

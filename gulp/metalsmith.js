@@ -2,6 +2,8 @@
 const config = require("../config.json");
 const paths = config.paths;
 const envs = require("./envs.js");
+const fs = require("fs");
+const path = require("path");
 
 const gulp = require("gulp");
 const gulpsmith = require("gulpsmith");
@@ -20,9 +22,20 @@ const permalinks = require("metalsmith-permalinks");
 const sitemap = require("metalsmith-mapsite");
 const debug = require("metalsmith-debug");
 const discoverPartials = require("metalsmith-discover-partials");
-
 const gravityAssets = require("./gravity-assets.js");
 const jobListings = require("./metalsmith-job-listings.js");
+const flourishShapes = require("../src/flourishes/shapes.json");
+
+const presentationSvgTemplate = fs.readFileSync(
+  path.join(
+    "./",
+    paths.templates.src,
+    paths.templates.partials,
+    "presentation-svg.hbs"
+  ),
+  "UTF-8"
+);
+const flourishTemplate = handlebars.compile(presentationSvgTemplate);
 
 function metalsmith() {
   // config for the site environment we're building
@@ -41,6 +54,10 @@ function metalsmith() {
       return options.fn(this);
     }
     return null;
+  });
+  handlebars.registerHelper("flourishShapes", function(name) {
+    const template = flourishTemplate(flourishShapes[name]);
+    return new handlebars.SafeString(template);
   });
 
   // register special partials
@@ -71,7 +88,18 @@ function metalsmith() {
             },
             build: {
               excludeRobots: siteEnv.excludeRobots
-            }
+            },
+
+            // Defaults for Twitter card meta tags
+            // (See: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
+            twitterCard: "summary",
+            twitterSite: "@Buildit_tech",
+
+            // Defaults for OpenGraph Protocol (OGP) meta tags
+            // (See: http://ogp.me/)
+            ogType: "website",
+            ogImage: "builidt-default-sharing-img.png",
+            ogImageAlt: "buildit @ wipro digital"
           })
           .use(jobListings())
           .use(pageTitles())

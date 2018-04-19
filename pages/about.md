@@ -1,8 +1,15 @@
 ---
-description: Buildit about page
-draft: false
+# Meta-data
+title: About us
+description: Who Buildit are, what they do and how they do it.
+page-url: about
+
+# Display
+layout: about.hbs
 main-classnames: grav-o-container has-flourish-top has-flourish-tail
 footerModifierClass: grav-c-footer-no-margin
+
+# Content
 imgCards:
     - title: Innovative
       content: Self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.
@@ -31,7 +38,42 @@ inlineRow:
   - href: https://designit.com
     title: Designit
     content: <svg role="img" class="grav-c-logo" width="178" height="33"><use xlink:href="#logo-designit"></use></svg>
-layout: about.hbs
-page-url: about
+flourish-top:
+  baseClass: flourish-group-a
+  shapes:
+  - shape: polygon-shape-4
+    shapeClass: polygon-shape-4
+    reveal: true
+    exclude: bottom
+  - shape: hatching-pattern-3
+    shapeClass: hatching-pattern-3
+    reveal: true
+    exclude: bottom
+flourish-tail:
+  baseClass: flourish-group-b
+  shapes:
+  - shape: polygon-shape-4
+    shapeClass: polygon-shape-4
+    reveal: true
+    exclude: top
+  - shape: hatching-pattern-2
+    shapeClass: hatching-pattern-2
+    reveal: true
+    exclude: top
+  - shape: polygon-shape-3
+    shapeClass: polygon-shape-3
+    reveal: true
+    exclude: top
+pullquote-what-we-do: 
+  quote: We are problem solvers who hone our craft through experimentation, continuous improvement and systems thinking
+  shapes:
+  - shape: hatching-pattern-1
+    shapeClass: hatching-pattern-1
+    reveal: true
+    exclude: top
+  - shape: polygon-shape-1
+    shapeClass: polygon-shape-1
+    reveal: true
+    exclude: top
 ---
 # About us
