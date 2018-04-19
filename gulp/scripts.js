@@ -31,5 +31,5 @@ function bundle() {
 
 module.exports = {
   bundle,
-  copyModules,
+  copyModules
 };
