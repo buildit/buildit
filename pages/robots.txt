@@ -1,5 +1,7 @@
 ---
-draft: false
+# Meta data
 permalink: false
+
+# Display
 layout: robots.hbs
 ---

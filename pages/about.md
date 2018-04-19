@@ -1,8 +1,15 @@
 ---
-description: Buildit about page
-draft: false
+# Meta-data
+title: About us
+description: Who Buildit are, what they do and how they do it.
+page-url: about
+
+# Display
+layout: about.hbs
 main-classnames: grav-o-container has-flourish-top has-flourish-tail
 footerModifierClass: grav-c-footer-no-margin
+
+# Content
 imgCards:
     - title: Innovative
       content: Self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.
@@ -69,5 +76,4 @@ pullquote-what-we-do:
     reveal: true
     exclude: top
 ---
-
 # About us
