@@ -10,10 +10,6 @@ function copyModules() {
   return gulp.src(paths.scripts.modules).pipe(gulp.dest(paths.scripts.dest));
 }
 
-function copyNodeModules() {
-  return gulp.src(paths.scripts.nodeModules).pipe(gulp.dest(paths.scripts.destNodeModules));
-}
-
 function bundle() {
   return gulp
     .src(paths.scripts.main)
@@ -36,5 +32,4 @@ function bundle() {
 module.exports = {
   bundle,
   copyModules,
-  copyNodeModules
 };

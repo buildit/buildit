@@ -28,7 +28,6 @@
     "scripts": {
       "main": "src/scripts/main.js",
       "modules": "src/scripts/**/*.js",
-      "nodeModules": ["./node_modules/gsap/EasePack.js", "./node_modules/gsap/TweenLite.js"],
       "src": "src/scripts/",
       "dest": "dist/scripts/",
       "destNodeModules": "dist/scripts/node_modules"
