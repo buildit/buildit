@@ -11,7 +11,8 @@
     "test-watch": "jest --coverage --watch",
     "cypress:open": "cypress open",
     "cypress:cli": "cypress run",
-    "cypress:travis": "http-server dist -c-1 -s & cypress run"
+    "cypress:travis": "http-server dist -c-1 -s & cypress run",
+    "pa11y-run": "http-server dist -c-1 -s & ./node_modules/.bin/pa11y-ci"
   },
   "repository": {
     "type": "git",
@@ -82,6 +83,7 @@
     "minimist": "^1.2.0",
     "node-sass": "^4.7.2",
     "normalize-scss": "^7.0.1",
+    "pa11y-ci": "^2.1.0",
     "prettier": "1.11.1",
     "rollup-plugin-babel": "^3.0.3"
   },
