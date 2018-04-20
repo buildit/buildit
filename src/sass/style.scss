@@ -51,10 +51,6 @@ body {
 
 
 // Temporary override - TODO: Move to gravity
-.grav-c-hero> :not(canvas) {
-  position: relative;
-}
-
 .grav-o-container {
   z-index: 1;
 }
@@ -62,6 +58,3 @@ body {
 /********************/
 /* Trumps           */
 /********************/
-.grav-c-two-columns-block {
-  justify-content: space-between;
-}
