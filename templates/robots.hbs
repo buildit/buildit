@@ -2,7 +2,13 @@ Sitemap: {{site.url}}/sitemap.xml
 
 {{#if build.excludeRobots }}
 # Non-production environment
-# Prevent search engines from indexing
+
+# Allow specific bots used for testing
+User-agent: Twitterbot
+Disallow:
+
+# Prevent all other bots from crawing and
+# indexing...
 User-agent: *
 Disallow: /
 {{else}}
