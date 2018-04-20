@@ -3,9 +3,9 @@
     "standard": "WCAG2A"
   },
   "urls": [
-    { "url": "http://localhost:8080" },
-    { "url": "http://localhost:8080/about/" },
-    { "url": "http://localhost:8080/careers/" },
-    { "url": "http://localhost:8080/locations/" }
+    "http://localhost:8080/",
+    "http://localhost:8080/about/",
+    "http://localhost:8080/careers/",
+    "http://localhost:8080/locations/"
   ]
 }
