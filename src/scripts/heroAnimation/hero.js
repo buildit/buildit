@@ -1,3 +1,5 @@
+import * as utils from './utils.js';
+
 let width,
   height,
   ctx,
@@ -10,6 +12,11 @@ const canvas = document.getElementById("js-canvas-hero");
 const container = document.querySelector(".grav-c-hero");
 
 function HeroAnimation() {
+  if (typeof canvas.getContext !== "function") {
+    console.warn("the thingy bob doesn't support canvas. Bailing out.");
+    return;
+  }
+
   if (container !== null) {
     canvasTop = canvas.getBoundingClientRect().top;
     initHeader();
@@ -97,8 +104,8 @@ function animate() {
         points[i].active = 0.04;
         points[i].circle.active = 0.1;
       } else {
-        points[i].active = 0.06;
-        points[i].circle.active = 0.06;
+        points[i].active = 0.04;
+        points[i].circle.active = 0.04;
       }
 
       drawLines(points[i]);
@@ -160,6 +167,7 @@ function addListeners() {
 }
 
 function initHeader() {
+  points = [];
   width = container.clientWidth;
   height = container.clientHeight;
   canvas.width = width;
@@ -169,58 +177,35 @@ function initHeader() {
     y: height * 2
   };
 
-  if (typeof canvas.getContext !== "function") {
-    console.warn("the thingy bob doesn't support canvas. Bailing out.");
-    return;
-  }
-
   ctx = canvas.getContext("2d");
   target = {
     x: width * 2,
     y: height * 2
   };
 
-  // create points - added breakpoint with less nodes displayed as on smaller screens as it can look very dense
-  if (window.matchMedia("screen and (min-width:768px)").matches) {
-    points = [];
-    for (var x = 0; x < width; x = x + width / 9) {
-      for (var y = 0; y < height; y = y + height / 9) {
-        var px = x + Math.random() * width / 9;
-        var py = y + Math.random() * height / 9;
-        var p = {
-          x: px,
-          originX: px,
-          y: py,
-          originY: py
-        };
-        points.push(p);
-      }
-    }
-  } else {
-    points = [];
-    for (var x = 0; x < width; x = x + width / 6) {
-      for (var y = 0; y < height; y = y + height / 6) {
-        var px = x + Math.random() * width / 6;
-        var py = y + Math.random() * height / 6;
-        var p = {
-          x: px,
-          originX: px,
-          y: py,
-          originY: py
-        };
-        points.push(p);
-      }
+  const pointsLimiter = utils.calcPointsLimiter(width, height);
+
+  for (var x = 0; x < width; x = x + width / pointsLimiter) {
+    for (var y = 0; y < height; y = y + height / pointsLimiter) {
+      var px = x + Math.random() * width / pointsLimiter;
+      var py = y + Math.random() * height / pointsLimiter;
+      var p = {
+        x: px,
+        originX: px,
+        y: py,
+        originY: py
+      };
+      points.push(p);
     }
   }
 
   // for each point find the 5 closest points
-  for (var i = 0; i < points.length; i++) {
-    var closest = [];
-    var p1 = points[i];
-    for (var j = 0; j < points.length; j++) {
-      var p2 = points[j];
+  points.map((p1) => {
+    let closest = [];
+    points.map(p2 => {
       if (!(p1 == p2)) {
         var placed = false;
+
         for (var k = 0; k < 5; k++) {
           if (!placed) {
             if (closest[k] == undefined) {
@@ -239,29 +224,28 @@ function initHeader() {
           }
         }
       }
-    }
-    p1.closest = closest;
-  }
+    });
 
-  // assign a circle to each point
-  for (var i in points) {
-    var c = new Circle(
-      points[i],
+    p1.closest = closest;
+  });
+
+  points.map(point => {
+   let c = new Circle(
+      point,
       2 + Math.random() * 2.5,
       "rgba(255,255,255,0.3)"
     );
-    points[i].circle = c;
-  }
-
+    point.circle = c;
+  })
   initAnimation();
 }
 
 function initAnimation() {
   animate();
 
-  for (var i in points) {
-    shiftPoint(points[i]);
-  }
+  points.map(point => {
+    shiftPoint(point);
+  })
 }
 
 export default HeroAnimation;
