@@ -14,7 +14,6 @@ const autoprefixer = require("gulp-autoprefixer");
 const metalsmith = require("./gulp/metalsmith");
 const browserSync = require("./gulp/browsersync");
 const scripts = require("./gulp/scripts");
-const { images, imageOptim } = require("./gulp/images");
 
 // non-gulp plugins
 const del = require("del");
@@ -75,7 +74,7 @@ function watch(done) {
   gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
   gulp.watch(
     paths.uncompressed.src,
-    gulp.series(imageOptim, images, browserSync.reload)
+    gulp.series(scripts.imageOptim, browserSync.reload)
   );
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
   gulp.watch(
@@ -89,17 +88,13 @@ function watch(done) {
 gulp.task(
   "build",
 
-  gulp.series(
-    imageOptim,
-
-    gulp.parallel(
-      assets,
-      styles,
-      scripts.copyModules,
-      scripts.bundle,
-      images,
-      metalsmith.build
-    )
+  gulp.parallel(
+    assets,
+    scripts.imageOptim,
+    styles,
+    scripts.copyModules,
+    scripts.bundle,
+    metalsmith.build
   )
 );
 
@@ -107,4 +102,4 @@ gulp.task("default", gulp.series("build", browserSync.initTask, watch));
 
 gulp.task("clean", clean);
 
-gulp.task("image-optim", imageOptim);
+gulp.task("image-optim", scripts.imageOptim);

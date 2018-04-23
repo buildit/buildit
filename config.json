@@ -31,13 +31,9 @@
       "src": "src/scripts/",
       "dest": "dist/scripts/"
     },
-    "images": {
-      "src": "static/images/**/*",
-      "dest": "dist/images/"
-    },
     "uncompressed": {
       "src": "uncompressed/**/*.{jpg,png,svg}",
-      "dest": "static"
+      "dest": "dist"
     },
     "pages": {
       "src": "pages/**/*",
