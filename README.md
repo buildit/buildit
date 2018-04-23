@@ -69,6 +69,9 @@ Behind the scenes the website is using the following technologies, so be sure yo
   * [eyeglass](https://github.com/sass-eyeglass/eyeglass)
 * [Cypress](docs/e2e.md), for end-to-end testing
 
+## Design
+* [Flourish design elements](docs/flourishes.md) to use, extend or create the flourish component
+
 ## Travis CI
 
 ### Pipeline
