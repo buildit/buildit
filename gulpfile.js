@@ -9,15 +9,12 @@ const size = require("gulp-size");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
-const imagemin = require("gulp-imagemin");
-const imageminMozjpeg = require("imagemin-mozjpeg");
-const imageminPngquant = require("imagemin-pngquant");
-const imageminSvgo = require("imagemin-svgo");
 
 // internal gulp plugins
 const metalsmith = require("./gulp/metalsmith");
 const browserSync = require("./gulp/browsersync");
 const scripts = require("./gulp/scripts");
+const { images, imageOptim } = require("./gulp/images");
 
 // non-gulp plugins
 const del = require("del");
@@ -29,15 +26,6 @@ const paths = config.paths;
 
 // Placeholder for the environment sniffing variable
 const PRODUCTION = false;
-
-// Copy all images
-// If in PRODUCTION perform some magic
-function images(done) {
-  return gulp
-    .src(paths.images.src, { dot: true })
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(size());
-}
 
 const sassOptions = {
   eyeglass: {}
@@ -95,19 +83,6 @@ function watch(done) {
     gulp.series(metalsmith.build, browserSync.reload)
   );
   done();
-}
-
-function imageOptim() {
-  return gulp
-    .src(paths.uncompressed.src)
-    .pipe(
-      imagemin([
-        imageminMozjpeg({ quality: 85 }),
-        imageminPngquant({ quality: "65-80" }),
-        imageminSvgo({ plugins: [{ removeViewBox: false }] })
-      ])
-    )
-    .pipe(gulp.dest(paths.uncompressed.dest));
 }
 
 // registering main tasks
