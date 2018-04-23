@@ -7,7 +7,7 @@ describe("Locations page", () => {
   });
 
   it("should render the page title", () => {
-    cy.title().should("include", "We are global");
+    cy.title().should("include", route);
   });
 
   it("should render current route as active navigation option", () => {
