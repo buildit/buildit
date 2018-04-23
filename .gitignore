@@ -5,6 +5,9 @@ dist
 npm-debug.log
 .secrets
 cypress/videos
+static/**/*.jpg
+static/**/*.png
+static/**/*.svg
 
 # Coverage directory used by tools like istanbul
 coverage
