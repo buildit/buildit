@@ -84,7 +84,8 @@ function metalsmith() {
           .metadata({
             site: {
               title: config.title,
-              url: siteEnv.url
+              url: siteEnv.url,
+              googleAnalyticsTrackingId: siteEnv.googleAnalyticsTrackingId
             },
             build: {
               excludeRobots: siteEnv.excludeRobots
