@@ -9,6 +9,10 @@ const size = require("gulp-size");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
+const imagemin = require("gulp-imagemin");
+const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminPngquant = require("imagemin-pngquant");
+const imageminSvgo = require("imagemin-svgo");
 
 // internal gulp plugins
 const metalsmith = require("./gulp/metalsmith");
@@ -81,7 +85,10 @@ function watch(done) {
     gulp.series(scripts.copyModules, scripts.bundle, browserSync.reload)
   );
   gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
-  gulp.watch(paths.images.src, gulp.series(images, browserSync.reload));
+  gulp.watch(
+    paths.uncompressed.src,
+    gulp.series(imageOptim, images, browserSync.reload)
+  );
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
   gulp.watch(
     [paths.pages.src, paths.templates.src],
@@ -90,20 +97,39 @@ function watch(done) {
   done();
 }
 
+function imageOptim() {
+  gulp
+    .src(paths.uncompressed.src)
+    .pipe(
+      imagemin([
+        imageminMozjpeg({ quality: 85 }),
+        imageminPngquant({ quality: "65-80" }),
+        imageminSvgo({ plugins: [{ removeViewBox: false }] })
+      ])
+    )
+    .pipe(gulp.dest(paths.uncompressed.dest));
+}
+
 // registering main tasks
 gulp.task(
   "build",
 
-  gulp.parallel(
-    assets,
-    styles,
-    scripts.copyModules,
-    scripts.bundle,
-    images,
-    metalsmith.build
+  gulp.series(
+    imageOptim,
+
+    gulp.parallel(
+      assets,
+      styles,
+      scripts.copyModules,
+      scripts.bundle,
+      images,
+      metalsmith.build
+    )
   )
 );
 
 gulp.task("default", gulp.series("build", browserSync.initTask, watch));
 
 gulp.task("clean", clean);
+
+gulp.task("image-optim", imageOptim);

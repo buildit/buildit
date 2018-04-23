@@ -35,6 +35,10 @@
       "src": "static/images/**/*",
       "dest": "dist/images/"
     },
+    "uncompressed": {
+      "src": "uncompressed/**/*.{jpg,png,svg}",
+      "dest": "static"
+    },
     "pages": {
       "src": "pages/**/*",
       "dest": "dist/"
