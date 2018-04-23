@@ -69,12 +69,12 @@ function mouseOut() {
   target.y = container.clientHeight * 2;
 }
 
-function mouseMove(e, target, canvasTop) {
+function mouseMove(event, target, canvasTop) {
   let posy = 0;
   let posx = (posy = 0);
 
-  posx = e.pageX;
-  posy = e.pageY - canvasTop;
+  posx = event.pageX;
+  posy = event.pageY - canvasTop;
 
   target.x = posx;
   target.y = posy;
