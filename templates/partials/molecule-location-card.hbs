@@ -1,13 +1,13 @@
 <div class="grav-c-location-card">
-  <h2>{{name}}</h2>
+  <h2>{{title}}</h2>
   <p>
-    {{#if addressline1}}{{addressline1}}<br>{{/if}}
-    {{#if addressline2}}{{addressline2}}<br>{{/if}}
+    {{#if address.line1}}{{address.line1}}<br>{{/if}}
+    {{#if address.line2}}{{address.line2}}<br>{{/if}}
     {{#if city}}{{city}}<br>{{/if}}
     {{#if postcode}}{{postcode}}<br>{{/if}}
     {{#if country}}{{country}}{{/if}}
   </p>
-  <a href="{{map-link}}" title="See {{name}} office on Google Maps - Opens in a new tab" target="_blank">
-    <img src="{{img}}" alt="{{img-alt}}">
+  <a href="{{map}}" title="See {{title}} office on Google Maps - Opens in a new tab" target="_blank">
+    <img src="{{img.url}}" alt="{{img.alt}}">
   </a>
 </div>
