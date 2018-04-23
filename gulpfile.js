@@ -98,7 +98,7 @@ function watch(done) {
 }
 
 function imageOptim() {
-  gulp
+  return gulp
     .src(paths.uncompressed.src)
     .pipe(
       imagemin([
