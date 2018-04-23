@@ -8,11 +8,13 @@
     "build": "npm run clean && gulp build",
     "start": "npm run clean && gulp",
     "test": "jest",
+    "http-server": "http-server dist -c-1 -s",
     "test-watch": "jest --coverage --watch",
     "cypress:open": "cypress open",
     "cypress:cli": "cypress run",
-    "cypress:travis": "http-server dist -c-1 -s & cypress run",
-    "pa11y-run": "http-server dist -c-1 -s & ./node_modules/.bin/pa11y-ci"
+    "cypress:travis": "http-server & cypress run",
+    "pa11y": "npm run http-server & ./node_modules/.bin/pa11y-ci",
+    "accessibility": "npm run build && npm run pa11y"
   },
   "repository": {
     "type": "git",

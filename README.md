@@ -67,7 +67,8 @@ Behind the scenes the website is using the following technologies, so be sure yo
   * [autoprefixer](https://github.com/postcss/autoprefixer)
   * [csso](https://github.com/css/csso)
   * [eyeglass](https://github.com/sass-eyeglass/eyeglass)
-* [Cypress](docs/e2e.md), for end-to-end testing
+* [Cypress](docs/tests.md), for end-to-end testing
+* [Pa11y-CI](docs/tests.md), for automated accessibility
 
 ## Travis CI
 
