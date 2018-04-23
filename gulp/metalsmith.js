@@ -22,6 +22,8 @@ const permalinks = require("metalsmith-permalinks");
 const sitemap = require("metalsmith-mapsite");
 const debug = require("metalsmith-debug");
 const discoverPartials = require("metalsmith-discover-partials");
+const collections = require("metalsmith-collections");
+const drafts = require("metalsmith-drafts");
 const gravityAssets = require("./gravity-assets.js");
 const jobListings = require("./metalsmith-job-listings.js");
 const flourishShapes = require("../src/flourishes/shapes.json");
@@ -102,6 +104,12 @@ function metalsmith() {
             ogImageAlt: "buildit @ wipro digital"
           })
           .use(jobListings())
+          .use(
+            collections({
+              locations: `locations/*.md`
+            })
+          )
+          .use(drafts())
           .use(pageTitles())
           .use(markdown())
           .use(
