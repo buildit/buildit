@@ -1,132 +1,109 @@
-const gulp = require('gulp');
-const clean = require('gulp-clean');
-const cleanCSS = require('gulp-clean-css');
-const concat = require('gulp-concat');
-const concatCss = require('gulp-concat-css');
-const connect = require('gulp-connect');
-const open = require('gulp-open');
-const pug = require('gulp-pug');
-const uglify = require('gulp-uglify');
-const watch = require('gulp-watch');
-const less = require('gulp-less');
-const gulpIf = require('gulp-if');
-const pump = require('pump');
+const gulp = require("gulp");
 
-const sourcemaps = require('gulp-sourcemaps');
+const concat = require("gulp-concat");
+const csso = require("gulp-csso");
+const gulpIf = require("gulp-if");
+const hash = require("gulp-hash");
+const sass = require("gulp-sass");
+const size = require("gulp-size");
+const sourcemaps = require("gulp-sourcemaps");
+const uglify = require("gulp-uglify");
+const autoprefixer = require("gulp-autoprefixer");
 
-const src = 'src';
-const target = 'dist';
+// internal gulp plugins
+const metalsmith = require("./gulp/metalsmith");
+const browserSync = require("./gulp/browsersync");
+const scripts = require("./gulp/scripts");
 
-let PRODUCTION = false;
+// non-gulp plugins
+const del = require("del");
+const eyeglass = require("eyeglass");
 
-// Web server
-gulp.task('serve', () => {
-  connect.server({
-    root: target,
-    livereload: true
-  });
-  gulp.src('').pipe(open({ uri: 'http://localhost:8080' }));
-});
+// config
+const config = require("./config.json");
+const paths = config.paths;
 
-// File watcher
-gulp.task('watch', () => {
-  gulp.watch([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`], { ignoreInitial: false }, ['copy-assets']);
-  gulp.watch([`${src}/**/*.pug`], { ignoreInitial: false }, ['compile-html']);
-  gulp.watch([`${src}/js/*.js`], { ignoreInitial: false }, ['js']);
-  gulp.watch([`${src}/**/*.less`], { ignoreInitial: false }, ['less']);
-  gulp.watch([`${src}/**/*.css`], { ignoreInitial: false }, ['css']);
-});
+// Placeholder for the environment sniffing variable
+const PRODUCTION = false;
 
-// Clean the output directory
-gulp.task('clean', () => {
-  return gulp.src(target, { read: false })
-    .pipe(clean());
-});
+// Copy all images
+// If in PRODUCTION perform some magic
+function images(done) {
+  return gulp
+    .src(paths.images.src, { dot: true })
+    .pipe(gulp.dest(paths.images.dest))
+    .pipe(size());
+}
 
-// Copy all assets except our JS, CSS and Pug templates
-gulp.task('copy-assets', () => {
-  return gulp.src([`${src}/**`, `!${src}/**/*.css`, `!${src}/**/*.js`, `!${src}/**/*.pug`, `!${src}/includes`, `!${src}/components`])
-    .pipe(gulp.dest(target))
-    .pipe(connect.reload());
-});
+const sassOptions = {
+  eyeglass: {}
+};
 
-// Compile HTML from Pug templates
-gulp.task('compile-html', () => {
-  return gulp.src([`${src}/**/*.pug`, `!${src}/layout.pug`, `!${src}/includes/**/*.pug`])
-    .pipe(pug({}))
-    .pipe(gulp.dest(`${target}`))
-    .pipe(connect.reload());
-});
+// Compile all required styles
+// If in PRODUCTION perform some magic
+function styles(done) {
+  gulp
+    .src(paths.styles.src)
+    .pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
+    .pipe(
+      autoprefixer({
+        browsers: ["last 2 versions"],
+        cascade: false
+      })
+    )
+    .pipe(
+      csso({
+        restructure: PRODUCTION,
+        debug: !PRODUCTION
+      })
+    )
+    .pipe(gulp.dest(paths.styles.dest));
+  done();
+}
 
-// Bundle vendor JS
-gulp.task('vendor', () => {
-  const files = [
-    'assets/library/jquery.min.js',
-    'assets/library/promise.min.js',
-    'assets/library/fetch.js',
-    'components/visibility.min.js',
-    'components/transition.min.js',
-    'components/sidebar.min.js'
-  ];
+// Grab static assets (fonts, etc.) and move them to the build folder
+// No file mangling should be done in this directory
+function assets() {
+  return gulp
+    .src(paths.assets.src, { dot: true })
+    .pipe(gulp.dest(paths.assets.dest))
+    .pipe(size());
+}
 
-  return gulp.src(files.map(item => `${src}/${item}`))
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest(target));
-});
+function clean(done) {
+  del([`${paths.pages.dest}/**/*`]);
+  done();
+}
 
-// Minify our JS
-gulp.task('js', (cb) => {
-  pump([
-      gulp.src(`${src}/js/*.js`),
-      uglify(),
-      gulp.dest(`${target}/js`),
-      connect.reload()
-    ],
-    cb);
-});
+function watch(done) {
+  gulp.watch(
+    paths.scripts.modules,
+    gulp.series(scripts.copyModules, scripts.bundle, browserSync.reload)
+  );
+  gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
+  gulp.watch(paths.images.src, gulp.series(images, browserSync.reload));
+  gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
+  gulp.watch(
+    [paths.pages.src, paths.templates.src],
+    gulp.series(metalsmith.build, browserSync.reload)
+  );
+  done();
+}
 
-// Build the CSS
-gulp.task('less', () => {
-  return gulp.src('./src/less/main.less')
-    .pipe(less())
-    .pipe(gulp.dest('./src/components/'));
-});
+// registering main tasks
+gulp.task(
+  "build",
 
-gulp.task('css', ['less'], () => {
-  // Normally we shouldn't have to do this. For now we have to
-  // as the CSS files need cleaning up and there seems to be an issue
-  // with the order of inclusion.
-  const files = [
-    'reset.css',
-    'site.css',
-    'container.css',
-    'grid.css',
-    'header.css',
-    'image.css',
-    'menu.css',
-    'divider.css',
-    'dropdown.css',
-    'segment.css',
-    'button.css',
-    'list.css',
-    'icon.css',
-    'transition.css',
-    'sidebar.css',
-    'main.css'
-  ];
+  gulp.parallel(
+    assets,
+    styles,
+    scripts.copyModules,
+    scripts.bundle,
+    images,
+    metalsmith.build
+  )
+);
 
-  return gulp.src([
-    ...(files.map(item => `${src}/components/${item}`)),
-    `${src}/components/*-buildit.css`,
-    `${src}/components/buildit.css`])
-    .pipe(concatCss('bundle.css'))
-    .pipe(gulp.dest(target))
-    .pipe(sourcemaps.init())
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(target))
-    .pipe(connect.reload());
-});
+gulp.task("default", gulp.series("build", browserSync.initTask, watch));
 
-gulp.task('build', ['copy-assets', 'compile-html', 'vendor', 'js', 'css']);
-gulp.task('default', ['build', 'serve', 'watch']);
+gulp.task("clean", clean);

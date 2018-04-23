@@ -1,0 +1,9 @@
+<div class="flourish-wrap {{#if flip}}flourish--flip{{/if}}">
+  <div class="flourish {{baseClass}}">
+    {{#each shapes}}
+      <div class="{{../baseClass}}__{{shapeClass}} {{#if reveal}}js-reveal-element{{/if}}" {{#if exclude}}data-exclude="{{exclude}}" {{/if}}>
+        {{ flourishShapes shape }}
+      </div>
+    {{/each}}
+  </div>
+</div>
