@@ -48,7 +48,7 @@ flourish-tail:
     reveal: true
     exclude: top
 pullquote-main: 
-  quote: This requires not just being able to do what good looks like but to stand in the middle of something not good and influence the outcome incrementally day to day to make it better
+  quote: This requires not just being able to do what good looks like but to stand in the middle of something not good and influence the outcome incrementally day to day to make it better.
   shapes:
   - shape: hatching-pattern-1
     shapeClass: hatching-pattern-1
