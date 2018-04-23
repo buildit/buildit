@@ -92,8 +92,8 @@ function metalsmith() {
 
             // Defaults for Twitter card meta tags
             // (See: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
-            twitterCard: "summary",
-            twitterSite: "@Buildit_tech",
+            twitterCard: "summary_large_image",
+            twitterSiteId: "910173909592485889", // ID for @Buildit_tech
 
             // Defaults for OpenGraph Protocol (OGP) meta tags
             // (See: http://ogp.me/)
