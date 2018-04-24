@@ -1,6 +1,6 @@
 {
   "chromelaunchconfig": {
-    "args": [ "--no-sandbox" ]
+    "args": [ "--disable-setuid-sandbox", "--no-sandbox" ]
   },
   "defaults": {
     "standard": "WCAG2A"
