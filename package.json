@@ -13,7 +13,7 @@
     "cypress:open": "cypress open",
     "cypress:cli": "cypress run",
     "cypress:travis": "npm run spin-up-server & cypress run",
-    "pa11y": "npm run spin-up-server & ./node_modules/.bin/pa11y-ci",
+    "pa11y": "npm run spin-up-server & ./node_modules/.bin/pa11y-ci --sitemap http://localhost:8080/sitemap.xml",
     "accessibility": "npm run build && npm run pa11y"
   },
   "repository": {
