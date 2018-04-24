@@ -16,35 +16,20 @@ hero:
   url: /about/
 blockquote: We partner with our clients to solve hard problems, and help them deliver world-class products.
 items:
-  - System thinking
-  - Continuous delivery
-  - Lean UX
+  - Systems thinking
+  - Agile coaching  
+  - Engineering transformation  
   - Design systems
-  - Agile coaching
+  - Lean UX  
   - Experiental learning
 imgLinksItems:
-- image:
-    src: "/images/logos/logo-citibank.png"
-    alt: CitiBank
-  href: https://www.citibank.co.uk
-  title: CitiBank
 - image:
     src: "/images/logos/logo-us-bank.png"
     alt: U.S. Bank
   href: https://www.usbank.com/
   title: U.S. Bank
 - image:
-    src: "/images/logos/logo-abbot.png"
-    alt: Abbott Laboratories
-  href: www.abbott.co.uk
-  title: Abbott Laboratories
-- image:
-    src: "/images/logos/logo-office-depot.png"
-    alt: Lloyds Banking Group
-  href: http://www.lloydsbankinggroup.com/
-  title: Lloyds Banking Group
-- image:
-    src: "/images/logos/logo-lbg.svg"
+    src: "/images/logos/logo-lbg.png"
     alt: Lloyds Banking Group
   href: http://www.lloydsbankinggroup.com/
   title: Lloyds Banking Group
@@ -53,6 +38,11 @@ imgLinksItems:
     alt: HSBC Bank
   href: http://www.hsbc.co.uk
   title: HSBC Bank
+- image:
+    src: "/images/logos/logo-RRD.png"
+    alt: RR Donnelley
+  href: https://www.rrdonnelley.com/
+  title: RR Donnelley
 - image:
     src: "/images/logos/logo-make-a-wish.png"
     alt: Make-A-Wish Foundation
@@ -64,28 +54,33 @@ imgLinksItems:
   href: https://www.hpe.com
   title: Hewlett Packard Enterprise
 - image:
-    src: "/images/logos/logo-healthtrust.png"
-    alt: HealthTrust
-  href: https://healthtrustpg.com/
-  title: HealthTrust
+    src: "/images/logos/logo-tdbank.png"
+    alt: TD Bank
+  href: https://www.tdbank.com/
+  title: TD Bank
 - image:
-    src: "/images/logos/logo-RRD.png"
-    alt: RR Donnelley
-  href: https://www.rrdonnelley.com/
-  title: RR Donnelley
-- image:
-    src: "/images/logos/logo-cfc.png"
-    alt: Chelsea FC
-  href: https://www.chelseafc.com/
-  title: Chelsea FC
+    src: "/images/logos/logo-abbot.png"
+    alt: Abbott Laboratories
+  href: www.abbott.co.uk
+  title: Abbott Laboratories
 - image:
     src: "/images/logos/logo-premier-health.png"
     alt: Premier Health
   href: https://www.premierhealth.com/
   title: Premier Health
 - image:
-    src: "/images/logos/logo-tdbank.png"
-    alt: TD Bank
-  href: https://www.tdbank.com/
-  title: TD Bank
+    src: "/images/logos/logo-BP.png"
+    alt: BP
+  href: https://www.bp.com/
+  title: BP
+- image:
+    src: "/images/logos/logo-office-depot.png"
+    alt: Office Depot
+  href: https://www.officedepot.com/
+  title: Office Depot
+- image:
+    src: "/images/logos/logo-citibank.png"
+    alt: CitiBank
+  href: https://www.citibank.co.uk
+  title: CitiBank
 ---

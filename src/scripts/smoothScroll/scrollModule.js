@@ -39,7 +39,11 @@ function _getElementPosition(element, scrollY = getScrollPosition().y) {
 }
 
 Scroll.prototype.init = function() {
-  document.querySelectorAll(this.options.class).forEach(element => {
+  const jumpLinks = document.querySelectorAll(this.options.class);
+
+  // IE-compatible way of iterating over the NodeList
+  // (See: https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+  Array.prototype.forEach.call(jumpLinks, element => {
     if (
       element.href.indexOf(window.location.origin) !== -1 &&
       element.href.indexOf("#") !== -1

@@ -70,6 +70,9 @@ Behind the scenes the website is using the following technologies, so be sure yo
 * [Cypress](docs/tests.md), for end-to-end testing
 * [Pa11y-CI](docs/tests.md), for automated accessibility
 
+## Design
+* [Flourish design elements](docs/flourishes.md) to use, extend or create the flourish component
+
 ## Travis CI
 
 ### Pipeline
