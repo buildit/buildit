@@ -8,10 +8,13 @@
     "build": "npm run clean && gulp build",
     "start": "npm run clean && gulp",
     "test": "jest",
+    "http-server": "http-server dist -c-1 -s",
     "test-watch": "jest --coverage --watch",
     "cypress:open": "cypress open",
     "cypress:cli": "cypress run",
-    "cypress:travis": "http-server dist -c-1 -s & cypress run"
+    "cypress:travis": "http-server & cypress run",
+    "pa11y": "npm run http-server & ./node_modules/.bin/pa11y-ci",
+    "accessibility": "npm run build && npm run pa11y"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,8 @@
     "Matteo Pescarin",
     "James Nash",
     "Valerio Francescangeli",
-    "Zane Cunningham"
+    "Zane Cunningham",
+    "Ana Escontrela"
   ],
   "license": "ISC",
   "bugs": {
@@ -85,6 +89,7 @@
     "minimist": "^1.2.0",
     "node-sass": "^4.7.2",
     "normalize-scss": "^7.0.1",
+    "pa11y-ci": "^2.1.0",
     "prettier": "1.11.1",
     "rollup-plugin-babel": "^3.0.3"
   },
