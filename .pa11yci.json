@@ -1,9 +1,10 @@
 {
-  "chromelaunchconfig": {
-    "args": [ "--disable-setuid-sandbox", "--no-sandbox" ]
-  },
   "defaults": {
     "standard": "WCAG2A"
   },
-  "sitemap": "http://localhost:8080/sitemap.xml"
+  "urls": [
+    "http://localhost:8080/", 
+    "http://localhost:8080/about", 
+    "http://localhost:8080/locations",
+    "http://localhost:8080/careers/"]
 }
