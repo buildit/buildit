@@ -1,9 +1,9 @@
-import Circle from '../Circle.js';
+import Circle from "../Circle.js";
 
-describe('heroCircles', () => {
-  it('should instatiate a new object', () => {
-    const circ = new Circle();
+describe("heroCircles", () => {
+  it("should instantiate a new object", () => {
+    const circle = new Circle();
 
-    expect(typeof circ).toBe('function');
+    expect(typeof circle).toBe("object");
   });
 });
