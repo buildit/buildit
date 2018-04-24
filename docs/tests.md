@@ -1,4 +1,4 @@
-# End-to-end testing with Cypress
+## End-to-end testing with Cypress
 
 ## Run Locally
 
@@ -12,3 +12,9 @@
 * Create a file under ./cypress/integration/
 * Label the file using this convention `<FILENAME>_spec`
 * Learn more about [Cypress](https://www.cypress.io/support/)
+
+
+## Accessibility testing with Pa11y CI
+* Build the website locally and run the tests with `npm run accessibility`
+* Update test runner setup at [.pa11yci.json](../.pa11yci.json)
+* Learn more about [Pa11y CI](https://github.com/pa11y/pa11y-ci)

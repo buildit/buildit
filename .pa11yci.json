@@ -1,0 +1,11 @@
+{
+  "defaults": {
+    "standard": "WCAG2A"
+  },
+  "urls": [
+    "http://localhost:8080/",
+    "http://localhost:8080/about/",
+    "http://localhost:8080/careers/",
+    "http://localhost:8080/locations/"
+  ]
+}
