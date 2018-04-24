@@ -1,11 +1,9 @@
 {
+  "chromelaunchconfig": {
+    "args": [ "--no-sandbox" ]
+  },
   "defaults": {
     "standard": "WCAG2A"
   },
-  "urls": [
-    "http://localhost:8080/",
-    "http://localhost:8080/about/",
-    "http://localhost:8080/careers/",
-    "http://localhost:8080/locations/"
-  ]
+  "sitemap": "http://localhost:8080/sitemap.xml"
 }
