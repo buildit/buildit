@@ -103,10 +103,6 @@ function initHeader() {
   };
 
   ctx = canvas.getContext("2d");
-  target = {
-    x: width * 2,
-    y: height * 2
-  };
 
   const pointsLimiter = utils.calcPointsLimiter(width, height);
 
@@ -155,9 +151,9 @@ function initHeader() {
   });
 
   points.map(point => {
-    let c = new Circle(point, 2 + Math.random() * 2.5, "rgba(255,255,255,0.3)", ctx);
-    point.circle = c;
+    point.circle = new Circle(point, 2 + Math.random() * 2.5, "rgba(255,255,255,0.3)", ctx);
   });
+
   initAnimation();
 }
 
