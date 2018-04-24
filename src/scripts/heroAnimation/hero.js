@@ -1,4 +1,5 @@
 import * as utils from "./utils.js";
+import Circle from "./Circle.js";
 
 let width,
   height,
@@ -154,7 +155,7 @@ function initHeader() {
   });
 
   points.map(point => {
-    let c = new utils.Circle(point, 2 + Math.random() * 2.5, "rgba(255,255,255,0.3)", ctx);
+    let c = new Circle(point, 2 + Math.random() * 2.5, "rgba(255,255,255,0.3)", ctx);
     point.circle = c;
   });
   initAnimation();
