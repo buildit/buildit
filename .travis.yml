@@ -25,6 +25,7 @@ script:
       npm run-script build;
     fi
   - npm run cypress:travis
+  - npm run pa11y
 
 before_deploy:
   - pip install --user awscli
