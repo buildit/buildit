@@ -89,10 +89,7 @@ function watch(done) {
     gulp.series(scripts.copyModules, scripts.bundle, browserSync.reload)
   );
   gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
-  gulp.watch(
-    paths.uncompressed.src,
-    gulp.series(imageOptim, browserSync.reload)
-  );
+  gulp.watch(paths.images.src, gulp.series(imageOptim, browserSync.reload));
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
   gulp.watch(
     [paths.pages.src, paths.templates.src],
