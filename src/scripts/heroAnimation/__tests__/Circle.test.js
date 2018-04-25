@@ -5,8 +5,7 @@ const point = {
   originX: 73.74925795996039,
   y: 47.151927550054076,
   originY: 47.151927550054076,
-  closest: [],
-  active: 0.4
+  closest: []
 };
 
 const rad = 4.230060109621693;
