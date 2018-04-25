@@ -3,9 +3,6 @@ node_js:
   - lts/*
 before_install:
   - npm i -g npm@~5.8.0
-cache:
-  directories:
-    - node_modules
 
 env:
   global:

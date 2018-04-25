@@ -12,13 +12,13 @@ describe("smooth scroll", () => {
   });
 
   it("should scroll to the right anchor", () => {
-    cy.visit(`http://localhost:8080/${pageRoute}`);
+    cy.visit(`/${pageRoute}`);
     cy.get(`a[href="#${anchorID}"]`).click();
     cy.get(`#${anchorID}`).should("be.visible");
   });
 
   it("window location should indicate the right anchor name", () => {
-    cy.visit(`http://localhost:8080/${pageRoute}`);
+    cy.visit(`/${pageRoute}`);
     cy.get(`a[href="#${anchorID}"]`).click();
     cy.location(location => expect(location).to.contain(anchorID));
   });
