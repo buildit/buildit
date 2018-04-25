@@ -58,3 +58,9 @@ body {
 /********************/
 /* Trumps           */
 /********************/
+
+
+// Temporary override - Industries section had too much bottom margin
+.grav-c-two-columns-text {
+  margin: 2rem auto 0em auto;
+}
