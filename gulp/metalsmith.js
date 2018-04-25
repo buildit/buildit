@@ -57,8 +57,15 @@ function metalsmith() {
     }
     return null;
   });
-  handlebars.registerHelper("flourishShapes", function(name) {
-    const template = flourishTemplate(flourishShapes[name]);
+  handlebars.registerHelper("flourishShapes", function(name, excludeGradient) {
+    const contextData = flourishShapes[name];
+    // If no 2nd arg is given to the helper, Handlebars passed in its options
+    // object here
+    if (typeof excludeGradient === "object") {
+      excludeGradient = false;
+    }
+    contextData.excludeGradient = excludeGradient;
+    const template = flourishTemplate(contextData);
     return new handlebars.SafeString(template);
   });
 
