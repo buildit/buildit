@@ -9,6 +9,10 @@ const size = require("gulp-size");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
+const imagemin = require("gulp-imagemin");
+const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminPngquant = require("imagemin-pngquant");
+const imageminSvgo = require("imagemin-svgo");
 
 // internal gulp plugins
 const metalsmith = require("./gulp/metalsmith");
@@ -66,6 +70,19 @@ function clean(done) {
   done();
 }
 
+function imageOptim() {
+  return gulp
+    .src(paths.images.src)
+    .pipe(
+      imagemin([
+        imageminMozjpeg({ quality: 85 }),
+        imageminPngquant({ quality: "65-80" }),
+        imageminSvgo({ plugins: [{ removeViewBox: false }] })
+      ])
+    )
+    .pipe(gulp.dest(paths.images.dest));
+}
+
 function watch(done) {
   gulp.watch(
     paths.scripts.modules,
@@ -74,7 +91,7 @@ function watch(done) {
   gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
   gulp.watch(
     paths.uncompressed.src,
-    gulp.series(scripts.imageOptim, browserSync.reload)
+    gulp.series(imageOptim, browserSync.reload)
   );
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
   gulp.watch(
@@ -90,7 +107,7 @@ gulp.task(
 
   gulp.parallel(
     assets,
-    scripts.imageOptim,
+    imageOptim,
     styles,
     scripts.copyModules,
     scripts.bundle,
@@ -101,5 +118,3 @@ gulp.task(
 gulp.task("default", gulp.series("build", browserSync.initTask, watch));
 
 gulp.task("clean", clean);
-
-gulp.task("image-optim", scripts.imageOptim);

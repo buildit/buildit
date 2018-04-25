@@ -11,8 +11,7 @@
     "test-watch": "jest --coverage --watch",
     "cypress:open": "cypress open",
     "cypress:cli": "cypress run",
-    "cypress:travis": "http-server dist -c-1 -s & cypress run",
-    "image-optim": "gulp image-optim"
+    "cypress:travis": "http-server dist -c-1 -s & cypress run"
   },
   "repository": {
     "type": "git",

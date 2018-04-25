@@ -31,8 +31,8 @@
       "src": "src/scripts/",
       "dest": "dist/scripts/"
     },
-    "uncompressed": {
-      "src": "uncompressed/**/*.{jpg,png,svg}",
+    "images": {
+      "src": "static/**/*.{jpg,png,svg}",
       "dest": "dist"
     },
     "pages": {
@@ -44,7 +44,11 @@
       "partials": "partials/"
     },
     "assets": {
-      "src": [ "static/assets/*", "static/images/*.gif" ],
+      "src": [
+        "static/assets/*",
+        "!static/assets/**/*.{jpg,png,svg}",
+        "static/images/*.gif"
+      ],
       "dest": "dist/"
     }
   }
