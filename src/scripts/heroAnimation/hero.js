@@ -1,13 +1,15 @@
 import * as utils from "./utils.js";
 import Circle from "./Circle.js";
 
-let width,
-  height,
-  ctx,
-  points,
-  target,
-  canvasTop,
-  animateHeader = true;
+let params = {
+  width: 0,
+  height: 0,
+  ctx: null,
+  points: [],
+  target: null,
+  canvasTop: null,
+  animateHeader: true
+};
 
 const canvas = document.getElementById("js-canvas-hero");
 const container = document.querySelector(".grav-c-hero");
@@ -19,7 +21,7 @@ function HeroAnimation() {
   }
 
   if (container !== null) {
-    canvasTop = canvas.getBoundingClientRect().top;
+    params.canvasTop = canvas.getBoundingClientRect().top;
     initHeader();
     initAnimation();
     addListeners();
@@ -27,29 +29,29 @@ function HeroAnimation() {
 }
 
 function scrollCheck() {
-  if (document.body.scrollTop > height) {
-    animateHeader = false;
+  if (document.body.scrollTop > params.height) {
+    params.animateHeader = false;
   } else {
-    animateHeader = true;
+    params.animateHeader = true;
   }
 }
 
 const resizeCanvas = utils.debounce(function() {
   initHeader();
-  canvasTop = canvas.getBoundingClientRect().top;
+  params.canvasTop = canvas.getBoundingClientRect().top;
 }, 150);
 
 function animate() {
-  if (animateHeader) {
-    ctx.clearRect(0, 0, width, height);
-    points.map(point => {
-      if (Math.abs(utils.getDistance(target, point)) < 8000) {
+  if (params.animateHeader) {
+    params.ctx.clearRect(0, 0, params.width, params.height);
+    params.points.map(point => {
+      if (Math.abs(utils.getDistance(params.target, point)) < 8000) {
         point.active = 0.3;
         point.circle.active = 0.75;
-      } else if (Math.abs(utils.getDistance(target, point)) < 40000) {
+      } else if (Math.abs(utils.getDistance(params.target, point)) < 40000) {
         point.active = 0.1;
         point.circle.active = 0.3;
-      } else if (Math.abs(utils.getDistance(target, point)) < 80000) {
+      } else if (Math.abs(utils.getDistance(params.target, point)) < 80000) {
         point.active = 0.04;
         point.circle.active = 0.1;
       } else {
@@ -57,7 +59,7 @@ function animate() {
         point.circle.active = 0.04;
       }
 
-      utils.drawLines(point, ctx);
+      utils.drawLines(point, params.ctx);
       point.circle.draw();
     });
   }
@@ -66,8 +68,8 @@ function animate() {
 }
 
 function mouseOut() {
-  target.x = container.clientHeight * 2;
-  target.y = container.clientHeight * 2;
+  params.target.x = container.clientHeight * 2;
+  params.target.y = container.clientHeight * 2;
 }
 
 function mouseMove(event, target, canvasTop) {
@@ -83,7 +85,9 @@ function mouseMove(event, target, canvasTop) {
 
 function addListeners() {
   if (!("ontouchstart" in window)) {
-    container.addEventListener("mousemove", function(e){mouseMove(e, target, canvasTop)});
+    container.addEventListener("mousemove", function(e) {
+      mouseMove(e, params.target, params.canvasTop);
+    });
     container.addEventListener("mouseout", mouseOut);
     window.addEventListener("resize", resizeCanvas);
   }
@@ -92,38 +96,38 @@ function addListeners() {
 }
 
 function initHeader() {
-  points = [];
-  width = container.clientWidth;
-  height = container.clientHeight;
-  canvas.width = width;
-  canvas.height = height;
-  target = {
-    x: width * 2,
-    y: height * 2
+  params.points = [];
+  params.width = container.clientWidth;
+  params.height = container.clientHeight;
+  canvas.width = params.width;
+  canvas.height = params.height;
+  params.target = {
+    x: params.width * 2,
+    y: params.height * 2
   };
 
-  ctx = canvas.getContext("2d");
+  params.ctx = canvas.getContext("2d");
 
-  const pointsLimiter = utils.calcPointsLimiter(width, height);
+  const pointsLimiter = utils.calcPointsLimiter(params.width, params.height);
 
-  for (var x = 0; x < width; x = x + width / pointsLimiter) {
-    for (var y = 0; y < height; y = y + height / pointsLimiter) {
-      var px = x + Math.random() * width / pointsLimiter;
-      var py = y + Math.random() * height / pointsLimiter;
+  for (var x = 0; x < params.width; x = x + params.width / pointsLimiter) {
+    for (var y = 0; y < params.height; y = y + params.height / pointsLimiter) {
+      var px = x + Math.random() * params.width / pointsLimiter;
+      var py = y + Math.random() * params.height / pointsLimiter;
       var p = {
         x: px,
         originX: px,
         y: py,
         originY: py
       };
-      points.push(p);
+      params.points.push(p);
     }
   }
 
   // for each point find the 5 closest points
-  points.map(p1 => {
+  params.points.map(p1 => {
     let closest = [];
-    points.map(p2 => {
+    params.points.map(p2 => {
       if (!(p1 == p2)) {
         var placed = false;
 
@@ -150,8 +154,13 @@ function initHeader() {
     p1.closest = closest;
   });
 
-  points.map(point => {
-    point.circle = new Circle(point, 2 + Math.random() * 2.5, "rgba(255,255,255,0.3)", ctx);
+  params.points.map(point => {
+    point.circle = new Circle(
+      point,
+      2 + Math.random() * 2.5,
+      "rgba(94, 161, 184, 0.3)",
+      params.ctx
+    );
   });
 
   initAnimation();
@@ -159,7 +168,7 @@ function initHeader() {
 
 function initAnimation() {
   animate();
-  points.map(point => {
+  params.points.map(point => {
     utils.shiftPoint(point);
   });
 }
