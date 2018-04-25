@@ -2,7 +2,7 @@
   <div class="flourish {{baseClass}}">
     {{#each shapes}}
       <div class="{{../baseClass}}__{{shapeClass}} {{#if reveal}}js-reveal-element{{/if}}" {{#if exclude}}data-exclude="{{exclude}}" {{/if}}>
-        {{ flourishShapes shape }}
+        {{ flourishShapes shape excludeGradient }}
       </div>
     {{/each}}
   </div>

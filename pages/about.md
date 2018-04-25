@@ -56,6 +56,7 @@ flourish-tail:
     shapeClass: polygon-shape-4
     reveal: true
     exclude: top
+    excludeGradient: true
   - shape: hatching-pattern-2
     shapeClass: hatching-pattern-2
     reveal: true

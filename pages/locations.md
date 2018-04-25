@@ -33,6 +33,7 @@ flourish-tail:
     shapeClass: polygon-shape-4
     reveal: true
     exclude: top
+    excludeGradient: true
   - shape: hatching-pattern-3
     shapeClass: hatching-pattern-3
     reveal: true
