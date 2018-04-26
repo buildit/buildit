@@ -1,4 +1,4 @@
-import Circle from "../Circle.js";
+import Circle from "../Circle";
 
 const point = {
   x: 73.74925795996039,
