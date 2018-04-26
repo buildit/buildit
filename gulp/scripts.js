@@ -1,35 +1,41 @@
+const path = require("path");
 const gulp = require("gulp");
 const gulpIf = require("gulp-if");
-const sourcemaps = require("gulp-sourcemaps");
-const rename = require("gulp-rename");
-const rollup = require("gulp-better-rollup");
+const rollup = require("rollup");
 const babel = require("rollup-plugin-babel");
+const closure = require("rollup-plugin-closure-compiler-js");
 const paths = require("../config.json").paths;
 
-function copyModules() {
-  return gulp.src(paths.scripts.modules).pipe(gulp.dest(paths.scripts.dest));
-}
-
 function bundle() {
-  return gulp
-    .src(paths.scripts.main)
-    .pipe(sourcemaps.init())
-    .pipe(
-      rollup(
-        {
-          plugins: [babel()]
-        },
-        {
-          format: "umd"
-        }
-      )
-    )
-    .pipe(rename("bundle.js"))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.scripts.dest));
+  return rollup
+    .rollup({
+      input: paths.scripts.main,
+      plugins: [
+        babel(),
+        closure({
+          compilationLevel: "SIMPLE",
+          // ES6 transpilation is made from babel
+          languageIn: "ECMASCRIPT5_STRICT",
+          languageOut: "ECMASCRIPT5_STRICT",
+          env: "CUSTOM",
+          warningLevel: "QUIET",
+          applyInputSourceMaps: false,
+          useTypesForOptimization: false,
+          processCommonJsModules: false,
+          // babel takes care of this
+          rewritePolyfills: false
+        })
+      ]
+    })
+    .then(bundle => {
+      return bundle.write({
+        file: path.join(paths.scripts.dest, "bundle.min.js"),
+        format: "umd",
+        sourcemap: true
+      });
+    });
 }
 
 module.exports = {
-  bundle,
-  copyModules
+  bundle
 };

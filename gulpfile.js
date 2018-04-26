@@ -6,8 +6,6 @@ const gulpIf = require("gulp-if");
 const hash = require("gulp-hash");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
 
 // internal gulp plugins
@@ -78,7 +76,7 @@ function clean(done) {
 function watch(done) {
   gulp.watch(
     paths.scripts.modules,
-    gulp.series(scripts.copyModules, scripts.bundle, browserSync.reload)
+    gulp.series(scripts.bundle, browserSync.reload)
   );
   gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
   gulp.watch(paths.images.src, gulp.series(images, browserSync.reload));
@@ -94,14 +92,7 @@ function watch(done) {
 gulp.task(
   "build",
 
-  gulp.parallel(
-    assets,
-    styles,
-    scripts.copyModules,
-    scripts.bundle,
-    images,
-    metalsmith.build
-  )
+  gulp.parallel(assets, styles, scripts.bundle, images, metalsmith.build)
 );
 
 gulp.task("default", gulp.series("build", browserSync.initTask, watch));
