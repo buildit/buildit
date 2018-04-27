@@ -9,7 +9,7 @@ let params = {
   animateHeader: true
 };
 
-const point = {
+const point1 = {
   x: 73.74925795996039,
   originX: 73.74925795996039,
   y: 47.151927550054076,
@@ -20,6 +20,24 @@ const point = {
       originX: 73.74925795996039,
       y: 47.151927550054076,
       originY: 47.151927550054076,
+      closest: [],
+      active: 0.4
+    }
+  ],
+  active: 0.4
+};
+
+const point2 = {
+  x: 83.74925795996039,
+  originX: 83.74925795996039,
+  y: 57.151927550054076,
+  originY: 57.151927550054076,
+  closest: [
+    {
+      x: 83.74925795996039,
+      originX: 78.74925795996039,
+      y: 57.151927550054076,
+      originY: 57.151927550054076,
       closest: [],
       active: 0.4
     }
@@ -74,18 +92,24 @@ describe("drawLines function", () => {
   it("should call the canvas functions for each point passed in", () => {
     const ctx = new CtxMock();
 
-    console.log("ctx", ctx);
-
     expect(ctx.beginPathCounter).toEqual(0);
     expect(ctx.moveToCounter).toEqual(0);
     expect(ctx.lineToCounter).toEqual(0);
     expect(ctx.strokeCounter).toEqual(0);
 
-    utils.drawLines(point, ctx);
+    utils.drawLines(point1, ctx);
 
     expect(ctx.beginPathCounter).toEqual(1);
     expect(ctx.moveToCounter).toEqual(1);
     expect(ctx.lineToCounter).toEqual(1);
     expect(ctx.strokeCounter).toEqual(1);
+  });
+});
+
+describe("getDistance function", () => {
+  it("should return distance between 2 points", () => {
+    const distance = utils.getDistance(point1, point2);
+
+    expect(distance).toEqual(200);
   });
 });

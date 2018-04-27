@@ -33,7 +33,7 @@ export function drawLines(p, ctx) {
 }
 
 export function shiftPoint(point) {
-  let tween = TweenLite.to(point, 1 + 1 * Math.random(), {
+  TweenLite.to(point, 1 + 1 * Math.random(), {
     x: point.originX - 0 + Math.random() * 20,
     y: point.originY - 0 + Math.random() * 20,
     ease: Circ.easeInOut,
