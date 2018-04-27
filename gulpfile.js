@@ -6,9 +6,11 @@ const gulpIf = require("gulp-if");
 const hash = require("gulp-hash");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
+const imagemin = require("gulp-imagemin");
+const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminPngquant = require("imagemin-pngquant");
+const imageminSvgo = require("imagemin-svgo");
 
 // internal gulp plugins
 const metalsmith = require("./gulp/metalsmith");
@@ -25,15 +27,6 @@ const paths = config.paths;
 
 // Placeholder for the environment sniffing variable
 const PRODUCTION = false;
-
-// Copy all images
-// If in PRODUCTION perform some magic
-function images(done) {
-  return gulp
-    .src(paths.images.src, { dot: true })
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(size());
-}
 
 const sassOptions = {
   eyeglass: {}
@@ -75,13 +68,26 @@ function clean(done) {
   done();
 }
 
+function imageOptim() {
+  return gulp
+    .src(paths.images.src)
+    .pipe(
+      imagemin([
+        imageminMozjpeg({ quality: 85 }),
+        imageminPngquant({ quality: "65-80" }),
+        imageminSvgo({ plugins: [{ removeViewBox: false }] })
+      ])
+    )
+    .pipe(gulp.dest(paths.images.dest));
+}
+
 function watch(done) {
   gulp.watch(
     paths.scripts.modules,
-    gulp.series(scripts.copyModules, scripts.bundle, browserSync.reload)
+    gulp.series(scripts.bundle, browserSync.reload)
   );
   gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
-  gulp.watch(paths.images.src, gulp.series(images, browserSync.reload));
+  gulp.watch(paths.images.src, gulp.series(imageOptim, browserSync.reload));
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
   gulp.watch(
     [paths.pages.src, paths.templates.src],
@@ -96,10 +102,9 @@ gulp.task(
 
   gulp.parallel(
     assets,
+    imageOptim,
     styles,
-    scripts.copyModules,
     scripts.bundle,
-    images,
     metalsmith.build
   )
 );

@@ -14,7 +14,11 @@ class ScrollRevealModule {
   }
 
   init() {
-    document.querySelectorAll(defaults.revealElement).forEach(ele => {
+    const revealElements = document.querySelectorAll(defaults.revealElement);
+
+    // IE-compatible way of iterating over the NodeList
+    // (See: https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+    Array.prototype.forEach.call(revealElements, ele => {
       let options = this.generateOptions(ele.dataset.exclude);
       scrollreveal.reveal(ele, options);
     });

@@ -9,15 +9,18 @@
     },
     "beta": {
       "url": "https://www-beta.buildit.digital",
-      "excludeRobots": true
+      "excludeRobots": true,
+      "googleAnalyticsTrackingId": "UA-78138413-6"
     },
     "staging": {
       "url": "https://www-staging.buildit.digital",
-      "excludeRobots": true
+      "excludeRobots": true,
+      "googleAnalyticsTrackingId": "UA-78138413-6"
     },
     "production": {
       "url": "https://buildit.wiprodigital.com",
-      "excludeRobots": false
+      "excludeRobots": false,
+      "googleAnalyticsTrackingId": "UA-78138413-2"
     }
   },
   "paths": {
@@ -32,8 +35,8 @@
       "dest": "dist/scripts/"
     },
     "images": {
-      "src": "static/images/**/*",
-      "dest": "dist/images/"
+      "src": "static/**/*.{jpg,png,svg}",
+      "dest": "dist"
     },
     "pages": {
       "src": "pages/**/*",
@@ -44,7 +47,11 @@
       "partials": "partials/"
     },
     "assets": {
-      "src": [ "static/assets/*", "static/images/*.gif" ],
+      "src": [
+        "static/assets/*",
+        "!static/assets/**/*.{jpg,png,svg}",
+        "static/images/*.gif"
+      ],
       "dest": "dist/"
     }
   }

@@ -20,6 +20,12 @@ To run it locally just `npm install` then run the `start` script: `npm start`. L
 
 To build the static website: `npm run-script build`. Distribution goes into `./dist`.
 
+
+### Image optimisation
+One of the build steps is to optimise any file jpg, png or svg file that is inside `static` and copy it to`dist`.
+We use `imagemin` with three different libraries, one for each file type: `moz-jpeg`, `pngquant` and `svgo`.
+
+
 ### Environments
 
 Some of the files produced by the build, for example `sitemap.xml`, need to contain the website's absolute URL. Others, such as `robots.txt`, need to have different contents depending on where the build will be deployed to (so that we can prevent search engines indexing our staging environments).
@@ -57,7 +63,7 @@ Where `production` corresponds to the key of the desired environment defined in 
 
 If no `--env` argument is provided to the builds, then the first environment defined in `config.json` will be used.
 
-## Website technolgies
+## Website technologies
 
 Behind the scenes the website is using the following technologies, so be sure you know what you're doing before starting to change anything.
 
@@ -67,7 +73,8 @@ Behind the scenes the website is using the following technologies, so be sure yo
   * [autoprefixer](https://github.com/postcss/autoprefixer)
   * [csso](https://github.com/css/csso)
   * [eyeglass](https://github.com/sass-eyeglass/eyeglass)
-* [Cypress](docs/e2e.md), for end-to-end testing
+* [Cypress](docs/tests.md), for end-to-end testing
+* [Pa11y-CI](docs/tests.md), for automated accessibility
 
 ## Design
 * [Flourish design elements](docs/flourishes.md) to use, extend or create the flourish component
@@ -94,7 +101,7 @@ Travis CI build expects the following environment variables:
 
 ### Deployment
 
-Currently, deployment only means sync'ing the output of the build (`./dist`) with an S3 bucket.
+Currently, deployment only means syncing the output of the build (`./dist`) with an S3 bucket.
 Deployment also invalidate the CloudFormation cache for all objects in the distribution.
 
 The S3 bucket, DNS, CloudFront etc have to be set up manually.

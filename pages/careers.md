@@ -47,8 +47,9 @@ flourish-tail:
     shapeClass: polygon-shape-3b
     reveal: true
     exclude: top
+    excludeGradient: true
 pullquote-main: 
-  quote: This requires not just being able to do what good looks like but to stand in the middle of something not good and influence the outcome incrementally day to day to make it better
+  quote: This requires not just being able to do what good looks like but to stand in the middle of something not good and influence the outcome incrementally day to day to make it better.
   shapes:
   - shape: hatching-pattern-1
     shapeClass: hatching-pattern-1

@@ -25,7 +25,14 @@
     </ul>
     <p>To learn more, check out our <a href="https://medium.com/buildit/">blog</a>.</p>
   </section>
-  {{>organism-list-image-links}}
+  <section class="grav-o-container-banner grav-u-text-centered">
+    <p>Here are some of the industries we have worked with:</p>
+    <ul class="grav-c-two-columns-text">
+      {{#each items-industries}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </section>
 {{/content}}
 
 {{/extend}}
