@@ -11,10 +11,7 @@ let params = {
   animateHeader: true
 };
 
-const canvas = document.getElementById("js-canvas-hero");
-const container = document.querySelector(".grav-c-hero");
-
-function HeroAnimation() {
+function HeroAnimation(canvas, container) {
   if (typeof canvas.getContext !== "function") {
     console.warn("the thingy bob doesn't support canvas. Bailing out.");
     return;
