@@ -113,3 +113,14 @@ describe("getDistance function", () => {
     expect(distance).toEqual(200);
   });
 });
+
+describe("shiftPoint function", () => {
+  it("should call shiftMethod method once", () => {
+    const TweenLite = {};
+    TweenLite.to = jest.fn();
+    const ease = {};
+    utils.shiftPoint({}, ease, TweenLite.to);
+
+    expect(TweenLite.to.mock.calls.length).toBe(1);
+  });
+});

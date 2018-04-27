@@ -32,15 +32,21 @@ export function drawLines(p, ctx) {
   });
 }
 
-export function shiftPoint(point) {
-  TweenLite.to(point, 1 + 1 * Math.random(), {
+export function shiftPoint(point, ease, shiftMethod) {
+  shiftMethod = shiftMethod || TweenLite.to;
+  ease = ease || Circ.easeInOut;
+
+  const duration = 1 + 1 * Math.random();
+  const vars = {
     x: point.originX - 0 + Math.random() * 20,
     y: point.originY - 0 + Math.random() * 20,
-    ease: Circ.easeInOut,
+    ease: ease,
     onComplete: function() {
-      shiftPoint(point);
+      shiftPoint(point, ease, shiftMethod);
     }
-  });
+  };
+
+  shiftMethod(point, duration, vars);
 }
 
 export function getDistance(p1, p2) {
