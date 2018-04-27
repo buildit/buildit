@@ -56,6 +56,7 @@ flourish-tail:
     shapeClass: polygon-shape-4
     reveal: true
     exclude: top
+    excludeGradient: true
   - shape: hatching-pattern-2
     shapeClass: hatching-pattern-2
     reveal: true
@@ -65,7 +66,7 @@ flourish-tail:
     reveal: true
     exclude: top
 pullquote-what-we-do: 
-  quote: We are problem solvers who hone our craft through experimentation, continuous improvement and systems thinking
+  quote: We are problem solvers who hone our craft through experimentation, continuous improvement and systems thinking.
   shapes:
   - shape: hatching-pattern-1
     shapeClass: hatching-pattern-1

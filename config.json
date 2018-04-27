@@ -9,15 +9,18 @@
     },
     "beta": {
       "url": "https://www-beta.buildit.digital",
-      "excludeRobots": true
+      "excludeRobots": true,
+      "googleAnalyticsTrackingId": "UA-78138413-6"
     },
     "staging": {
       "url": "https://www-staging.buildit.digital",
-      "excludeRobots": true
+      "excludeRobots": true,
+      "googleAnalyticsTrackingId": "UA-78138413-6"
     },
     "production": {
       "url": "https://buildit.wiprodigital.com",
-      "excludeRobots": false
+      "excludeRobots": false,
+      "googleAnalyticsTrackingId": "UA-78138413-2"
     }
   },
   "paths": {

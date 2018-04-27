@@ -6,6 +6,7 @@
 <meta name="description" content="{{description}}">
 
 <meta property="og:title" content="{{#if ogTitle }}{{ogTitle}}{{else}}{{title}}{{/if}}">
+<meta property="og:description" content="{{#if ogDescription }}{{ogDescription}}{{else}}{{description}}{{/if}}">
 <meta property="og:site_name" content="{{site.title}}">
 <meta property="og:type" content="{{ogType}}">
 <meta property="og:url" content="{{site.url}}/{{#if path}}{{path}}/{{/if}}">
@@ -13,7 +14,7 @@
 <meta property="og:image:alt" content="{{ogImageAlt}}">
 
 <meta name="twitter:card" content="{{twitterCard}}" />
-<meta name="twitter:site" content="{{twitterSite}}" />
+<meta name="twitter:site:id" content="{{twitterSiteId}}" />
 
 <link rel="stylesheet" href="/styles/style.css">
 

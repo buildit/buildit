@@ -1,11 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="{{viewbox}}" class="{{classname}}" role="presentation">
-  <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="{{gradientId}}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="{{viewbox}}" class="{{classname}}" aria-hidden="true">
+{{#unless excludeGradient}}
+  <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="{{gradientId}}" gradientUnits="objectBoundingBox">
     <stop offset="5%" class="stop-1"/>
     <stop offset="95%" class="stop-2"/>
   </linearGradient>
+{{/unless}}
   <path
     class="shape"
-    gradientUnits="objectBoundingBox"
     d="{{description}}">
   </path>
 </svg>
