@@ -1,6 +1,7 @@
-# Buildit
+# Buildit website
 
-This is the buildit website.
+This is the source code for the Buildit website: https://buildit.wiprodigital.com/
+
 
 ## Requirements
 
