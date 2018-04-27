@@ -38,7 +38,7 @@
     "npm": ">= 5.8.0"
   },
   "devDependencies": {
-    "@buildit/gravity-ui-sass": "^0.7.0",
+    "@buildit/gravity-ui-sass": "^0.8.0",
     "@buildit/job-listings": "^1.0.2",
     "ajv": "^5.5.2",
     "babel-core": "^6.26.0",
@@ -60,6 +60,7 @@
     "gulp-front-matter": "^1.3.0",
     "gulp-hash": "^4.2.2",
     "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-size": "^3.0.0",
     "gulpsmith": "^0.6.0",
@@ -68,6 +69,9 @@
     "helper-markdown": "^1.0.0",
     "helper-moment": "^0.2.0",
     "http-server": "^0.11.1",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^5.1.0",
+    "imagemin-svgo": "^6.0.0",
     "jest": "^22.4.3",
     "jstransformer-handlebars": "^1.1.0",
     "lodash.assign": "^4.2.0",

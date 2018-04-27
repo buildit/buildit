@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [Pa11y](http://pa11y.org/) accessibility tests
 - ESLint with Prettier
 - Templated `robots.txt` that can be configured per deployment environment
+- Image optimisation task
 
 ### Changed
 - Site build now uses Metalsmith
