@@ -75,7 +75,7 @@ If no `--env` argument is provided to the builds, then the first environment def
 * [Branching strategy](./docs/branching-strategy.md)
 * [Testing](./docs/tests.md)
 * [Build process](./docs/build-process.md)
-* [Build and deploy pipeline](./build-deploy-pipeline.md)
+* [Build and deploy pipeline](./docs/build-deploy-pipeline.md)
 
 ### Design
 * [Flourish design elements](./docs/flourishes.md) to use, extend or create the flourish component
