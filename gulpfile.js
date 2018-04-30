@@ -6,9 +6,8 @@ const gulpIf = require("gulp-if");
 const hash = require("gulp-hash");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
+
 const critical = require("critical").stream;
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const imageminMozjpeg = require("imagemin-mozjpeg");
@@ -87,7 +86,7 @@ function imageOptim() {
 function watch(done) {
   gulp.watch(
     paths.scripts.modules,
-    gulp.series(scripts.copyModules, scripts.bundle, browserSync.reload)
+    gulp.series(scripts.bundle, browserSync.reload)
   );
   gulp.watch(
     paths.styles.src,
@@ -122,14 +121,9 @@ function criticalCss() {
 // registering main tasks
 gulp.task(
   "build",
+
   gulp.series(
-    gulp.parallel(
-      assets,
-      imageOptim,
-      styles,
-      scripts.copyModules,
-      scripts.bundle
-    ),
+    gulp.parallel(assets, imageOptim, styles, scripts.bundle),
     metalsmith.build,
     criticalCss
   )
