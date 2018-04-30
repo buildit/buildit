@@ -1,5 +1,5 @@
 // custom rules applied to gravity ui scss
-header[role=banner] {
+body > header {
   .medium-logo {
     width: 20px;
     min-width: 20px;

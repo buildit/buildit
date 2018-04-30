@@ -6,6 +6,8 @@ const gulpIf = require("gulp-if");
 const hash = require("gulp-hash");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
+
+const critical = require("critical").stream;
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const imageminMozjpeg = require("imagemin-mozjpeg");
@@ -86,26 +88,44 @@ function watch(done) {
     paths.scripts.modules,
     gulp.series(scripts.bundle, browserSync.reload)
   );
-  gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reloadCSS));
+  gulp.watch(
+    paths.styles.src,
+    gulp.series(styles, criticalCss, browserSync.reloadCSS)
+  );
   gulp.watch(paths.images.src, gulp.series(imageOptim, browserSync.reload));
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
   gulp.watch(
     [paths.pages.src, paths.templates.src],
-    gulp.series(metalsmith.build, browserSync.reload)
+    gulp.series(metalsmith.build, criticalCss, browserSync.reload)
   );
   done();
+}
+
+function criticalCss() {
+  return gulp
+    .src("dist/**/*.html")
+    .pipe(
+      critical({
+        base: "dist/",
+        inline: true,
+        css: ["dist/styles/style.css"],
+        ignore: ["@font-face", /url\(/]
+      })
+    )
+    .on("error", function(err) {
+      console.error(err.message);
+    })
+    .pipe(gulp.dest("dist"));
 }
 
 // registering main tasks
 gulp.task(
   "build",
 
-  gulp.parallel(
-    assets,
-    imageOptim,
-    styles,
-    scripts.bundle,
-    metalsmith.build
+  gulp.series(
+    gulp.parallel(assets, imageOptim, styles, scripts.bundle),
+    metalsmith.build,
+    criticalCss
   )
 );
 
