@@ -2,6 +2,11 @@
 
 This is the source code for the Buildit website: https://buildit.wiprodigital.com/
 
+To provide feedback, raise bugs or request features, please use our [Buildit website feedback form](https://docs.google.com/forms/d/e/1FAIpQLScOeoF7XfYYs3R8b9K_zvSY0oVS92hAV82FXUOyy8JnDz2lNg/viewform).
+
+If you want to get involved in the development of this website, then please see our [contribution guidelines](./CONTRIBUTING.md).
+
+
 
 ## Requirements
 
@@ -15,17 +20,14 @@ and before running any other npm command, run
 
     $ nvm use
 
+
 ## Build and development
 
 To run it locally just `npm install` then run the `start` script: `npm start`. Local hosting is at http://localhost:8080 and a browser window should open automatically.
 
 To build the static website: `npm run-script build`. Distribution goes into `./dist`.
 
-
-### Image optimisation
-One of the build steps is to optimise any file jpg, png or svg file that is inside `static` and copy it to`dist`.
-We use `imagemin` with three different libraries, one for each file type: `moz-jpeg`, `pngquant` and `svgo`.
-
+Refer to the [build process](./docs/build-process.md) document for further details on all the tasks the build performs.
 
 ### Environments
 
@@ -64,8 +66,21 @@ Where `production` corresponds to the key of the desired environment defined in 
 
 If no `--env` argument is provided to the builds, then the first environment defined in `config.json` will be used.
 
-## Website technologies
 
+## More information
+
+### General
+* [Contribution guidelines](./CONTRIBUTING.md)
+* [Coding standards](./docs/coding-standards.md)
+* [Branching strategy](./docs/branching-strategy.md)
+* [Testing](./docs/tests.md)
+* [Build process](./docs/build-process.md)
+* [Build and deploy pipeline](./build-deploy-pipeline.md)
+
+### Design
+* [Flourish design elements](./docs/flourishes.md) to use, extend or create the flourish component
+
+### Website technologies
 Behind the scenes the website is using the following technologies, so be sure you know what you're doing before starting to change anything.
 
 * [Metalsmith](http://metalsmith.io) for the core of the website,
@@ -74,51 +89,9 @@ Behind the scenes the website is using the following technologies, so be sure yo
   * [autoprefixer](https://github.com/postcss/autoprefixer)
   * [csso](https://github.com/css/csso)
   * [eyeglass](https://github.com/sass-eyeglass/eyeglass)
-* [Cypress](docs/tests.md), for end-to-end testing
-* [Pa11y-CI](docs/tests.md), for automated accessibility
+* [Cypress](./docs/tests.md), for end-to-end testing
+* [Pa11y-CI](./docs/tests.md), for automated accessibility
 
-## Design
-* [Flourish design elements](docs/flourishes.md) to use, extend or create the flourish component
-
-## Travis CI
-
-### Pipeline
-
-* Any pushed commit got build (`npm run-script build`)
-* Any successful build of `master` branch get deployed to Staging
-* Any successful build of a Tag matching a valid SemVer pattern (`vX.Y.Z`) (case-sensitive) gets deployed to Production
-
-### Travis CI Setup
-
-Travis CI build expects the following environment variables:
-
-* `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`: AWS credentials used for deploying
-* `BETA_BUCKET` and `PROD_BUCKET_REGION`: S3 bucket and Region for Beta environment
-* `BETA_DISTRIBUTION_ID`: CloudFront Distribution ID for Beta
-* `STAGING_BUCKET` and `STAGING_BUCKET_REGION`: S3 bucket and Region for Staging environment
-* `STAGING_DISTRIBUTION_ID`: CloudFront Distribution ID for Staging
-* `PROD_BUCKET` and `PROD_BUCKET_REGION`: S3 bucket and Region for Production environment
-* `PROD_DISTRIBUTION_ID`: CloudFront Distribution ID for Production
-
-### Deployment
-
-Currently, deployment only means syncing the output of the build (`./dist`) with an S3 bucket.
-Deployment also invalidate the CloudFormation cache for all objects in the distribution.
-
-The S3 bucket, DNS, CloudFront etc have to be set up manually.
-
-## Decisions
-
+### Decisions
 Decisions linked to implementation details, have not been catalogued. Many of those decisions are now lost.  
-Therefore, although late, we have decided to start logging all new decisions. These decisions will now be catalogued in the [Decision Log](docs/DECISIONLOG.md)
-
-## Logs
-
-Currently we are not using CloudWatch or any other system to aggregate logs.  
-AWS S3 splits activity logs into several files, which can make it hard to consume and search. The [Log Aggregator Script](./logAggregator.sh) pulls down the logs for a given day and combines them into a file that is easily consumed.
-
-To run the script, simply type  
-`$ ./s3LogAggregator.sh`  
-and follow the instructions on screen.
-
-The date should be entered in YYYY-mm-dd format (e.g. 2018-03-01), when prompted by the script.
+Therefore, although late, we have decided to start logging all new decisions. These decisions will now be catalogued in the [Decision Log](./docs/DECISIONLOG.md)
