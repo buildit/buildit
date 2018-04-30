@@ -8,7 +8,9 @@ let params = {
   points: [],
   target: null,
   canvasTop: null,
-  animateHeader: true
+  animateHeader: true,
+  canvas: null,
+  container: null
 };
 
 function HeroAnimation(canvas, container) {
@@ -18,7 +20,10 @@ function HeroAnimation(canvas, container) {
   }
 
   if (container !== null) {
-    params.canvasTop = canvas.getBoundingClientRect().top;
+    params.canvas = canvas;
+    params.container = container;
+    params.canvasTop = params.canvas.getBoundingClientRect().top;
+
     initHeader();
     initAnimation();
     addListeners();
@@ -34,8 +39,8 @@ function scrollCheck() {
 }
 
 const resizeCanvas = utils.debounce(function() {
-  initHeader();
-  params.canvasTop = canvas.getBoundingClientRect().top;
+  initHeader(params.canvas, params.container);
+  params.canvasTop = params.canvas.getBoundingClientRect().top;
 }, 150);
 
 function animate() {
@@ -65,8 +70,8 @@ function animate() {
 }
 
 function mouseOut() {
-  params.target.x = container.clientHeight * 2;
-  params.target.y = container.clientHeight * 2;
+  params.target.x = params.container.clientHeight * 2;
+  params.target.y = params.container.clientHeight * 2;
 }
 
 function mouseMove(event, target, canvasTop) {
@@ -82,10 +87,10 @@ function mouseMove(event, target, canvasTop) {
 
 function addListeners() {
   if (!("ontouchstart" in window)) {
-    container.addEventListener("mousemove", function(e) {
+    params.container.addEventListener("mousemove", function(e) {
       mouseMove(e, params.target, params.canvasTop);
     });
-    container.addEventListener("mouseout", mouseOut);
+    params.container.addEventListener("mouseout", mouseOut);
     window.addEventListener("resize", resizeCanvas);
   }
 
@@ -94,16 +99,16 @@ function addListeners() {
 
 function initHeader() {
   params.points = [];
-  params.width = container.clientWidth;
-  params.height = container.clientHeight;
-  canvas.width = params.width;
-  canvas.height = params.height;
+  params.width = params.container.clientWidth;
+  params.height = params.container.clientHeight;
+  params.canvas.width = params.width;
+  params.canvas.height = params.height;
   params.target = {
     x: params.width * 2,
     y: params.height * 2
   };
 
-  params.ctx = canvas.getContext("2d");
+  params.ctx = params.canvas.getContext("2d");
 
   const pointsLimiter = utils.calcPointsLimiter(params.width, params.height);
 
