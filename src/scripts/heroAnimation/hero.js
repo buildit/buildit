@@ -85,11 +85,24 @@ function mouseMove(e) {
   params.target.y = posy;
 }
 
+function noTouchAnim() {
+  let posy = 0;
+  let posx = (posy = 0);
+
+  posx = params.container.clientWidth / 2;
+  posy = params.container.clientHeight / 2 - params.canvasTop;
+
+  params.target.x = posx;
+  params.target.y = posy;
+}
+
 function addListeners() {
   if (!("ontouchstart" in window)) {
     params.container.addEventListener("mousemove", mouseMove);
     params.container.addEventListener("mouseout", mouseOut);
     window.addEventListener("resize", resizeCanvas);
+  } else {
+    noTouchAnim();
   }
 
   window.addEventListener("scroll", scrollCheck);
