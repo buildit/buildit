@@ -22,6 +22,22 @@ const point1 = {
       originY: 47.151927550054076,
       closest: [],
       active: 0.4
+    },
+    {
+      x: 83.74925795996039,
+      originX: 83.74925795996039,
+      y: 57.151927550054076,
+      originY: 57.151927550054076,
+      closest: [],
+      active: 0.4
+    },
+    {
+      x: 93.74925795996039,
+      originX: 93.74925795996039,
+      y: 67.151927550054076,
+      originY: 67.151927550054076,
+      closest: [],
+      active: 0.4
     }
   ],
   active: 0.4
@@ -84,25 +100,28 @@ describe("calcPointsLimiter function", () => {
       smallScreen.height
     );
 
-    expect(pointsLimiter).toEqual(6);
+    expect(pointsLimiter).toBeGreaterThanOrEqual(6);
   });
 });
 
 describe("drawLines function", () => {
   it("should call the canvas functions for each point passed in", () => {
     const ctx = new CtxMock();
+    const numOfPoints = point1.closest.length;
 
     expect(ctx.beginPathCounter).toEqual(0);
     expect(ctx.moveToCounter).toEqual(0);
     expect(ctx.lineToCounter).toEqual(0);
+    expect(ctx.strokeStyle).toEqual(null);
     expect(ctx.strokeCounter).toEqual(0);
 
     utils.drawLines(point1, ctx);
 
-    expect(ctx.beginPathCounter).toEqual(1);
-    expect(ctx.moveToCounter).toEqual(1);
-    expect(ctx.lineToCounter).toEqual(1);
-    expect(ctx.strokeCounter).toEqual(1);
+    expect(ctx.beginPathCounter).toEqual(numOfPoints);
+    expect(ctx.moveToCounter).toEqual(numOfPoints);
+    expect(ctx.lineToCounter).toEqual(numOfPoints);
+    expect(ctx.strokeStyle).toEqual("rgba(94, 161, 184,0.4)");
+    expect(ctx.strokeCounter).toEqual(numOfPoints);
   });
 });
 

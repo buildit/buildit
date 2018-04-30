@@ -5,6 +5,7 @@ export function calcPointsLimiter(width, height) {
   return pointsLimiter > pointsLimiterMin ? pointsLimiter : pointsLimiterMin;
 }
 
+// Taken from Underscore. TODO: add this as a dependency
 export function debounce(func, wait, immediate) {
   let timeout;
   return function() {
@@ -49,6 +50,7 @@ export function shiftPoint(point, ease, shiftMethod) {
   shiftMethod(point, duration, vars);
 }
 
+// TODO: Should be refactored to use a more appropiate Math method
 export function getDistance(p1, p2) {
   return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
 }
