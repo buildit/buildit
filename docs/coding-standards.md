@@ -21,7 +21,7 @@ Additions or changes to the website's HTML **must** therefore always follow this
 1. Does Gravity already provide a component for what you need? If yes, use it.
 1. If not, does Gravity provide something close to what you need? If yes, please consider using that.
 1. If your new component contains parts that exist in Gravity, then please make use of them.
-1. Once you have finalised your new component's markup and associated CSS, please notify the Gravity maintainers so that they can consider it for inclusion into a future release of Gravity.
+1. Once you have finalised your new component's markup and associated CSS, please notify [the Gravity maintainers](https://github.com/orgs/buildit/teams/gravity-maintainers) so that they can consider it for inclusion into a future release of Gravity.
 
 Where we produce Handlebars partials that map directly to a counterpart in Gravity's pattern library, please use the components Atomic Design category and name as the partial's filename. For example: `molecule-steps.hbs`.
 

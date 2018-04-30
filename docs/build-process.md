@@ -15,11 +15,8 @@ We use [Metalsmith](http://www.metalsmith.io/) (via [`gulpsmith`](https://github
 1. All [markdown files](https://daringfireball.net/projects/markdown/syntax) and text files in the `pages/` directory are read in and passed into the pipeline one by one.
 1. If the files contain [YAML frontmatter](https://www.npmjs.com/package/front-matter), it is extracted and added to the metadata fields used by Metalsmith
     * The value of the **`layout` field** in the YAML data is expected to be the filename of the [Handlebars template](https://handlebarsjs.com/) (within the `templates/` folder) that should be used to render this page
-1. The per-file YAML data is combined with data from a number of Metalsmith plug-ins:
-    * Some global metadata about the site, added as the **`site`, `build`, `twitter*` and `og*` fields**
-    * A custom plug-in that uses [Buildit's `job-listing library`](https://github.com/buildit/job-listings) to fetch our job ads from [SmartRecruiters](https://www.smartrecruiters.com/), group them by location and make the results available via the **`jobLocations` field**.
-    * The [`metalsmith-collections` plug-in](https://github.com/segmentio/metalsmith-collections) to create the **`collections.locations` field** from all the files within `pages/locations`.
-    * The [`metalsmith-page-titles`](https://github.com/hellatan/metalsmith-page-titles), which creates the **`pageTitle` field** that is a combination of the page's `title` and the website's title (e.g. "Careers | buildit @ wipro digital")
+1. The per-file YAML data is combined with data from a number of Metalsmith plug-ins
+    * Please refer to the code in `gulp/metalsmith.js` to see which plug-ins are used and what they do
 1. For markdown files, their contents are converted to HTML (which is placed into the **`contents` field**).
 1. Finally, the Handlebars template (specified via the `layout` field) is rendered using all the fields as its context data.
     * For example, to render the `pageTitle` field within a template you can use `{{ pageTitle }}`.
