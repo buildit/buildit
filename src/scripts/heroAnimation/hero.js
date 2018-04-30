@@ -74,22 +74,20 @@ function mouseOut() {
   params.target.y = params.container.clientHeight * 2;
 }
 
-function mouseMove(event, target, canvasTop) {
+function mouseMove(e) {
   let posy = 0;
   let posx = (posy = 0);
 
-  posx = event.pageX;
-  posy = event.pageY - canvasTop;
+  posx = e.pageX;
+  posy = e.pageY - params.canvasTop;
 
-  target.x = posx;
-  target.y = posy;
+  params.target.x = posx;
+  params.target.y = posy;
 }
 
 function addListeners() {
   if (!("ontouchstart" in window)) {
-    params.container.addEventListener("mousemove", function(e) {
-      mouseMove(e, params.target, params.canvasTop);
-    });
+    params.container.addEventListener("mousemove", mouseMove);
     params.container.addEventListener("mouseout", mouseOut);
     window.addEventListener("resize", resizeCanvas);
   }
