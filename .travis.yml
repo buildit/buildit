@@ -1,9 +1,8 @@
 language: node_js
 node_js:
   - lts/*
-cache:
-  directories:
-    - node_modules
+before_install:
+  - npm i -g npm@~5.8.0
 
 env:
   global:
@@ -11,10 +10,21 @@ env:
     - secure: "yuOsuEAFh3xvvhiAa1qFqdDJ8UY0jnmFB2Vb5fa88yTlQO8FCV2VWH45vlOAZ1EhEeAo/8LFO1iEV/8ykMQICqTeS+dXUxrut8PpIAccgfRO0OnuebY2KKSADbBKsw+lsMPXuaFNxn0mv0vuHMulX0oPR8f/Zx0ZJGf2jo7NuhUPvJhZPIT8cT9VxAdgk7wMdJ6qGIOla5e8icM14JS9lLg+GegL3ks34OZRJW1ciWPAgz/Qp437ByTutHsaRu+/5GXbCLS0k+vSQOzgB6vpcnG4YAPmVXrcFl2LfM3Tqc7yaC/JjPCY44RXvf3SGlsUy/12pbOZ4YYZ5eCXMwN+605YAHYL2uLelYNmhhTy5pYmJwFeO0MaBzS8QSmilhA6GPd0pjQiV/vA9uF4Mj9eUTK6+Tnw67oAWjND5JKr7cbKzVzK74Y8ekFGJbRCRGR0JoOuT5tDQ49tuYBFGiUc+WeE2FcdkLL6TDF3FJHVQ2VjYm6o4oyK7DhOizS606A1XtwvWWElrsTWLWPldKJiQLvxdAmYbWHzQ0DC3LLsA5ZAp3ZpSBCZKyAivMGpWaHkg/Dl9Y3O96cHQVDZepF/lftGoR2lhxNEzhH0USotJpbPdaKyo+4f1uDm7shzCduBYIngd2eTb/NLjCf5CkLjcOuGr50l7xY6g2UCaDBBtQM=" #SLACK_NOTIFICATION_URL
 
 install:
-  - npm install
+  - npm ci
 
 script:
-  - npm run-script build
+  - npm run-script test
+  - |
+    if [[ "$TRAVIS_TAG" =~ "$PROD_TAG_REGEXP" ]]; then
+      npm run-script build -- --env production;
+    elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      npm run-script build -- --env staging;
+    elif [ "$TRAVIS_BRANCH" == "beta" ]; then
+      npm run-script build -- --env beta;
+    else
+      npm run-script build;
+    fi
+  - npm run cypress:travis
 
 before_deploy:
   - pip install --user awscli
@@ -22,11 +32,11 @@ before_deploy:
 deploy:
   # deploy master to Staging
   - provider: script
-    script: 
-      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" && 
-      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --exclude "*" --include "*.css" --content-type "text/css; charset=utf-8" && 
-      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --exclude "*" --include "*.js" --content-type "application/javascript; charset=utf-8" && 
-      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --include "*" --exclude "*.js" --exclude "*.html" --exclude "*.css" && 
+    script:
+      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --exclude "*" --include "*.css" --content-type "text/css; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --exclude "*" --include "*.js" --content-type "application/javascript; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --include "*" --exclude "*.js" --exclude "*.html" --exclude "*.css" &&
       ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} --paths /*
     skip_cleanup: true
     on:
@@ -34,11 +44,11 @@ deploy:
 
   # deploy tags matching rel-* or release-* to Production
   - provider: script
-    script: 
-      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" && 
-      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --exclude "*" --include "*.css" --content-type "text/css; charset=utf-8" && 
-      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --exclude "*" --include "*.js" --content-type "application/javascript; charset=utf-8" && 
-      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --include "*" --exclude "*.js" --exclude "*.html" --exclude "*.css" && 
+    script:
+      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --exclude "*" --include "*.css" --content-type "text/css; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --exclude "*" --include "*.js" --content-type "application/javascript; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --include "*" --exclude "*.js" --exclude "*.html" --exclude "*.css" &&
       ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --paths /*
     skip_cleanup: true
     on:

@@ -1,0 +1,12 @@
+<blockquote class="flourish-pullquote-wrap">
+  <div class="flourish flourish-pullquote">
+    {{#each shapes}}
+      <div class="flourish-pullquote__{{shape}} {{#if reveal}}js-reveal-element{{/if}}" {{#if exclude}}data-exclude="{{exclude}}"{{/if}}>
+        {{ flourishShapes shape }}
+      </div>
+    {{/each}}
+    <span class="flourish-pullquote__text">
+      {{quote}}
+    </span>
+  </div>
+</blockquote>

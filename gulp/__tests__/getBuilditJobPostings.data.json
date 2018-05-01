@@ -1,0 +1,324 @@
+[
+  {
+    "uuid": "1d500178-8c17-42bc-a9c0-c3d145073c0a",
+    "title": "Delivery Lead",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Director",
+    "location": {
+      "city": "Gdańsk",
+      "region": "Pomeranian Voivodeship",
+      "countryCode": "pl",
+      "country": "Poland"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "d9b4400b-f937-4daa-98ed-e7d74a9b6aa5",
+    "title": "Senior iOS Engineer (contract)",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "New York",
+      "region": "NY",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Contract",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "3f79b96a-f6f8-4abe-9153-aaeec0d6e8d9",
+    "title": "Senior Android Engineer (contract)",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "New York",
+      "region": "NY",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Contract",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "a1800d81-f6d3-4f7a-a60d-4991e8c118b2",
+    "title": "Senior Android Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "New York",
+      "region": "NY",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "0bfcd6a5-3601-4f44-bee9-37eac63e7ebc",
+    "title": "Senior iOS Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "New York",
+      "region": "NY",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "0dd72280-4ffa-426a-81cc-b9f89d1a10e6",
+    "title": "Front End Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "New York",
+      "region": "NY",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "07c641c3-a22e-4b48-8b7c-4da9cc840d61",
+    "title": "Front End Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Denver",
+      "region": "CO",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "f6c90b92-0f45-4fe3-91bf-f1e52927709a",
+    "title": "Platform Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Denver",
+      "region": "CO",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "d4e71287-eebe-401e-974f-1a23b78e3b31",
+    "title": "Platform Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "New York",
+      "region": "NY",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "020f8936-e246-45c7-82d7-c55311f4c62a",
+    "title": "Platform Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "London",
+      "region": "ENGLAND",
+      "countryCode": "gb",
+      "country": "United Kingdom"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "29484278-f356-459a-a19b-4babc1323e9e",
+    "title": "Head of Engineering",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Director",
+    "location": {
+      "city": "London",
+      "region": "England",
+      "countryCode": "gb",
+      "country": "United Kingdom"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "b3594334-c24c-4d35-b25b-2ed8910db9c2",
+    "title": "Platform Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Dublin",
+      "region": "County Dublin",
+      "countryCode": "ie",
+      "country": "Ireland"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "ac4e2f81-563f-44cd-9eb9-6c3b00b9de01",
+    "title": "Senior Platform Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Dallas",
+      "region": "TX",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "a9ae58f2-26b0-4ed8-b434-5b660017a8f2",
+    "title": "Senior Front End Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Dallas",
+      "region": "TX",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "a9291e76-3b68-445c-b5b0-606308b74e18",
+    "title": "Lead Platform Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "London",
+      "region": "England",
+      "countryCode": "gb",
+      "country": "United Kingdom"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "faedf555-16e2-40da-a7da-c00fddb582e1",
+    "title": "Front End Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "London",
+      "region": "England",
+      "countryCode": "gb",
+      "country": "United Kingdom"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "4e939ea8-2add-4a92-b0cd-a5687c66497c",
+    "title": "Creative Technologist",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "London",
+      "region": "England",
+      "countryCode": "gb",
+      "country": "United Kingdom"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "54acd469-1857-4864-a7a3-4cf2775e0888",
+    "title": "Platform Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Gdańsk",
+      "region": "Pomeranian Voivodeship",
+      "countryCode": "pl",
+      "country": "Poland"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "4164b14a-8620-4ef3-9b30-ce2c8bb21183",
+    "title": "Full Stack Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Gdańsk",
+      "region": "Pomeranian Voivodeship",
+      "countryCode": "pl",
+      "country": "Poland"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "d4b92ea6-2873-47f8-a99a-092a4243db6e",
+    "title": "Front End Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Gdańsk",
+      "region": "Pomeranian Voivodeship",
+      "countryCode": "pl",
+      "country": "Poland"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "2b137be9-568d-4c84-ba03-9241bab8a686",
+    "title": "Senior Front End Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Houston",
+      "region": "TX",
+      "countryCode": "us",
+      "country": "United States"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "ed5de06d-de5f-4643-a167-1f493ed5f982",
+    "title": "Software Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Dublin",
+      "region": "County Dublin",
+      "countryCode": "ie",
+      "country": "Ireland"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  },
+  {
+    "uuid": "22d904e8-27cd-41d6-b850-f03528167654",
+    "title": "DevOps Engineer",
+    "companyId": "WiproDigital",
+    "experienceLevel": "Mid-Senior Level",
+    "location": {
+      "city": "Dublin",
+      "region": "County Dublin",
+      "countryCode": "ie",
+      "country": "Ireland"
+    },
+    "typeOfEmployment": "Full-time",
+    "trId": "2f4a2735-7172-45dd-aca7-63618dca8aff"
+  }
+]

@@ -1,0 +1,13 @@
+<div class="grav-c-location-card">
+  <h2>{{title}}</h2>
+  <p>
+    {{#if address.line1}}{{address.line1}}<br>{{/if}}
+    {{#if address.line2}}{{address.line2}}<br>{{/if}}
+    {{#if city}}{{city}}<br>{{/if}}
+    {{#if postcode}}{{postcode}}<br>{{/if}}
+    {{#if country}}{{country}}{{/if}}
+  </p>
+  <a href="{{map}}" title="See {{title}} office on Google Maps - Opens in a new tab" target="_blank">
+    <img src="{{img.url}}" alt="{{img.alt}}">
+  </a>
+</div>
