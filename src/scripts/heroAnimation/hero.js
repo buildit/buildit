@@ -31,7 +31,7 @@ function HeroAnimation(canvas, container) {
 }
 
 function scrollCheck() {
-  if (document.body.scrollTop > params.height) {
+  if (params.container.getBoundingClientRect().bottom < 0) {
     params.animateHeader = false;
   } else {
     params.animateHeader = true;
@@ -79,7 +79,7 @@ function mouseMove(e) {
   let posx = (posy = 0);
 
   posx = e.pageX;
-  posy = e.pageY - params.canvasTop;
+  posy = e.pageY - this.offsetTop;
 
   params.target.x = posx;
   params.target.y = posy;
@@ -90,7 +90,7 @@ function noTouchAnim() {
   let posx = (posy = 0);
 
   posx = params.container.clientWidth / 2;
-  posy = params.container.clientHeight / 2 - params.canvasTop;
+  posy = params.container.clientHeight / 2;
 
   params.target.x = posx;
   params.target.y = posy;
@@ -133,6 +133,7 @@ function initHeader() {
         y: py,
         originY: py
       };
+
       params.points.push(p);
     }
   }
