@@ -35,7 +35,7 @@ The build also optimises the final CSS output via [CSSO](https://github.com/css/
 ## JS bundling
 _See: [`gulp/scripts.js`](../gulp/scripts.js)_
 
-All site-specific JavaScript (e.g. for hero animation) is written as ES6-style modules in `src/scripts/`. We use [rollup.js](https://rollupjs.org/guide/en) and its [Babel](https://babeljs.io/) plug-in to transpile and bundle the source JS modules into a single [UMD](https://github.com/umdjs/umd) bundle that can be served to web browsers.
+All site-specific JavaScript (e.g. for hero animation) is written as ES6-style modules in `src/scripts/`. We use [rollup.js](https://rollupjs.org/guide/en) with the help of two plug-ins, [Babel](https://babeljs.io/) and the JavaScript version of [Google's Closure Compiler](https://github.com/google/closure-compiler-js), to transpile and bundle the source JS modules into a single [UMD](https://github.com/umdjs/umd) bundle that can be served to web browsers.
 
 **Note:** Some of our JavaScript has dependencies on 3rd party libraries. Currently, these are not embedded into our bundle, so we load CDN-hosted versions of those scripts directly from our HTML.
 
