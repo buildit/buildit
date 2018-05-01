@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - ESLint with Prettier
 - Templated `robots.txt` that can be configured per deployment environment
 - Image optimisation task
+- Client bundle minification through Google's Closure Compiler
+- Critical CSS optimisation
 
 ### Changed
 - Site build now uses Metalsmith
