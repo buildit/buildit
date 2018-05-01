@@ -7,6 +7,7 @@ ogTitle: Buildit
 layout: homepage.hbs
 header-light: true
 footerModifierClass: grav-c-footer-no-margin
+disableLogoLink: true
 
 # Content
 hero:
