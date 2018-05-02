@@ -6,6 +6,7 @@ page-url: about
 
 # Display
 layout: about.hbs
+header-light: true
 main-classnames: grav-o-container has-flourish-top has-flourish-tail
 footerModifierClass: grav-c-footer-no-margin
 
