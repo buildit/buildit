@@ -5,10 +5,9 @@ import HeroAnimation from "./heroAnimation/hero.js";
 
 const canvas = document.getElementById("js-canvas-hero");
 const container = document.querySelector(".grav-c-hero");
-
 const scroll = new Scroll({ class: ".grav-c-cta" });
-
 const scrollReveal = new ScrollReveal();
+
 if (canvas && container) {
   const heroAnimation = new HeroAnimation(canvas, container);
 }

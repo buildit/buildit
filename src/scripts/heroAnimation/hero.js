@@ -7,7 +7,6 @@ let params = {
   ctx: null,
   points: [],
   target: null,
-  canvasTop: null,
   animateHeader: true,
   canvas: null,
   container: null
@@ -22,7 +21,6 @@ function HeroAnimation(canvas, container) {
   if (container !== null) {
     params.canvas = canvas;
     params.container = container;
-    params.canvasTop = params.canvas.getBoundingClientRect().top;
 
     initHeader();
     initAnimation();
@@ -40,7 +38,6 @@ function scrollCheck() {
 
 const resizeCanvas = utils.debounce(function() {
   initHeader(params.canvas, params.container);
-  params.canvasTop = params.canvas.getBoundingClientRect().top;
 }, 150);
 
 function animate() {
