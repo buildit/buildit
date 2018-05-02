@@ -7,6 +7,10 @@
       "url": "http://localhost:8080",
       "excludeRobots": true
     },
+    "local-dev-min": {
+      "url": "http://localhost:8080",
+      "excludeRobots": true
+    },
     "beta": {
       "url": "https://www-beta.buildit.digital",
       "excludeRobots": true,
