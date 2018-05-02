@@ -24,12 +24,23 @@ body > header {
         fill: $medium-monogram-white;
       }
     }
+
+    .grav-c-nav-menu, .grav-c-nav-menu__external-link {
+      .grav-c-block-link, .grav-c-block-link:visited {
+        background-color: transparent;
+        border-width: 0;
+        border-color: transparent;
+      }
+
+      .grav-c-block-link:not([href]) {
+        color: #544848;
+      }
+    }
   }
 
+
+
   .grav-c-nav-menu__external-link {
-    .grav-c-block-link {
-      border-color: transparent;
-    }
 
     &:hover {
       rect {
