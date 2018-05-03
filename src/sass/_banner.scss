@@ -33,7 +33,7 @@ body > header {
       }
 
       .grav-c-block-link:not([href]) {
-        color: #544848;
+        color: $grav-co-neutral-asphalt;
       }
     }
   }
