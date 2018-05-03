@@ -31,13 +31,14 @@ The majority of the website's CSS is imported from [`gravity-ui-sass`](https://g
 
 The build also optimises the final CSS output via [CSSO](https://github.com/css/csso). Finally, we use [Critical](https://www.npmjs.com/package/critical) to inline any critical CSS into the HTML pages to improve perceived page load speed.
 
-
 ## JS bundling
 _See: [`gulp/scripts.js`](../gulp/scripts.js)_
 
 All site-specific JavaScript (e.g. for hero animation) is written as ES6-style modules in `src/scripts/`. We use [rollup.js](https://rollupjs.org/guide/en) with the help of two plug-ins, [Babel](https://babeljs.io/) and the JavaScript version of [Google's Closure Compiler](https://github.com/google/closure-compiler-js), to transpile and bundle the source JS modules into a single [UMD](https://github.com/umdjs/umd) bundle that can be served to web browsers.
 
-**Note:** Some of our JavaScript has dependencies on 3rd party libraries. Currently, these are not embedded into our bundle, so we load CDN-hosted versions of those scripts directly from our HTML.
+### Note:
+- Some of our JavaScript has dependencies on 3rd party libraries. Currently, these are not embedded into our bundle, so we load CDN-hosted versions of those scripts directly from our HTML.
+- `npm run dev` will skip the minification script
 
 
 ## Image optimisation
@@ -45,10 +46,21 @@ _See: [`gulpfile.js`](../gulpfile.js)_
 
 Any source JPEG, PNG and SVG image files located in `static/images/` are optimised via [`imagemin`](https://github.com/imagemin/imagemin) with three different libraries, one for each file type: `moz-jpeg`, `pngquant` and `svgo`. The compressed images are then written to the `dist/images/` output directory.
 
-**Note:** GIF files are not further optimised. They get copied to the build ouptut as-is, along with non-image assets.
+### Note:
+- GIF files are not further optimised. They get copied to the build ouptut as-is, along with non-image assets.
+- `npm run dev` will skip the optimisation scripts
 
 
 ## Asset copying
 _See: [`gulpfile.js`](../gulpfile.js)_
 
 Any files under `static/` (except for JPEG, PNG and SVG files in `static/images/`) are copied as-is to the build output directory, `dist/`.
+
+
+## Critical CSS inlining
+Part of the CSS of every html page will be extracted from the CSS file and inlined.
+
+This process happens automatically and it uses [critical](https://github.com/addyosmani/critical)
+
+### Notes:
+- `npm run dev` will skip this optimisation script
