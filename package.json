@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "npm run clean && gulp build",
-    "start": "npm run clean && gulp",
+    "dev": "npm run clean && gulp",
+    "start": "npm run clean && gulp --env local-dev-min",
     "test": "jest",
     "spin-up-server": "http-server ./dist -c-1 -s",
     "test-watch": "jest --coverage --watch",

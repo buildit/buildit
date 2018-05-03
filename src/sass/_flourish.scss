@@ -1,6 +1,7 @@
 .flourish-wrap {
+  position: relative;
+  z-index: -10;
   margin: 0;
-  overflow: hidden;
 
   + main {
     margin-top: -200px;
@@ -15,13 +16,13 @@
   position: relative;
   margin: 0 auto;
   z-index: -1;
- 
+
   >div {
     position: absolute;
     margin: 0;
     z-index: -1;
   }
- 
+
   .stop-1,
   .stop-2 {
     stop-color: $color-grey-alto;
