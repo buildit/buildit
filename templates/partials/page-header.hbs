@@ -1,20 +1,20 @@
 <header class="{{#if header-light}}is-light{{/if}}">
   <div>
     <div class="logo-main">
-    {{#unless path}}
-      <h1>
-    {{else}}
+    {{#if path}}
       <a href="/">
-    {{/unless}}
+    {{else}}
+      <h1>
+    {{/if}}
         <svg role="img" class="grav-c-logo" aria-label="buildit @ wipro digital" width="300" height="33">
           <title>buildit @ wipro digital</title>
           <use xlink:href="#buildit-logotype"></use>
         </svg>
-    {{#unless path}}
-      </h1>
-    {{else}}
+    {{#if path}}
       </a>
-    {{/unless}}
+    {{else}}
+      </h1>
+    {{/if}}
     </div>
     <button type="button" class="grav-c-toggle-menu" aria-pressed="false" aria-label="Do something">
       <span class="grav-c-toggle-menu__icon"></span>
