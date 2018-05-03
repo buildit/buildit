@@ -26,9 +26,12 @@ const eyeglass = require("eyeglass");
 // config
 const config = require("./config.json");
 const paths = config.paths;
+const envs = require("./gulp/envs.js");
 
 // Placeholder for the environment sniffing variable
 const PRODUCTION = false;
+
+const optimise = envs.shouldOptimise();
 
 const sassOptions = {
   eyeglass: {}
@@ -74,11 +77,14 @@ function imageOptim() {
   return gulp
     .src(paths.images.src)
     .pipe(
-      imagemin([
-        imageminMozjpeg({ quality: 85 }),
-        imageminPngquant({ quality: "65-80" }),
-        imageminSvgo({ plugins: [{ removeViewBox: false }] })
-      ])
+      gulpIf(
+        optimise,
+        imagemin([
+          imageminMozjpeg({ quality: 85 }),
+          imageminPngquant({ quality: "65-80" }),
+          imageminSvgo({ plugins: [{ removeViewBox: false }] })
+        ])
+      )
     )
     .pipe(gulp.dest(paths.images.dest));
 }
@@ -105,12 +111,15 @@ function criticalCss() {
   return gulp
     .src("dist/**/*.html")
     .pipe(
-      critical({
-        base: "dist/",
-        inline: true,
-        css: ["dist/styles/style.css"],
-        ignore: ["@font-face", /url\(/]
-      })
+      gulpIf(
+        optimise,
+        critical({
+          base: "dist/",
+          inline: true,
+          css: ["dist/styles/style.css"],
+          ignore: ["@font-face", /url\(/]
+        })
+      )
     )
     .on("error", function(err) {
       console.error(err.message);

@@ -19,6 +19,10 @@ module.exports = {
 
   currentEnv: options.env,
 
+  shouldOptimise: function() {
+    return options.env !== "local-dev";
+  },
+
   getEnvInfo: function(env) {
     return envs[env];
   },
