@@ -10,7 +10,7 @@ import { getScrollPosition } from "./windowHelpers.js";
 
 const defaultOptions = {
   duration: 2500,
-  animation: easingOptions.easeOutCubic,
+  animation: easingOptions.easeInOutCubic,
   resetTime: () => ({ start: null, now: null }),
   position: { start: 0, end: null, current: null }
 };
