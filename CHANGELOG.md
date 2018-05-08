@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+
+## [4.0.2] - 2018-05-07
+### Fixed
+- WEB-248 & WEB-249: Flourishes no longer cause gap below footer and janky scrolling on careers page.
+- WEB-237: Location page map links now all use `maps.google.com` URLs.
+
+
+## [4.0.1] - 2018-05-07
+### Fixed
+- WEB-236: `.travis.yml` now builds production site with correct configuration.
+
+
+## [4.0.0] - 2018-05-03
 ### Added
 - New home page design & content
 - New about page design & content
