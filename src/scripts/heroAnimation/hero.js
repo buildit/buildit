@@ -86,8 +86,8 @@ function noTouchAnim() {
   let posy = 0;
   let posx = (posy = 0);
 
-  posx = params.container.clientWidth / 2;
-  posy = params.container.clientHeight / 2;
+  posx = params.container.clientWidth / 1.5;
+  posy = params.container.clientHeight / 1.5;
 
   params.target.x = posx;
   params.target.y = posy;
