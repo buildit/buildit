@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Robots meta tags to control indexing of pages
+- WEB-229 cropping at bottom of hero
 
 ### Updated
 - Travis script to run daily cron job against latest tag

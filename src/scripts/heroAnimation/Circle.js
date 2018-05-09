@@ -12,7 +12,7 @@ Circle.prototype.draw = function() {
   if (!this.active) return;
   this.ctx.beginPath();
   this.ctx.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI, false);
-  this.ctx.fillStyle = "rgba(94, 161, 184," + this.active + ")";
+  this.ctx.fillStyle = `rgba(${this.color},${this.active})`;
   this.ctx.fill();
 };
 

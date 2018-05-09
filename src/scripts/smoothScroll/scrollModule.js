@@ -10,7 +10,7 @@ import { getScrollPosition } from "./windowHelpers.js";
 
 const defaultOptions = {
   duration: 2500,
-  animation: easingOptions.easeOutCubic,
+  animation: easingOptions.easeInOutCubic,
   resetTime: () => ({ start: null, now: null }),
   position: { start: 0, end: null, current: null }
 };
@@ -84,13 +84,14 @@ Scroll.prototype.updateState = function() {
 
 // See https://github.com/cferdinandi/smooth-scroll/blob/master/dist/js/smooth-scroll.js
 Scroll.prototype.onChange = function() {
+  const scrollLength = this._position.end - this._position.start;
   const elapsedTime = this._time.now - this._time.start;
   let progress = elapsedTime / this.options.duration;
   progress = progress >= 1 ? 1 : progress;
 
   this._position.current =
-    this._position.start +
-    this._position.end * this.options.animation(progress);
+    this._position.start + scrollLength * this.options.animation(progress);
+
   window.scrollTo(0, this._position.current);
 };
 
