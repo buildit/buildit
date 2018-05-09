@@ -54,7 +54,7 @@ function animate() {
         point.active = 0.04;
         point.circle.active = 0.1;
       } else {
-        point.active = 0.07;
+        point.active = 0.04;
         point.circle.active = 0.04;
       }
 
@@ -86,8 +86,8 @@ function noTouchAnim() {
   let posy = 0;
   let posx = (posy = 0);
 
-  posx = params.container.clientWidth / 1.5;
-  posy = params.container.clientHeight / 1.5;
+  posx = params.container.clientWidth / 2;
+  posy = params.container.clientHeight / 2;
 
   params.target.x = posx;
   params.target.y = posy;
