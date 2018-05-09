@@ -27,6 +27,7 @@ const drafts = require("metalsmith-drafts");
 const gravityAssets = require("./gravity-assets.js");
 const jobListings = require("./metalsmith-job-listings.js");
 const flourishShapes = require("../src/flourishes/shapes.json");
+const buildInfo = require("./metalsmith-build-info.js");
 
 const presentationSvgTemplate = fs.readFileSync(
   path.join(
@@ -112,6 +113,7 @@ function metalsmith() {
             ogImageAlt: "buildit @ wipro digital"
           })
           .use(jobListings())
+          .use(buildInfo())
           .use(
             collections({
               locations: `locations/*.md`
@@ -142,7 +144,13 @@ function metalsmith() {
               omitIndex: true
             })
           )
-          .use(htmlMinifier())
+          .use(
+            htmlMinifier({
+              minifierOptions: {
+                removeComments: false
+              }
+            })
+          )
           .use(debug())
       )
       .pipe(gulp.dest(paths.pages.dest))
