@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Robots meta tags to control indexing of pages
 
+### Updated
+- Travis script to run daily cron job against latest tag
+
 ### Fixed
 - WEB-248 & WEB-249: Flourishes no longer cause gap below footer and janky scrolling on careers page.
 
