@@ -4,6 +4,13 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <meta name="description" content="{{description}}">
+{{#if build.excludeRobots}}
+<meta name="robots" content="noindex">
+{{else}}
+  {{#if metaRobots}}
+  <meta name="robots" content="{{metaRobots}}">
+  {{/if}}
+{{/if}}
 
 <meta property="og:title" content="{{#if ogTitle }}{{ogTitle}}{{else}}{{title}}{{/if}}">
 <meta property="og:description" content="{{#if ogDescription }}{{ogDescription}}{{else}}{{description}}{{/if}}">
