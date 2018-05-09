@@ -29,7 +29,7 @@ There are three ways to build and run the website:
 |:--|:--|
 | `npm run build` | Generates a minified local build |
 | `npm run start` | Generates a minified local build and a local server instance |
-| `npm run dev` | Generated a non minified local build and a local server instance |
+| `npm run dev` | Generates a non minified local build and a local server instance |
 
 Local hosting is at http://localhost:8080 and a browser window should open automatically.
 
