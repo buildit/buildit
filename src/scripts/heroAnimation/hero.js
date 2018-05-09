@@ -122,16 +122,16 @@ function initHeader() {
   const gridSize = 100;
 
   for (
-    var x = -gridSize;
+    let x = -gridSize;
     x < params.width;
     x = x + params.width / pointsLimiter
   ) {
-    for (var y = 0; y < params.height; y = y + params.height / pointsLimiter) {
-      var px = utils.getRandomArbitrary(x, x + gridSize);
-      var py = utils.getRandomArbitrary(y, y + gridSize);
+    for (let y = 0; y < params.height; y = y + params.height / pointsLimiter) {
+      const px = utils.getRandomArbitrary(x, x + gridSize);
+      const py = utils.getRandomArbitrary(y, y + gridSize);
 
       if (py < params.height - gridSize / 2) {
-        var p = {
+        const p = {
           x: px,
           originX: px,
           y: py,
@@ -147,9 +147,9 @@ function initHeader() {
     let closest = [];
     params.points.map(p2 => {
       if (!(p1 == p2)) {
-        var placed = false;
+        let placed = false;
 
-        for (var k = 0; k < 5; k++) {
+        for (let k = 0; k < 5; k++) {
           if (!placed) {
             if (closest[k] == undefined) {
               closest[k] = p2;
@@ -158,7 +158,7 @@ function initHeader() {
           }
         }
 
-        for (var k = 0; k < 5; k++) {
+        for (let k = 0; k < 5; k++) {
           if (!placed) {
             if (utils.getDistance(p1, p2) < utils.getDistance(p1, closest[k])) {
               closest[k] = p2;
