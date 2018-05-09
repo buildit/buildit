@@ -6,6 +6,12 @@
 * Any successful build of `master` branch get deployed to Staging
 * Any successful build of a Tag matching a valid SemVer pattern (`vX.Y.Z`) (case-sensitive) gets deployed to Production
 
+## Daily build
+
+There is a cron job set up on Travis that is going to generate a production build from the latest release.
+This is a first and quick solution to be able to update the job listings page.
+
+
 ## Travis CI Setup
 
 Travis CI build expects the following environment variables:
