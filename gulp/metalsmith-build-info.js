@@ -9,13 +9,18 @@ module.exports = function plugin() {
     const metadata = metalsmith.metadata();
     metadata.build = metadata.build || {};
 
-    debug("Retrieve build info...");
+    debug("Retrieving build info...");
     getBuildInfo()
       .then(bldInfo => {
         // Add build info into metadata.build
         Object.assign(metadata.build, bldInfo);
-
         metalsmith.metadata(metadata);
+
+        // Also, create add a build-info.json file
+        files["build-info.json"] = {
+          contents: new Buffer(JSON.stringify(bldInfo, null, 2))
+        };
+
         done();
       })
       .catch(err => {
