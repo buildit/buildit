@@ -6,10 +6,15 @@
 * Any successful build of `master` branch get deployed to Staging
 * Any successful build of a Tag matching a valid SemVer pattern (`vX.Y.Z`) (case-sensitive) gets deployed to Production
 
-## Daily build
+## Automatic Daily build
 
-There is a cron job set up on Travis that is going to generate a production build from the latest release.
-This is a first and quick solution to be able to update the job listings page.
+There is a daily cron job set up on Travis that is going to generate a production build from the latest release.
+
+Travis settings page for the website can be found here: [travis-ci.org/buildit/buildit/settings](https://travis-ci.org/buildit/buildit/settings)
+
+### Note
+This is a quick solution to update the job listings page.
+
 
 
 ## Travis CI Setup
