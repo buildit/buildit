@@ -32,9 +32,9 @@
 .flourish-group-b {
   min-width: 500px;
   &__polygon-shape-4 {
-    width: 500px;
+    width: 540px;
     height: 150px;
-    bottom: -20%;
+    bottom: -30%;
     left: -15%;
     fill: $color-grey-alto;
     opacity: 0.2;
@@ -65,8 +65,10 @@
     .shape {
       fill: url('#polygon-shape-3-gradient');
     }
+    .stop-2 {
+      stop-color: $color-grey-mercury;
+    }
     .stop-1 {
-      stop-color: $color-grey-iron;
       stop-opacity: 0;
     }
   }
@@ -77,7 +79,7 @@
   &__hatching-pattern-2 {
     width: 800px;
     right: -20%;
-    top: 10%;
+    top: -10%;
     svg {
       transform: rotate(180deg);
     }
@@ -93,7 +95,7 @@
     width: 550px;
     right: -20%;
     svg {
-      transform: rotate(-10deg) scaleX(-1);
+      transform: scaleX(-1);
     }
     .shape {
       fill: url('#polygon-shape-4-gradient');
@@ -127,7 +129,7 @@
     bottom: -55%;
     opacity: 0.5;
     svg {
-      transform: rotate(174deg);
+      transform: rotate(176deg);
     }
     .shape {
       fill: url('#polygon-shape-3-gradient');

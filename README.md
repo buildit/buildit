@@ -1,6 +1,6 @@
 # Buildit website
 
-This is the source code for the Buildit website: https://buildit.wiprodigital.com/
+This is the source code for the Buildit website: [https://buildit.wiprodigital.com/](https://buildit.wiprodigital.com/)
 
 To provide feedback, raise bugs or request features, please use our [Buildit website feedback form](https://docs.google.com/forms/d/e/1FAIpQLScOeoF7XfYYs3R8b9K_zvSY0oVS92hAV82FXUOyy8JnDz2lNg/viewform).
 
@@ -23,9 +23,17 @@ and before running any other npm command, run
 
 ## Build and development
 
-To run it locally just `npm install` then run the `start` script: `npm start`. Local hosting is at http://localhost:8080 and a browser window should open automatically.
+There are three ways to build and run the website:
 
-To build the static website: `npm run-script build`. Distribution goes into `./dist`.
+| Script | Description |
+|:--|:--|
+| `npm run build` | Generates a minified local build |
+| `npm run start` | Generates a minified local build and a local server instance |
+| `npm run dev` | Generates a non minified local build and a local server instance |
+
+Local hosting is at http://localhost:8080 and a browser window should open automatically.
+
+Distribution goes into `./dist`.
 
 Refer to the [build process](./docs/build-process.md) document for further details on all the tasks the build performs.
 

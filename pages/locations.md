@@ -7,6 +7,7 @@ page-url:    locations
 
 # Display
 layout:      locations.hbs
+header-light: true
 main-classnames: grav-o-container
 footerModifierClass: grav-c-footer-no-margin
 

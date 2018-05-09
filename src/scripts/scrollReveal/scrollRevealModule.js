@@ -3,8 +3,8 @@ import * as utils from "../utils.js";
 const defaults = {
   revealElement: ".js-reveal-element",
   originParams: ["top", "right", "bottom", "left"],
-  randomDurationPeriod: [500, 1500],
-  randomDistanceLength: [100, 500],
+  randomDurationPeriod: [500, 1000],
+  randomDistanceLength: [5, 100],
   mobile: false
 };
 
