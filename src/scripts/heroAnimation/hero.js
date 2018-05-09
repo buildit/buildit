@@ -54,7 +54,7 @@ function animate() {
         point.active = 0.04;
         point.circle.active = 0.1;
       } else {
-        point.active = 0.04;
+        point.active = 0.07;
         point.circle.active = 0.04;
       }
 
@@ -119,19 +119,26 @@ function initHeader() {
   params.ctx = params.canvas.getContext("2d");
 
   const pointsLimiter = utils.calcPointsLimiter(params.width, params.height);
+  const gridSize = 100;
 
-  for (var x = 0; x < params.width; x = x + params.width / pointsLimiter) {
+  for (
+    var x = -gridSize;
+    x < params.width;
+    x = x + params.width / pointsLimiter
+  ) {
     for (var y = 0; y < params.height; y = y + params.height / pointsLimiter) {
-      var px = x + Math.random() * params.width / pointsLimiter;
-      var py = y + Math.random() * params.height / pointsLimiter;
-      var p = {
-        x: px,
-        originX: px,
-        y: py,
-        originY: py
-      };
+      var px = utils.getRandomArbitrary(x, x + gridSize);
+      var py = utils.getRandomArbitrary(y, y + gridSize);
 
-      params.points.push(p);
+      if (py < params.height - gridSize / 2) {
+        var p = {
+          x: px,
+          originX: px,
+          y: py,
+          originY: py
+        };
+        params.points.push(p);
+      }
     }
   }
 
@@ -169,7 +176,7 @@ function initHeader() {
     point.circle = new Circle(
       point,
       2 + Math.random() * 2.5,
-      "rgba(94, 161, 184, 0.3)",
+      "94, 161, 184",
       params.ctx
     );
   });
