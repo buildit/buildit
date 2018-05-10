@@ -6,6 +6,7 @@ const gulpIf = require("gulp-if");
 const hash = require("gulp-hash");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
+const header = require("gulp-header");
 
 const critical = require("critical").stream;
 const autoprefixer = require("gulp-autoprefixer");
@@ -27,9 +28,7 @@ const eyeglass = require("eyeglass");
 const config = require("./config.json");
 const paths = config.paths;
 const envs = require("./gulp/envs.js");
-
-// Placeholder for the environment sniffing variable
-const PRODUCTION = false;
+const getBuildInfo = require("./gulp/get-build-info.js");
 
 const optimise = envs.shouldOptimise();
 
@@ -38,25 +37,26 @@ const sassOptions = {
 };
 
 // Compile all required styles
-// If in PRODUCTION perform some magic
-function styles(done) {
-  gulp
-    .src(paths.styles.src)
-    .pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
-    .pipe(
-      autoprefixer({
-        browsers: ["last 2 versions"],
-        cascade: false
-      })
-    )
-    .pipe(
-      csso({
-        restructure: PRODUCTION,
-        debug: !PRODUCTION
-      })
-    )
-    .pipe(gulp.dest(paths.styles.dest));
-  done();
+function styles() {
+  return getBuildInfo().then(bldInfo => {
+    gulp
+      .src(paths.styles.src)
+      .pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
+      .pipe(
+        autoprefixer({
+          browsers: ["last 2 versions"],
+          cascade: false
+        })
+      )
+      .pipe(
+        csso({
+          restructure: optimise,
+          debug: !optimise
+        })
+      )
+      .pipe(header(`/* ${bldInfo.description} ${bldInfo.commitShortHash} */`))
+      .pipe(gulp.dest(paths.styles.dest));
+  });
 }
 
 // Grab static assets (fonts, etc.) and move them to the build folder
