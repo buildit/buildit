@@ -64,3 +64,33 @@ body {
 .grav-c-two-columns-text {
   margin: 2rem auto 0em auto;
 }
+
+// Temporary overrides - Partner logos
+.grav-c-list-inline-row svg {
+  border-bottom: 0px;
+  margin: $grav-sp-inset-m;
+}
+
+.grav-c-list-inline-row {
+  margin-bottom: $grav-sp-m;
+  justify-content: center;
+}
+
+.grav-c-list-inline-row>li {
+  flex: auto 0 0;
+  margin-right: $grav-sp-m;
+  margin-left: $grav-sp-m;
+}
+
+.grav-c-list-inline-row a {
+  height: auto;
+  border-width: 1px;
+  border-color: #DDDFDF;
+  border-style: solid;
+  background-color: $grav-co-neutral-dirty-snow-white;
+  padding: $grav-sp-s;
+}
+
+.grav-c-list-inline-row a svg {
+  height: 1.75rem;
+}
