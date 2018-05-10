@@ -67,8 +67,8 @@ const sassOptions = {
 };
 
 // Compile all required styles
-function styles() {
-  return getBuildInfo().then(bldInfo => {
+function styles(done) {
+  getBuildInfo().then(bldInfo => {
     gulp
       .src(paths.styles.src)
       .pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
@@ -85,7 +85,10 @@ function styles() {
         })
       )
       .pipe(header(`/* ${bldInfo.description} ${bldInfo.commitShortHash} */`))
-      .pipe(gulp.dest(paths.styles.dest));
+      .pipe(gulp.dest(paths.styles.dest))
+      .on("finish", () => {
+        done();
+      });
   });
 }
 
@@ -163,8 +166,7 @@ gulp.task(
 
   gulp.series(
     printBuildInfo,
-    gulp.parallel(assets, imageOptim, styles, scripts.bundle),
-    metalsmith.build,
+    gulp.parallel(assets, imageOptim, styles, scripts.bundle, metalsmith.build),
     criticalCss
   )
 );
