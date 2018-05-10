@@ -23,6 +23,7 @@ const scripts = require("./gulp/scripts");
 // non-gulp plugins
 const del = require("del");
 const eyeglass = require("eyeglass");
+const chalk = require("chalk");
 
 // config
 const config = require("./config.json");
@@ -31,6 +32,35 @@ const envs = require("./gulp/envs.js");
 const getBuildInfo = require("./gulp/get-build-info.js");
 
 const optimise = envs.shouldOptimise();
+
+// Output build and env info to aid with debugging
+// - especially for Travis CI builds
+function printProps(obj) {
+  let output = "{\n";
+  Object.keys(obj).forEach(key => {
+    output += `  ${chalk.cyan(key)}: ${chalk.magentaBright(obj[key])}\n`;
+  });
+  output += "}";
+  return output;
+}
+
+function printBuildInfo() {
+  return getBuildInfo().then(buildInfo => {
+    console.log(chalk`
+
+{bold.whiteBright Environment config:}
+${printProps(envs.getCurrentEnvInfo())}
+
+{bold.whiteBright Optimisations:} ${
+      optimise ? chalk.greenBright("ENABLED") : chalk.redBright("DISABLED")
+    }
+
+{bold.whiteBright Build info:}
+${printProps(buildInfo)}
+
+`);
+  });
+}
 
 const sassOptions = {
   eyeglass: {}
@@ -132,6 +162,7 @@ gulp.task(
   "build",
 
   gulp.series(
+    printBuildInfo,
     gulp.parallel(assets, imageOptim, styles, scripts.bundle),
     metalsmith.build,
     criticalCss

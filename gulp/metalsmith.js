@@ -43,7 +43,6 @@ const flourishTemplate = handlebars.compile(presentationSvgTemplate);
 function metalsmith() {
   // config for the site environment we're building
   const siteEnv = envs.getCurrentEnvInfo();
-  console.log("Current env:\n", siteEnv);
 
   // filter out files with front matter
   const fmFilter = filter("**/*.{html,md,txt}", { restore: true });
