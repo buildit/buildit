@@ -1,7 +1,7 @@
 import * as utils from "./utils.js";
 import Circle from "./Circle.js";
-import _ from "lodash";
-import debounce from "lodash/debounce";
+
+import debounce from "lodash-es/debounce";
 
 let params = {
   width: 0,

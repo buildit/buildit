@@ -39,6 +39,7 @@ function bundle() {
       return bundle.write({
         file: path.join(paths.scripts.dest, "bundle.min.js"),
         format: "umd",
+        include: "node_modules/**",
         sourcemap: true
       });
     });
