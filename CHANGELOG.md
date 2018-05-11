@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Robots meta tags to control indexing of pages
+
+### Changed
 - WEB-229 cropping at bottom of hero
+- WEB-221 CHanged debounce js to an npm dependency 
 
 ### Fixed
 - WEB-248 & WEB-249: Flourishes no longer cause gap below footer and janky scrolling on careers page.
