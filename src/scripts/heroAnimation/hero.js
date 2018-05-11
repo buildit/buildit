@@ -1,5 +1,7 @@
 import * as utils from "./utils.js";
 import Circle from "./Circle.js";
+import _ from "lodash";
+import debounce from "lodash/debounce";
 
 let params = {
   width: 0,
@@ -36,7 +38,7 @@ function scrollCheck() {
   }
 }
 
-const resizeCanvas = utils.debounce(function() {
+const resizeCanvas = debounce(function() {
   initHeader(params.canvas, params.container);
 }, 150);
 
