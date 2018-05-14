@@ -67,20 +67,19 @@ body {
 
 // Temporary overrides - About page partner logos
 .grav-c-list-inline-row {
-  margin-bottom: $grav-sp-m;
+  // Negative margin on container to cancel out left margin of left-most logo(s)
+  margin-left: -1 * $bigger-gap-size;
   justify-content: center;
 }
 
-.grav-c-list-inline-row>li {
+.grav-c-list-inline-row > li {
+  margin-left: $bigger-gap-size;
   flex: auto 0 0;
-  margin-right: $grav-sp-m;
-  margin-left: $grav-sp-m;
 }
 
 .grav-c-list-inline-row a {
-  height: auto;
   border-width: 1px;
-  border-color: #DDDFDF;
+  border-color: $color-grey-iron;
   border-style: solid;
   background-color: $grav-co-neutral-dirty-snow-white;
   padding: $grav-sp-s;
@@ -90,5 +89,6 @@ body {
   height: 1.75rem;
   border-bottom: 0px;
   margin: $grav-sp-m;
+  vertical-align: middle;
 }
 
