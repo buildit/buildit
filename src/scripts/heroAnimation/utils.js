@@ -50,13 +50,10 @@ export function shiftPoint(point, ease, shiftMethod) {
   shiftMethod(point, duration, vars);
 }
 
-// TODO: Should be refactored to use a more appropiate Math method
 export function getDistance(p1, p2) {
-  if (typeof window.Math.hypot !== "function") {
-    return Math.sqrt(Math.pow(p1.x - p2.x, 4) + Math.pow(p1.y - p2.y, 4));
-  } else {
-    return Math.hypot(Math.pow(p1.x - p2.x, 2), Math.pow(p1.y - p2.y, 2));
-  }
+  return typeof Math.hypot !== "undefined"
+    ? Math.hypot(Math.pow(p1.x - p2.x, 2), Math.pow(p1.y - p2.y, 2))
+    : Math.sqrt(Math.pow(p1.x - p2.x, 4) + Math.pow(p1.y - p2.y, 4));
 }
 
 export function getRandomArbitrary(min, max) {
