@@ -65,12 +65,7 @@ body {
   margin: 2rem auto 0em auto;
 }
 
-// Temporary overrides - Partner logos
-.grav-c-list-inline-row svg {
-  border-bottom: 0px;
-  margin: $grav-sp-inset-m;
-}
-
+// Temporary overrides - About page partner logos
 .grav-c-list-inline-row {
   margin-bottom: $grav-sp-m;
   justify-content: center;
@@ -91,6 +86,9 @@ body {
   padding: $grav-sp-s;
 }
 
-.grav-c-list-inline-row a svg {
+.grav-c-list-inline-row svg {
   height: 1.75rem;
+  border-bottom: 0px;
+  margin: $grav-sp-m;
 }
+
