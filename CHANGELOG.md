@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Robots meta tags to control indexing of pages
+- Dynamically generated `humans.txt` file
 
 ### Changed
 - WEB-229 cropping at bottom of hero
