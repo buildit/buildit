@@ -68,12 +68,12 @@ body {
 // Temporary overrides - About page partner logos
 .grav-c-list-inline-row {
   // Negative margin on container to cancel out left margin of left-most logo(s)
-  margin-left: -1 * $bigger-gap-size;
+  margin-left: -1 * $grav-sp-l;
   justify-content: center;
 }
 
 .grav-c-list-inline-row > li {
-  margin-left: $bigger-gap-size;
+  margin-left: $grav-sp-l;
   flex: auto 0 0;
 }
 
