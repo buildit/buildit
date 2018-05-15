@@ -34,7 +34,9 @@ export function shiftPoint(point, ease, shiftMethod) {
 }
 
 export function getDistance(p1, p2) {
-  const power = (origin, dest) => Math.pow(origin - dest, 2);
+  const power = function(origin, dest) {
+    Math.pow(origin - dest, 2);
+  };
 
   return typeof Math.hypot !== "undefined"
     ? parseFloat(Math.hypot(p1.x - p2.x, p1.y - p2.y).toFixed(2))

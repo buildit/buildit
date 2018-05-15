@@ -49,19 +49,15 @@ function animate() {
       if (Math.abs(utils.getDistance(params.target, point)) < 80) {
         point.active = 0.3;
         point.circle.active = 0.75;
-        debugger;
       } else if (Math.abs(utils.getDistance(params.target, point)) < 4000) {
         point.active = 0.1;
         point.circle.active = 0.3;
-        debugger;
       } else if (Math.abs(utils.getDistance(params.target, point)) < 8000) {
         point.active = 0.04;
         point.circle.active = 0.1;
-        debugger;
       } else {
         point.active = 0.04;
         point.circle.active = 0.04;
-        debugger;
       }
 
       utils.drawLines(point, params.ctx);
