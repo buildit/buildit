@@ -34,16 +34,17 @@ export function shiftPoint(point, ease, shiftMethod) {
 }
 
 export function getDistance(p1, p2) {
+  const squareVector = (origin, dest) => Math.pow(origin - dest, 2);
+  const quadVector = (origin, dest) => Math.pow(origin - dest, 4);
+
   return typeof Math.hypot !== "undefined"
     ? parseFloat(
-        Math.hypot(Math.pow(p1.x - p2.x, 2), Math.pow(p1.y - p2.y, 2)).toFixed(
+        Math.hypot(squareVector(p1.x, p2.x), squareVector(p1.y, p2.y)).toFixed(
           2
         )
       )
     : parseFloat(
-        Math.sqrt(Math.pow(p1.x - p2.x, 4) + Math.pow(p1.y - p2.y, 4)).toFixed(
-          2
-        )
+        Math.sqrt(quadVector(p1.x, p2.x) + quadVector(p1.y, p2.y)).toFixed(2)
       );
 }
 
