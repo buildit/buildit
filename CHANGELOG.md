@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Robots meta tags to control indexing of pages
-- WEB-229: Cropping at bottom of hero
+- Dynamically generated `humans.txt` file
 - WEB-247: Embedding build info into build output
+
+### Changed
+- WEB-229: Cropping at bottom of hero
+- WEB-221 Changed debounce js to an npm dependency 
 
 ### Fixed
 - WEB-248 & WEB-249: Flourishes no longer cause gap below footer and janky scrolling on careers page.
@@ -49,11 +53,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Renamed "Find us" / "Contact" page to "Locations"
 - Replaced old favicon, icons, etc. with ones using new Buildit logo
 - Replaced `npm install` with `npm ci` in `.travis.yml`
+- All location map top level domains aligned to .com
 
 ### Removed
 - Old, unused assets
 - Anything to do Pug, Semantic UI and whatever else the old site used
-
 
 ## [0.3.x and earlier] - 2018-01-31
 Unfortunately, we did not keep a changelog for these older releases.
