@@ -34,18 +34,11 @@ export function shiftPoint(point, ease, shiftMethod) {
 }
 
 export function getDistance(p1, p2) {
-  const squareVector = (origin, dest) => Math.pow(origin - dest, 2);
-  const quadVector = (origin, dest) => Math.pow(origin - dest, 4);
+  const power = (origin, dest) => Math.pow(origin - dest, 2);
 
   return typeof Math.hypot !== "undefined"
-    ? parseFloat(
-        Math.hypot(squareVector(p1.x, p2.x), squareVector(p1.y, p2.y)).toFixed(
-          2
-        )
-      )
-    : parseFloat(
-        Math.sqrt(quadVector(p1.x, p2.x) + quadVector(p1.y, p2.y)).toFixed(2)
-      );
+    ? parseFloat(Math.hypot(p1.x - p2.x, p1.y - p2.y).toFixed(2))
+    : parseFloat(Math.sqrt(power(p1.x, p2.x) + power(p1.y, p2.y)).toFixed(2));
 }
 
 export function getRandomArbitrary(min, max) {

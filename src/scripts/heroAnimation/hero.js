@@ -46,18 +46,22 @@ function animate() {
   if (params.animateHeader) {
     params.ctx.clearRect(0, 0, params.width, params.height);
     params.points.map(point => {
-      if (Math.abs(utils.getDistance(params.target, point)) < 8000) {
+      if (Math.abs(utils.getDistance(params.target, point)) < 80) {
         point.active = 0.3;
         point.circle.active = 0.75;
-      } else if (Math.abs(utils.getDistance(params.target, point)) < 40000) {
+        debugger;
+      } else if (Math.abs(utils.getDistance(params.target, point)) < 4000) {
         point.active = 0.1;
         point.circle.active = 0.3;
-      } else if (Math.abs(utils.getDistance(params.target, point)) < 80000) {
+        debugger;
+      } else if (Math.abs(utils.getDistance(params.target, point)) < 8000) {
         point.active = 0.04;
         point.circle.active = 0.1;
+        debugger;
       } else {
         point.active = 0.04;
         point.circle.active = 0.04;
+        debugger;
       }
 
       utils.drawLines(point, params.ctx);
