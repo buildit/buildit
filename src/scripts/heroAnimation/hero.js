@@ -11,7 +11,8 @@ let params = {
   target: null,
   animateHeader: true,
   canvas: null,
-  container: null
+  container: null,
+  fadeBubble: 80
 };
 
 function HeroAnimation(canvas, container) {
@@ -45,14 +46,17 @@ const resizeCanvas = debounce(function() {
 function animate() {
   if (params.animateHeader) {
     params.ctx.clearRect(0, 0, params.width, params.height);
+
     params.points.map(point => {
-      if (Math.abs(utils.getDistance(params.target, point)) < 80) {
+      const distance = Math.abs(utils.getDistance(params.target, point));
+
+      if (distance <= params.fadeBubble) {
         point.active = 0.3;
         point.circle.active = 0.75;
-      } else if (Math.abs(utils.getDistance(params.target, point)) < 4000) {
+      } else if (distance <= params.fadeBubble * 2) {
         point.active = 0.1;
         point.circle.active = 0.3;
-      } else if (Math.abs(utils.getDistance(params.target, point)) < 8000) {
+      } else if (distance <= params.fadeBubble * 3) {
         point.active = 0.04;
         point.circle.active = 0.1;
       } else {
