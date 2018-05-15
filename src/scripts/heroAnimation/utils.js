@@ -35,12 +35,12 @@ export function shiftPoint(point, ease, shiftMethod) {
 
 export function getDistance(p1, p2) {
   return typeof Math.hypot !== "undefined"
-    ? Number(
+    ? parseFloat(
         Math.hypot(Math.pow(p1.x - p2.x, 2), Math.pow(p1.y - p2.y, 2)).toFixed(
           2
         )
       )
-    : Number(
+    : parseFloat(
         Math.sqrt(Math.pow(p1.x - p2.x, 4) + Math.pow(p1.y - p2.y, 4)).toFixed(
           2
         )
