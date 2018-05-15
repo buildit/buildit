@@ -129,7 +129,7 @@ describe("getDistance function", () => {
   it("should calculate distance between 2 points using hypot as default method", () => {
     const distance = utils.getDistance(point1, point2);
 
-    expect(distance).toEqual(141.4213562373095);
+    expect(distance).toEqual(141.42);
     expect(global.Math.hypot).toBeDefined();
   });
 
