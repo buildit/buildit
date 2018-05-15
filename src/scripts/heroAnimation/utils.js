@@ -33,9 +33,14 @@ export function shiftPoint(point, ease, shiftMethod) {
   shiftMethod(point, duration, vars);
 }
 
-// TODO: Should be refactored to use a more appropiate Math method
 export function getDistance(p1, p2) {
-  return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+  const power = function(origin, dest) {
+    Math.pow(origin - dest, 2);
+  };
+
+  return typeof Math.hypot !== "undefined"
+    ? parseFloat(Math.hypot(p1.x - p2.x, p1.y - p2.y).toFixed(2))
+    : parseFloat(Math.sqrt(power(p1.x, p2.x) + power(p1.y, p2.y)).toFixed(2));
 }
 
 export function getRandomArbitrary(min, max) {
