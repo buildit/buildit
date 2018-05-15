@@ -4,6 +4,7 @@ const gulpIf = require("gulp-if");
 const rollup = require("rollup");
 const babel = require("rollup-plugin-babel");
 const closure = require("rollup-plugin-closure-compiler-js");
+const resolveNodeModules = require("rollup-plugin-node-resolve");
 const paths = require("../config.json").paths;
 const envs = require("./envs");
 
@@ -15,6 +16,7 @@ function bundle() {
       input: paths.scripts.main,
       plugins: [
         babel(),
+        resolveNodeModules(),
         gulpIf(
           optimise,
           closure({
