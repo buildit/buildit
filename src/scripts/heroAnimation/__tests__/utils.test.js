@@ -134,12 +134,21 @@ describe("getDistance function", () => {
   });
 
   it("should use sqrt method to calculate distance between 2 points using sqrt as fallback", () => {
-    global.Math.hypot = undefined;
-    global.Math.sqrt = jest.fn();
+    const backupHypot = global.Math.hypot;
+    const backupSqrt = global.Math.sqrt;
+    const hypotMock = jest.fn(global.Math.hypot);
+    const sqrtMock = jest.fn(global.Math.sqrt);
+
+    delete global.Math.hypot;
+    global.Math.sqrt = sqrtMock;
+
     const distance = utils.getDistance(point1, point2);
 
     expect(global.Math.hypot).toBeUndefined();
-    expect(global.Math.sqrt.mock.calls.length).toBe(1);
+    expect(sqrtMock.mock.calls.length).toBe(1);
+
+    global.Math.hypot = backupHypot;
+    global.Math.sqrt = backupSqrt;
   });
 });
 
