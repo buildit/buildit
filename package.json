@@ -27,7 +27,8 @@
     "James Nash",
     "Valerio Francescangeli",
     "Zane Cunningham",
-    "Ana Escontrela"
+    "Ana Escontrela",
+    "Daniel Bull"
   ],
   "license": "ISC",
   "bugs": {
@@ -77,6 +78,7 @@
     "imagemin-svgo": "^6.0.0",
     "jest": "^22.4.3",
     "jstransformer-handlebars": "^1.1.0",
+    "lodash-es": "^4.17.10",
     "lodash.assign": "^4.2.0",
     "metalsmith": "^2.3.0",
     "metalsmith-collections": "^0.9.0",
@@ -96,7 +98,8 @@
     "prettier": "1.11.1",
     "rollup": "^0.58.2",
     "rollup-plugin-babel": "^3.0.4",
-    "rollup-plugin-closure-compiler-js": "^1.0.6"
+    "rollup-plugin-closure-compiler-js": "^1.0.6",
+    "rollup-plugin-node-resolve": "^3.3.0"
   },
   "private": true,
   "dependencies": {
