@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - WEB-248 & WEB-249: Flourishes no longer cause gap below footer and janky scrolling on careers page.
+- WEB-198: Soft scrolling on in-page jump links is actually soft now.
 
 
 ## [4.0.1] - 2018-05-07
