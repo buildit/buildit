@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- WEB-251: About page partner logos styling - logos changed to boxed versions + added GA tracking
+
 ### Added
 - Robots meta tags to control indexing of pages
 - Dynamically generated `humans.txt` file
