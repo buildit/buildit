@@ -34,9 +34,11 @@ imgCards:
         alt: A stylised version of R2-D2 from Star Wars.
 inlineRow:
   - href: https://wiprodigital.com/
+    onclick: "gtag('event', 'click', {'event_category': 'Boxed partner logos', 'event_label': 'Boxed partner logo button - Wipro Digital'});"
     title: Wipro Digital
     content: <svg role="img" class="grav-c-logo" width="178" height="33"><use xlink:href="#logo-wiprodigital"></use></svg>
   - href: https://designit.com
+    onclick: "gtag('event', 'click', {'event_category': 'Boxed partner logos', 'event_label': 'Boxed partner logo button - Designit'});"
     title: Designit
     content: <svg role="img" class="grav-c-logo" width="178" height="33"><use xlink:href="#logo-designit"></use></svg>
 flourish-top:
