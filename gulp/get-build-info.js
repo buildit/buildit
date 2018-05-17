@@ -1,30 +1,25 @@
-const git = require('git-last-commit');
-const { promisify } = require('util');
+const git = require("git-last-commit");
+const { promisify } = require("util");
 
 // Holds cached commit info, so we don't need to
 // re-read it every time.
-let commitInfo;
+let commitInfo = null;
 
 async function getCommitInfo() {
-  if (commitInfo !== undefined) {
-    return commitInfo;
-  }
-  else {
+  if (commitInfo === null) {
     commitInfo = await promisify(git.getLastCommit)();
-    return commitInfo;
   }
+  return commitInfo;
 }
-
 
 module.exports = async function() {
   const bldInfo = {};
 
   const travisBuildNumber = process.env.TRAVIS_BUILD_NUMBER;
-  if( travisBuildNumber === undefined ){
+  if (travisBuildNumber === undefined) {
     bldInfo.isTravisBuild = false;
-    bldInfo.description = 'Local dev build';
-  }
-  else {
+    bldInfo.description = "Local dev build";
+  } else {
     const travisBuildId = process.env.TRAVIS_BUILD_ID;
 
     bldInfo.isTravisBuild = true;
@@ -39,7 +34,9 @@ module.exports = async function() {
   const commitInfo = await getCommitInfo();
   bldInfo.commitHash = commitInfo.hash;
   bldInfo.commitShortHash = commitInfo.shortHash;
-  bldInfo.commitGithubUrl = `https://github.com/buildit/buildit/commit/${commitInfo.hash}`;
+  bldInfo.commitGithubUrl = `https://github.com/buildit/buildit/commit/${
+    commitInfo.hash
+  }`;
 
   return bldInfo;
 };
