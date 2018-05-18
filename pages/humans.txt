@@ -29,7 +29,7 @@ team:
     twitter: "@nicusX"
 
   - name: Matteo Pescarin
-    role: Metalsmithy
+    role: Londoneer
     url: http://peach.smartart.it/
     twitter: "@ilPeach"
 
