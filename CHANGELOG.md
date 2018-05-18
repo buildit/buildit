@@ -5,16 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Changed
-- WEB-251: About page partner logos styling - logos changed to boxed versions + added GA tracking
 
+
+## [4.0.2] - 2018-05-18
 ### Added
 - Robots meta tags to control indexing of pages
 - Dynamically generated `humans.txt` file
+- WEB-247: Embedding build info into build output
 
 ### Changed
-- WEB-229 cropping at bottom of hero
-- WEB-221 Changed debounce js to an npm dependency 
+- WEB-229: Cropping at bottom of hero
+- WEB-221: Changed debounce js to an npm dependency
+- WEB-251: About page partner logos styling - logos changed to boxed versions + added GA tracking
 
 ### Updated
 - Travis script to run daily cron job against latest tag

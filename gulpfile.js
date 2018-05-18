@@ -6,6 +6,7 @@ const gulpIf = require("gulp-if");
 const hash = require("gulp-hash");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
+const header = require("gulp-header");
 
 const critical = require("critical").stream;
 const autoprefixer = require("gulp-autoprefixer");
@@ -22,41 +23,73 @@ const scripts = require("./gulp/scripts");
 // non-gulp plugins
 const del = require("del");
 const eyeglass = require("eyeglass");
+const chalk = require("chalk");
 
 // config
 const config = require("./config.json");
 const paths = config.paths;
 const envs = require("./gulp/envs.js");
-
-// Placeholder for the environment sniffing variable
-const PRODUCTION = false;
+const getBuildInfo = require("./gulp/get-build-info.js");
 
 const optimise = envs.shouldOptimise();
+
+// Output build and env info to aid with debugging
+// - especially for Travis CI builds
+function printProps(obj) {
+  let output = "{\n";
+  Object.keys(obj).forEach(key => {
+    output += `  ${chalk.cyan(key)}: ${chalk.magentaBright(obj[key])}\n`;
+  });
+  output += "}";
+  return output;
+}
+
+function printBuildInfo() {
+  return getBuildInfo().then(buildInfo => {
+    console.log(chalk`
+
+{bold.whiteBright Environment config:}
+${printProps(envs.getCurrentEnvInfo())}
+
+{bold.whiteBright Optimisations:} ${
+      optimise ? chalk.greenBright("ENABLED") : chalk.redBright("DISABLED")
+    }
+
+{bold.whiteBright Build info:}
+${printProps(buildInfo)}
+
+`);
+  });
+}
 
 const sassOptions = {
   eyeglass: {}
 };
 
 // Compile all required styles
-// If in PRODUCTION perform some magic
 function styles(done) {
-  gulp
-    .src(paths.styles.src)
-    .pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
-    .pipe(
-      autoprefixer({
-        browsers: ["last 2 versions"],
-        cascade: false
-      })
-    )
-    .pipe(
-      csso({
-        restructure: PRODUCTION,
-        debug: !PRODUCTION
-      })
-    )
-    .pipe(gulp.dest(paths.styles.dest));
-  done();
+  getBuildInfo().then(bldInfo => {
+    gulp
+      .src(paths.styles.src)
+      .pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
+      .pipe(
+        autoprefixer({
+          browsers: ["last 2 versions"],
+          cascade: false
+        })
+      )
+      .pipe(
+        csso({
+          restructure: optimise,
+          debug: !optimise
+        })
+      )
+      .pipe(header(`/* ${bldInfo.description} ${bldInfo.commitShortHash} */`))
+      .pipe(gulp.dest(paths.styles.dest))
+      .on("finish", () => {
+        done();
+      });
+  });
 }
 
 // Grab static assets (fonts, etc.) and move them to the build folder
@@ -132,8 +165,8 @@ gulp.task(
   "build",
 
   gulp.series(
-    gulp.parallel(assets, imageOptim, styles, scripts.bundle),
-    metalsmith.build,
+    printBuildInfo,
+    gulp.parallel(assets, imageOptim, styles, scripts.bundle, metalsmith.build),
     criticalCss
   )
 );
