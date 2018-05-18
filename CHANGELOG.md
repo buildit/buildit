@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- WEB-251: About page partner logos styling - logos changed to boxed versions + added GA tracking
+
 ### Added
 - Robots meta tags to control indexing of pages
 - Dynamically generated `humans.txt` file
@@ -13,6 +16,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - WEB-229: Cropping at bottom of hero
 - WEB-221 Changed debounce js to an npm dependency 
+
+### Updated
+- Travis script to run daily cron job against latest tag
 
 ### Fixed
 - WEB-248 & WEB-249: Flourishes no longer cause gap below footer and janky scrolling on careers page.
