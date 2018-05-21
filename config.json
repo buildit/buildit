@@ -11,11 +11,6 @@
       "url": "http://localhost:8080",
       "excludeRobots": true
     },
-    "beta": {
-      "url": "https://www-beta.buildit.digital",
-      "excludeRobots": true,
-      "googleAnalyticsTrackingId": "UA-78138413-6"
-    },
     "staging": {
       "url": "https://www-staging.buildit.digital",
       "excludeRobots": true,
