@@ -24,8 +24,6 @@ script:
       npm run-script build -- --env production;
     elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
       npm run-script build -- --env staging;
-    elif [ "$TRAVIS_BRANCH" == "beta" ]; then
-      npm run-script build -- --env beta;
     else
       npm run-script build;
     fi
@@ -59,12 +57,6 @@ deploy:
     on:
       tags: true
       condition: $TRAVIS_TAG =~ $PROD_TAG_REGEXP
-  # deploy beta to Beta Website
-  - provider: script
-    script: ~/.local/bin/aws s3 sync dist s3://${BETA_BUCKET} --delete --region=${BETA_BUCKET_REGION} && ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${BETA_DISTRIBUTION_ID} --paths /*
-    skip_cleanup: true
-    on:
-      branch: beta
 notifications:
   slack:
     rooms:
