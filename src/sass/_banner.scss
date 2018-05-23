@@ -15,7 +15,6 @@ body > header {
     }
   }
 
-
   .grav-c-nav-menu__external-link {
     &:hover {
       rect {
@@ -24,5 +23,9 @@ body > header {
     }
   }
 
-
+  .grav-c-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
