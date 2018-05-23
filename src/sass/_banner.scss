@@ -8,35 +8,13 @@ body > header {
     margin-right: $grav-sp-xs;
 
     rect {
-      fill: $medium-monogram-white;
-    }
-    path {
       fill: $medium-monogram-black;
     }
-  }
-
-  &.is-light {
-    .medium-logo {
-      rect {
-        fill: $medium-monogram-black;
-      }
-      path {
-        fill: $medium-monogram-white;
-      }
-    }
-
-    .grav-c-nav-menu, .grav-c-nav-menu__external-link {
-      .grav-c-block-link, .grav-c-block-link:visited {
-        background-color: transparent;
-        border-width: 0;
-        border-color: transparent;
-      }
-
-      .grav-c-block-link:not([href]) {
-        color: $grav-co-neutral-asphalt;
-      }
+    path {
+      fill: $medium-monogram-white;
     }
   }
+
 
   .grav-c-nav-menu__external-link {
     &:hover {
@@ -46,9 +24,5 @@ body > header {
     }
   }
 
-  .grav-c-block-link {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
+
 }
