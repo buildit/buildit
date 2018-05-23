@@ -40,7 +40,7 @@
     "npm": ">= 5.8.0"
   },
   "devDependencies": {
-    "@buildit/gravity-ui-sass": "^0.9.1",
+    "@buildit/gravity-ui-sass": "^0.10.0",
     "@buildit/job-listings": "^1.0.2",
     "ajv": "^5.5.2",
     "babel-core": "^6.26.0",

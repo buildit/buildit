@@ -5,7 +5,6 @@ ogTitle: Buildit
 
 # Display
 layout: homepage.hbs
-header-light: true
 footerModifierClass: grav-c-footer-no-margin
 
 # Content
