@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Updated Matteo's role in humans.txt credits.
+- Enabled Google Analytics IP anonymisation flag
 
 
 ## [4.0.2] - 2018-05-18
