@@ -34,13 +34,17 @@ export function shiftPoint(point, ease, shiftMethod) {
 }
 
 export function getDistance(p1, p2) {
-  const power = function(origin, dest) {
-    Math.pow(origin - dest, 2);
-  };
+  Math.hypot =
+    Math.hypot ||
+    // Polyfill taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot#Polyfill
+    function() {
+      var y = 0,
+        i = arguments.length;
+      while (i--) y += arguments[i] * arguments[i];
+      return Math.sqrt(y);
+    };
 
-  return typeof Math.hypot !== "undefined"
-    ? parseFloat(Math.hypot(p1.x - p2.x, p1.y - p2.y).toFixed(2))
-    : parseFloat(Math.sqrt(power(p1.x, p2.x) + power(p1.y, p2.y)).toFixed(2));
+  return parseFloat(Math.hypot(p1.x - p2.x, p1.y - p2.y).toFixed(2));
 }
 
 export function getRandomArbitrary(min, max) {

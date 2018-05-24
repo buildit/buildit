@@ -126,29 +126,24 @@ describe("drawLines function", () => {
 });
 
 describe("getDistance function", () => {
+  const distanceTest = 14.14;
+
   it("should calculate distance between 2 points using hypot as default method", () => {
     const distance = utils.getDistance(point1, point2);
 
-    expect(distance).toEqual(14.14);
+    expect(distance).toEqual(distanceTest);
     expect(global.Math.hypot).toBeDefined();
   });
 
-  it("should use sqrt method to calculate distance between 2 points using sqrt as fallback", () => {
+  it("should calculate distance between 2 points using polyfill if Math.hypot isn't defined", () => {
     const backupHypot = global.Math.hypot;
-    const backupSqrt = global.Math.sqrt;
-    const hypotMock = jest.fn(global.Math.hypot);
-    const sqrtMock = jest.fn(global.Math.sqrt);
-
     delete global.Math.hypot;
-    global.Math.sqrt = sqrtMock;
+    expect(global.Math.hypot).toBeUndefined();
 
     const distance = utils.getDistance(point1, point2);
-
-    expect(global.Math.hypot).toBeUndefined();
-    expect(sqrtMock.mock.calls.length).toBe(1);
+    expect(distance).toEqual(distanceTest);
 
     global.Math.hypot = backupHypot;
-    global.Math.sqrt = backupSqrt;
   });
 });
 
