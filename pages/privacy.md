@@ -14,13 +14,13 @@ privacyPolicyClass: privacy-policy grav-u-max-word-count-m
 # Content
 
 ---
-# Use of private information policy (GDPR)
-Last updated: 23/05/2018
+# Use of# Use of private information policy (GDPR)
+Last updated: 24/05/2018
 
 
 ## Summary
 
-We respect the EU’s **General Data Protection Regulations (GDPR)** and this policy explains how we collect and treat any information you give us. You won’t find any complicated legal terms or long passages of unreadable text. We’ve no desire to trick you into agreeing to something you might later regret.
+We comply with the EU’s **General Data Protection Regulations (GDPR)** and this policy explains how we collect and treat any information you give us. You won’t find any complicated legal terms or long passages of unreadable text. We’ve no desire to trick you into agreeing to something you might later regret.
 
 
 ## Why we value your privacy
@@ -30,11 +30,7 @@ We value your privacy as much as we do our own, so we’re committed to keeping 
 
 ## How we collect information
 
-We use these third party services:
-- Amazon Web Services
-- Cloudflare
-- Google Analytics
-- Google Maps
+We only collect data through Google Analytics.
 
 For the privacy policies regarding third party services, we refer you to their respective websites.
 
@@ -58,14 +54,12 @@ We are not in possession of any information that will let us identify and contac
 
 ## Who has access to information about you
 
-When we store information in our own systems, only the people who need it have access. Our management team have access to everything you’ve provided, but individual employees have access to only what they need to do their job.
+The only time we will access information about you is if you apply for one of our available position. Your data is managed by a GDPR compliant third-party service and is only accessed by individuals involved with the hiring process.
 
 
 ## The steps we take to keep your information private
 
 Where we store your information in third-party services, we restrict access only to people who need it.
-
-The computers we use are all encrypted using Apple's FileVault 2 and are protected by a passcode or fingerprint access. These computers ask for authentication whenever they’re started or after 5 minutes of inactivity. Our mobile devices are also protected by a fingerprint or facial recognition.
 
 
 ## Changes to the policy
