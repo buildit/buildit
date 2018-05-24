@@ -1,0 +1,19 @@
+{{#extend "page"}}
+
+{{#content "flourish-top"}}
+  {{> flourish flourish-top }}
+{{/content}}
+
+{{#content "main"}}
+  
+  <article{{#if privacyPolicyClass}} class="{{privacyPolicyClass}}"{{/if}}>
+  {{{contents}}}
+  </article>
+
+{{/content}}
+
+{{#content "flourish-tail"}}
+  {{> flourish flourish-tail }}
+{{/content}}
+
+{{/extend}}
