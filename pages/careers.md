@@ -6,7 +6,6 @@ page-url: careers
 
 # Display
 layout: careers.hbs
-header-light: true
 main-classnames: grav-o-container
 footerModifierClass: grav-c-footer-no-margin
 

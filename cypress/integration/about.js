@@ -11,7 +11,7 @@ describe("About page", () => {
   });
 
   it("should render current route as active navigation option", () => {
-    cy.isActiveRoute(".grav-c-block-link", route);
+    cy.isActiveRoute(".grav-c-nav-link", route);
   });
 
   it("renders a pullquote animation", () => {
