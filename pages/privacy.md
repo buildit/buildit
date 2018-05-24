@@ -14,7 +14,7 @@ privacyPolicyClass: privacy-policy grav-u-max-word-count-m
 # Content
 
 ---
-# Use of# Use of private information policy (GDPR)
+# Use of private information policy (GDPR)
 Last updated: 24/05/2018
 
 
