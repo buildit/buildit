@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Updated Matteo's role in humans.txt credits.
 - Enabled Google Analytics IP anonymisation flag
 
+### Fixed
+- WEB-261: Math.hypot fallback for IE
+
 
 ## [4.0.2] - 2018-05-18
 ### Added
