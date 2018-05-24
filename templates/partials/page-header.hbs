@@ -1,4 +1,4 @@
-<header class="{{#if header-light}}is-light{{/if}}">
+<header>
   <div>
     <div class="logo-main">
     {{#if path}}
@@ -22,16 +22,16 @@
     <nav class="grav-c-nav-menu">
       <ul>
         <li>
-          <a class="grav-c-block-link" {{#compare page-url "about"}} href="/about/" {{/compare}}>About us</a>
+          <a class="grav-c-nav-link" {{#compare page-url "about"}} href="/about/" {{/compare}}>About us</a>
         </li>
         <li>
-          <a class="grav-c-block-link" {{#compare page-url "careers"}} href="/careers/" {{/compare}}>Careers</a>
+          <a class="grav-c-nav-link" {{#compare page-url "careers"}} href="/careers/" {{/compare}}>Careers</a>
         </li>
         <li>
-          <a class="grav-c-block-link" {{#compare page-url "locations"}} href="/locations/" {{/compare}}>Locations</a>
+          <a class="grav-c-nav-link" {{#compare page-url "locations"}} href="/locations/" {{/compare}}>Locations</a>
         </li>
         <li class="grav-c-nav-menu__external-link">
-          <a class="grav-c-block-link" href="https://medium.com/buildit">
+          <a class="grav-c-nav-link" href="https://medium.com/buildit">
             <svg class="grav-c-icon medium-logo" width="195px" height="195px" viewBox="0 0 195 195" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>Medium Monogram Logo</title>
