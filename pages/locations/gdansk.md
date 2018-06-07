@@ -3,6 +3,7 @@ title: Gdańsk
 address:
   line1: ul. Grunwaldzka 409
   line2: Alchemia Ferrum 6th floor
+city: Gdańsk
 postcode: 80-309 Gdańsk
 country: Poland
 img: 

@@ -3,6 +3,7 @@ title: Dublin
 address:
   line1: Alexandra House
   line2: 3 Ballsbridge Park
+city: Dublin
 postcode: Dublin 4
 country: Ireland
 img: 
