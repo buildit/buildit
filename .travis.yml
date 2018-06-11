@@ -4,7 +4,7 @@ node_js:
 before_install:
   - npm i -g npm@~5.8.0
   - |
-    if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
+    if [ "$TRAVIS_BRANCH" == "master" ] && [ $TRAVIS_EVENT_TYPE == "cron" ]; then
       git checkout tags/$TAG;
     fi
 
@@ -68,7 +68,7 @@ deploy:
       ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --paths /*
     skip_cleanup: true
     on:
-      condition: $TRAVIS_EVENT_TYPE == "cron"
+      condition: [ "$TRAVIS_BRANCH" == "master" ] && [ $TRAVIS_EVENT_TYPE == "cron" ]
 
 notifications:
   slack:
