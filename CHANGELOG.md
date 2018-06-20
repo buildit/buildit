@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Warsaw office to locations page
 
+
+## [4.1.0] - 2018-06-07
+### Added
+- Privacy policy link in footer
+
 ### Changed
 - Updated Matteo's role in humans.txt credits.
 - Enabled Google Analytics IP anonymisation flag
