@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Warsaw office to locations page
 
+### Fixed
+- Marker locations and alt texts of map previews on locations page
+
 
 ## [4.1.1] - 2018-06-21
 ### Updated
