@@ -1,9 +1,10 @@
 ---
-title: Bengaluru
+title: Bangalore
 address:
   line1: 72 Electronic City
   line2: Hosur Road
-postcode: Bangalore 560100
+city: Bengaluru
+postcode: Bengaluru 560100
 country: India
 img:
   url: https://maps.googleapis.com/maps/api/staticmap?format=jpg&key=AIzaSyAa-P3u_B9zTs_DJ_dXRK5og7r3_n7vlT0&maptype=roadmap&scale=2&size=425x300&markers=12.837073620840986,77.65719560673462&zoom=15

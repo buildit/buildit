@@ -3,6 +3,9 @@ title: Dublin
 address:
   line1: Alexandra House
   line2: 3 Ballsbridge Park
+# omit the city in this case to avoid a repetition in the address
+# https://github.com/buildit/buildit/pull/179
+# city: Dublin 
 postcode: Dublin 4
 country: Ireland
 img: 
