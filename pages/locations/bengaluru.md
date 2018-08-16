@@ -3,7 +3,8 @@ title: Bangalore
 address:
   line1: 72 Electronic City
   line2: Hosur Road
-city: Bengaluru
+# omit the city in this case to avoid a repetition in the address
+# city: Bengaluru
 postcode: Bengaluru 560100
 country: India
 img:

@@ -2,6 +2,8 @@
 title: Warsaw
 address:
   line1: Aleje Jerozolimskie 123A
+# omit the city in this case to avoid a repetition in the address
+# city: Warszawa
 postcode: 02-017 Warszawa
 country: Poland
 img: 
