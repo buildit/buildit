@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.1.3] - 2018-08-16
+### Fixed
+- Fixes a typo on the home page 
+
 
 ## [4.1.2] - 2018-08-16
 ### Added
