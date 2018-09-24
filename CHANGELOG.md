@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-s
+
 ## [4.1.3] - 2018-09-24
+### Fixed
+- Fixes a typo on the home page 
+
 ### Added
 - Dallas office to locations page
 

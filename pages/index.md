@@ -19,7 +19,7 @@ items:
   - Engineering transformation  
   - Design systems
   - Lean UX  
-  - Experiental learning
+  - Experiential learning
   - Systems thinking
 items-industries:
   - Utilities
