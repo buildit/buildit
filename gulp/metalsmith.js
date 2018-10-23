@@ -109,7 +109,7 @@ function metalsmith() {
             // (See: http://ogp.me/)
             ogType: "website",
             ogImage: "builidt-default-sharing-img.png",
-            ogImageAlt: "buildit @ wipro digital"
+            ogImageAlt: "Buildit @ Wipro Digital"
           })
           .use(jobListings())
           .use(buildInfo())
