@@ -17,9 +17,7 @@ function bundle() {
       .rollup({
         input: paths.scripts.main,
         plugins: [
-          babel({
-            plugins: ["external-helpers"]
-          }),
+          babel(),
           resolveNodeModules(),
           gulpIf(
             optimise,
