@@ -1,9 +1,7 @@
 const gulp = require("gulp");
 
-const concat = require("gulp-concat");
 const csso = require("gulp-csso");
 const gulpIf = require("gulp-if");
-const hash = require("gulp-hash");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
 const header = require("gulp-header");
