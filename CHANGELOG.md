@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Upgraded dev dependencies
 - Travis builds now use Node version specified in .nvmrc
 - Enabled [Greenkeeper](https://greenkeeper.io/) to automatically update depencies
+- `scrollreveal` is now included in our JS bundle, instead of being loaded via CDN
 
 ### Fixed
 - `scrollreveal` is no longer incorrectly listed as a (non-dev) dependency
