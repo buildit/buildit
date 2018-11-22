@@ -42,7 +42,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
-    "@buildit/gravity-ui-sass": "^0.10.0",
+    "@buildit/gravity-ui-sass": "^0.11.0",
     "@buildit/job-listings": "^1.0.2",
     "babel-core": "^7.0.0-bridge",
     "babel-jest": "^23.6.0",
@@ -55,7 +55,7 @@
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.0",
-    "eyeglass": "^1.5.0",
+    "eyeglass": "^2.0.0",
     "git-last-commit": "^0.3.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
