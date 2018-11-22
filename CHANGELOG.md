@@ -6,8 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
+- Upgraded to Gravity v0.11.0
 - Upgraded dev dependencies
 - Travis builds now use Node version specified in .nvmrc
+- Enabled [Greenkeeper](https://greenkeeper.io/) to automatically update depencies
 
 ### Fixed
 - `scrollreveal` is no longer incorrectly listed as a (non-dev) dependency
