@@ -1,3 +1,4 @@
+import ScrollReveal from "scrollreveal";
 import * as utils from "../utils.js";
 
 const defaults = {
