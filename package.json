@@ -93,7 +93,7 @@
     "metalsmith-permalinks": "^2.0.0",
     "minimist": "^1.2.0",
     "pa11y-ci": "^2.1.1",
-    "prettier": "1.15.2",
+    "prettier": "1.15.3",
     "rollup": "^0.67.3",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-closure-compiler-js": "^1.0.6",
