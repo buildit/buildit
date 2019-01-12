@@ -93,11 +93,11 @@
     "metalsmith-permalinks": "^2.0.0",
     "minimist": "^1.2.0",
     "pa11y-ci": "^2.1.1",
-    "prettier": "1.15.2",
+    "prettier": "1.15.3",
     "rollup": "^0.68.0",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-closure-compiler-js": "^1.0.6",
-    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
     "scrollreveal": "^4.0.5"
   },
   "private": true
