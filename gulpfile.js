@@ -112,7 +112,7 @@ function imageOptim() {
         optimise,
         imagemin([
           imageminMozjpeg({ quality: 85 }),
-          imageminPngquant({ quality: "65-80" }),
+          imageminPngquant({ quality: [0.65, 0.8] }),
           imageminSvgo({ plugins: [{ removeViewBox: false }] })
         ])
       )
