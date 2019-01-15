@@ -1,7 +1,7 @@
 ---
 title: Warsaw
 address:
-  line1: 2nd floor
+  line1: 2nd floor (in WeWork)
   line2: Krucza 50
 # omit the city in this case to avoid a repetition in the address
 # city: Warszawa
