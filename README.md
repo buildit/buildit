@@ -39,6 +39,15 @@ Distribution goes into `./dist`.
 
 Refer to the [build process](./docs/build-process.md) document for further details on all the tasks the build performs.
 
+### Committing
+
+All commits should be made with [Commitizen](https://github.com/commitizen/cz-cli). To make your commits with it 
+simply run the following command.
+ 
+`npm run commit`
+ 
+Failure to format your commits properly will result in a rejected PR and/or failed cloud builds.
+
 ### Environments
 
 Some of the files produced by the build, for example `sitemap.xml`, need to contain the website's absolute URL. Others, such as `robots.txt`, need to have different contents depending on where the build will be deployed to (so that we can prevent search engines indexing our staging environments).
