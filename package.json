@@ -110,7 +110,7 @@
     "prettier": "^1.16.4",
     "rollup": "^1.4.1",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-closure-compiler-js": "^1.0.6",
+    "rollup-plugin-closure-compiler-js": "github:dw-buildit/rollup-plugin-closure-compiler-js",
     "rollup-plugin-node-resolve": "^4.0.1",
     "scrollreveal": "^4.0.5",
     "semantic-release": "^15.13.3"
