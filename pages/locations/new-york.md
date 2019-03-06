@@ -1,10 +1,15 @@
 ---
 title: New York
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
+uriSlug: studio/us/new-york
 address:
   line1: 77 Sands Street
 city: Brooklyn
-postcode: NY 11201
+postRegion: NY
+postcode: 11201
+postcodePosition: below # postRegion + postcode appear below city
 country: USA
+countryCode: us # ISO 3166-1 alpha-2
 img: 
   url: https://maps.googleapis.com/maps/api/staticmap?format=jpg&key=AIzaSyAa-P3u_B9zTs_DJ_dXRK5og7r3_n7vlT0&maptype=roadmap&scale=2&size=425x300&markers=40.70033451610208,-73.98736217524858&zoom=17
   alt: Map showing the location of the New York studio
