@@ -57,6 +57,12 @@ function metalsmith() {
     }
     return null;
   });
+  handlebars.registerHelper("equals", function(a, b, options) {
+    if (a === b) {
+      return options.fn(this);
+    }
+    return null;
+  });
   handlebars.registerHelper("flourishShapes", function(name, excludeGradient) {
     const contextData = flourishShapes[name];
     // If no 2nd arg is given to the helper, Handlebars passed in its options

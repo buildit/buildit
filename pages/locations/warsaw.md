@@ -1,12 +1,15 @@
 ---
 title: Warsaw
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
+uriSlug: studio/pl/warszawa
 address:
   line1: 2nd floor (in WeWork)
   line2: Krucza 50
-# omit the city in this case to avoid a repetition in the address
-# city: Warszawa
-postcode: 00-022 Warszawa
+postcode: 00-022
+city: Warszawa
+postcodePosition: before # Postcode appears before city on same line
 country: Poland
+countryCode: pl # ISO 3166-1 alpha-2
 img: 
   url: https://maps.googleapis.com/maps/api/staticmap?format=jpg&key=AIzaSyAa-P3u_B9zTs_DJ_dXRK5og7r3_n7vlT0&maptype=roadmap&scale=2&size=425x300&markers=52.231614,21.016589&zoom=15
   alt: Map showing the location of the Warsaw studio
