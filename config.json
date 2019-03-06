@@ -5,21 +5,31 @@
   "envs": {
     "local-dev": {
       "url": "http://localhost:8080",
-      "excludeRobots": true
+      "excludeRobots": true,
+      "gtmContainerId": "GTM-WC9XF5V",
+      "gtmAuthId": "Ds-fbHSwmiqQaCMr3raWvw",
+      "gtmPreviewId": "env-7"
     },
     "local-dev-min": {
       "url": "http://localhost:8080",
-      "excludeRobots": true
+      "excludeRobots": true,
+      "gtmContainerId": "GTM-WC9XF5V",
+      "gtmAuthId": "Ds-fbHSwmiqQaCMr3raWvw",
+      "gtmPreviewId": "env-7"
     },
     "staging": {
       "url": "https://www-staging.buildit.digital",
       "excludeRobots": true,
-      "googleAnalyticsTrackingId": "UA-78138413-6"
+      "gtmContainerId": "GTM-WC9XF5V",
+      "gtmAuthId": "Ag0PVkIlh7ZE644wJQP4JA",
+      "gtmPreviewId": "env-8"
     },
     "production": {
       "url": "https://buildit.wiprodigital.com",
       "excludeRobots": false,
-      "googleAnalyticsTrackingId": "UA-78138413-2"
+      "gtmContainerId": "GTM-WC9XF5V",
+      "gtmAuthId": "HCE83Z7j2NN-BpF0vcvrvQ",
+      "gtmPreviewId": "env-2"
     }
   },
   "paths": {

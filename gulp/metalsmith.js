@@ -94,7 +94,9 @@ function metalsmith() {
             site: {
               title: config.title,
               url: siteEnv.url,
-              googleAnalyticsTrackingId: siteEnv.googleAnalyticsTrackingId
+              gtmContainerId: siteEnv.gtmContainerId,
+              gtmAuthId: siteEnv.gtmAuthId,
+              gtmPreviewId: siteEnv.gtmPreviewId
             },
             build: {
               excludeRobots: siteEnv.excludeRobots
