@@ -34,7 +34,7 @@ deploy:
     script:
       npx semantic-release
 
-  # deploy master to Staging
+  # deploy develop to Staging
   - provider: script
     script:
       ~/.local/bin/aws s3 sync dist s3://${STAGING_BUCKET} --delete --region=${STAGING_BUCKET_REGION} --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" &&
@@ -44,9 +44,9 @@ deploy:
       ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} --paths /*
     skip_cleanup: true
     on:
-      branch: master
+      branch: develop
 
-  # deploy tags matching rel-* or release-* to Production
+  # deploy master merges to production
   - provider: script
     script:
       ~/.local/bin/aws s3 sync dist s3://${PROD_BUCKET} --delete --region=${PROD_BUCKET_REGION} --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" &&
@@ -56,8 +56,7 @@ deploy:
       ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --paths /*
     skip_cleanup: true
     on:
-      tags: true
-      condition: $TRAVIS_TAG =~ $PROD_TAG_REGEXP
+      branch: master
 
   # deploy master branch to Production once a day
   - provider: script
