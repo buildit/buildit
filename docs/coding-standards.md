@@ -25,6 +25,6 @@ Additions or changes to the website's HTML **must** therefore always follow this
 
 Where we produce Handlebars partials that map directly to a counterpart in Gravity's pattern library, please use the components Atomic Design category and name as the partial's filename. For example: `molecule-steps.hbs`.
 
-Regardless of whether you are composing Gravity components or making bespoke ones, the final HTML build output for every page should always be [valid HTML5](https://validator.w3.org/).
+Regardless of whether you are composing Gravity components or making bespoke ones, the final HTML build output for every page should always be [valid HTML5](https://validator.w3.org/). We also recommend that you familiarise yourself with the [metadata formats we use](./metadata.md).
 
 
