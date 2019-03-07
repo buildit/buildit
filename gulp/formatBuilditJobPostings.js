@@ -5,6 +5,11 @@ module.exports = function formatBuilditJobPostings(allJobs) {
 
   // Group jobs by location
   const jobLocations = allJobs.reduce((accumulator, job) => {
+    // Append slug version of the city name to be used for URIs
+    job.location.citySlug = encodeURIComponent(
+      job.location.city.toLocaleLowerCase()
+    );
+
     // See if we already have a jobLocation object we can
     // append to
     let jobLocation = accumulator.find(jl => {
@@ -23,11 +28,7 @@ module.exports = function formatBuilditJobPostings(allJobs) {
     }
 
     // Append this job's details to the jobLocation
-    jobLocation.jobs.push({
-      title: job.title,
-      type: job.typeOfEmployment,
-      url: job.url
-    });
+    jobLocation.jobs.push(job);
 
     return accumulator;
   }, []);

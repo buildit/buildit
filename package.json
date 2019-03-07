@@ -49,7 +49,7 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@buildit/gravity-ui-sass": "^0.12.0",
-    "@buildit/job-listings": "^1.0.2",
+    "@buildit/job-listings": "^1.1.0",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@commitlint/travis-cli": "^7.5.2",
