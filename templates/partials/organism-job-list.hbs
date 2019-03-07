@@ -1,6 +1,12 @@
 <section class="grav-c-job-list">
-  <header>
-    <h2>{{location.city}}, {{location.country}}</h2>
+  <header typeof="schema:Place" resource="https://buildit.wiprodigital.com/ns/job-location/{{location.countryCode}}/{{location.citySlug}}">
+    <h2 property="schema:address" typeof="schema:PostalAddress">
+      <span property="schema:name">
+        <span property="schema:addressLocality">{{location.city}}</span>,
+        {{location.country}}
+      </span>
+      <meta property="schema:addressCountry" content="{{location.countryCode}}">
+    </h2>
   </header>
   <ul>
     {{#each jobs}}
