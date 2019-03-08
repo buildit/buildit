@@ -1,7 +1,7 @@
 ---
 title: Edinburgh
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/gb/edinburgh
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: edinburgh
 address:
   line1: 2 Castle Terrace
 city: Edinburgh

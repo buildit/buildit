@@ -1,6 +1,6 @@
 ---
 title: Warsaw
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/
 uriSlug: studio/pl/warszawa
 address:
   line1: 2nd floor (in WeWork)

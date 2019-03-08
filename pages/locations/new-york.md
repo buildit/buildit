@@ -1,7 +1,7 @@
 ---
 title: New York
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/us/new-york
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: new-york
 address:
   line1: 77 Sands Street
 city: Brooklyn

@@ -35,6 +35,19 @@ We chose RDFa because:
 * Even though [Google seems to prefer JSON-LD these days](https://developers.google.com/search/docs/guides/sd-policies), they still support RDFa and microdata. JSON-LD is more akin to classic `<meta>` tags - i.e. a blob of structured metadata that doesn't necessarily match content on the page that is visible to users. RDFa on the other hand lets you _augment_ and/or _reuse_ your existing page content and make it machine-friendly. Given our desire to keep things lean and DRY, RDFa felt like a better fit.
     * Note that JSON-LD and RDFa can technically co-exist. So, if we find ourselves adding substantial amounts of "hidden" metadata, it might be better expressed as JSON-LD than RDFa properties in `<meta>` and `<link>` tags.
 
+### Resoure URIs
+
+Some of the resources we describe are referenced by others or in multiple places. In those cases, we assign them a URI. Note that there is no requirement for these URIs to be locatable - i.e. for them to be URLs. Sometimes they might, but oftentimes they won't. Especially if they are purely to identify a real world thing (e.g. an office or a person) or an abstract concept (e.g. an organisation).
+
+To avoid clashes with "normal" URLs, all these Buildit URIs should be prefixed with `https://buildit.wiprodigital.com/thing/`. Furthermore, developers are encouraged to list URIs below as they add them. That way, future developers have visibility of what's already available and can re-use rather than re-invent.
+
+* **`https://buildit.wiprodigital.com/thing/buildit-org`**: Identifies a Buildit organisation.
+* **`https://buildit.wiprodigital.com/thing/studio/[xx]/[city]`**: Identifies a Buildit studio's physical place.
+    * `[xx]` is the lowercase [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) country code that the studio is in.
+    * `[city]` is the lowercase city name.
+* **`https://buildit.wiprodigital.com/thing/job-location/[xx]/[city]`**: Identifies a location where a Buildit job is based.
+    * `[xx]` is the lowercase [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) country code.
+    * `[city]` is the lowercase city name.
 
 ## What about Microformats?
 Old hands may recall [Microformats](http://microformats.org/) (not to be confused with micro-_data_!) - yet another way of embelishing your HTML content with some machine-readable structure. While there are still a number of tools that use it, the community does not seem to e very active these days. Since it doesn't really let us do anything we can't already do via RDFa, there's no point supporting it as well.

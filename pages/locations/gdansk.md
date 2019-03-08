@@ -1,7 +1,7 @@
 ---
 title: Gdańsk
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/pl/gdansk
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: gdansk
 address:
   line1: ul. Grunwaldzka 409
   line2: Alchemia Ferrum 6th floor

@@ -1,7 +1,7 @@
 ---
 title: Dallas
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/us/dallas
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: dallas
 address:
   line1: 5445 Legacy Drive 
   line2: Suite 300
