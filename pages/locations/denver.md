@@ -1,7 +1,7 @@
 ---
 title: Denver
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/us/denver
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: denver
 address:
   line1: 1550 Wewatta Street
 city: Denver

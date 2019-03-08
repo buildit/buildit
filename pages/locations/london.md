@@ -1,7 +1,7 @@
 ---
 title: London
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/gb/london
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: london
 address:
   line1: 2 Finsbury Avenue
 city: London

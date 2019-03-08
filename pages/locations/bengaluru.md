@@ -1,7 +1,7 @@
 ---
 title: Bangalore
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/in/bengaluru
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: bengaluru
 address:
   line1: 72 Electronic City
   line2: Hosur Road

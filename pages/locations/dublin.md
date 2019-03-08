@@ -1,7 +1,7 @@
 ---
 title: Dublin
-# URI slug for this location which gets appended to https://buildit.wiprodigital.com/ns/
-uriSlug: studio/ie/dublin
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: dublin
 address:
   line1: Alexandra House
   line2: 3 Ballsbridge Park
