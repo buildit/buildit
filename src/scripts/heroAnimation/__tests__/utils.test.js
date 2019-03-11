@@ -156,4 +156,15 @@ describe("shiftPoint function", () => {
 
     expect(TweenLite.to.mock.calls.length).toBe(1);
   });
+
+  describe("getRandomArbitrary function", () => {
+    it("should return a number within the min/max range that was passed across", () => {
+      const min = 0;
+      const max = 10;
+      const int = utils.getRandomArbitrary(min, max);
+
+      expect(int).toBeGreaterThanOrEqual(min);
+      expect(int).toBeLessThanOrEqual(max);
+    });
+  });
 });

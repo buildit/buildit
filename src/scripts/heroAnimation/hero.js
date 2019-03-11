@@ -3,198 +3,195 @@ import Circle from "./Circle.js";
 
 import debounce from "lodash-es/debounce";
 
-let params = {
-  width: 0,
-  height: 0,
-  ctx: null,
-  points: [],
-  target: null,
-  animateHeader: true,
-  canvas: null,
-  container: null,
-  fadeBubble: 80
-};
+class HeroAnimation {
+  constructor(canvas, container, heroParams) {
+    if (typeof canvas.getContext !== "function") {
+      console.warn("the thingy bob doesn't support canvas. Bailing out.");
+      return;
+    }
 
-function HeroAnimation(canvas, container) {
-  if (typeof canvas.getContext !== "function") {
-    console.warn("the thingy bob doesn't support canvas. Bailing out.");
-    return;
+    this.canvas = canvas;
+    this.container = container;
+    this.params = heroParams;
+    this.resizeCanvas = debounce(this.resizeCanvas, 150);
+
+    this.initHeader();
+    this.initAnimation();
+
+    if (!("ontouchstart" in window)) {
+      this.container.addEventListener("mousemove", this.mouseMove.bind(this));
+      this.container.addEventListener("mouseout", this.mouseOut.bind(this));
+      window.addEventListener("resize", this.resizeCanvas.bind(this));
+    } else {
+      noTouchAnim();
+    }
+
+    window.addEventListener("scroll", this.scrollCheck.bind(this));
   }
 
-  if (container !== null) {
-    params.canvas = canvas;
-    params.container = container;
+  initHeader() {
+    if (this.container.clientWidth < this.params.gridSize) return;
 
-    initHeader();
-    initAnimation();
-    addListeners();
-  }
-}
+    this.params.points = [];
+    this.params.width = this.container.clientWidth || this.params.width;
+    this.params.height = this.container.clientHeight || this.params.height;
+    this.canvas.width = this.params.width;
+    this.canvas.height = this.params.height;
+    this.params.target = {
+      x: this.params.width * 2,
+      y: this.params.height * 2
+    };
 
-function scrollCheck() {
-  if (params.container.getBoundingClientRect().bottom < 0) {
-    params.animateHeader = false;
-  } else {
-    params.animateHeader = true;
-  }
-}
+    this.params.ctx = this.canvas.getContext("2d");
 
-const resizeCanvas = debounce(function() {
-  initHeader(params.canvas, params.container);
-}, 150);
+    const pointsLimiter = utils.calcPointsLimiter(
+      this.params.width,
+      this.params.height
+    );
 
-function animate() {
-  if (params.animateHeader) {
-    params.ctx.clearRect(0, 0, params.width, params.height);
+    for (
+      let x = -this.params.gridSize;
+      x < this.params.width;
+      x = x + this.params.width / pointsLimiter
+    ) {
+      for (
+        let y = 0;
+        y < this.params.height;
+        y = y + this.params.height / pointsLimiter
+      ) {
+        const px = utils.getRandomArbitrary(x, x + this.params.gridSize);
+        const py = utils.getRandomArbitrary(y, y + this.params.gridSize);
 
-    params.points.map(point => {
-      const distance = Math.abs(utils.getDistance(params.target, point));
-
-      if (distance <= params.fadeBubble) {
-        point.active = 0.3;
-        point.circle.active = 0.75;
-      } else if (distance <= params.fadeBubble * 2) {
-        point.active = 0.1;
-        point.circle.active = 0.3;
-      } else if (distance <= params.fadeBubble * 3) {
-        point.active = 0.04;
-        point.circle.active = 0.1;
-      } else {
-        point.active = 0.04;
-        point.circle.active = 0.04;
+        if (py < this.params.height - this.params.gridSize / 2) {
+          const p = {
+            x: px,
+            originX: px,
+            y: py,
+            originY: py
+          };
+          this.params.points.push(p);
+        }
       }
+    }
 
-      utils.drawLines(point, params.ctx);
-      point.circle.draw();
+    // for each point find the 5 closest points
+    this.params.points.map(p1 => {
+      let closest = [];
+      this.params.points.map(p2 => {
+        if (!(p1 == p2)) {
+          let placed = false;
+
+          for (let k = 0; k < 5; k++) {
+            if (!placed) {
+              if (closest[k] == undefined) {
+                closest[k] = p2;
+                placed = true;
+              }
+            }
+          }
+
+          for (let k = 0; k < 5; k++) {
+            if (!placed) {
+              if (
+                utils.getDistance(p1, p2) < utils.getDistance(p1, closest[k])
+              ) {
+                closest[k] = p2;
+                placed = true;
+              }
+            }
+          }
+        }
+      });
+
+      p1.closest = closest;
+    });
+
+    this.params.points.map(point => {
+      point.circle = new Circle(
+        point,
+        2 + Math.random() * 2.5,
+        "94, 161, 184",
+        this.params.ctx
+      );
+    });
+
+    this.initAnimation();
+  }
+
+  initAnimation() {
+    this.animate();
+    this.params.points.map(point => {
+      utils.shiftPoint(point);
     });
   }
 
-  requestAnimationFrame(animate);
-}
-
-function mouseOut() {
-  params.target.x = params.container.clientHeight * 2;
-  params.target.y = params.container.clientHeight * 2;
-}
-
-function mouseMove(e) {
-  let posy = 0;
-  let posx = (posy = 0);
-
-  posx = e.pageX;
-  posy = e.pageY - this.offsetTop;
-
-  params.target.x = posx;
-  params.target.y = posy;
-}
-
-function noTouchAnim() {
-  let posy = 0;
-  let posx = (posy = 0);
-
-  posx = params.container.clientWidth / 1.5;
-  posy = params.container.clientHeight / 1.5;
-
-  params.target.x = posx;
-  params.target.y = posy;
-}
-
-function addListeners() {
-  if (!("ontouchstart" in window)) {
-    params.container.addEventListener("mousemove", mouseMove);
-    params.container.addEventListener("mouseout", mouseOut);
-    window.addEventListener("resize", resizeCanvas);
-  } else {
-    noTouchAnim();
-  }
-
-  window.addEventListener("scroll", scrollCheck);
-}
-
-function initHeader() {
-  params.points = [];
-  params.width = params.container.clientWidth;
-  params.height = params.container.clientHeight;
-  params.canvas.width = params.width;
-  params.canvas.height = params.height;
-  params.target = {
-    x: params.width * 2,
-    y: params.height * 2
-  };
-
-  params.ctx = params.canvas.getContext("2d");
-
-  const pointsLimiter = utils.calcPointsLimiter(params.width, params.height);
-  const gridSize = 100;
-
-  for (
-    let x = -gridSize;
-    x < params.width;
-    x = x + params.width / pointsLimiter
-  ) {
-    for (let y = 0; y < params.height; y = y + params.height / pointsLimiter) {
-      const px = utils.getRandomArbitrary(x, x + gridSize);
-      const py = utils.getRandomArbitrary(y, y + gridSize);
-
-      if (py < params.height - gridSize / 2) {
-        const p = {
-          x: px,
-          originX: px,
-          y: py,
-          originY: py
-        };
-        params.points.push(p);
-      }
+  scrollCheck() {
+    if (this.container.getBoundingClientRect().bottom < 0) {
+      this.params.animateHeader = false;
+    } else {
+      this.params.animateHeader = true;
     }
   }
 
-  // for each point find the 5 closest points
-  params.points.map(p1 => {
-    let closest = [];
-    params.points.map(p2 => {
-      if (!(p1 == p2)) {
-        let placed = false;
+  mouseOut() {
+    this.params.target.x = this.container.clientHeight * 2;
+    this.params.target.y = this.container.clientHeight * 2;
+  }
 
-        for (let k = 0; k < 5; k++) {
-          if (!placed) {
-            if (closest[k] == undefined) {
-              closest[k] = p2;
-              placed = true;
-            }
-          }
+  mouseMove(e) {
+    let posy = 0;
+    let posx = (posy = 0);
+
+    posx = e.pageX;
+    posy = e.pageY - this.container.offsetTop;
+
+    this.params.target.x = posx;
+    this.params.target.y = posy;
+  }
+
+  noTouchAnim() {
+    let posy = 0;
+    let posx = (posy = 0);
+
+    posx = params.container.clientWidth / 1.5;
+    posy = params.container.clientHeight / 1.5;
+
+    this.params.target.x = posx;
+    this.params.target.y = posy;
+  }
+
+  resizeCanvas() {
+    this.initHeader(this.canvas, this.container);
+  }
+
+  animate() {
+    if (this.params.animateHeader) {
+      this.params.ctx.clearRect(0, 0, this.params.width, this.params.height);
+
+      this.params.points.map(point => {
+        const distance = Math.abs(utils.getDistance(this.params.target, point));
+
+        if (distance <= this.params.fadeBubble) {
+          point.active = 0.3;
+          point.circle.active = 0.75;
+        } else if (distance <= this.params.fadeBubble * 2) {
+          point.active = 0.1;
+          point.circle.active = 0.3;
+        } else if (distance <= this.params.fadeBubble * 3) {
+          point.active = 0.04;
+          point.circle.active = 0.1;
+        } else {
+          point.active = 0.04;
+          point.circle.active = 0.04;
         }
 
-        for (let k = 0; k < 5; k++) {
-          if (!placed) {
-            if (utils.getDistance(p1, p2) < utils.getDistance(p1, closest[k])) {
-              closest[k] = p2;
-              placed = true;
-            }
-          }
-        }
-      }
-    });
+        utils.drawLines(point, this.params.ctx);
+        point.circle.draw();
+      });
+    }
 
-    p1.closest = closest;
-  });
-
-  params.points.map(point => {
-    point.circle = new Circle(
-      point,
-      2 + Math.random() * 2.5,
-      "94, 161, 184",
-      params.ctx
-    );
-  });
-
-  initAnimation();
-}
-
-function initAnimation() {
-  animate();
-  params.points.map(point => {
-    utils.shiftPoint(point);
-  });
+    requestAnimationFrame(this.animate.bind(this));
+  }
 }
 
 export default HeroAnimation;
