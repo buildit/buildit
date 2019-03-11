@@ -16,9 +16,9 @@ script:
   - commitlint-travis
   - npm run-script test
   - |
-    if [[ "$TRAVIS_TAG" =~ $PROD_TAG_REGEXP ]] || [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
+    if [ "$TRAVIS_BRANCH" == "master" ] || [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
       npm run-script build -- --env production;
-    elif [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    elif [ "$TRAVIS_BRANCH" == "develop" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
       npm run-script build -- --env staging;
     else
       npm run-script build;
