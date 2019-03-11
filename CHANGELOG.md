@@ -1,3 +1,10 @@
+## [4.3.1](https://github.com/buildit/buildit/compare/v4.3.0...v4.3.1) (2019-03-11)
+
+
+### Bug Fixes
+
+* **travis:** production was using the wrong release script ([4afd8c4](https://github.com/buildit/buildit/commit/4afd8c4))
+
 # [4.3.0](https://github.com/buildit/buildit/compare/v4.2.0...v4.3.0) (2019-03-11)
 
 
