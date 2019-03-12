@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buildit/buildit.git"
+    "url": "https://github.com/buildit/buildit.git"
   },
   "author": "Buildit @ Wipro Digital (https://buildit.wiprodigital.com)",
   "contributors": [
@@ -53,6 +53,8 @@
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@commitlint/travis-cli": "^7.5.2",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
     "babel-core": "^7.0.0-bridge",
     "babel-jest": "^24.1.0",
     "browser-sync": "^2.26.3",
@@ -111,7 +113,8 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-closure-compiler-js": "^1.0.6",
     "rollup-plugin-node-resolve": "^4.0.1",
-    "scrollreveal": "^4.0.5"
+    "scrollreveal": "^4.0.5",
+    "semantic-release": "^15.13.3"
   },
   "private": true,
   "config": {
