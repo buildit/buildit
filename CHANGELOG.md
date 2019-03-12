@@ -1,3 +1,18 @@
+# [4.3.0](https://github.com/buildit/buildit/compare/v4.2.0...v4.3.0) (2019-03-11)
+
+
+### Bug Fixes
+
+* **locations:** renames Dallas to Plano ([b315b79](https://github.com/buildit/buildit/commit/b315b79))
+
+
+### Features
+
+* **analytics:** switch to GTM and track smart recruiters links ([1cf2187](https://github.com/buildit/buildit/commit/1cf2187))
+* **careers:** adds talent team email links ([0e14695](https://github.com/buildit/buildit/commit/0e14695))
+* **commits:** support for commitizen formatted commits ([cfd4f21](https://github.com/buildit/buildit/commit/cfd4f21))
+* **semantic-release:** added semantic now runs on `master` branch ([a4d8f57](https://github.com/buildit/buildit/commit/a4d8f57))
+
 # Changelog
 All notable changes to this project will be documented in this file.
 
