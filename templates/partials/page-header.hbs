@@ -23,13 +23,13 @@
     <nav class="grav-c-nav-menu">
       <ul>
         <li>
-          <a class="grav-c-nav-link" {{#compare page-url "about"}} typeof="schema:AboutPage" href="/about/" {{/compare}}>About us</a>
+          <a class="grav-c-nav-link" {{#compare page-url "!==" "about"}} typeof="schema:AboutPage" href="/about/" {{/compare}}>About us</a>
         </li>
         <li>
-          <a class="grav-c-nav-link" {{#compare page-url "careers"}} href="/careers/" {{/compare}}>Careers</a>
+          <a class="grav-c-nav-link" {{#compare page-url "!==" "careers"}} href="/careers/" {{/compare}}>Careers</a>
         </li>
         <li>
-          <a class="grav-c-nav-link" {{#compare page-url "locations"}} typeof="schema:ContactPage" href="/locations/" {{/compare}}>Locations</a>
+          <a class="grav-c-nav-link" {{#compare page-url "!==" "locations"}} typeof="schema:ContactPage" href="/locations/" {{/compare}}>Locations</a>
         </li>
         <li class="grav-c-nav-menu__external-link">
           <a class="grav-c-nav-link" href="https://medium.com/buildit" rel="schema:sameAs">
