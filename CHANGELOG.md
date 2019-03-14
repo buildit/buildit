@@ -13,16 +13,8 @@
 * **commits:** support for commitizen formatted commits ([cfd4f21](https://github.com/buildit/buildit/commit/cfd4f21))
 * **semantic-release:** added semantic now runs on `master` branch ([a4d8f57](https://github.com/buildit/buildit/commit/a4d8f57))
 
-# Changelog
-All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
-
-
-## [4.2.0] - 2019-01-15
+## [4.2.0](https://github.com/buildit/buildit/compare/v4.1.4...v4.2.0) (2019-01-15)
 ### Changed
 - Upgraded to Gravity v0.11.0
 - Upgraded dev dependencies
@@ -36,12 +28,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removed unused dependencies
 
 
-## [4.1.4] - 2018-10-23
+## [4.1.4](https://github.com/buildit/buildit/compare/v4.1.3...v4.1.4) (2018-10-23)
 ### Fixed
 - Corrected capitalisation of "Buildit @ Wipro Digital" text
 
 
-## [4.1.3] - 2018-09-24
+## [4.1.3](https://github.com/buildit/buildit/compare/v4.1.2...v4.1.3) (2018-09-24)
 ### Fixed
 - Fixes a typo on the home page 
 
@@ -49,7 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Dallas office to locations page
 
 
-## [4.1.2] - 2018-08-16
+## [4.1.2](https://github.com/buildit/buildit/compare/v4.1.1...v4.1.2) (2018-08-16)
 ### Added
 - Warsaw office to locations page
 
@@ -57,11 +49,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Marker locations and alt texts of map previews on locations page
 
 
-## [4.1.1] - 2018-06-21
+## [4.1.1](https://github.com/buildit/buildit/compare/v4.1.0...v4.1.1) (2018-06-21)
 ### Updated
 - Travis file to trigger a daily production build
 
-## [4.1.0] - 2018-06-07
+## [4.1.0](https://github.com/buildit/buildit/compare/v4.0.2...v4.1.0) (2018-06-07)
 ### Added
 - Privacy policy link in footer
 
@@ -76,7 +68,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - WEB-261: Math.hypot fallback for IE in hero
 
 
-## [4.0.2] - 2018-05-18
+## [4.0.2](https://github.com/buildit/buildit/compare/v4.0.1...v4.0.2) (2018-05-18)
 ### Added
 - Robots meta tags to control indexing of pages
 - Dynamically generated `humans.txt` file
@@ -98,12 +90,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - WEB-257: CDN scripts removed where not needed
 
 
-## [4.0.1] - 2018-05-07
+## [4.0.1](https://github.com/buildit/buildit/compare/v4.0.0...v4.0.1) (2018-05-07)
 ### Fixed
 - WEB-236: `.travis.yml` now builds production site with correct configuration.
 
 
-## [4.0.0] - 2018-05-03
+## [4.0.0](https://github.com/buildit/buildit/compare/v0.3.8...v4.0.0) (2018-05-03)
 ### Added
 - New home page design & content
 - New about page design & content
