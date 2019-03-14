@@ -1,12 +1,15 @@
 ---
 title: Gdańsk
+# URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
+citySlug: gdansk
 address:
   line1: ul. Grunwaldzka 409
   line2: Alchemia Ferrum 6th floor
-# omit the city in this case to avoid a repetition in the address
-# city: Gdańsk
-postcode: 80-309 Gdańsk
+postcode: 80-309
+city: Gdańsk
+postcodePosition: before # Postcode appears before city on same line
 country: Poland
+countryCode: pl # ISO 3166-1 alpha-2
 img: 
   url: https://maps.googleapis.com/maps/api/staticmap?format=jpg&key=AIzaSyAa-P3u_B9zTs_DJ_dXRK5og7r3_n7vlT0&maptype=roadmap&scale=2&size=425x300&markers=54.39851249592157,18.57698661508039&zoom=15
   alt: Map showing the location of the Gdańsk studio

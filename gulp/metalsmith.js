@@ -12,7 +12,7 @@ const filter = require("gulp-filter");
 const assign = require("lodash.assign");
 const handlebars = require("handlebars");
 const handlebarsLayouts = require("handlebars-layouts");
-const markdownHelper = require("helper-markdown");
+const handlebarsHelpers = require("handlebars-helpers");
 
 const htmlMinifier = require("metalsmith-html-minifier");
 const markdown = require("metalsmith-markdown");
@@ -48,15 +48,12 @@ function metalsmith() {
   const fmFilter = filter("**/*.{html,md,txt}", { restore: true });
 
   // register Handlebars helpers
-  handlebars.registerHelper("moment", require("helper-moment"));
   handlebars.registerHelper(handlebarsLayouts(handlebars));
-  handlebars.registerHelper("markdown", markdownHelper);
-  handlebars.registerHelper("compare", function(a, b, options) {
-    if (a !== b) {
-      return options.fn(this);
-    }
-    return null;
-  });
+  handlebarsHelpers.comparison({ handlebars: handlebars });
+  handlebarsHelpers.markdown({ handlebars: handlebars });
+  handlebarsHelpers.date({ handlebars: handlebars });
+
+  // Custom helper for our flourish effects
   handlebars.registerHelper("flourishShapes", function(name, excludeGradient) {
     const contextData = flourishShapes[name];
     // If no 2nd arg is given to the helper, Handlebars passed in its options
