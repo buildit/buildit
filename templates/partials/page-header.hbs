@@ -1,13 +1,14 @@
 <header>
-  <div>
+  <div resource="https://buildit.wiprodigital.com/thing/buildit-org" typeof="schema:Organization">
+    <meta property="schema:name" content="Buildit @ Wipro Digital">
     <div class="grav-c-page-header__logo">
     {{#if path}}
-      <a href="/">
+      <a href="/" property="schema:url">
     {{else}}
       <h1>
     {{/if}}
         <svg role="img" class="grav-c-logo" aria-label="Buildit @ Wipro Digital" width="300" height="33">
-          <title>buildit @ wipro digital</title>
+          <title>Buildit @ Wipro Digital</title>
           <use xlink:href="#buildit-logotype"></use>
         </svg>
     {{#if path}}
@@ -22,16 +23,16 @@
     <nav class="grav-c-nav-menu">
       <ul>
         <li>
-          <a class="grav-c-nav-link" {{#compare page-url "about"}} href="/about/" {{/compare}}>About us</a>
+          <a class="grav-c-nav-link" {{#compare page-url "!==" "about"}} typeof="schema:AboutPage" href="/about/" {{/compare}}>About us</a>
         </li>
         <li>
-          <a class="grav-c-nav-link" {{#compare page-url "careers"}} href="/careers/" {{/compare}}>Careers</a>
+          <a class="grav-c-nav-link" {{#compare page-url "!==" "careers"}} href="/careers/" {{/compare}}>Careers</a>
         </li>
         <li>
-          <a class="grav-c-nav-link" {{#compare page-url "locations"}} href="/locations/" {{/compare}}>Locations</a>
+          <a class="grav-c-nav-link" {{#compare page-url "!==" "locations"}} typeof="schema:ContactPage" href="/locations/" {{/compare}}>Locations</a>
         </li>
         <li class="grav-c-nav-menu__external-link">
-          <a class="grav-c-nav-link" href="https://medium.com/buildit">
+          <a class="grav-c-nav-link" href="https://medium.com/buildit" rel="schema:sameAs">
             <svg class="grav-c-icon medium-logo" width="195px" height="195px" viewBox="0 0 195 195" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>Medium Monogram Logo</title>

@@ -23,7 +23,7 @@
 {{/if}}
 
 /* SITE */
-    Last update: {{moment format="YYYY/MM/DD"}}{{#if standards}}
+    Last update: {{date "today" "YYYY/MM/DD"}}{{#if standards}}
     Standards:{{#each standards}}
       - {{{this}}}{{/each}}{{/if}}{{#if components}}
     Components:{{#each components}}
