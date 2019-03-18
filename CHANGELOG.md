@@ -1,3 +1,17 @@
+# [4.4.0](https://github.com/buildit/buildit/compare/v4.3.1...v4.4.0) (2019-03-18)
+
+
+### Bug Fixes
+
+* switched dependency due to issue with subdependency ([5b9d574](https://github.com/buildit/buildit/commit/5b9d574))
+
+
+### Features
+
+* adds Schema.org place meta-data to locations page ([5819024](https://github.com/buildit/buildit/commit/5819024))
+* adds Schema.org RDFa data to job listings ([9062837](https://github.com/buildit/buildit/commit/9062837))
+* adds Schema.org RDFa data to page header & footer ([4cf20f0](https://github.com/buildit/buildit/commit/4cf20f0))
+
 ## [4.3.1](https://github.com/buildit/buildit/compare/v4.3.0...v4.3.1) (2019-03-11)
 
 
