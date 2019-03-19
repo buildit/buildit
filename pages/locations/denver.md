@@ -3,7 +3,9 @@ title: Denver
 # URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
 citySlug: denver
 address:
-  line1: 1550 Wewatta Street
+  line1: WeWork Tabor Center
+  line2: 1200 17th Street
+  line3: Floor 10, Room 161
 city: Denver
 postRegion: CO
 postcode: 80202
@@ -11,8 +13,8 @@ postcodePosition: below # postRegion + postcode appear below city
 country: USA
 countryCode: us # ISO 3166-1 alpha-2
 img: 
-  url: https://maps.googleapis.com/maps/api/staticmap?format=jpg&key=AIzaSyAa-P3u_B9zTs_DJ_dXRK5og7r3_n7vlT0&maptype=roadmap&scale=2&size=425x300&markers=39.75239475433594,-105.00245422823357&zoom=16
+  url: https://maps.googleapis.com/maps/api/staticmap?format=jpg&key=AIzaSyAa-P3u_B9zTs_DJ_dXRK5og7r3_n7vlT0&maptype=roadmap&scale=2&size=425x300&markers=39.7491649,-104.9961904&zoom=16
   alt: Map showing the location of the Denver studio
-map: https://www.google.com/maps?ll=39.752562,-105.002314&z=16&t=m&hl=en-US&gl=GB&mapclient=embed&q=1550+Wewatta+St+Denver,+CO+80202+USA
+map: https://www.google.com/maps/place/WeWork/@39.7491364,-104.9982773,16.98z/data=!4m5!3m4!1s0x876c796434f3a3ed:0x91c7f1e0ef0abb98!8m2!3d39.7491649!4d-104.9961904
 draft: true
 ---
