@@ -46,6 +46,18 @@ deploy:
     on:
       branch: develop
 
+  # deploy next to Next
+  - provider: script
+    script:
+      ~/.local/bin/aws s3 sync dist s3://${BETA_BUCKET} --delete --region=${BETA_BUCKET_REGION} --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${BETA_BUCKET} --delete --region=${BETA_BUCKET_REGION} --exclude "*" --include "*.css" --content-type "text/css; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${BETA_BUCKET} --delete --region=${BETA_BUCKET_REGION} --exclude "*" --include "*.js" --content-type "application/javascript; charset=utf-8" &&
+      ~/.local/bin/aws s3 sync dist s3://${BETA_BUCKET} --delete --region=${BETA_BUCKET_REGION} --include "*" --exclude "*.js" --exclude "*.html" --exclude "*.css" &&
+      ~/.local/bin/aws cloudfront create-invalidation --distribution-id ${BETA_DISTRIBUTION_ID} --paths /*
+    skip_cleanup: true
+    on:
+      branch: next
+
   # deploy master merges to production
   - provider: script
     script:
