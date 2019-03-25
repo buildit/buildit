@@ -8,5 +8,13 @@
     <strong>jobs</strong>
   </p>
 </section>
-<section class="grav-o-container">
+<section class="colour-palette-dark">
+  <h3><strong>We’re worldwide.</strong><br/>That’s right next to you.</h3>
+  <ul>
+    {% for location in locations %}
+      <li>
+        <a href="/locations/{{ location.citySlug }}/">{{ location.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </section>
