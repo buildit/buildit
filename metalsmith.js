@@ -13,6 +13,7 @@ const beautify = require("metalsmith-beautify");
 const drafts = require("metalsmith-drafts");
 const htmlMinifierOptimise = require("./lib/metalsmith-html-minifier-optimise");
 const mapsiteCurrentenv = require("./lib/metalsmith-mapsite-currentenv");
+const jobListings = require("./lib/metalsmith-job-listings");
 const gravity = require("@buildit/gravity-ui-sass");
 const fs = require("fs");
 
@@ -29,6 +30,7 @@ ms.source("./pages")
   )
   .use(buildInfo())
   .use(envInfo())
+  .use(jobListings())
   .use(collections())
   .use(
     inPlace({
