@@ -1,0 +1,30 @@
+<div>
+  <div class="grav-c-page-header__logo">
+    {% if path %}
+      <a href="/">
+    {% else %}
+      <h1>
+    {% endif %}
+        <svg role="img" class="grav-c-logo" aria-label="Buildit @ Wipro Digital" width="300" height="33">
+          <title>buildit @ wipro digital</title>
+          <use xlink:href="#buildit-logotype"></use>
+        </svg>
+    {% if path %}
+      </a>
+    {% else %}
+      </h1>
+    {% endif %}
+  </div>
+  <button type="button" class="grav-c-toggle-menu" aria-pressed="false" aria-label="Do something">
+    <span class="grav-c-toggle-menu__icon"></span>
+  </button>
+  <nav class="grav-c-nav-menu">
+    <ul>
+      {% for navItem in colMainNav %}
+      <li>
+        <a class="grav-c-nav-link" href="/{{ navItem.path | replace("index.html", "") }}">{{ navItem.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

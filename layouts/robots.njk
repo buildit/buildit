@@ -1,0 +1,22 @@
+Sitemap: {{env.url}}/sitemap.xml
+
+{% if env.excludeRobots %}
+# Non-production environment
+
+# Allow specific bots used for testing
+User-agent: Twitterbot
+Disallow:
+
+# Prevent all other bots from crawing and
+# indexing...
+User-agent: *
+Disallow: /
+{% else %}
+User-agent: *
+Disallow:
+{% endif %}
+
+{{contents | safe}}
+
+# {{build.description or 'undefined'}}
+# commit: {{build.commitShortHash or 'undefined'}}

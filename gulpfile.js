@@ -5,6 +5,7 @@ const gulpIf = require("gulp-if");
 const sass = require("gulp-sass");
 const size = require("gulp-size");
 const header = require("gulp-header");
+const run = require("gulp-run");
 
 const critical = require("critical").stream;
 const autoprefixer = require("gulp-autoprefixer");
@@ -14,7 +15,6 @@ const imageminPngquant = require("imagemin-pngquant");
 const imageminSvgo = require("imagemin-svgo");
 
 // internal gulp plugins
-const metalsmith = require("./gulp/metalsmith");
 const browserSync = require("./gulp/browsersync");
 const scripts = require("./gulp/scripts");
 
@@ -24,8 +24,8 @@ const eyeglass = require("eyeglass");
 const chalk = require("chalk");
 
 // config
-const config = require("./config.json");
-const paths = config.paths;
+const gulpConfig = require("./config/gulp.json");
+const paths = gulpConfig.paths;
 const envs = require("./gulp/envs.js");
 const getBuildInfo = require("./gulp/get-build-info.js");
 
@@ -100,7 +100,7 @@ function assets() {
 }
 
 function clean(done) {
-  del([`${paths.pages.dest}/**/*`]);
+  del(paths.dest);
   done();
 }
 
@@ -120,6 +120,10 @@ function imageOptim() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
+function metalsmithBuild() {
+  return run(`npx ./metalsmith.js --env ${envs.currentEnv}`).exec();
+}
+
 function watch(done) {
   gulp.watch(
     paths.scripts.modules,
@@ -132,8 +136,20 @@ function watch(done) {
   gulp.watch(paths.images.src, gulp.series(imageOptim, browserSync.reload));
   gulp.watch(paths.assets.src, gulp.series(assets, browserSync.reload));
   gulp.watch(
-    [paths.pages.src, paths.templates.src],
-    gulp.series(metalsmith.build, criticalCss, browserSync.reload)
+    [
+      paths.pages.src,
+      paths.layouts.src,
+      paths.configs.src,
+      paths.content.src,
+      "metalsmith.js"
+    ],
+    gulp.series(
+      "clean",
+      metalsmithBuild,
+      gulp.parallel(assets, imageOptim, styles, scripts.bundle),
+      criticalCss,
+      browserSync.reload
+    )
   );
   done();
 }
@@ -158,17 +174,19 @@ function criticalCss() {
     .pipe(gulp.dest("dist"));
 }
 
+gulp.task("clean", clean);
+
 // registering main tasks
 gulp.task(
   "build",
 
   gulp.series(
+    "clean",
     printBuildInfo,
-    gulp.parallel(assets, imageOptim, styles, scripts.bundle, metalsmith.build),
+    metalsmithBuild,
+    gulp.parallel(assets, imageOptim, styles, scripts.bundle),
     criticalCss
   )
 );
 
 gulp.task("default", gulp.series("build", browserSync.initTask, watch));
-
-gulp.task("clean", clean);

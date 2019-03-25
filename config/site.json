@@ -1,0 +1,12 @@
+{
+  "site": {
+    "title": "Buildit @ Wipro Digital",
+    "shortTitle": "Buildit",
+    "description": "The Buildit @ Wipro Digital website",
+    "twitterCard": "summary_large_image",
+    "twitterSiteId": "@buildit_tech",
+    "ogType": "website",
+    "ogImage": "builidt-default-sharing-img.png",
+    "ogImageAlt": "buildit @ wipro digital"
+  }
+}

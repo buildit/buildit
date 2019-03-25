@@ -1,0 +1,15 @@
+<main>
+  {% if blocks.hero %}
+    <section class="grav-c-hero">
+      {{ blocks.hero | safe }}
+    </section>
+  {% endif %}
+  <section class="grav-o-container">
+    {% if blocks.main %}
+      {{ blocks.main | safe }}
+    {% else %}
+      {# Fall back to rendering contents #}
+      {{ contents | safe }}
+    {% endif %}
+  </section>
+</main>
