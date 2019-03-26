@@ -92,3 +92,10 @@ body {
   vertical-align: middle;
 }
 
+.grav-c-page-header__logo {
+  /*
+    The addition of invisible <meta> elements in the header is causing
+    the logo to get an unwanted top margin (due to Gravity's * + * rule).
+  */
+  margin-top: 0;
+}
