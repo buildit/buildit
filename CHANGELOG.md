@@ -1,3 +1,14 @@
+## [4.4.2](https://github.com/buildit/buildit/compare/v4.4.1...v4.4.2) (2019-03-26)
+
+
+### Bug Fixes
+
+* pin eyeglass to 2.2.1 ([cca5a2b](https://github.com/buildit/buildit/commit/cca5a2b))
+* **homepage:** fixes broken hamburger menu ([78003f8](https://github.com/buildit/buildit/commit/78003f8))
+* **homepage:** fixes logo positioning in header ([e7b9a31](https://github.com/buildit/buildit/commit/e7b9a31))
+* **locations:** fixes Plano studio title ([662da77](https://github.com/buildit/buildit/commit/662da77))
+* **locations:** updates Denver studio address ([91c2236](https://github.com/buildit/buildit/commit/91c2236))
+
 ## [4.4.1](https://github.com/buildit/buildit/compare/v4.4.0...v4.4.1) (2019-03-25)
 
 
