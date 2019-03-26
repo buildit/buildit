@@ -32,13 +32,13 @@ module.exports = async function() {
     // Add some useful Travis build meta data
     bldInfo.travisBuildNumber = travisBuildNumber;
     bldInfo.travisBuildId = travisBuildId;
-    bldInfo.travisBuildUrl = `https://travis-ci.org/buildit/gravity-metalsmith-shell/builds/${travisBuildId}`;
+    bldInfo.travisBuildUrl = `https://travis-ci.org/buildit/buildit/builds/${travisBuildId}`;
   }
 
   const commitInfo = await getCommitInfo();
   bldInfo.commitHash = commitInfo.hash;
   bldInfo.commitShortHash = commitInfo.shortHash;
-  bldInfo.commitGithubUrl = `https://github.com/buildit/gravity-metalsmith-shell/commit/${
+  bldInfo.commitGithubUrl = `https://github.com/buildit/buildit/commit/${
     commitInfo.hash
   }`;
   bldInfo.committedOn = moment
