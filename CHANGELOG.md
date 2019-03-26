@@ -1,3 +1,12 @@
+## [4.4.1](https://github.com/buildit/buildit/compare/v4.4.0...v4.4.1) (2019-03-25)
+
+
+### Bug Fixes
+
+* **locations:** fixes Plano studio title ([b01aed5](https://github.com/buildit/buildit/commit/b01aed5))
+* **locations:** updates Denver studio address ([e17dcff](https://github.com/buildit/buildit/commit/e17dcff))
+* pin eyeglass to 2.2.1 ([b628f8f](https://github.com/buildit/buildit/commit/b628f8f))
+
 # [4.4.0](https://github.com/buildit/buildit/compare/v4.3.1...v4.4.0) (2019-03-18)
 
 
