@@ -11,3 +11,11 @@ colMainNav-index: 0
   Welcome to our new Buildit website featuring stories by and about our technical people and teams.
   News from our community, and an easy way to search the entire range of relevant job opportunities we have open.
 </p>
+<ul>
+{% for story in colStories %}
+  <li>
+    <a href="/{{ story.path | replace("index.html", "") }}">{{ story.title }}</a>
+    <p>{{ story.description }}</p>
+  </li>
+{% endfor %}
+</ul>

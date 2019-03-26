@@ -8,10 +8,20 @@
     <strong>jobs</strong>
   </p>
 </section>
+<section>
+  <ul>
+    {% for article in colArticles %}
+      <li>
+        <a href="/{{ article.path | replace("index.html", "") }}">{{ article.title }}</a>
+        <p>{{ article.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 <section class="colour-palette-dark">
   <h3><strong>We’re worldwide.</strong><br/>That’s right next to you.</h3>
   <ul>
-    {% for location in locations %}
+    {% for location in colLocations %}
       <li>
         <a href="/locations/{{ location.citySlug }}/">{{ location.title }}</a>
       </li>
