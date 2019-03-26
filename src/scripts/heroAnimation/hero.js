@@ -23,7 +23,7 @@ class HeroAnimation {
       this.container.addEventListener("mouseout", this.mouseOut.bind(this));
       window.addEventListener("resize", this.resizeCanvas.bind(this));
     } else {
-      noTouchAnim();
+      this.noTouchAnim();
     }
 
     window.addEventListener("scroll", this.scrollCheck.bind(this));
@@ -153,8 +153,8 @@ class HeroAnimation {
     let posy = 0;
     let posx = (posy = 0);
 
-    posx = params.container.clientWidth / 1.5;
-    posy = params.container.clientHeight / 1.5;
+    posx = this.container.clientWidth / 1.5;
+    posy = this.container.clientHeight / 1.5;
 
     this.params.target.x = posx;
     this.params.target.y = posy;
