@@ -1,12 +1,13 @@
-<div>
+<div resource="https://buildit.wiprodigital.com/thing/buildit-org" typeof="schema:Organization">
+  <meta property="schema:name" content="Buildit @ Wipro Digital">
   <div class="grav-c-page-header__logo">
     {% if path %}
-      <a href="/">
+      <a href="/" property="schema:url">
     {% else %}
       <h1>
     {% endif %}
         <svg role="img" class="grav-c-logo" aria-label="Buildit @ Wipro Digital" width="300" height="33">
-          <title>buildit @ wipro digital</title>
+          <title>Buildit @ Wipro Digital</title>
           <use xlink:href="#buildit-logotype"></use>
         </svg>
     {% if path %}
@@ -22,7 +23,13 @@
     <ul>
       {% for navItem in colMainNav %}
       <li>
-        <a class="grav-c-nav-link" href="/{{ navItem.path | replace("index.html", "") }}">{{ navItem.title }}</a>
+        <a
+          class="grav-c-nav-link"
+          {% if navItem.schema %}typeof="schema:{{ navItem.schema }}"{% endif %}
+          href="/{{ navItem.path | replace("index.html", "") }}"
+        >
+          {{ navItem.title }}
+        </a>
       </li>
       {% endfor %}
     </ul>
