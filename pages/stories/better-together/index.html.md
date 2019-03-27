@@ -1,16 +1,15 @@
 ---
 layout: basic-page.njk
-title: Everything we do is driven by you
+title: Better Together
 collection:
   - colStories
   - colArticles
-date: 201903051537
-description: >-
-  Welcome to our new Buildit website featuring stories by and about our technical people and teams.
-  To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our
-  technical people and teams. Welcome to our new Buildit website.
+date: 201903011200
+description: Welcome to our new Buildit website featuring stories by and about our technical people and teams.
+blocks-njk:
+  main: layouts/partials/blocks/article-main.njk
 ---
-Welcome to our new Buildit website featuring stories by and about our technical people and teams. To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our technical people and teams. Welcome to our new Buildit website.
+Welcome to our new Buildit website featuring stories by and about our technical people and teams.
 
 > This is the markdown content.
 

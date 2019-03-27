@@ -1,13 +1,17 @@
 ---
 layout: basic-page.njk
-title: Better Together
+title: Zara Najballah
 collection:
-  - colStories
+  - colPeople
   - colArticles
-date: 201903011200
-description: Welcome to our new Buildit website featuring stories by and about our technical people and teams.
+date: 201902270658
+description: >-
+  Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect
+  developers smoothy, and why Freon cakes should be gluten free.
+blocks-njk:
+  main: layouts/partials/blocks/article-main.njk
 ---
-Welcome to our new Buildit website featuring stories by and about our technical people and teams.
+Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect developers smoothy, and why Freon cakes should be gluten free.
 
 > This is the markdown content.
 

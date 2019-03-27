@@ -1,15 +1,18 @@
 ---
 layout: basic-page.njk
-title: Zara Najballah
+title: Everything we do is driven by you
 collection:
-  - colPeople
+  - colStories
   - colArticles
-date: 201902270658
+date: 201903051537
 description: >-
-  Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect
-  developers smoothy, and why Freon cakes should be gluten free.
+  Welcome to our new Buildit website featuring stories by and about our technical people and teams.
+  To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our
+  technical people and teams. Welcome to our new Buildit website.
+blocks-njk:
+  main: layouts/partials/blocks/article-main.njk
 ---
-Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect developers smoothy, and why Freon cakes should be gluten free.
+Welcome to our new Buildit website featuring stories by and about our technical people and teams. To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our technical people and teams. Welcome to our new Buildit website.
 
 > This is the markdown content.
 
