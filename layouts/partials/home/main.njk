@@ -12,7 +12,7 @@
   <ul>
     {% for article in colArticles %}
       <li>
-        <a href="/{{ article.path | replace("index.html", "") }}">{{ article.title }}</a>
+        <a href="/{{ article.path }}">{{ article.title }}</a>
         <p>{{ article.description }}</p>
       </li>
     {% endfor %}
