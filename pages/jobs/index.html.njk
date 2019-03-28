@@ -1,0 +1,40 @@
+---
+layout: basic-page.njk
+ogTitle: Buildit Jobs
+title: Jobs
+schema: JobsPage
+collection: colMainNav
+colMainNav-index: 2
+---
+<h1>Jobs</h1>
+<p>If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a></p>
+{% for jobLocation in jobLocations %}
+<section class="grav-c-job-list">
+  <header typeof="schema:Place" resource="https://buildit.wiprodigital.com/thing/job-location/{{jobLocation.location.countryCode}}/{{jobLocation.location.citySlug}}">
+    <h2 property="schema:address" typeof="schema:PostalAddress">
+    <span property="schema:name">
+      <span property="schema:addressLocality">{{jobLocation.location.city}}</span>,
+      {{jobLocation.location.country}}
+    </span>
+      <meta property="schema:addressCountry" content="{{jobLocation.location.countryCode}}">
+    </h2>
+  </header>
+  <ul>
+    {% for job in jobLocation.jobs %}
+    <li>
+      <p class="grav-c-job-card">
+        <a href="{{job.url}}" typeof="schema:JobPosting">
+          <span property="schema:title">{{job.title}}</span>
+          <meta property="schema:datePosted" content="{{job.datePosted}}">
+          <meta property="schema:employmentType" content="{{job.typeOfEmployment}}">
+          <meta property="schema:industry" content="{{job.industry}}">
+          <meta property="schema:description" content="For the full job description please visit: {{job.url}}">
+          <link property="schema:hiringOrganization" href="https://buildit.wiprodigital.com/thing/buildit-org">
+          <link property="schema:jobLocation" href="https://buildit.wiprodigital.com/thing/job-location/{{jobLocation.location.countryCode}}/{{jobLocation.location.citySlug}}">
+        </a>
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

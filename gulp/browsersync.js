@@ -3,7 +3,7 @@
  * in BrowserSync.
  */
 const browserSync = require("browser-sync").create();
-const paths = require("../config.json").paths;
+const paths = require("../config/gulp.json").paths;
 
 const taskNamePrefix = "browsersync:";
 
@@ -30,7 +30,7 @@ function initTask(done) {
   browserSync.init({
     port: 8080,
     server: {
-      baseDir: paths.pages.dest
+      baseDir: paths.dest
     },
     notify: {
       styles: [

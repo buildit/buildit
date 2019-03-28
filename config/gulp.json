@@ -1,0 +1,40 @@
+{
+  "paths": {
+    "src": "src/",
+    "dest": "dist/",
+    "styles": {
+      "src": [ "src/sass/**/*.scss" ],
+      "dest": "dist/styles/"
+    },
+    "scripts": {
+      "main": "src/scripts/main.js",
+      "modules": ["src/scripts/**/*.js", "!src/scripts/**/*.test.js"],
+      "src": "src/scripts/",
+      "dest": "dist/scripts/"
+    },
+    "images": {
+      "src": "static/**/*.{jpg,png,svg}",
+      "dest": "dist/"
+    },
+    "assets": {
+      "src": [
+        "static/assets/*",
+        "!static/assets/**/*.{jpg,png,svg}",
+        "static/images/*.gif"
+      ],
+      "dest": "dist/"
+    },
+    "pages": {
+      "src": "pages/"
+    },
+    "layouts": {
+      "src": "layouts/"
+    },
+    "configs": {
+      "src": "config/"
+    },
+    "content": {
+      "src": "content/"
+    }
+  }
+}

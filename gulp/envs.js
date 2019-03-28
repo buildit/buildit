@@ -1,7 +1,5 @@
 const minimist = require("minimist");
-const config = require("../config.json");
-
-const envs = config.envs;
+const envs = require("../config/envs.json");
 const availableEnvs = Object.keys(envs);
 const defaultEnv = availableEnvs[0];
 
@@ -20,7 +18,7 @@ module.exports = {
   currentEnv: options.env,
 
   shouldOptimise: function() {
-    return options.env !== "local-dev";
+    return this.getCurrentEnvInfo()["optimise"] || false;
   },
 
   getEnvInfo: function(env) {

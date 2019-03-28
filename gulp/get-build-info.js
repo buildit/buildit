@@ -1,5 +1,7 @@
 const git = require("git-last-commit");
 const { promisify } = require("util");
+const envs = require("./envs.js");
+const moment = require("moment");
 
 // Holds cached commit info, so we don't need to
 // re-read it every time.
@@ -18,12 +20,14 @@ module.exports = async function() {
   const travisBuildNumber = process.env.TRAVIS_BUILD_NUMBER;
   if (travisBuildNumber === undefined) {
     bldInfo.isTravisBuild = false;
-    bldInfo.description = "Local dev build";
+    bldInfo.description = `Locally built ${envs.currentEnv} build`;
   } else {
     const travisBuildId = process.env.TRAVIS_BUILD_ID;
 
     bldInfo.isTravisBuild = true;
-    bldInfo.description = `Travis CI build #${travisBuildNumber}`;
+    bldInfo.description = `Travis CI built ${
+      envs.currentEnv
+    } #${travisBuildNumber}`;
 
     // Add some useful Travis build meta data
     bldInfo.travisBuildNumber = travisBuildNumber;
@@ -37,6 +41,9 @@ module.exports = async function() {
   bldInfo.commitGithubUrl = `https://github.com/buildit/buildit/commit/${
     commitInfo.hash
   }`;
+  bldInfo.committedOn = moment
+    .unix(commitInfo.committedOn)
+    .format("YYYY-MM-DD HH:mm:ss");
 
   return bldInfo;
 };

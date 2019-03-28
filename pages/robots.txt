@@ -1,7 +1,3 @@
 ---
-# Meta data
-permalink: false
-
-# Display
-layout: robots.hbs
+layout: robots.njk
 ---

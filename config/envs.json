@@ -1,0 +1,52 @@
+{
+  "local-dev": {
+    "url": "http://localhost:8080",
+    "excludeRobots": true,
+    "optimise": false,
+    "gtm": {
+      "containerId": "GTM-WC9XF5V",
+      "authId": "Ds-fbHSwmiqQaCMr3raWvw",
+      "previewId": "env-7"
+    }
+  },
+  "local-dev-min": {
+    "url": "http://localhost:8080",
+    "excludeRobots": true,
+    "optimise": true,
+    "gtm": {
+      "containerId": "GTM-WC9XF5V",
+      "authId": "Ds-fbHSwmiqQaCMr3raWvw",
+      "previewId": "env-7"
+    }
+  },
+  "staging": {
+    "url": "https://www-staging.buildit.digital",
+    "excludeRobots": true,
+    "optimise": true,
+    "gtm": {
+      "containerId": "GTM-WC9XF5V",
+      "authId": "Ag0PVkIlh7ZE644wJQP4JA",
+      "previewId": "env-8"
+    }
+  },
+  "next": {
+    "url": "https://www-next.buildit.digital",
+    "excludeRobots": true,
+    "optimise": true,
+    "gtm": {
+      "containerId": "GTM-WC9XF5V",
+      "authId": "Ag0PVkIlh7ZE644wJQP4JA",
+      "previewId": "env-8"
+    }
+  },
+  "production": {
+    "url": "https://buildit.wiprodigital.com",
+    "excludeRobots": false,
+    "optimise": true,
+    "gtm": {
+      "containerId": "GTM-WC9XF5V",
+      "authId": "HCE83Z7j2NN-BpF0vcvrvQ",
+      "previewId": "env-2"
+    }
+  }
+}

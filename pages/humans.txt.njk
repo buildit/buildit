@@ -1,0 +1,119 @@
+---
+team:
+  - name: Ana Escontrela
+    role: Queen of automated tests
+    twitter: "@anaescontrela"
+    url: http://www.anaescontrela.com/
+
+  - name: Brodie McIntyre
+    role: Cache clearer
+
+  - name: Dan Bull
+    role: The Refactorer
+    twitter: "@dannyb1982"
+
+  - name: Emily Burns
+    role: The UX of A
+
+  - name: James "Jimmy" McMillan
+    role: Hero Maker
+
+  - name: James Nash
+    role: Pattern librarian
+    url: http://cirrus.twiddles.com/
+    twitter: "@c1rrus"
+
+  - name: Lorenzo Nicora
+    role: Pipeline plumber
+    twitter: "@nicusX"
+
+  - name: Matteo Pescarin
+    role: Londoneer
+    url: http://peach.smartart.it/
+    twitter: "@ilPeach"
+
+  - name: Patrick Bower
+    role: Mr Flourish
+    twitter: "@paddy_bower"
+    url: http://patrickbower.com/
+
+  - name: Valerio Francescangeli
+    role: Speed demon
+    twitter: "@franz899"
+
+  - name: Zane Cunningham
+    role: Cat herder
+
+  - name: Zara Najiballah
+    role: Pop-maker and wow-adder
+    twitter: "@ZaraNajib"
+    url: https://www.zaradev.com/
+
+  - name: Daniel Wilkinson
+    role: Smither of shells
+    twitter: "@djfw"
+
+thanks:
+  - name: Ant Gardiner
+    role: Retro facilitator
+    twitter: "@AntGardiner"
+
+  - name: Oli Rowlands
+    role: Sponsor
+
+standards:
+  - HTML5
+  - CSS3
+  - ES6
+
+components:
+  - Buildit Gravity
+  - Metalsmith
+  - Gulp
+  - Nunjucks
+  - SASS
+  - Cypress
+  - Pa11y
+  - Rollup
+
+software:
+  - VS Code
+  - git
+  - Inkscape
+  - Illustrator
+  - Photoshop
+  - Zeplin
+  - Webstorm
+---
+/* TEAM */{% for person in team %}
+    {{person.role}}: {{person.name}}{% if person.url %}
+    Site: {{person.url}}{% endif %}{% if person.twitter %}
+    Twitter: {{person.twitter}}{% endif %}{% if person.from %}
+    From: {{person.from}}{% endif %}
+{% endfor %}{% if thanks %}
+
+/* THANKS */{% for person in thanks %}
+    {{person.role}}: {{person.name}}{% if person.url %}
+    Site: {{person.url}}{% endif %}{% if person.twitter %}
+    Twitter: {{person.twitter}}{% endif %}{% if person.from %}
+    From: {{person.from}}{% endif %}
+{% endfor %}{% endif %}
+
+/* PRE-V4 WEBSITE CREDITS */
+    Paul Karsten, Matt Burgess, Claire Moore, Byron Wong,
+    Jonathan Lazarini, James Nash, Mark Bishop, Shahzain Badruddin,
+    Panos Voudouris, Marc Lucchini, David Moss, Sylvain Faucherand,
+    Gisnalbert Spinola, Greg Pearman, Urmy Urmston, Uros Rapajic,
+    Mike Stone, Matt Coyle, Noah Cantor, Dirk Wood, Tom Robinson,
+    Alex Kalinovsky & Marcos Peebles
+    Reviewed by Alex Beal
+
+
+/* SITE */
+    Last update: {{build.committedOn or 'undefined'}}
+{% if standards %}    Standards:{% for standard in standards %}
+      - {{standard}}{% endfor %}{% endif %}
+{% if components %}    Components:{% for component in components %}
+      - {{component}}{% endfor %}{% endif %}
+{% if software %}    Software:{% for sw in software %}
+      - {{sw}}{% endfor %}{% endif %}

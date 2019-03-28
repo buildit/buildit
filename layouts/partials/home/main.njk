@@ -1,0 +1,20 @@
+<section class="grav-c-hero">
+  <h1>
+    We <strong>build brands</strong> for the digital world.
+  </h1>
+  <p>
+    Welcome to our new Buildit website featuring stories by and about our technical <strong>people</strong> and teams.
+    News from our <strong>community</strong>, and an easy way to search the entire range of relevant
+    <strong>jobs</strong>
+  </p>
+</section>
+<section class="colour-palette-dark">
+  <h3><strong>We’re worldwide.</strong><br/>That’s right next to you.</h3>
+  <ul>
+    {% for location in locations %}
+      <li>
+        <a href="/locations/{{ location.citySlug }}/">{{ location.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
