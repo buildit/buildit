@@ -5,12 +5,16 @@ collection:
   - colPeople
   - colArticles
 date: 20190227T065900Z
-article-index: 2
+article-index: 1
 description: >-
   Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect
   developers smoothy, and why Freon cakes should be gluten free.
 blocks-njk:
-  main: layouts/partials/blocks/article-main.njk
+  hero: layouts/partials/articles/hero.njk
+  contents: layouts/partials/articles/contents.njk
+image:
+  src: https://placeimg.com/1152/648/people
+  alt: Not Zara Najballah
 ---
 Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect developers smoothy, and why Freon cakes should be gluten free.
 

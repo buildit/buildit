@@ -4,6 +4,7 @@ const fsMetadata = require("metalsmith-fs-metadata");
 const pathNoIndex = require("./lib/metalsmith-path-noindex");
 const buildInfo = require("./lib/metalsmith-build-info");
 const envInfo = require("./lib/metalsmith-env-info");
+const humanDate = require("./lib/metalsmith-humandate");
 const collections = require("metalsmith-collections");
 const frontmatterFileLoader = require("metalsmith-frontmatter-file-loader");
 const frontmatterRenderer = require("metalsmith-frontmatter-renderer");
@@ -35,6 +36,7 @@ ms.source("./pages")
   )
   .use(buildInfo())
   .use(envInfo())
+  .use(humanDate())
   .use(jobListings())
   .use(
     collections({

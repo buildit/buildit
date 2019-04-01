@@ -5,13 +5,17 @@ collection:
   - colStories
   - colArticles
 date: 20190305T153700Z
-article-index: 1
+article-index: 2
 description: >-
   Welcome to our new Buildit website featuring stories by and about our technical people and teams.
   To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our
   technical people and teams. Welcome to our new Buildit website.
 blocks-njk:
-  main: layouts/partials/blocks/article-main.njk
+  hero: layouts/partials/articles/hero.njk
+  contents: layouts/partials/articles/contents.njk
+image:
+  src: https://placeimg.com/1280/720/arch
+  alt: Everything we do is driven by you
 ---
 Welcome to our new Buildit website featuring stories by and about our technical people and teams. To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our technical people and teams. Welcome to our new Buildit website.
 

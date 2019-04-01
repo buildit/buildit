@@ -4,12 +4,12 @@
       {{ blocks.hero | safe }}
     </section>
   {% endif %}
-  <section class="grav-o-container">
-    {% if blocks.main %}
-      {{ blocks.main | safe }}
-    {% else %}
-      {# Fall back to rendering contents #}
+  {% if blocks.contents %}
+    {{ blocks.contents | safe }}
+  {% else %}
+    {# Fall back to rendering contents #}
+    <section class="grav-o-container">
       {{ contents | safe }}
-    {% endif %}
-  </section>
+    </section>
+  {% endif %}
 </main>
