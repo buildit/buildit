@@ -110,7 +110,7 @@
     "metalsmith-mapsite": "^1.0.6",
     "metalsmith-serve": "0.0.7",
     "minimist": "^1.2.0",
-    "momentjs": "^2.0.0",
+    "moment": "^2.24.0",
     "pa11y-ci": "^2.1.1",
     "prettier": "^1.16.4",
     "rollup": "^1.8.0",
