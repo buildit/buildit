@@ -1,7 +1,7 @@
 # Coding standards
 
 ## SASS / CSS
-TBC. However, it is a good idea to follow [Gravity's own standards](https://github.com/buildit/gravity-ui-sass/blob/develop/docs/naming-conventions.md) for consistency and also to make it easier to contribute any new UI components developed for the site upstream into the Gravity design system.
+TBC. However, it is a good idea to follow [Gravity's own standards](https://github.com/buildit/gravity-ui-web/blob/develop/docs/naming-conventions.md) for consistency and also to make it easier to contribute any new UI components developed for the site upstream into the Gravity design system.
 
 ## JavaScript
 Our JS code is organised as ES6 modules (so we use `import` / `export` syntax). `src/scripts/main.js` is the main entry point [our build](./build-process.md) uses to create the final JS bundle, so make sure your module is `import`ed there.
