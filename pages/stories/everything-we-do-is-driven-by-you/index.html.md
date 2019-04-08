@@ -4,7 +4,7 @@ title: Everything we do is driven by you
 collection:
   - colStories
   - colArticles
-date: 20190305T153700Z
+date: 2019-03-05T15:37:00Z
 article-index: 2
 description: >-
   Welcome to our new Buildit website featuring stories by and about our technical people and teams.

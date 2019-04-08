@@ -4,7 +4,7 @@ title: Better Together
 collection:
   - colStories
   - colArticles
-date: 20190301T120000Z
+date: 2019-03-01T12:00:00Z
 article-index: 0
 description: Welcome to our new Buildit website featuring stories by and about our technical people and teams.
 blocks-njk:

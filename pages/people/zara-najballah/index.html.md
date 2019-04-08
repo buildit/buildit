@@ -4,7 +4,7 @@ title: Zara Najballah
 collection:
   - colPeople
   - colArticles
-date: 20190227T065900Z
+date: 2019-02-27T06:59:00Z
 article-index: 1
 description: >-
   Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect
