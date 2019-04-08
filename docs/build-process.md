@@ -27,7 +27,7 @@ We use [Metalsmith](http://www.metalsmith.io/) (via [`gulpsmith`](https://github
 ## SASS compilation
 _See: [`gulpfile.js`](../gulpfile.js)_
 
-The majority of the website's CSS is imported from [`gravity-ui-sass`](https://github.com/buildit/gravity-ui-sass), the SASS UI library from Buildit's Gravity design system. However, the website does layer on a few of its own, unique components like the flourishes. Rather than use Gravity's pre-compiled CSS file, we therefore import it into the website's own SASS file (`src/sass/style.scss`) and compile from there.
+The majority of the website's CSS is imported from [`gravity-ui-web`](https://github.com/buildit/gravity-ui-web), the SASS UI library from Buildit's Gravity design system. However, the website does layer on a few of its own, unique components like the flourishes. Rather than use Gravity's pre-compiled CSS file, we therefore import it into the website's own SASS file (`src/sass/style.scss`) and compile from there.
 
 The build also optimises the final CSS output via [CSSO](https://github.com/css/csso). Finally, we use [Critical](https://www.npmjs.com/package/critical) to inline any critical CSS into the HTML pages to improve perceived page load speed.
 

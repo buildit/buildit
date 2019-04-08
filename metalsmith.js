@@ -14,14 +14,17 @@ const drafts = require("metalsmith-drafts");
 const htmlMinifierOptimise = require("./lib/metalsmith-html-minifier-optimise");
 const mapsiteCurrentenv = require("./lib/metalsmith-mapsite-currentenv");
 const jobListings = require("./lib/metalsmith-job-listings");
-const gravity = require("@buildit/gravity-ui-sass");
+const gravityPaths = require("@buildit/gravity-ui-web/build-api");
 const fs = require("fs");
 
 ms.source("./pages")
   .destination("./dist")
   .clean(false)
   .metadata({
-    gravitySvgContents: fs.readFileSync(gravity.bldSvgSymbolsFilePath, "utf8")
+    gravitySvgContents: fs.readFileSync(
+      gravityPaths.distPath(gravityPaths.distSvgSymbolsFilename),
+      "utf8"
+    )
   })
   .use(
     fsMetadata({
