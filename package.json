@@ -48,7 +48,7 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
-    "@buildit/gravity-ui-sass": "^0.12.0",
+    "@buildit/gravity-ui-web": "^1.0.0",
     "@buildit/job-listings": "^1.1.0",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
