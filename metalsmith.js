@@ -1,9 +1,10 @@
 const Metalsmith = require("metalsmith");
 let ms = Metalsmith(__dirname);
 const fsMetadata = require("metalsmith-fs-metadata");
-const path = require("metalsmith-path");
+const pathNoIndex = require("./lib/metalsmith-path-noindex");
 const buildInfo = require("./lib/metalsmith-build-info");
 const envInfo = require("./lib/metalsmith-env-info");
+const humanDate = require("./lib/metalsmith-humandate");
 const collections = require("metalsmith-collections");
 const frontmatterFileLoader = require("metalsmith-frontmatter-file-loader");
 const frontmatterRenderer = require("metalsmith-frontmatter-renderer");
@@ -15,6 +16,8 @@ const htmlMinifierOptimise = require("./lib/metalsmith-html-minifier-optimise");
 const mapsiteCurrentenv = require("./lib/metalsmith-mapsite-currentenv");
 const jobListings = require("./lib/metalsmith-job-listings");
 const gravityPaths = require("@buildit/gravity-ui-web/build-api");
+const namedIndexSort = require("./lib/sorts/named-index-sort");
+const dateSort = require("./lib/sorts/date-sort");
 const fs = require("fs");
 
 ms.source("./pages")
@@ -33,38 +36,28 @@ ms.source("./pages")
   )
   .use(buildInfo())
   .use(envInfo())
+  .use(humanDate())
   .use(jobListings())
   .use(
     collections({
       colMainNav: {
-        sortBy: (a, b) => {
-          let aNum, bNum;
-
-          aNum = Number(a["colMainNav-index"]);
-          bNum = Number(b["colMainNav-index"]);
-
-          // Test for NaN
-          if (aNum != aNum && bNum != bNum) return 0;
-          if (aNum != aNum) return 1;
-          if (bNum != bNum) return -1;
-
-          // Normal comparison, want lower numbers first
-          if (aNum > bNum) return 1;
-          if (bNum > aNum) return -1;
-          return 0;
-        }
+        sortBy: namedIndexSort("nav-index")
+      },
+      colArticles: {
+        sortBy: namedIndexSort("article-index")
+      },
+      colStories: {
+        sortBy: dateSort
+      },
+      colPeople: {
+        sortBy: dateSort
       }
     })
   )
+  .use(pathNoIndex())
   .use(
     inPlace({
       suppressNoFilesError: true
-    })
-  )
-  .use(
-    path({
-      directoryIndex: "/index.html",
-      extensions: [".html"]
     })
   )
   .use(

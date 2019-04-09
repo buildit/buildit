@@ -26,7 +26,7 @@
         <a
           class="grav-c-nav-link"
           {% if navItem.schema %}typeof="schema:{{ navItem.schema }}"{% endif %}
-          href="/{{ navItem.path | replace("index.html", "") }}"
+          href="/{{ navItem.path }}"
         >
           {{ navItem.title }}
         </a>

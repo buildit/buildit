@@ -1,0 +1,6 @@
+<h1>{{ title }}</h1>
+<p>{{ description }}</p>
+<time datetime="{{ date }}">{{ humanDate }}</time>
+{% if image %}
+  <img src="{{ image.src }}" alt="{{ image.alt }}" />
+{% endif %}

@@ -1,0 +1,26 @@
+---
+layout: basic-page.njk
+ogTitle: Buildit People
+title: People
+schema: PeoplePage
+collection: colMainNav
+nav-index: 1
+---
+<h1>People</h1>
+<p>
+  Welcome to our new Buildit website featuring stories by and about our technical people and teams.
+  News from our community, and an easy way to search the entire range of relevant job opportunities we have open.
+</p>
+<ul class="grav-c-list-img-cards">
+  {% for article in colPeople %}
+    <li>
+      <a href="/{{ article.path }}">
+        {% if article.image %}
+          <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
+        {% endif %}
+        <h3 class="grav-c-list-img-cards__title">{{ article.title }}</h3>
+      </a>
+      <p>{{ article.description }}</p>
+    </li>
+  {% endfor %}
+</ul>

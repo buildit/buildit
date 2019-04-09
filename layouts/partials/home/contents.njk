@@ -8,10 +8,25 @@
     <strong>jobs</strong>
   </p>
 </section>
-<section class="colour-palette-dark">
+<section class="grav-o-container">
+  <ul class="grav-c-list-img-cards">
+    {% for article in colArticles %}
+      <li>
+        <a href="/{{ article.path }}">
+          {% if article.image %}
+            <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
+          {% endif %}
+          <h3 class="grav-c-list-img-cards__title">{{ article.title }}</h3>
+        </a>
+        <p>{{ article.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<section class="grav-o-container colour-palette-dark">
   <h3><strong>We’re worldwide.</strong><br/>That’s right next to you.</h3>
   <ul>
-    {% for location in locations %}
+    {% for location in colLocations %}
       <li>
         <a href="/locations/{{ location.citySlug }}/">{{ location.title }}</a>
       </li>
