@@ -13,6 +13,10 @@ body > header {
     path {
       fill: $medium-monogram-white;
     }
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(100%);
+    }
   }
 
   .grav-c-nav-menu__external-link {
