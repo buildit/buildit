@@ -31,4 +31,10 @@
   &--flip {
     transform: rotate(180deg);
   }
+  
+  svg {
+    @media (prefers-color-scheme: dark) {
+      opacity: 0.3;
+    }
+  }
 }
