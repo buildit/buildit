@@ -1,3 +1,10 @@
+# [4.5.0](https://github.com/buildit/buildit/compare/v4.4.2...v4.5.0) (2019-04-23)
+
+
+### Features
+
+* dark mode ([aee7954](https://github.com/buildit/buildit/commit/aee7954))
+
 ## [4.4.2](https://github.com/buildit/buildit/compare/v4.4.1...v4.4.2) (2019-03-26)
 
 
