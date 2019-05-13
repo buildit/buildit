@@ -11,14 +11,14 @@ nav-index: 0
   Welcome to our new Buildit website featuring stories by and about our technical people and teams.
   News from our community, and an easy way to search the entire range of relevant job opportunities we have open.
 </p>
-<ul class="grav-c-list-img-cards">
+<ul class="grav-c-list-cards-basic">
   {% for article in colStories %}
     <li>
       <a href="/{{ article.path }}">
         {% if article.image %}
           <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
         {% endif %}
-        <h3 class="grav-c-list-img-cards__title">{{ article.title }}</h3>
+        <h3>{{ article.title }}</h3>
       </a>
       <p>{{ article.description }}</p>
     </li>
