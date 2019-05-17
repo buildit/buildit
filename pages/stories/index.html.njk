@@ -17,6 +17,9 @@ nav-index: 0
       <a href="/{{ article.path }}">
         {% if article.image %}
           <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
+          <svg role="img">
+            <use xlink:href="#decoration-arrow-right"></use>
+          </svg>
         {% endif %}
         <h3>{{ article.title }}</h3>
       </a>
