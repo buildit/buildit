@@ -13,7 +13,7 @@ nav-index: 1
 </p>
 <ul class="grav-c-list-cards-basic">
   {% for article in colPeople %}
-    <li>
+    <li class="grav-c-card-basic">
       <a href="/{{ article.path }}">
         {% if article.image %}
           <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
