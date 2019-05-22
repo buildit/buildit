@@ -39,21 +39,6 @@ body {
 /* Components       */
 /********************/
 
-// flourishes
-@import 'flourish';
-@import 'flourish-groups';
-@import 'flourish-pullquotes';
-
-// reveal plugin animtaions
-.js-reveal-element {
-  visibility: hidden;
-}
-
-
-// Temporary override - TODO: Move to gravity
-.grav-o-container {
-  z-index: 1;
-}
 
 /********************/
 /* Trumps           */

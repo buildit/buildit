@@ -117,7 +117,6 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-closure-compiler-js": "github:dw-buildit/rollup-plugin-closure-compiler-js",
     "rollup-plugin-node-resolve": "^4.2.3",
-    "scrollreveal": "^4.0.5",
     "semantic-release": "^15.13.13"
   },
   "private": true,
