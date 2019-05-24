@@ -14,7 +14,7 @@
 {% endif %}
 
 <meta property="og:title" content="{{ ogTitle or title }}">
-<meta property="og:description" content="{{ ogDescription or config.site.description }}">
+<meta property="og:description" content="{{ ogDescription or description or config.site.description }}">
 <meta property="og:site_name" content="{{ config.site.title }}">
 <meta property="og:type" content="{{ ogType or config.site.ogType }}">
 <meta property="og:url" content="{{ env.url }}/{% if path %}{{ path }}{% endif %}">
