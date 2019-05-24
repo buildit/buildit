@@ -1,14 +1,6 @@
-<section class="grav-c-hero">
-  <img
-    class="grav-c-hero__banner"
-    alt="{{ image.alt }}"
-    src="{{ image.src }}"
-  />
-
-  <div class="grav-c-hero__container">
-    {% block heroContainer %}
-      <h1>{{ title | safe }}</h1>
-      <p>{{ description | safe }}</p>
-    {% endblock %}
-  </div>
-</section>
+<h1>{{ title }}</h1>
+<p>{{ description }}</p>
+<time datetime="{{ date }}">{{ humanDate }}</time>
+{% if image %}
+  <img src="{{ image.src }}" alt="{{ image.alt }}" />
+{% endif %}
