@@ -4,7 +4,7 @@ title: Zara Najballah
 collection:
   - colPeople
   - colArticles
-date: 2019-02-27T06:59:00Z
+date: "2019-02-27T06:59:00.000Z"
 article-index: 1
 description: >-
   Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect
@@ -14,6 +14,9 @@ blocks-njk:
 image:
   src: https://placeimg.com/1152/648/people
   alt: Not Zara Najballah
+  remote: true
+ogType: article
+section: people
 ---
 Starting her career through our graduate scheme as a front end engineer she talks JavaScript frameworks, the perfect developers smoothy, and why Freon cakes should be gluten free.
 

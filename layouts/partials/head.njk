@@ -18,8 +18,14 @@
 <meta property="og:site_name" content="{{ config.site.title }}">
 <meta property="og:type" content="{{ ogType or config.site.ogType }}">
 <meta property="og:url" content="{{ env.url }}/{% if path %}{{ path }}{% endif %}">
-<meta property="og:image" content="{{ env.url }}/images/{{ ogImage or config.site.ogImage }}">
-<meta property="og:image:alt" content="{{ ogImageAlt or config.site.ogImageAlt }}">
+
+{% if ogImage.remote or image.remote %}
+  {% set imageSrc %}{{ ogImage.src or image.src }}{% endset %}
+{% else %}
+  {% set imageSrc %}{{ env.url }}/images/{{ ogImage.src or image.src or config.site.ogImage }}{% endset %}
+{% endif %}
+<meta property="og:image" content="{{ imageSrc }}">
+<meta property="og:image:alt" content="{{ ogImage.alt or image.alt or config.site.ogImageAlt }}">
 
 <meta name="twitter:card" content="{{ config.site.twitterCard }}"/>
 <meta name="twitter:site:id" content="{{ config.site.twitterSiteId }}"/>
