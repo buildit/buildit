@@ -8,8 +8,7 @@ date: 2019-03-01T12:00:00Z
 article-index: 0
 description: Welcome to our new Buildit website featuring stories by and about our technical people and teams.
 blocks-njk:
-  hero: layouts/partials/articles/hero.njk
-  contents: layouts/partials/articles/contents.njk
+  main: layouts/partials/articles/main.njk
 image:
   src: https://placeimg.com/1024/576/tech
   alt: Better Together

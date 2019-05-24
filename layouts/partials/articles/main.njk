@@ -1,0 +1,24 @@
+<article class="grav-o-container grav-c-article">
+  <header class="grav-c-page-intro">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <time datetime="{{ date }}">{{ humanDate }}</time>
+    {% if image %}
+      <img src="{{ image.src }}" alt="{{ image.alt }}" />
+    {% endif %}
+  </header>
+  <div class="grav-c-ostentatious-copy">
+    {{ contents | safe }}
+  </div>
+</article>
+{% if next %}
+  <hr>
+  <aside class="grav-o-container">
+    <ul class="grav-c-related-items">
+      <li>
+        <span>Next Story</span>
+        <a href="/{{ next.path }}">{{ next.title }}</a>
+      </li>
+    </ul>
+  </aside>
+{% endif %}

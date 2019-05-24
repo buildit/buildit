@@ -11,8 +11,7 @@ description: >-
   To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our
   technical people and teams. Welcome to our new Buildit website.
 blocks-njk:
-  hero: layouts/partials/articles/hero.njk
-  contents: layouts/partials/articles/contents.njk
+  main: layouts/partials/articles/main.njk
 image:
   src: https://placeimg.com/1280/720/arch
   alt: Everything we do is driven by you
