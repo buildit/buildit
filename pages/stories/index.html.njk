@@ -6,24 +6,25 @@ schema: CollectionPage
 collection: colMainNav
 nav-index: 0
 ---
-<h1>Stories</h1>
+<h1 property="schema:name">Stories</h1>
 <p>
   Welcome to our new Buildit website featuring stories by and about our technical people and teams.
   News from our community, and an easy way to search the entire range of relevant job opportunities we have open.
 </p>
-<ul class="grav-c-list-cards-basic">
+<ul class="grav-c-list-cards-basic" property="schema:mainEntity" typeof="schema:ItemList">
   {% for article in colStories %}
-    <li class="grav-c-card-basic">
-      <a href="/{{ article.path }}">
+    <li class="grav-c-card-basic" property="schema:itemListElement" typeof="schema:ListItem">
+      <meta property="schema:position" content="{{ loop.index }}">
+      <a href="/{{ article.path }}" property="schema:url">
         {% if article.image %}
-          <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
+          <img property="schema:image" src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
           <svg role="img">
             <use xlink:href="#decoration-arrow-right"></use>
           </svg>
         {% endif %}
-        <h3>{{ article.title }}</h3>
+        <h3 property="schema:name">{{ article.title }}</h3>
       </a>
-      <p>{{ article.description }}</p>
+      <p property="schema:description">{{ article.description }}</p>
     </li>
   {% endfor %}
 </ul>

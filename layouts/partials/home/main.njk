@@ -18,19 +18,20 @@
 </section>
 
 <section class="grav-o-container">
-  <ul class="grav-c-list-cards-basic">
+  <ul class="grav-c-list-cards-basic" typeof="schema:ItemList">
     {% for article in colArticles %}
-      <li class="grav-c-card-basic">
-        <a href="/{{ article.path }}">
+      <li class="grav-c-card-basic" property="schema:itemListElement" typeof="schema:ListItem">
+        <meta property="schema:position" content="{{ loop.index }}">
+        <a href="/{{ article.path }}" property="schema:url">
           {% if article.image %}
-            <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
+            <img property="schema:image" src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
             <svg role="img">
               <use xlink:href="#decoration-arrow-right"></use>
             </svg>
           {% endif %}
-          <h3>{{ article.title }}</h3>
+          <h3 property="schema:name">{{ article.title }}</h3>
         </a>
-        <p>{{ article.description }}</p>
+        <p property="schema:description">{{ article.description }}</p>
       </li>
     {% endfor %}
   </ul>

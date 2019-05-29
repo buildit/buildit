@@ -7,12 +7,7 @@
     <ul>
       {% for navItem in colMainNav %}
         <li>
-          <a
-            {% if navItem.schema %}typeof="schema:{{ navItem.schema }}"{% endif %}
-            href="/{{ navItem.path }}"
-          >
-            {{ navItem.title }}
-          </a>
+          <a href="/{{ navItem.path }}">{{ navItem.title }}</a>
         </li>
       {% endfor %}
     </ul>

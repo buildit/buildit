@@ -1,7 +1,11 @@
-<div resource="https://buildit.wiprodigital.com/thing/buildit-org" typeof="schema:Organization">
+<div
+  resource="https://buildit.wiprodigital.com/thing/buildit-org"
+  {% if not path %}property="schema:mainEntity"{% endif %}
+  typeof="schema:Organization"
+>
   <div class="grav-c-page-header__logo">
     {% if path %}
-      <a href="/" property="schema:url">
+      <a href="/" property="schema:url schema:mainEntityOfPage">
     {% else %}
       <h1>
     {% endif %}
@@ -19,17 +23,11 @@
   <button type="button" class="grav-c-toggle-menu" aria-pressed="false" aria-label="Do something">
     <span class="grav-c-toggle-menu__icon"></span>
   </button>
-  <nav class="grav-c-nav-menu">
+  <nav class="grav-c-nav-menu" typeof="schema:SiteNavigationElement">
     <ul>
       {% for navItem in colMainNav %}
       <li>
-        <a
-          class="grav-c-nav-link"
-          {% if navItem.schema %}typeof="schema:{{ navItem.schema }}"{% endif %}
-          href="/{{ navItem.path }}"
-        >
-          {{ navItem.title }}
-        </a>
+        <a class="grav-c-nav-link" href="/{{ navItem.path }}">{{ navItem.title }}</a>
       </li>
       {% endfor %}
     </ul>
