@@ -57,7 +57,10 @@ ms.source("./pages")
   .use(pathNoIndex())
   .use(
     inPlace({
-      suppressNoFilesError: true
+      suppressNoFilesError: true,
+      engineOptions: {
+        html: true
+      }
     })
   )
   .use(

@@ -147,7 +147,6 @@ function watch(done) {
       "clean",
       metalsmithBuild,
       gulp.parallel(assets, imageOptim, styles, scripts.bundle),
-      criticalCss,
       browserSync.reload
     )
   );

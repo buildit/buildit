@@ -4,18 +4,20 @@ title: Everything we do is driven by you
 collection:
   - colStories
   - colArticles
-date: 2019-03-05T15:37:00Z
+date: "2019-03-05T15:37:00.000Z"
 article-index: 2
 description: >-
   Welcome to our new Buildit website featuring stories by and about our technical people and teams.
   To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our
   technical people and teams. Welcome to our new Buildit website.
 blocks-njk:
-  hero: layouts/partials/articles/hero.njk
-  contents: layouts/partials/articles/contents.njk
+  main: layouts/partials/articles/main.njk
 image:
   src: https://placeimg.com/1280/720/arch
   alt: Everything we do is driven by you
+  remote: true
+ogType: article
+section: stories
 ---
 Welcome to our new Buildit website featuring stories by and about our technical people and teams. To our new Buildit website featuring stories by and about our new Buildit website featuring stories by and about our technical people and teams. Welcome to our new Buildit website.
 

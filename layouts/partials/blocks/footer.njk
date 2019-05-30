@@ -1,9 +1,7 @@
-{% if blocks.footer %}
-  <footer>
+<footer class="grav-u-color-scheme-contrast">
+  {% if blocks.footer %}
     {{ blocks.footer | safe }}
-  </footer>
-{% else %}
-  <footer class="grav-u-color-scheme-dark">
+  {% else %}
     {% include "default/footer.njk" %}
-  </footer>
-{% endif %}
+  {% endif %}
+</footer>

@@ -13,14 +13,29 @@
     {% endif %}
 {% endif %}
 
+<!-- Open Graph -->
 <meta property="og:title" content="{{ ogTitle or title }}">
-<meta property="og:description" content="{{ ogDescription or config.site.description }}">
+<meta property="og:description" content="{{ ogDescription or description or config.site.description }}">
 <meta property="og:site_name" content="{{ config.site.title }}">
 <meta property="og:type" content="{{ ogType or config.site.ogType }}">
 <meta property="og:url" content="{{ env.url }}/{% if path %}{{ path }}{% endif %}">
-<meta property="og:image" content="{{ env.url }}/images/{{ ogImage or config.site.ogImage }}">
-<meta property="og:image:alt" content="{{ ogImageAlt or config.site.ogImageAlt }}">
 
+{% if ogImage.remote or image.remote %}
+  {% set imageSrc %}{{ ogImage.src or image.src }}{% endset %}
+{% else %}
+  {% set imageSrc %}{{ env.url }}/images/{{ ogImage.src or image.src or config.site.ogImage }}{% endset %}
+{% endif %}
+<meta property="og:image" content="{{ imageSrc }}">
+<meta property="og:image:alt" content="{{ ogImage.alt or image.alt or config.site.ogImageAlt }}">
+
+<!-- Open graph: Article -->
+{% if ogType == 'article' %}
+  {% if date %}<meta property="article:published_time" content="{{ date | safe }}">{% endif %}
+  {% if author.name %}<meta property="article:author" content="{{ author.name }}">{% endif %}
+  {% if section %}<meta property="article:section" content="{{ section }}">{% endif %}
+{% endif %}
+
+<!-- Twitter -->
 <meta name="twitter:card" content="{{ config.site.twitterCard }}"/>
 <meta name="twitter:site:id" content="{{ config.site.twitterSiteId }}"/>
 

@@ -4,26 +4,32 @@ title: Better Together
 collection:
   - colStories
   - colArticles
-date: 2019-03-01T12:00:00Z
+date: "2019-03-01T12:00:00.000Z"
 article-index: 0
 description: Welcome to our new Buildit website featuring stories by and about our technical people and teams.
 blocks-njk:
-  hero: layouts/partials/articles/hero.njk
-  contents: layouts/partials/articles/contents.njk
+  main: layouts/partials/articles/main.njk
 image:
   src: https://placeimg.com/1024/576/tech
   alt: Better Together
+  remote: true
+ogType: article
+section: stories
 ---
-Welcome to our new Buildit website featuring stories by and about our technical people and teams.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-> This is the markdown content.
+- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. uptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-Lorem ipsum dolor sit amet, sit eu graeci aliquam ponderum, patrioque deseruisse intellegam ei eum, latine accumsan te pro. Eum malis latine ei, error vocibus patrioque pro ei, an nam soleat constituam. Cu nemore inermis graecis his, usu nominati intellegebat cu. Ei sea commune intellegat. Pro ut albucius scriptorem, quo ei recusabo inciderint.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
 
-Ex ius homero referrentur. His vero discere patrioque in, epicurei phaedrum cum et. Sed dolores deserunt te. An quo luptatum moderatius. Ad viris euripidis mea. Quas graecis consequat vix in, essent nominavi mel cu.
+> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-Nec in meis omnis phaedrum, et qui stet aliquid, nam te electram splendide. Eam ut lobortis facilisis reprimique, ut illum option noluisse quo, ne latine eloquentiam accommodare nam. Nam duis possim dolorum ad, te alia menandri sit. Dicta vitae cu mea, vim et quis instructior.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-Ex qui rebum admodum. Tota laoreet voluptatibus usu ei, viris nostrud vocibus cum ex. Ius cu ridens phaedrum, est ut aeque sententiae cotidieque. Ei mazim regione vix, eu vivendum probatus eum. Stet signiferumque conclusionemque usu ex, pro cu option integre.
+<blockquote><p>The quick brown fox jumps over the lazy dog.</p><cite>- Joe Bloggs</cite></blockquote>
 
-Ullum veritus vituperata quo et. Platonem voluptatibus vix no, te ius dicunt phaedrum. No sed probo propriae percipit. Ad duo appetere probatus, ei cum enim nominavi platonem, modo autem sonet te quo. Atqui pericula consulatu vix ne, mei nostrud delicata an. Id dolorum petentium his, ne noluisse vulputate per.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
