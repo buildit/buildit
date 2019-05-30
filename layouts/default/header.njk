@@ -5,10 +5,12 @@
 >
   <div class="grav-c-page-header__logo">
     {% if path %}
-      <a href="/" property="schema:url schema:mainEntityOfPage">
+      <meta property="schema:url" content="/">
+      <a href="/" property="schema:logo" typeof="schema:ImageObject">
     {% else %}
-      <h1>
+      <h1 property="schema:logo" typeof="schema:ImageObject">
     {% endif %}
+        <meta property="schema:url" content="/images/buildit-at-wipro-digital.png">
         <svg role="img" class="grav-c-logo" aria-label="Buildit @ Wipro Digital" width="300" height="33">
           <title>Buildit @ Wipro Digital</title>
           <use xlink:href="#buildit-logotype"></use>
