@@ -49,6 +49,17 @@ function initTask(done) {
         "color: white",
         "text-align: center"
       ]
+    },
+    snippetOptions: {
+      // Make BrowerSync JS snippet get appended
+      // to <head> instead of <body>, so that it doesn't
+      // interfere with our * + * CSS rules.
+      rule: {
+        fn(snippet, match) {
+          return snippet + match;
+        },
+        match: /<\/head>/i
+      }
     }
   });
   done();
