@@ -109,10 +109,10 @@
     "moment": "^2.24.0",
     "pa11y-ci": "^2.3.0",
     "prettier": "^1.17.1",
-    "rollup": "^1.12.5",
+    "rollup": "^1.14.2",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-closure-compiler-js": "github:dw-buildit/rollup-plugin-closure-compiler-js",
-    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
     "semantic-release": "^15.13.14"
   },
   "private": true,
