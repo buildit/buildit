@@ -30,9 +30,9 @@
 
 <!-- Open graph: Article -->
 {% if ogType == 'article' %}
-  {% if date %}<meta property="article:published_time" content="{{ date | safe }}">{% endif %}
-  {% if author.name %}<meta property="article:author" content="{{ author.name }}">{% endif %}
-  {% if section %}<meta property="article:section" content="{{ section }}">{% endif %}
+  {% if date %}<meta property="og:article:published_time" content="{{ date | safe }}">{% endif %}
+  {% if author.name %}<meta property="og:article:author" content="{{ author.name }}">{% endif %}
+  {% if section %}<meta property="og:article:section" content="{{ section }}">{% endif %}
 {% endif %}
 
 <!-- Twitter -->
