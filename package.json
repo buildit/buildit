@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@buildit/gravity-ui-web": "next",
-    "@buildit/job-listings": "^1.1.0",
+    "@buildit/job-listings": "^2.0.0",
     "browser-sync": "^2.26.7",
     "debug": "^4.1.1",
     "git-last-commit": "^0.3.0",

@@ -10,19 +10,21 @@ nav-index: 2
   <h1>Jobs</h1>
   <p>If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a></p>
 </div>
-{% for jobLocation in jobLocations %}
+{% for country, cities in jobsByCountryAndCity | dictsort %}
+<h2>{{ country }}</h2>
+{% for city, jobs in cities | dictsort %}
+{% set jobLocation = jobs[0].location %}
 <section>
-  <header typeof="schema:Place" resource="https://buildit.wiprodigital.com/thing/job-location/{{jobLocation.location.countryCode}}/{{jobLocation.location.citySlug}}">
-    <h2 property="schema:address" typeof="schema:PostalAddress">
+  <header typeof="schema:Place" resource="{{jobLocation.uri}}">
+    <h3 property="schema:address" typeof="schema:PostalAddress">
     <span property="schema:name">
-      <span property="schema:addressLocality">{{jobLocation.location.city}}</span>,
-      {{jobLocation.location.country}}
+      <span property="schema:addressLocality">{{ city }}</span>
     </span>
-      <meta property="schema:addressCountry" content="{{jobLocation.location.countryCode}}">
-    </h2>
+      <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
+    </h3>
   </header>
   <ul class="grav-o-two-column grav-o-column-list">
-    {% for job in jobLocation.jobs %}
+    {% for job in jobs %}
     <li typeof="schema:JobPosting">
       <a rel="schema:url" property="schema:title" href="{{job.url}}">{{job.title}}</a>
       <meta property="schema:datePosted" content="{{job.datePosted}}">
@@ -30,9 +32,10 @@ nav-index: 2
       <meta property="schema:industry" content="{{job.industry}}">
       <meta property="schema:description" content="For the full job description please visit: {{job.url}}">
       <link property="schema:hiringOrganization" href="https://buildit.wiprodigital.com/thing/buildit-org">
-      <link property="schema:jobLocation" href="https://buildit.wiprodigital.com/thing/job-location/{{jobLocation.location.countryCode}}/{{jobLocation.location.citySlug}}">
+      <link property="schema:jobLocation" href="{{job.location.uri}}">
     </li>
     {% endfor %}
   </ul>
 </section>
+{% endfor %}
 {% endfor %}

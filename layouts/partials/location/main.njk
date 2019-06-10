@@ -1,0 +1,40 @@
+<header class="grav-c-page-intro grav-o-container">
+  <h1>{{ title }} Studio</h1>
+  {% if description %}
+  <p>{{ description }}</p>
+  {% endif %}
+  {% if image %}
+    <img src="{{ image.src }}" alt="{{ image.alt }}" />
+  {% endif %}
+</header>
+<div class="grav-o-container">
+  {% if contents %}
+    {{ contents | safe }}
+  {% endif %}
+
+  <h2>Address</h2>
+
+
+  <h2>Jobs</h2>
+  <p>Current job postings for Buildit's {{ title }} studio. If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a>.</p>
+  <div class="grav-c-job-list">
+    <ul>
+      {% for job in jobLocation.jobs %}
+      <li>
+        <p class="grav-c-job-card">
+          <a href="{{job.url}}" typeof="schema:JobPosting">
+            <span property="schema:title">{{job.title}}</span>
+            <meta property="schema:datePosted" content="{{job.datePosted}}">
+            <meta property="schema:employmentType" content="{{job.typeOfEmployment}}">
+            <meta property="schema:industry" content="{{job.industry}}">
+            <meta property="schema:description" content="For the full job description please visit: {{job.url}}">
+            <link property="schema:hiringOrganization" href="https://buildit.wiprodigital.com/thing/buildit-org">
+            <link property="schema:jobLocation" href="https://buildit.wiprodigital.com/thing/job-location/{{jobLocation.location.countryCode}}/{{jobLocation.location.citySlug}}">
+          </a>
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
