@@ -8,17 +8,27 @@ const moment = require("moment");
 let commitInfo = null;
 
 async function getCommitInfo() {
+  if (isLocalBuild()) {
+    return new Promise(resolve => resolve({}));
+  }
+
   if (commitInfo === null) {
     commitInfo = await promisify(git.getLastCommit)();
   }
+
   return commitInfo;
+}
+
+function isLocalBuild() {
+  const travisBuildNumber = process.env.TRAVIS_BUILD_NUMBER;
+  return travisBuildNumber === undefined;
 }
 
 module.exports = async function() {
   const bldInfo = {};
 
   const travisBuildNumber = process.env.TRAVIS_BUILD_NUMBER;
-  if (travisBuildNumber === undefined) {
+  if (isLocalBuild()) {
     bldInfo.isTravisBuild = false;
     bldInfo.description = `Locally built ${envs.currentEnv} build`;
   } else {
