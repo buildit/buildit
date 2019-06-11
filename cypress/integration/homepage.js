@@ -10,7 +10,7 @@ describe("Homepage", () => {
   });
 
   it("should add a link for each location", () => {
-    cy.get(".colour-palette-dark")
+    cy.get(".grav-c-callout")
       .find("li")
       .each(value => {
         expect(value.find("a").attr("href")).to.include("/locations/");
