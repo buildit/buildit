@@ -17,6 +17,7 @@
     "lint": "eslint \"**/*.js\"",
     "spin-up-server": "http-server ./dist -c-1 -s",
     "test-watch": "jest --coverage --watch",
+    "cypress": "cypress",
     "cypress:open": "cypress open",
     "cypress:cli": "cypress run",
     "cypress:travis": "npm run spin-up-server & cypress run",

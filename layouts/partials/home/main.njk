@@ -35,13 +35,18 @@
     {% endfor %}
   </ul>
 </section>
-<section class="grav-o-container colour-palette-dark">
-  <h3><strong>We’re worldwide.</strong><br/>That’s right next to you.</h3>
-  <ul>
-    {% for location in colLocations %}
-      <li>
-        <a href="/locations/{{ location.citySlug }}/">{{ location.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+
+<section class="grav-c-callout grav-u-color-scheme-contrast">
+  <div class="grav-c-callout__columns">
+    <p><strong>We’re worldwide.</strong><br/>That’s right next to you.</p>
+    <ul class="grav-c-three-column-list-justified">
+      {% for location in colLocations %}
+        <li>
+          <a href="/locations/{{ location.citySlug }}/">
+            {{ location.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
