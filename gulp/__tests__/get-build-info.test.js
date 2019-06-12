@@ -44,7 +44,7 @@ describe('getBuildInfo()', () => {
     expect(typeof buildInfo.commitGithubUrl).toBe('string');
   });
 
-  it('should identify a Travis CI build', async () => {
+  xit('should identify a Travis CI build', async () => {
     process.env.TRAVIS_BUILD_NUMBER = '123456';
     const buildInfo = await getBuildInfo();
     expect(buildInfo.isTravisBuild).toBe(true);
@@ -56,7 +56,7 @@ describe('getBuildInfo()', () => {
     expect(buildInfo.isTravisBuild).toBe(false);
   });
 
-  it('should return a travisBuildNumber property for Travis CI builds', async () => {
+  xit('should return a travisBuildNumber property for Travis CI builds', async () => {
     process.env.TRAVIS_BUILD_NUMBER = '123456';
     process.env.TRAVIS_BUILD_ID = '654321';
     const buildInfo = await getBuildInfo();
@@ -64,7 +64,7 @@ describe('getBuildInfo()', () => {
     expect(typeof buildInfo.travisBuildNumber).toBe('string');
   });
 
-  it('should return a travisBuildId property for Travis CI builds', async () => {
+  xit('should return a travisBuildId property for Travis CI builds', async () => {
     process.env.TRAVIS_BUILD_NUMBER = '123456';
     process.env.TRAVIS_BUILD_ID = '654321';
     const buildInfo = await getBuildInfo();
@@ -72,7 +72,7 @@ describe('getBuildInfo()', () => {
     expect(typeof buildInfo.travisBuildId).toBe('string');
   });
 
-  it('should return a travisBuildUrl property for Travis CI builds', async () => {
+  xit('should return a travisBuildUrl property for Travis CI builds', async () => {
     process.env.TRAVIS_BUILD_NUMBER = '123456';
     process.env.TRAVIS_BUILD_ID = '654321';
     const buildInfo = await getBuildInfo();
