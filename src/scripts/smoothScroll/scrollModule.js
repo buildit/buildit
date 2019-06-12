@@ -5,21 +5,21 @@
  * @returns { Object } Handles the scroll to an anchor on the same page
  */
 
-import easingOptions from "./easingOptions.js";
-import { getScrollPosition } from "./windowHelpers.js";
+import easingOptions from './easingOptions';
+import { getScrollPosition } from './windowHelpers';
 
 const defaultOptions = {
   duration: 2500,
   animation: easingOptions.easeInOutCubic,
   resetTime: () => ({ start: null, now: null }),
-  position: { start: 0, end: null, current: null }
+  position: { start: 0, end: null, current: null },
 };
 
 function Scroll(opts) {
   this.options = {
     class: opts.class,
     animation: opts.animation || defaultOptions.animation,
-    duration: opts.duration || defaultOptions.duration
+    duration: opts.duration || defaultOptions.duration,
   };
   this._time = defaultOptions.resetTime();
   this._position = defaultOptions.position;
@@ -27,34 +27,34 @@ function Scroll(opts) {
 
 function _getElementPosition(element, scrollY = getScrollPosition().y) {
   const destinationTarget = element.href.substring(
-    element.href.indexOf("#") + 1
+    element.href.indexOf('#') + 1,
   );
   const destinationElement = document.getElementById(destinationTarget);
 
   return {
     start: scrollY,
     end: destinationElement.offsetTop,
-    current: scrollY
+    current: scrollY,
   };
 }
 
-Scroll.prototype.init = function() {
+Scroll.prototype.init = () => {
   const jumpLinks = document.querySelectorAll(this.options.class);
 
   // IE-compatible way of iterating over the NodeList
   // (See: https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
-  Array.prototype.forEach.call(jumpLinks, element => {
+  Array.prototype.forEach.call(jumpLinks, (element) => {
     if (
-      element.href.indexOf(window.location.origin) !== -1 &&
-      element.href.indexOf("#") !== -1
+      element.href.indexOf(window.location.origin) !== -1
+      && element.href.indexOf('#') !== -1
     ) {
       this.onScroll(element);
     }
   });
 };
 
-Scroll.prototype.onScroll = function(element) {
-  element.addEventListener("click", () => {
+Scroll.prototype.onScroll = (element) => {
+  element.addEventListener('click', () => {
     this._position = _getElementPosition(element);
 
     window.requestAnimationFrame(() => {
@@ -63,7 +63,7 @@ Scroll.prototype.onScroll = function(element) {
   });
 };
 
-Scroll.prototype.updateState = function() {
+Scroll.prototype.updateState = () => {
   const now = new Date();
 
   if (this._time.start === null) {
@@ -83,14 +83,13 @@ Scroll.prototype.updateState = function() {
 };
 
 // See https://github.com/cferdinandi/smooth-scroll/blob/master/dist/js/smooth-scroll.js
-Scroll.prototype.onChange = function() {
+Scroll.prototype.onChange = () => {
   const scrollLength = this._position.end - this._position.start;
   const elapsedTime = this._time.now - this._time.start;
   let progress = elapsedTime / this.options.duration;
   progress = progress >= 1 ? 1 : progress;
 
-  this._position.current =
-    this._position.start + scrollLength * this.options.animation(progress);
+  this._position.current = this._position.start + scrollLength * this.options.animation(progress);
 
   window.scrollTo(0, this._position.current);
 };

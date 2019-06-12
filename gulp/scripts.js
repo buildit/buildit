@@ -1,17 +1,18 @@
-const path = require("path");
-const gulpIf = require("gulp-if");
-const rollup = require("rollup");
-const babel = require("rollup-plugin-babel");
-const closure = require("rollup-plugin-closure-compiler-js");
-const resolveNodeModules = require("rollup-plugin-node-resolve");
-const paths = require("../config/gulp.json").paths;
-const envs = require("./envs");
-const getBuildInfo = require("./get-build-info.js");
+const path = require('path');
+const gulpIf = require('gulp-if');
+const rollup = require('rollup');
+const babel = require('rollup-plugin-babel');
+const closure = require('rollup-plugin-closure-compiler-js');
+const resolveNodeModules = require('rollup-plugin-node-resolve');
+// eslint-disable-next-line prefer-destructuring
+const paths = require('../config/gulp.json').paths;
+const envs = require('./envs');
+const getBuildInfo = require('./get-build-info.js');
 
 const optimise = envs.shouldOptimise();
 
 function bundle() {
-  return getBuildInfo().then(bldInfo => {
+  return getBuildInfo().then((bldInfo) => {
     rollup
       .rollup({
         input: paths.scripts.main,
@@ -21,12 +22,12 @@ function bundle() {
           gulpIf(
             optimise,
             closure({
-              compilationLevel: "SIMPLE",
+              compilationLevel: 'SIMPLE',
               // ES6 transpilation is made from babel
-              languageIn: "ECMASCRIPT5_STRICT",
-              languageOut: "ECMASCRIPT5_STRICT",
-              env: "CUSTOM",
-              warningLevel: "QUIET",
+              languageIn: 'ECMASCRIPT5_STRICT',
+              languageOut: 'ECMASCRIPT5_STRICT',
+              env: 'CUSTOM',
+              warningLevel: 'QUIET',
               applyInputSourceMaps: false,
               useTypesForOptimization: false,
               processCommonJsModules: false,
@@ -36,24 +37,23 @@ function bundle() {
               // for optimised builds
               outputWrapper: `/* ${bldInfo.description} ${
                 bldInfo.commitShortHash
-              } */\n%output%`
-            })
-          )
-        ]
+              } */\n%output%`,
+            }),
+          ),
+        ],
       })
-      .then(bundle => {
-        return bundle.write({
-          file: path.join(paths.scripts.dest, "bundle.min.js"),
-          format: "umd",
-          sourcemap: true,
-          // For non-optimised builds
-          // (this gets stripped off by closure otheriwse)
-          banner: `/* ${bldInfo.description} ${bldInfo.commitShortHash} */`
-        });
-      });
+      // eslint-disable-next-line no-shadow
+      .then(bundle => bundle.write({
+        file: path.join(paths.scripts.dest, 'bundle.min.js'),
+        format: 'umd',
+        sourcemap: true,
+        // For non-optimised builds
+        // (this gets stripped off by closure otheriwse)
+        banner: `/* ${bldInfo.description} ${bldInfo.commitShortHash} */`,
+      }));
   });
 }
 
 module.exports = {
-  bundle
+  bundle,
 };

@@ -2,10 +2,10 @@
  * Gulp tasks and helper functions for launching and reloading
  * in BrowserSync.
  */
-const browserSync = require("browser-sync").create();
-const paths = require("../config/gulp.json").paths;
+const browserSync = require('browser-sync').create();
+const { paths } = require('../config/gulp.json');
 
-const taskNamePrefix = "browsersync:";
+const taskNamePrefix = 'browsersync:';
 
 /**
  * Reloads BrowserSync.
@@ -19,7 +19,7 @@ function reload(done) {
  * Reloads BrowserSync, with CSS injection.
  */
 function reloadCSS(done) {
-  browserSync.stream({ match: "**/*.css" });
+  browserSync.stream({ match: '**/*.css' });
   done();
 }
 
@@ -30,25 +30,25 @@ function initTask(done) {
   browserSync.init({
     port: 8080,
     server: {
-      baseDir: paths.dest
+      baseDir: paths.dest,
     },
     notify: {
       styles: [
-        "display: none",
-        "padding: 15px",
-        "font-family: sans-serif",
-        "position: fixed",
-        "font-size: 1em",
-        "z-index: 9999",
-        "bottom: 0px",
-        "right: 0px",
-        "border-top-left-radius: 5px",
-        "background-color: #1B2032",
-        "opacity: 0.4",
-        "margin: 0",
-        "color: white",
-        "text-align: center"
-      ]
+        'display: none',
+        'padding: 15px',
+        'font-family: sans-serif',
+        'position: fixed',
+        'font-size: 1em',
+        'z-index: 9999',
+        'bottom: 0px',
+        'right: 0px',
+        'border-top-left-radius: 5px',
+        'background-color: #1B2032',
+        'opacity: 0.4',
+        'margin: 0',
+        'color: white',
+        'text-align: center',
+      ],
     },
     snippetOptions: {
       // Make BrowerSync JS snippet get appended
@@ -58,19 +58,19 @@ function initTask(done) {
         fn(snippet, match) {
           return snippet + match;
         },
-        match: /<\/head>/i
-      }
-    }
+        match: /<\/head>/i,
+      },
+    },
   });
   done();
 }
 
-initTask.displayName = taskNamePrefix + "init";
-initTask.description = "Launches BrowserSync dev server.";
+initTask.displayName = `${taskNamePrefix}init`;
+initTask.description = 'Launches BrowserSync dev server.';
 
 module.exports = {
   stream: browserSync.stream,
   reload,
   reloadCSS,
-  initTask
+  initTask,
 };

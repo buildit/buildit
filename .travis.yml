@@ -14,7 +14,6 @@ env:
 
 script:
   - commitlint-travis
-  - npm run-script test
   - |
     if [ "$TRAVIS_BRANCH" == "master" ] || [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
       npm run-script build -- --env production;
@@ -25,7 +24,7 @@ script:
     else
       npm run-script build;
     fi
-  - npm run cypress:travis
+  - npm run ci
 
 before_deploy:
   - pip install --user awscli

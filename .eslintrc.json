@@ -1,14 +1,32 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "extends": ["plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "extends": ["airbnb-base"],
   "rules": {
-    "prettier/prettier": "error"
-  }
+    "no-underscore-dangle": "off",
+    "no-console": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.js"],
+      "env": {
+        "browser": true
+      }
+    },
+    {
+      "files": ["**/*.test.js"],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": ["cypress/**/*.js"],
+      "env": {
+        "mocha": true
+      },
+      "globals": {
+        "Cypress": "readonly",
+        "cy": "readonly",
+        "expect": "readonly"
+      }
+    }
+  ]
 }
