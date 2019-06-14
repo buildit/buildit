@@ -1,11 +1,12 @@
-const minimist = require("minimist");
-const envs = require("../config/envs.json");
+const minimist = require('minimist');
+const envs = require('../config/envs.json');
+
 const availableEnvs = Object.keys(envs);
 const defaultEnv = availableEnvs[0];
 
 const knownOptions = {
-  string: "env",
-  default: { env: defaultEnv }
+  string: 'env',
+  default: { env: defaultEnv },
 };
 
 const options = minimist(process.argv.slice(2), knownOptions);
@@ -17,15 +18,15 @@ module.exports = {
 
   currentEnv: options.env,
 
-  shouldOptimise: function() {
-    return this.getCurrentEnvInfo()["optimise"] || false;
+  shouldOptimise() {
+    return this.getCurrentEnvInfo().optimise || false;
   },
 
-  getEnvInfo: function(env) {
+  getEnvInfo(env) {
     return envs[env];
   },
 
-  getCurrentEnvInfo: function() {
+  getCurrentEnvInfo() {
     return envs[options.env];
-  }
+  },
 };

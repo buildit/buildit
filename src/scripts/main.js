@@ -1,7 +1,7 @@
-import Scroll from "./smoothScroll/scrollModule.js";
-import toogleSwitch from "./toogleSwitch/toogleSwitch.js";
+import Scroll from './smoothScroll/scrollModule';
+import toogleSwitch from './toogleSwitch/toogleSwitch';
 
-const scroll = new Scroll({ class: ".grav-c-cta" });
+const scroll = new Scroll({ class: '.grav-c-cta' });
 
 scroll.init();
 toogleSwitch();

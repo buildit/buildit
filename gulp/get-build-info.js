@@ -1,24 +1,37 @@
-const git = require("git-last-commit");
-const { promisify } = require("util");
-const envs = require("./envs.js");
-const moment = require("moment");
+const git = require('git-last-commit');
+const { promisify } = require('util');
+const moment = require('moment');
+const envs = require('./envs.js');
 
 // Holds cached commit info, so we don't need to
 // re-read it every time.
 let commitInfo = null;
 
+function isLocalBuild() {
+  const travisBuildNumber = process.env.TRAVIS_BUILD_NUMBER;
+  return travisBuildNumber === undefined;
+}
+
 async function getCommitInfo() {
+  if (isLocalBuild()) {
+    return new Promise(resolve => resolve({
+      hash: '',
+      shortHash: '',
+    }));
+  }
+
   if (commitInfo === null) {
     commitInfo = await promisify(git.getLastCommit)();
   }
+
   return commitInfo;
 }
 
-module.exports = async function() {
+module.exports = async () => {
   const bldInfo = {};
 
   const travisBuildNumber = process.env.TRAVIS_BUILD_NUMBER;
-  if (travisBuildNumber === undefined) {
+  if (isLocalBuild()) {
     bldInfo.isTravisBuild = false;
     bldInfo.description = `Locally built ${envs.currentEnv} build`;
   } else {
@@ -35,15 +48,15 @@ module.exports = async function() {
     bldInfo.travisBuildUrl = `https://travis-ci.org/buildit/buildit/builds/${travisBuildId}`;
   }
 
-  const commitInfo = await getCommitInfo();
-  bldInfo.commitHash = commitInfo.hash;
-  bldInfo.commitShortHash = commitInfo.shortHash;
+  const commitInfoBuild = await getCommitInfo();
+  bldInfo.commitHash = commitInfoBuild.hash;
+  bldInfo.commitShortHash = commitInfoBuild.shortHash;
   bldInfo.commitGithubUrl = `https://github.com/buildit/buildit/commit/${
-    commitInfo.hash
+    commitInfoBuild.hash
   }`;
   bldInfo.committedOn = moment
-    .unix(commitInfo.committedOn)
-    .format("YYYY-MM-DD HH:mm:ss");
+    .unix(commitInfoBuild.committedOn)
+    .format('YYYY-MM-DD HH:mm:ss');
 
   return bldInfo;
 };

@@ -4,56 +4,61 @@
  */
 const easingOptions = {
   // no easing, no acceleration
-  linear: function(t) {
+  linear(t) {
     return t;
   },
   // accelerating from zero velocity
-  easeInQuad: function(t) {
+  easeInQuad(t) {
     return t * t;
   },
   // decelerating to zero velocity
-  easeOutQuad: function(t) {
+  easeOutQuad(t) {
     return t * (2 - t);
   },
   // acceleration until halfway, then deceleration
-  easeInOutQuad: function(t) {
+  easeInOutQuad(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   },
   // accelerating from zero velocity
-  easeInCubic: function(t) {
+  easeInCubic(t) {
     return t * t * t;
   },
   // decelerating to zero velocity
-  easeOutCubic: function(t) {
-    return --t * t * t + 1;
+  easeOutCubic(t) {
+    const tMinus = t - 1;
+    return tMinus * tMinus * tMinus + 1;
   },
   // acceleration until halfway, then deceleration
-  easeInOutCubic: function(t) {
+  easeInOutCubic(t) {
     return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
   },
   // accelerating from zero velocity
-  easeInQuart: function(t) {
+  easeInQuart(t) {
     return t * t * t * t;
   },
   // decelerating to zero velocity
-  easeOutQuart: function(t) {
-    return 1 - --t * t * t * t;
+  easeOutQuart(t) {
+    const tMinus = t - 1;
+    return 1 - tMinus * t * t * t;
   },
   // acceleration until halfway, then deceleration
-  easeInOutQuart: function(t) {
-    return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
+  easeInOutQuart(t) {
+    const tMinus = t - 1;
+    return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * tMinus * t * t * t;
   },
   // accelerating from zero velocity
-  easeInQuint: function(t) {
+  easeInQuint(t) {
     return t * t * t * t * t;
   },
   // decelerating to zero velocity
-  easeOutQuint: function(t) {
-    return 1 + --t * t * t * t * t;
+  easeOutQuint(t) {
+    const tMinus = t - 1;
+    return 1 + tMinus * t * t * t * t;
   },
   // acceleration until halfway, then deceleration
-  easeInOutQuint: function(t) {
-    return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
+  easeInOutQuint(t) {
+    const tMinus = t - 1;
+    return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * tMinus * t * t * t * t;
   },
 };
 
