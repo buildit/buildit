@@ -61,6 +61,7 @@ ms.source('./pages')
       suppressNoFilesError: true,
       engineOptions: {
         html: true,
+        root: 'layouts',
       },
     }),
   )
@@ -94,7 +95,14 @@ ms.source('./pages')
       suppressNoFilesError: true,
     }),
   )
-  .use(layouts())
+  .use(
+    layouts({
+      engineOptions: {
+        html: true,
+        root: 'layouts',
+      },
+    }),
+  )
   .use(
     beautify({
       preserve_newlines: false,
