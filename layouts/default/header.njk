@@ -1,16 +1,13 @@
 <div
   resource="https://buildit.wiprodigital.com/thing/buildit-org"
-  {% if not path %}property="schema:mainEntity"{% endif %}
   typeof="schema:Organization"
 >
   <div class="grav-c-page-header__logo">
     {% if path %}
-      <meta property="schema:url" content="/">
-      <a href="/" property="schema:logo" typeof="schema:ImageObject">
+      <a href="/" rel="schema:url">
     {% else %}
-      <h1 property="schema:logo" typeof="schema:ImageObject">
+      <h1>
     {% endif %}
-        <meta property="schema:url" content="/images/buildit-at-wipro-digital.png">
         <svg role="img" class="grav-c-logo" aria-label="Buildit @ Wipro Digital" width="300" height="33">
           <title>Buildit @ Wipro Digital</title>
           <use xlink:href="#buildit-logotype"></use>
@@ -22,6 +19,9 @@
     {% endif %}
   </div>
   <meta property="schema:name" content="Buildit @ Wipro Digital">
+  <span hidden property="schema:logo" typeof="schema:ImageObject">
+    <link rel="schema:url" href="/images/buildit-at-wipro-digital.png">
+  </span>
   <button type="button" class="grav-c-toggle-menu" aria-pressed="false" aria-label="Do something">
     <span class="grav-c-toggle-menu__icon"></span>
   </button>

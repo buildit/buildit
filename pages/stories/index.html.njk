@@ -13,18 +13,6 @@ nav-index: 0
 </p>
 <ul class="grav-c-list-cards-basic" property="schema:mainEntity" typeof="schema:ItemList">
   {% for article in colStories %}
-    <li class="grav-c-card-basic" property="schema:itemListElement" typeof="schema:ListItem">
-      <meta property="schema:position" content="{{ loop.index }}">
-      <a href="/{{ article.path }}" property="schema:url">
-        {% if article.image %}
-          <img property="schema:image" src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
-          <svg role="img">
-            <use xlink:href="#decoration-arrow-right"></use>
-          </svg>
-        {% endif %}
-        <h3 property="schema:name">{{ article.title }}</h3>
-      </a>
-      <p property="schema:description">{{ article.description }}</p>
-    </li>
+    {% include "partials/articles/list-item.njk" %}
   {% endfor %}
 </ul>

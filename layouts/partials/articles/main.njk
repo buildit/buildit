@@ -10,7 +10,7 @@
     <p>{{ description }}</p>
     <time property="schema:datePublished schema:dateModified" datetime="{{ date }}">{{ humanDate }}</time>
     <img property="schema:image" src="{{ imageSrc }}" alt="{{ image.alt or config.site.ogImageAlt }}" />
-    <meta property="schema:author schema:publisher" content="https://buildit.wiprodigital.com/thing/buildit-org">
+    <link rel="schema:author schema:publisher" href="https://buildit.wiprodigital.com/thing/buildit-org">
   </header>
   <div class="grav-c-ostentatious-copy" property="schema:articleBody">
     {{ contents | safe }}
