@@ -6,11 +6,13 @@ schema: CollectionPage
 collection: colMainNav
 nav-index: 0
 ---
-<h1 property="schema:name">Stories</h1>
-<p>
-  Welcome to our new Buildit website featuring stories by and about our technical people and teams.
-  News from our community, and an easy way to search the entire range of relevant job opportunities we have open.
-</p>
+<div class="grav-c-page-intro">
+  <h1>Stories</h1>
+  <p>
+    Welcome to our new Buildit website featuring stories by and about our technical people and teams. News from our
+    community, and an easy way to search the entire range of relevant job opportunities we have open.
+  </p>
+</div>
 <ul class="grav-c-list-cards-basic" typeof="schema:ItemList">
   {% for article in colStories %}
     {% include "partials/articles/list-item.njk" %}
