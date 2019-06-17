@@ -14,4 +14,34 @@ describe('Homepage', () => {
         expect(value.find('a').attr('href')).to.include('/locations/');
       });
   });
+
+  it('should open an article when clicking it', () => {
+    cy.get('.grav-c-card-basic')
+      .find('a')
+      .first()
+      .click();
+  });
+
+  describe('navigation', () => {
+    function verifyPage(name) {
+      cy.get('.grav-c-nav-menu')
+        .find(`a[href='/${name.toLowerCase()}/']`)
+        .click()
+        .get('h1')
+        .first()
+        .contains(name);
+    }
+
+    it('should follow the stories link', () => {
+      verifyPage('Stories');
+    });
+
+    it('should follow the people link', () => {
+      verifyPage('People');
+    });
+
+    it('should follow the jobs link', () => {
+      verifyPage('Jobs');
+    });
+  });
 });
