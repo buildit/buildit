@@ -1,40 +1,45 @@
-<header class="grav-c-page-intro grav-o-container">
-  <h1>{{ title }} Studio</h1>
+<header class="grav-c-page-intro">
+  <h1 property="schema:name">{{ title }} Studio</h1>
   {% if description %}
   <p>{{ description }}</p>
   {% endif %}
   {% if image %}
     <img src="{{ image.src }}" alt="{{ image.alt }}" />
   {% endif %}
+  <link rel="schema:mainEntityOfPage" href="{{ path }}">
 </header>
-<div class="grav-o-container">
+{# <div class="grav-c-ostentatious-copy"> #}
   {% if contents %}
     {{ contents | safe }}
   {% endif %}
 
   <h2>Address</h2>
-
-
-  <h2>Jobs</h2>
-  <p>Current job postings for Buildit's {{ title }} studio. If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a>.</p>
-  <div class="grav-c-job-list">
-    <ul>
-      {% for job in jobLocation.jobs %}
-      <li>
-        <p class="grav-c-job-card">
-          <a href="{{job.url}}" typeof="schema:JobPosting">
-            <span property="schema:title">{{job.title}}</span>
-            <meta property="schema:datePosted" content="{{job.datePosted}}">
-            <meta property="schema:employmentType" content="{{job.typeOfEmployment}}">
-            <meta property="schema:industry" content="{{job.industry}}">
-            <meta property="schema:description" content="For the full job description please visit: {{job.url}}">
-            <link property="schema:hiringOrganization" href="https://buildit.wiprodigital.com/thing/buildit-org">
-            <link property="schema:jobLocation" href="https://buildit.wiprodigital.com/thing/job-location/{{jobLocation.location.countryCode}}/{{jobLocation.location.citySlug}}">
-          </a>
-        </p>
-      </li>
-      {% endfor %}
-    </ul>
+  <div class="grav-c-two-columns-block">
+    {% include 'partials/location/address.njk' %}
+    <a href="{{ map }}" rel="schema:hasMap" title="See {{ title }} office on Google Maps - Opens in a new tab" target="_blank">
+      <img src="{{ img.url }}" alt="{{ img.alt }}">
+    </a>
   </div>
 
-</div>
+  <h2>Jobs</h2>
+  {% if jobsByCity[title].length > 0 %}
+  <p>Current job postings for Buildit's {{ title }} studio:</p>
+  <ul>
+    {% for job in jobsByCity[title] %}
+      {% include 'partials/jobs/job-card.njk' %}
+    {% endfor %}
+  </ul>
+  {% set jobLocation = jobsByCity[title][0].location %}
+  <span hidden typeof="schema:Place" resource="{{jobLocation.uri}}">
+    <span property="schema:address" typeof="schema:PostalAddress">
+      <meta property="schema:addressLocality" content="{{jobLocation.city}}">
+      <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
+    </span>
+  </span>
+  <p>For open positions in other Buildit studios and locations, please visit our <a href="/jobs/">jobs page</a>.</p>
+  {% else %}
+  <p>Currently, there are no open job postings for Buildit's {{ title }} studio. You can see open positions in other Buildit studios and locations on our <a href="/jobs/">jobs page</a>.</p>
+  {% endif %}
+  <p>If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a>.</p>
+
+{# </div> #}

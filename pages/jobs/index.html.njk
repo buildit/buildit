@@ -14,26 +14,25 @@ nav-index: 2
 <h2>{{ country }}</h2>
 {% for city, jobs in cities | dictsort %}
 {% set jobLocation = jobs[0].location %}
+{% set studio = locationsByCity[city][0] %}
 <section>
   <header typeof="schema:Place" resource="{{jobLocation.uri}}">
     <h3 property="schema:address" typeof="schema:PostalAddress">
     <span property="schema:name">
-      <span property="schema:addressLocality">{{ city }}</span>
+      <span property="schema:addressLocality">
+      {% if studio %}
+        <a href="/{{ studio.path }}">{{ city }}</a>
+      {% else %}
+        {{ city }}
+      {% endif %}
+      </span>
     </span>
       <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
     </h3>
   </header>
   <ul class="grav-o-two-column grav-o-column-list">
     {% for job in jobs %}
-    <li typeof="schema:JobPosting">
-      <a rel="schema:url" property="schema:title" href="{{job.url}}">{{job.title}}</a>
-      <meta property="schema:datePosted" content="{{job.datePosted}}">
-      <meta property="schema:employmentType" content="{{job.typeOfEmployment}}">
-      <meta property="schema:industry" content="{{job.industry}}">
-      <meta property="schema:description" content="For the full job description please visit: {{job.url}}">
-      <link property="schema:hiringOrganization" href="https://buildit.wiprodigital.com/thing/buildit-org">
-      <link property="schema:jobLocation" href="{{job.location.uri}}">
-    </li>
+      {% include 'partials/jobs/job-card.njk' %}
     {% endfor %}
   </ul>
 </section>

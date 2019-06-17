@@ -1,0 +1,29 @@
+<p property="schema:address" typeof="schema:PostalAddress">
+    <span property="schema:streetAddress">
+      {{address.line1}}
+      {% if address.line2 %}
+        <br>
+        {{address.line2}}
+      {% endif %}
+      {% if address.line3 %}
+        <br>
+        {{address.line3}}
+      {% endif %}
+    </span>
+    <br>
+
+    {% if postcodePosition == "below" %}
+      <span property="schema:addressLocality">{{city}}</span>
+      <br>
+    {% endif %}
+    {% if postcodePosition == "after" %}
+      <span property="schema:addressLocality">{{city}}</span>
+    {% endif %}
+    {% if postRegion %}<span property="schema:addressRegion">{{postRegion}}</span> {% endif %}<span property="schema:postalCode">{{postcode}}</span>
+    {% if postcodePosition == "before" %}
+      <span property="schema:addressLocality">{{city}}</span>
+    {% endif %}
+
+    <br>
+    <span property="schema:addressCountry" content="{{countryCode}}">{{country}}</span>
+</p>

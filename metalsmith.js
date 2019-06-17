@@ -18,6 +18,7 @@ const humanDate = require('./lib/metalsmith-humandate');
 const htmlMinifierOptimise = require('./lib/metalsmith-html-minifier-optimise');
 const mapsiteCurrentenv = require('./lib/metalsmith-mapsite-currentenv');
 const jobListings = require('./lib/metalsmith-job-listings');
+const groupByKey = require('./lib/metalsmith-group-by-key');
 const namedIndexSort = require('./lib/sorts/named-index-sort');
 const dateSort = require('./lib/sorts/date-sort');
 
@@ -61,6 +62,11 @@ ms.source('./pages')
     }),
   )
   .use(pathNoIndex())
+  .use(groupByKey({
+    propertyIn: 'colLocations',
+    propertyOut: 'locationsByCity',
+    key: 'title',
+  }))
   .use(
     inPlace({
       suppressNoFilesError: true,

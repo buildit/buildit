@@ -1,0 +1,11 @@
+<main
+  class="grav-o-container"
+  typeof="schema:Place"
+  resource="https://buildit.wiprodigital.com/thing/studio/{{ countryCode}}/{{ citySlug }}"
+>
+  {# Render standard block partial #}
+  {# temporary disable due to limitation of frontmatter renderer
+  {% include 'partials/blocks/main.njk' %}
+  #}
+  {% include 'partials/location/main.njk' %}
+</main>

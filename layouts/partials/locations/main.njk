@@ -1,0 +1,9 @@
+<div class="grav-c-two-columns-block">
+  {% if contents %}
+    {{ contents | safe }}
+  {% endif %}
+
+  {% for location in collections.colLocations | sort(false, false, 'title') %}
+    {% include 'partials/locations/location-card.njk' %}
+  {% endfor %}
+</div>

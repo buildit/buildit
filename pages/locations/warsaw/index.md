@@ -1,4 +1,6 @@
 ---
+# The title should just be the city's name and must also match the city name as it
+# appears in the SmartRecruiters data used for the job listings.
 title: Warsaw
 # URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/
 citySlug: warsaw
@@ -15,6 +17,8 @@ img:
   alt: Map showing the location of the Warsaw studio
 map: https://www.google.co.uk/maps/place/Krucza+50,+00-022+Warszawa,+Poland/@52.231611,21.0160202,18.66z/data=!4m5!3m4!1s0x471eccf40f6d0cd1:0x6c455009318c5e95!8m2!3d52.2315259!4d21.016595
 layout: basic-page.njk
+blocks-njk:
+  main: layouts/partials/location/main.njk
+  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---
-<h1>Warsaw</h1>

@@ -1,7 +1,9 @@
 ---
-title: Bangalore
+# The title should just be the city's name and must also match the city name as it
+# appears in the SmartRecruiters data used for the job listings.
+title: Bengaluru
 # URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
-citySlug: bengaluru
+citySlug: bengaluru 
 address:
   line1: 72 Electronic City
   line2: Hosur Road
@@ -15,6 +17,8 @@ img:
   alt: Map showing the location of the Bengaluru studio
 map: https://www.google.com/maps/place/Wipro+Limited/@12.838566,77.6592042,16z/data=!4m5!3m4!1s0x0:0x1d0caf77fe02554f!8m2!3d12.8384852!4d77.6571581?hl=en-US
 layout: basic-page.njk
+blocks-njk:
+  main: layouts/partials/location/main.njk
+  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---
-<h1>Bangalore</h1>
