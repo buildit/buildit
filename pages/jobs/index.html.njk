@@ -11,7 +11,7 @@ nav-index: 2
   <p>If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a></p>
 </div>
 {% for jobLocation in jobLocations %}
-<section class="grav-c-job-list">
+<section>
   <header typeof="schema:Place" resource="https://buildit.wiprodigital.com/thing/job-location/{{jobLocation.location.countryCode}}/{{jobLocation.location.citySlug}}">
     <h2 property="schema:address" typeof="schema:PostalAddress">
     <span property="schema:name">

@@ -10,9 +10,8 @@ describe('Jobs page', () => {
     cy.title().should('include', route);
   });
 
-  it('renders job positions which should link to smatrecruiters website', () => {
-    cy.get('.grav-c-job-list')
-      .find('.grav-c-job-card>a')
+  it('renders job positions which should link to smartrecruiters website', () => {
+    cy.get('section>ul>li>a')
       .first()
       .should('have.attr', 'href')
       .and('match', /smartrecruiters/);
