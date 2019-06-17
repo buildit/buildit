@@ -1,7 +1,4 @@
-<div
-  resource="https://buildit.wiprodigital.com/thing/buildit-org"
-  typeof="schema:Organization"
->
+<div resource="https://buildit.wiprodigital.com/thing/buildit-org" typeof="schema:Organization">
   <div class="grav-c-page-header__logo">
     {% if path %}
       <a href="/" rel="schema:url">
@@ -30,7 +27,9 @@
     <ul>
       {% for navItem in colMainNav %}
       <li>
-        <a class="grav-c-nav-link" href="/{{ navItem.path }}">{{ navItem.title }}</a>
+        <a class="grav-c-nav-link" rel="schema:url" href="/{{ navItem.path }}" property="schema:name">
+          {{ navItem.title }}
+        </a>
       </li>
       {% endfor %}
     </ul>

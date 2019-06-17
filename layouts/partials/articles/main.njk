@@ -3,7 +3,7 @@
 {% else %}
   {% set imageSrc %}{{ env.url }}/images/{{ image.src or config.site.ogImage }}{% endset %}
 {% endif %}
-<article class="grav-o-container grav-c-article" property="schema:mainEntity" typeof="schema:Article">
+<article class="grav-o-container grav-c-article" typeof="schema:Article">
   <meta property="schema:mainEntityOfPage" content="/{{ path }}">
   <header class="grav-c-page-intro">
     <h1 property="schema:headline">{{ title }}</h1>
