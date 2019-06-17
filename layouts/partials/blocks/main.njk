@@ -1,10 +1,5 @@
-<main>
-  {% if blocks.main %}
-    {{ blocks.main | safe }}
-  {% else %}
-    {# Fall back to rendering contents #}
-    <section class="grav-o-container">
-      {{ contents | safe }}
-    </section>
-  {% endif %}
-</main>
+{% if blocks.main %}
+  {{ blocks.main | safe }}
+{% else %}
+  {% include "default/main.njk" %}
+{% endif %}

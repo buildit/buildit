@@ -1,0 +1,8 @@
+{% if blocks.mainWrapper %}
+  {{ blocks.mainWrapper | safe }}
+{% else %}
+<main>
+  {# Fall back to rendering standard block partial #}
+  {% include 'partials/blocks/main.njk' %}
+</main>
+{% endif %}

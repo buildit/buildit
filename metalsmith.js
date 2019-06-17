@@ -21,6 +21,11 @@ const jobListings = require('./lib/metalsmith-job-listings');
 const namedIndexSort = require('./lib/sorts/named-index-sort');
 const dateSort = require('./lib/sorts/date-sort');
 
+const nunjucksJsTransformerOptions = {
+  html: true,
+  root: 'layouts',
+};
+
 ms.source('./pages')
   .destination('./dist')
   .clean(false)
@@ -59,10 +64,7 @@ ms.source('./pages')
   .use(
     inPlace({
       suppressNoFilesError: true,
-      engineOptions: {
-        html: true,
-        root: 'layouts',
-      },
+      engineOptions: nunjucksJsTransformerOptions,
     }),
   )
   .use(
@@ -93,16 +95,12 @@ ms.source('./pages')
       out: 'blocks',
       ext: 'njk',
       suppressNoFilesError: true,
+      options: nunjucksJsTransformerOptions,
     }),
   )
-  .use(
-    layouts({
-      engineOptions: {
-        html: true,
-        root: 'layouts',
-      },
-    }),
-  )
+  .use(layouts({
+    engineOptions: nunjucksJsTransformerOptions,
+  }))
   .use(
     beautify({
       preserve_newlines: false,
