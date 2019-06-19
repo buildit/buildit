@@ -1,7 +1,7 @@
 <div resource="https://buildit.wiprodigital.com/thing/buildit-org" typeof="schema:Organization">
   <div class="grav-c-page-header__logo">
     {% if path %}
-      <a href="/" property="schema:url">
+      <a href="/" rel="schema:url">
     {% else %}
       <h1>
     {% endif %}
@@ -12,22 +12,22 @@
     {% if path %}
       </a>
     {% else %}
+        <link rel="schema:url" href="/">
       </h1>
     {% endif %}
   </div>
   <meta property="schema:name" content="Buildit @ Wipro Digital">
+  <span hidden property="schema:logo" typeof="schema:ImageObject">
+    <link rel="schema:url" href="/images/buildit-at-wipro-digital.png">
+  </span>
   <button type="button" class="grav-c-toggle-menu" aria-pressed="false" aria-label="Do something">
     <span class="grav-c-toggle-menu__icon"></span>
   </button>
-  <nav class="grav-c-nav-menu">
+  <nav class="grav-c-nav-menu" typeof="schema:SiteNavigationElement">
     <ul>
       {% for navItem in colMainNav %}
       <li>
-        <a
-          class="grav-c-nav-link"
-          {% if navItem.schema %}typeof="schema:{{ navItem.schema }}"{% endif %}
-          href="/{{ navItem.path }}"
-        >
+        <a class="grav-c-nav-link" rel="schema:url" href="/{{ navItem.path }}" property="schema:name">
           {{ navItem.title }}
         </a>
       </li>
