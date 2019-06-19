@@ -3,24 +3,23 @@
     <use xlink:href="#buildit-logotype"></use>
   </svg>
 
-  <div class="grav-c-page-footer__lists">
+  <div class="grav-c-page-footer__lists" typeof="schema:SiteNavigationElement">
     <ul>
       {% for navItem in colMainNav %}
         <li>
-          <a
-            {% if navItem.schema %}typeof="schema:{{ navItem.schema }}"{% endif %}
-            href="/{{ navItem.path }}"
-          >
-            {{ navItem.title }}
-          </a>
+          <a rel="schema:url" href="/{{ navItem.path }}" property="schema:name">{{ navItem.title }}</a>
         </li>
       {% endfor %}
     </ul>
 
     <ul>
-      <li><a href="#">Terms</a></li>
-      <li><a href="#">Accessibility</a></li>
-      <li><a href="https://wiprodigital.com/privacy-policy">Privacy &amp; Cookie Policy</a></li>
+      <li><a rel="schema:url" href="#" property="schema:name">Terms</a></li>
+      <li><a rel="schema:url" href="#" property="schema:name">Accessibility</a></li>
+      <li>
+        <a rel="schema:url" href="https://wiprodigital.com/privacy-policy" property="schema:name">
+          Privacy &amp; Cookie Policy
+        </a>
+      </li>
     </ul>
   </div>
 
