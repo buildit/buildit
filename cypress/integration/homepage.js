@@ -16,10 +16,16 @@ describe('Homepage', () => {
   });
 
   it('should open an article when clicking it', () => {
-    cy.get('.grav-c-card-basic')
+    const link = cy.get('.grav-c-card-basic')
       .find('a')
-      .first()
-      .click();
+      .first();
+
+    link.then(($el) => {
+      link.click();
+      cy.get('h1')
+        .first()
+        .contains($el.text().trim());
+    });
   });
 
   describe('navigation', () => {
