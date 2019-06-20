@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test",
+      "pre-commit": "npm run lint",
       "pre-push": "npm run lint && npm test && npm run e2e",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
