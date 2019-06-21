@@ -44,3 +44,9 @@
 /* Trumps           */
 /********************/
 
+// Temporary work-around for bug in Gravity's
+// column layout styling that causes the page to
+// overflow the viewport horizontally.
+.grav-o-container {
+  overflow-x: hidden;
+}

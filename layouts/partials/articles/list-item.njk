@@ -1,13 +1,15 @@
-<li class="grav-c-card-basic" property="schema:itemListElement" typeof="schema:ListItem">
-  <a href="/{{ article.path }}" property="schema:url">
-    {% if article.image %}
-      <img property="schema:image" src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
-      <svg role="img">
-        <use xlink:href="#decoration-arrow-right"></use>
-      </svg>
-    {% endif %}
-    <h3 property="schema:name">{{ article.title }}</h3>
-  </a>
-  <p property="schema:description">{{ article.description }}</p>
-  <meta property="schema:position" content="{{ loop.index }}">
+<li property="schema:itemListElement" typeof="schema:ListItem">
+  <div class="grav-c-card-basic">
+    <a href="/{{ article.path }}" property="schema:url">
+      {% if article.image %}
+        <img property="schema:image" src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
+        <svg role="img">
+          <use xlink:href="#decoration-arrow-right"></use>
+        </svg>
+      {% endif %}
+      <h3 property="schema:name">{{ article.title }}</h3>
+    </a>
+    <p property="schema:description">{{ article.description }}</p>
+    <meta property="schema:position" content="{{ loop.index }}">
+  </div>
 </li>
