@@ -21,7 +21,7 @@ nav-index: 2
       <meta property="schema:addressCountry" content="{{jobLocation.location.countryCode}}">
     </h2>
   </header>
-  <ul>
+  <ul class="grav-o-two-column grav-o-column-list">
     {% for job in jobLocation.jobs %}
     <li typeof="schema:JobPosting">
       <a rel="schema:url" property="schema:title" href="{{job.url}}">{{job.title}}</a>

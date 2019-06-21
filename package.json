@@ -56,9 +56,9 @@
     "npm": ">= 5.8.0"
   },
   "dependencies": {
+    "@buildit/gravity-ui-web": "^3.0.0-alpha.6",
     "@buildit/job-listings": "^1.1.0",
-    "@buildit/gravity-ui-web": "next",
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "debug": "^4.1.1",
     "git-last-commit": "^0.3.0",
     "gulp": "^4.0.2",
