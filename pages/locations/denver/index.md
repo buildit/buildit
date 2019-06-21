@@ -21,6 +21,5 @@ map: https://www.google.com/maps/place/WeWork/@39.7491364,-104.9982773,16.98z/da
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---

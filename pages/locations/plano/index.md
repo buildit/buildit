@@ -20,6 +20,5 @@ map: https://www.google.co.uk/maps/place/5445+Legacy+Dr+%23300,+Plano,+TX+75024,
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---

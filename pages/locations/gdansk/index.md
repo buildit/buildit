@@ -19,6 +19,5 @@ map: https://www.google.com/maps/place/Alchemia+Ferrum+Tower/@54.3985837,18.5747
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---

@@ -18,6 +18,5 @@ map: https://www.google.com/maps/place/2+Finsbury+Ave,+London+EC2M+2PA/@51.52010
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---

@@ -19,6 +19,5 @@ map: https://www.google.co.uk/maps/place/Krucza+50,+00-022+Warszawa,+Poland/@52.
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---

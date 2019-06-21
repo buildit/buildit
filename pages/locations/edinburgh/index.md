@@ -18,6 +18,5 @@ map: https://www.google.com/maps/place/2+Castle+Terrace,+Edinburgh+EH1+2EL/@55.9
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---

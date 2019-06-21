@@ -19,7 +19,6 @@ map: https://www.google.com/maps?ll=53.330506,-6.228374&z=16&t=m&hl=en-US&gl=GB&
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 description: Hi, we’re a bunch of designers and technologists taking a cross-functional lens to thorny problems.
 image:

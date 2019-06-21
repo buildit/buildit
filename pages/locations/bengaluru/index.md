@@ -19,6 +19,5 @@ map: https://www.google.com/maps/place/Wipro+Limited/@12.838566,77.6592042,16z/d
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---

@@ -19,6 +19,5 @@ map: https://www.google.com/maps/place/77+Sands+St,+Brooklyn,+NY+11201,+USA/@40.
 layout: basic-page.njk
 blocks-njk:
   main: layouts/partials/location/main.njk
-  mainWrapper: layouts/partials/location/main-wrapper.njk
 collection: colLocations
 ---
