@@ -35,9 +35,12 @@
 .grav-c-callout {
   background: url('/images/callout.jpg') center center;
   background-size: cover;
+}
 
-  // Adds flow so that the container is wrapped properly
-  padding: 1px 0;
+.web-c-job-list {
+  li + li {
+    margin-top: 0.5em;
+  }
 }
 
 /********************/

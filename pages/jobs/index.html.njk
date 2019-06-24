@@ -12,29 +12,29 @@ nav-index: 2
 </div>
 {% for country, cities in jobsByCountryAndCity | dictsort %}
 <h2>{{ country }}</h2>
-{% for city, jobs in cities | dictsort %}
-{% set jobLocation = jobs[0].location %}
-{% set studio = locationsByCity[city][0] %}
-<section>
-  <header typeof="schema:Place" resource="{{jobLocation.uri}}">
-    <h3 property="schema:address" typeof="schema:PostalAddress">
-    <span property="schema:name">
-      <span property="schema:addressLocality">
-      {% if studio %}
-        <a href="/{{ studio.path }}">{{ city }}</a>
-      {% else %}
-        {{ city }}
-      {% endif %}
+  {% for city, jobs in cities | dictsort %}
+  {% set jobLocation = jobs[0].location %}
+  {% set studio = locationsByCity[city][0] %}
+  <section>
+    <header typeof="schema:Place" resource="{{jobLocation.uri}}">
+      <h3 property="schema:address" typeof="schema:PostalAddress" class="grav-u-font-size-plus-3">
+      <span property="schema:name">
+        <span property="schema:addressLocality">{{ city }}</span>
       </span>
-    </span>
-      <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
-    </h3>
-  </header>
-  <ul class="grav-o-two-column grav-o-column-list">
-    {% for job in jobs %}
-      {% include 'partials/jobs/job-card.njk' %}
-    {% endfor %}
-  </ul>
-</section>
-{% endfor %}
+        <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
+      </h3>
+    </header>
+    <ul class="grav-o-two-column grav-o-column-list web-c-job-list">
+      {% for job in jobs %}
+        {% include 'partials/jobs/job-card.njk' %}
+      {% endfor %}
+    </ul>
+    {% if studio %}
+      <p>Learn about our <a href="/{{ studio.path }}">{{ city }} studio</a>.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+  {% if not loop.last %}
+  <hr>
+  {% endif %}
 {% endfor %}

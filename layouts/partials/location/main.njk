@@ -11,7 +11,7 @@
     {% if image %}
       <img src="{{ image.src }}" alt="{{ image.alt }}" />
     {% endif %}
-    <link rel="schema:mainEntityOfPage" href="{{ path }}">
+    <link rel="schema:mainEntityOfPage" href="/{{ path }}">
   </header>
   {# Convoluted way of checking whether contents is blank
      - i.e. only whitespace #}
@@ -36,7 +36,7 @@
       <h2>Jobs</h2>
       {% if jobsByCity[title].length > 0 %}
       <p>Current job postings for Buildit's {{ title }} studio:</p>
-      <ul>
+      <ul class="web-c-job-list">
         {% for job in jobsByCity[title] %}
           {% include 'partials/jobs/job-card.njk' %}
         {% endfor %}

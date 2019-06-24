@@ -3,7 +3,7 @@
 # appears in the SmartRecruiters data used for the job listings.
 title: Bengaluru
 # URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
-citySlug: bengaluru 
+citySlug: bengaluru
 address:
   line1: 72 Electronic City
   line2: Hosur Road
