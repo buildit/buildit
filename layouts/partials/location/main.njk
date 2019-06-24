@@ -23,14 +23,13 @@
   {% endif %}
 
   <div class="grav-o-two-column">
-    <section>
+    <section class="grav-c-location-card">
       <h2>Address</h2>
-      <div class="grav-o-two-column">
-        {% include 'partials/location/address.njk' %}
-        <a href="{{ map }}" rel="schema:hasMap" title="See {{ title }} office on Google Maps - Opens in a new tab" target="_blank">
-          <img src="{{ img.url }}" alt="{{ img.alt }}">
-        </a>
-      </div>
+      {% include 'partials/location/address.njk' %}
+      <a href="{{ map }}" rel="schema:hasMap" title="See {{ title }} office on Google Maps - Opens in a new tab" target="_blank">
+        <img src="{{ img.url }}" alt="{{ img.alt }}"><br>
+        View map
+      </a>
     </section>
 
     <section>
