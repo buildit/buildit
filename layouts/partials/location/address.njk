@@ -19,7 +19,10 @@
     {% if postcodePosition == "after" %}
       <span property="schema:addressLocality">{{city}}</span>
     {% endif %}
-    {% if postRegion %}<span property="schema:addressRegion">{{postRegion}}</span> {% endif %}<span property="schema:postalCode">{{postcode}}</span>
+    {% if postRegion %}
+      <span property="schema:addressRegion">{{postRegion}}</span>
+    {% endif %}
+    <span property="schema:postalCode">{{postcode}}</span>
     {% if postcodePosition == "before" %}
       <span property="schema:addressLocality">{{city}}</span>
     {% endif %}
