@@ -1,7 +1,7 @@
 {% if image and image.remote %}
   {% set imageSrc %}{{ image.src }}{% endset %}
 {% else %}
-  {% set imageSrc %}{{ env.url }}/images/{{ image.src or config.site.ogImage }}{% endset %}
+  {% set imageSrc %}{{ env.url }}/{{ image.src or config.site.ogImage }}{% endset %}
 {% endif %}
 <article class="grav-o-container grav-c-article" typeof="schema:Article">
   <meta property="schema:mainEntityOfPage" content="/{{ path }}">

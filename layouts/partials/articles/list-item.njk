@@ -1,8 +1,13 @@
+{% if article.image and article.image.remote %}
+  {% set imageSrc %}{{ article.image.src }}{% endset %}
+{% else %}
+  {% set imageSrc %}{{ env.url }}/{{ article.image.src or config.site.ogImage }}{% endset %}
+{% endif %}
 <li property="schema:itemListElement" typeof="schema:ListItem">
   <div class="grav-c-card-basic">
     <a href="/{{ article.path }}" property="schema:url">
       {% if article.image %}
-        <img property="schema:image" src="{{ article.image.src }}" alt="{{ article.image.alt }}" />
+        <img property="schema:image" src="{{ imageSrc }}" alt="{{ article.image.alt }}" />
         <svg role="img">
           <use xlink:href="#decoration-arrow-right"></use>
         </svg>
