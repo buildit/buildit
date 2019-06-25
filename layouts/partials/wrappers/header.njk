@@ -1,0 +1,8 @@
+{% if blocks.headerWrapper %}
+  {{ blocks.headerWrapper | safe }}
+{% else %}
+<header>
+  {# Fall back to rendering standard block partial #}
+  {% include 'partials/blocks/header.njk' %}
+</header>
+{% endif %}

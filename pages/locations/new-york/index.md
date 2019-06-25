@@ -1,4 +1,6 @@
 ---
+# The title should just be the city's name and must also match the city name as it
+# appears in the SmartRecruiters data used for the job listings.
 title: New York
 # URI slug for this location which gets appended to https://buildit.wiprodigital.com/thing/studio/[xx]/
 citySlug: new-york
@@ -15,6 +17,7 @@ img:
   alt: Map showing the location of the New York studio
 map: https://www.google.com/maps/place/77+Sands+St,+Brooklyn,+NY+11201,+USA/@40.700331,-73.987327,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a346b0a6f41:0xe60dd10638023226!8m2!3d40.7003578!4d-73.9873581
 layout: basic-page.njk
+blocks-njk:
+  main: layouts/partials/location/main.njk
 collection: colLocations
 ---
-<h1>New York</h1>

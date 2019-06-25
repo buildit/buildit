@@ -1,0 +1,17 @@
+<div class="grav-c-location-card" typeof="schema:Place" resource="https://buildit.wiprodigital.com/thing/studio/{{ location.countryCode}}/{{ location.citySlug }}">
+  <h2><a property="schema:url" href="/{{ location.path }}">{{ location.title }}</a></h2>
+  {% set address = location.address -%}
+  {%- set city = location.city -%}
+  {%- set postRegion = location.postRegion -%}
+  {%- set postcode = location.postcode -%}
+  {%- set postcodePosition = location.postcodePosition -%}
+  {%- set country = location.country -%}
+  {%- set countryCode = location.countryCode -%}
+  {% include 'partials/location/address.njk' %}
+  <a href="{{ location.map }}" rel="schema:hasMap" title="See {{ location.title }} office on Google Maps - Opens in a new tab" target="_blank">
+    <img src="{{ location.img.url }}" alt="{{ location.img.alt }}">
+    <br>
+    View map
+  </a>
+  <meta property="schema:name" content="{{ location.title }} Studio">
+</div>

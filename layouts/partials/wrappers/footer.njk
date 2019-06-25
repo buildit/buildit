@@ -1,0 +1,8 @@
+{% if blocks.footerWrapper %}
+  {{ blocks.footerWrapper | safe }}
+{% else %}
+<footer class="grav-u-color-scheme-contrast">
+  {# Fall back to rendering standard block partial #}
+  {% include 'partials/blocks/footer.njk' %}
+</footer>
+{% endif %}

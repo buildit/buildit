@@ -18,8 +18,14 @@ const humanDate = require('./lib/metalsmith-humandate');
 const htmlMinifierOptimise = require('./lib/metalsmith-html-minifier-optimise');
 const mapsiteCurrentenv = require('./lib/metalsmith-mapsite-currentenv');
 const jobListings = require('./lib/metalsmith-job-listings');
+const groupByKey = require('./lib/metalsmith-group-by-key');
 const namedIndexSort = require('./lib/sorts/named-index-sort');
 const dateSort = require('./lib/sorts/date-sort');
+
+const nunjucksJsTransformerOptions = {
+  html: true,
+  root: 'layouts',
+};
 
 ms.source('./pages')
   .destination('./dist')
@@ -56,13 +62,15 @@ ms.source('./pages')
     }),
   )
   .use(pathNoIndex())
+  .use(groupByKey({
+    propertyIn: 'colLocations',
+    propertyOut: 'locationsByCity',
+    key: 'title',
+  }))
   .use(
     inPlace({
       suppressNoFilesError: true,
-      engineOptions: {
-        html: true,
-        root: 'layouts',
-      },
+      engineOptions: nunjucksJsTransformerOptions,
     }),
   )
   .use(
@@ -93,16 +101,12 @@ ms.source('./pages')
       out: 'blocks',
       ext: 'njk',
       suppressNoFilesError: true,
+      options: nunjucksJsTransformerOptions,
     }),
   )
-  .use(
-    layouts({
-      engineOptions: {
-        html: true,
-        root: 'layouts',
-      },
-    }),
-  )
+  .use(layouts({
+    engineOptions: nunjucksJsTransformerOptions,
+  }))
   .use(
     beautify({
       preserve_newlines: false,

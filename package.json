@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@buildit/gravity-ui-web": "next",
-    "@buildit/job-listings": "^1.1.0",
+    "@buildit/job-listings": "^2.0.0",
     "browser-sync": "^2.26.7",
     "debug": "^4.1.1",
     "git-last-commit": "^0.3.0",
@@ -78,7 +78,7 @@
     "metalsmith-discover-partials": "^0.1.2",
     "metalsmith-drafts": "0.1.0",
     "metalsmith-frontmatter-file-loader": "^1.1.0",
-    "metalsmith-frontmatter-renderer": "^1.4.0",
+    "metalsmith-frontmatter-renderer": "^1.5.0",
     "metalsmith-fs-metadata": "github:dw-buildit/metalsmith-fs-metadata",
     "metalsmith-html-minifier": "^3.0.3",
     "metalsmith-in-place": "^4.2.0",
@@ -87,10 +87,10 @@
     "metalsmith-serve": "0.0.7",
     "minimist": "^1.2.0",
     "moment": "^2.24.0",
-    "rollup": "^1.14.2",
+    "rollup": "^1.15.6",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-closure-compiler-js": "github:dw-buildit/rollup-plugin-closure-compiler-js",
-    "rollup-plugin-node-resolve": "^5.0.1"
+    "rollup-plugin-node-resolve": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
