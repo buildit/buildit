@@ -69,7 +69,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eyeglass": "^2.4.1",
-    "git-last-commit": "^0.3.0",
+    "git-last-commit": "^1.0.0",
     "gsap": "^2.0.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
