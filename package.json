@@ -48,7 +48,7 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@buildit/gravity-ui-web": "^2.2.2",
+    "@buildit/gravity-ui-web": "^2.2.3",
     "@buildit/job-listings": "^2.0.0",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
@@ -107,7 +107,7 @@
     "minimist": "^1.2.0",
     "pa11y-ci": "^2.2.0",
     "prettier": "^1.18.2",
-    "rollup": "^1.20.2",
+    "rollup": "^1.20.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-closure-compiler-js": "github:dw-buildit/rollup-plugin-closure-compiler-js",
     "rollup-plugin-node-resolve": "^5.2.0",
