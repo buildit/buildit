@@ -50,6 +50,9 @@ ms.source('./pages')
       colMainNav: {
         sortBy: namedIndexSort('nav-index'),
       },
+      colLocations: {
+        sortBy: 'title',
+      },
       colArticles: {
         sortBy: namedIndexSort('article-index'),
       },
