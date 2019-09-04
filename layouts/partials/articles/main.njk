@@ -3,7 +3,7 @@
 {% else %}
   {% set imageSrc %}{{ env.url }}/{{ image.src or config.site.ogImage }}{% endset %}
 {% endif %}
-<article class="grav-o-container grav-c-article" typeof="schema:Article">
+<article class="grav-c-article" typeof="schema:Article">
   <meta property="schema:mainEntityOfPage" content="/{{ path }}">
   <header class="grav-c-page-intro">
     <h1 property="schema:headline">{{ title }}</h1>
@@ -18,7 +18,7 @@
 </article>
 {% if next %}
   <hr>
-  <aside class="grav-o-container">
+  <aside>
     <ul class="grav-c-related-items">
       <li>
         <span>Next Story</span>
