@@ -14,6 +14,17 @@
   </header>
   <div class="grav-c-ostentatious-copy" property="schema:articleBody">
     {{ contents | safe }}
+
+    {% if canonicalUrl %}
+    <aside class="web-c-subtle-notice">
+      {% if originalSourceSiteId %}
+        {% set sourceSite = externalSites[originalSourceSiteId] %}
+        This is article was first posted on <a href="{{ sourceSite.url }}">{{ sourceSite.title }}</a>. <a href="{{ canonicalUrl }}">Read the original article</a>.
+      {% else %}
+        This article was originally published at: <a href="{{ canonicalUrl }}">{{ canonicalUrl }}</a>.
+      {% endif %}
+    </aside>
+    {% endif %}
   </div>
 </article>
 {% if next %}

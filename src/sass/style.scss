@@ -43,6 +43,17 @@
   }
 }
 
+// Subtle notice messages.
+// Used on republished articles to link to the
+// original source.
+.web-c-subtle-notice {
+  @include grav-color-apply('background-color', 'a', 'neutral-alt');
+  @include grav-color-apply('color', 'b', 'neutral-subtle');
+  @include grav-font-size(-1);
+
+  padding: $grav-sp-m;
+}
+
 /********************/
 /* Trumps           */
 /********************/
