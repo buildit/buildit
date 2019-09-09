@@ -35,8 +35,7 @@ We conducted some research and workshops to get a handle on what shape our desig
 ## Tech stack research
 Buildit already had three projects that could potentially benefit from a design system: The Buildit website and two internal web apps.
 
-![Some of the questions from our questionnaire](/images/articles/ibgds-01.png)
-<cite>Some of the questions from our questionnaire</cite>
+<figure><img src="/images/articles/ibgds-01.png" alt="Some of the questions from our questionnaire"><figcaption>Some of the questions from our questionnaire</figcaption></figure>
 
 We began by sending out a developer questionnaire, inspired by [Brad Frost’s Frontend Guidelines Questions](http://bradfrost.com/blog/post/frontend-guidelines-questions/), to those 3 teams. The results were interesting:
 - The website used [Pug templates](https://pugjs.org/api/getting-started.html) to creates static HTML. Styling was done in [LESS](http://lesscss.org/) and made use of the [Semantic UI](https://semantic-ui.com/) framework.
@@ -77,8 +76,8 @@ Successful design systems have a set of design principles to guide their work an
 
 We began by looking at other design systems’ principles and collating them in a table to look for commonalities.
 
-![Excerpt from our big design system principles comparison table](/images/articles/ibgds-03.png)
-<cite>Excerpt from our big design system principles comparison table</cite>
+<figure><img src="/images/articles/ibgds-03.png" alt="Excerpt from our big design system principles comparison table"><figcaption>Excerpt from our big design system principles comparison table</figcaption></figure>
+
 
 Of the design systems we looked at, the most common principles centered around:
 
@@ -103,8 +102,7 @@ We subsequently found that, while these were all good aspirations, some of them 
 
 We then conducted UI inventories of our website and apps. Unsurprisingly, each app had a very different look and feel from the others.
 
-![The team reviewing and collating components from the various UI inventories](/images/articles/ibgds-04.jpg)
-<cite>The team reviewing and collating components from the various UI inventories</cite>
+<figure><img src="/images/articles/ibgds-04.jpg" alt="The team reviewing and collating components from the various UI inventories"><figcaption>The team reviewing and collating components from the various UI inventories</figcaption></figure>
 
 Nonetheless, when we began to collate all the components, we did find some repetition of the same kinds of components. However, organising and naming the components proved to be highly contentious.
 
@@ -114,8 +112,7 @@ The output of this exercise was a list of components that Gravity would eventual
 
 With our research done, we were raring to go. We set up a git repository for our UI library, set up a PatternLab build to generate a live pattern library and then… we stalled.
 
-![Nothing but tumbleweed (Photo credit: Jez Arnold)](/images/articles/ibgds-05.jpg)
-<cite>Nothing but tumbleweed (Photo credit: <a href="https://commons.wikimedia.org/wiki/File:Tumbleweed_rolling.jpg">Jez Arnold</a>)</cite>
+<figure><img src="/images/articles/ibgds-05.jpg" alt="Nothing but tumbleweed (Photo credit: Jez Arnold)"><figcaption>Nothing but tumbleweed (Photo credit: <a href="https://commons.wikimedia.org/wiki/File:Tumbleweed_rolling.jpg">Jez Arnold</a>)</figcaption></figure>
 
 Buildit is a consultancy. We make our money by helping our clients with digital transformation projects. We don’t make and sell our own products.
 
@@ -131,8 +128,7 @@ In early December 2017, an internal project was kicked off to refresh the [Build
 
 Even though we were building a website, part of that was designing and developing a set of UI components. We therefore picked up Gravity’s mostly empty UI library and pattern library and fleshed them out just enough to build the website. To be honest, even if we hadn’t had Gravity, we still would have built a pattern library, because *that’s just how you make websites*.
 
-![The relationship between the code for Gravity’s pattern library, UI library and Buildit’s website](/images/articles/ibgds-06.jpg)
-<cite>The relationship between the code for Gravity’s pattern library, UI library and Buildit’s website</cite>
+<figure><img src="/images/articles/ibgds-06.jpg" alt="The relationship between the code for Gravity’s pattern library, UI library and Buildit’s website"><figcaption>The relationship between the code for Gravity’s pattern library, UI library and Buildit’s website</figcaption></figure>
 
 In terms of design, we sketched on paper and whiteboards, tested some navigation flows with a clickable wireframe prototype in Balsamiq and did some visual design explorations in Sketch and Illustrator. However, whatever artefacts we produced in those tools were ephemeral, rough drafts. **As soon as we felt our ideas had matured enough, we implemented them in HTML & CSS within our pattern library and then iterated and refined them in there.**
 
@@ -154,8 +150,7 @@ And so, as a by-product of creating our website, we were able to also create and
 
 Gravity now has enough substance that we’re finally comfortable to tell the world about it. However, we still consider Gravity to be a *nascent* design system.
 
-![Viewing the page header component within Gravity’s pattern library](/images/articles/ibgds-07.jpg)
-<cite>Viewing the page header component within Gravity’s pattern library</cite>
+<figure><img src="/images/articles/ibgds-07.jpg" alt=""><figcaption>Viewing the page header component within Gravity’s pattern library</figcaption></figure>
 
 ## Developing a roadmap
 
@@ -187,8 +182,7 @@ We therefore set about refining our design principles and eventually ended up wi
 
 The more we thought about it, the more we realised that our principles could extend well beyond just the design aspects. They could and should influence how we maintain Gravity, how we approach technical aspects and more. We therefore dropped the “design” bit and now simply have Gravity’s *principles*.
 
-![Members of the Gravity team discussing the revised principles](/images/articles/ibgds-09.jpg)
-<cite>Members of the Gravity team discussing the revised principles</cite>
+<figure><img src="/images/articles/ibgds-09.jpg" alt="Members of the Gravity team discussing the revised principles"><figcaption>Members of the Gravity team discussing the revised principles</figcaption></figure>
 
 This model helped us better organise our ideas and we ended up with:
 
