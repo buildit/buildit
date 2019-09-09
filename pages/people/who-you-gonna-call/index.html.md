@@ -7,6 +7,7 @@ collection:
 date: "2018-07-18T06:59:00.000Z"
 article-index: 1
 description: As a small team of Creative Technologists here at Buildit we thrive on rapidly making and breaking things to find the answers that improve products.
+canonicalUrl: https://medium.com/buildit/who-you-gonna-call-fb737b9d6268
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
