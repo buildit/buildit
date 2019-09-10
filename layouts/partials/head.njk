@@ -13,6 +13,10 @@
     {% endif %}
 {% endif %}
 
+{% if canonicalUrl %}
+<link rel="canonical" href="{{ canonicalUrl }}">
+{% endif %}
+
 <!-- Open Graph -->
 <meta property="og:title" content="{{ ogTitle or title }}">
 <meta property="og:description" content="{{ ogDescription or description or config.site.description }}">

@@ -39,6 +39,7 @@ ms.source('./pages')
   .use(
     fsMetadata({
       config: './config/site.json',
+      externalSites: './metadata/external-sites.json',
     }),
   )
   .use(buildInfo())

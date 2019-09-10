@@ -7,6 +7,8 @@ collection:
 date: "2018-06-15T12:00:00.000Z"
 article-index: 0
 description: We have created a nascent design system and its name is Gravity. It supports our Buildit @ Wipro Digital website and our internal projects. 
+canonicalUrl: https://medium.com/buildit/introducing-buildits-gravity-design-system-44c3fe7a1d26
+originalSourceSiteId: buildit-medium-blog
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
