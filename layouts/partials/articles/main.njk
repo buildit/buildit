@@ -4,7 +4,6 @@
   {% set imageSrc %}{{ env.url }}/{{ image.src or config.site.ogImage }}{% endset %}
 {% endif %}
 <article class="grav-c-article" typeof="schema:Article">
-  <meta property="schema:mainEntityOfPage" content="/{{ path }}">
   <header class="grav-c-page-intro">
     <h1 property="schema:headline">{{ title }}</h1>
     <p>{{ description }}</p>
@@ -12,6 +11,7 @@
     <img property="schema:image" src="{{ imageSrc }}" alt="{{ image.alt or config.site.ogImageAlt }}" />
     <link rel="schema:author schema:publisher" href="https://buildit.wiprodigital.com/thing/buildit-org">
   </header>
+  <meta property="schema:mainEntityOfPage" content="/{{ path }}">
   <div class="grav-c-ostentatious-copy" property="schema:articleBody">
     {{ contents | safe }}
 
