@@ -25,6 +25,7 @@ const chalk = require('chalk');
 const gravityBldApi = require('@buildit/gravity-ui-web/build-api');
 const scripts = require('./gulp/scripts');
 const browserSync = require('./gulp/browsersync');
+const favicons = require('./gulp/favicons');
 const gulpConfig = require('./config/gulp.json');
 
 // eslint-disable-next-line prefer-destructuring
@@ -166,6 +167,7 @@ function watch(done) {
       browserSync.reload,
     ),
   );
+  gulp.watch(paths.favicons.src, favicons.generateFavicons);
   done();
 }
 
@@ -199,7 +201,14 @@ gulp.task(
     'clean',
     printBuildInfo,
     metalsmithBuild,
-    gulp.parallel(assets, imageOptim, styles, scripts.bundle, copyDebugCss),
+    gulp.parallel(
+      assets,
+      imageOptim,
+      styles,
+      scripts.bundle,
+      copyDebugCss,
+      favicons.generateFavicons,
+    ),
     criticalCss,
   ),
 );

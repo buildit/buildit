@@ -35,6 +35,10 @@
     },
     "content": {
       "src": "content/"
+    },
+    "favicons": {
+      "src": "src/favicons/*.png",
+      "dest": "dist/"
     }
   }
 }
