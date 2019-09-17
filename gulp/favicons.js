@@ -1,5 +1,7 @@
+const { Readable } = require('stream');
+const Vinyl = require('vinyl');
 const gulp = require('gulp');
-const favicons = require('gulp-favicons');
+const favicons = require('favicons');
 const jsonEditor = require('gulp-json-editor');
 const rename = require('gulp-rename');
 const filter = require('gulp-filter');
@@ -10,6 +12,58 @@ const siteConfig = require('../config/site.json').site;
 
 // eslint-disable-next-line prefer-destructuring
 const paths = gulpConfig.paths;
+
+
+class FaviconSourceStream extends Readable {
+  constructor(sourceFiles, config) {
+    super({
+      objectMode: true,
+    });
+
+    this._reading = false;
+    this._sourceFiles = sourceFiles;
+    this._config = config;
+  }
+
+  async _nextFavicons() {
+    if (!this._favicons) {
+      try {
+        // Run Favicons directly (so that we pass in an array of multiple
+        // images, which is not supported by gulp-favicons)
+        const { images, files } = await favicons(
+          this._sourceFiles,
+          this._config,
+        );
+
+        this._favicons = images.concat(files).map(file => new Vinyl({
+          path: file.name,
+          contents: Buffer.isBuffer(file.contents)
+            ? file.contents
+            : Buffer.from(file.contents),
+        }));
+      } catch (err) {
+        this.destroy(err);
+      }
+    }
+
+    if (this._favicons.length === 0) {
+      // We've pushed all icons to the stream
+      this.push(null);
+    } else if (this.push(this._favicons.pop())) {
+      this._nextFavicons();
+    } else {
+      this._reading = false;
+    }
+  }
+
+  _read() {
+    if (!this._reading) {
+      this._reading = true;
+      this._nextFavicons();
+    }
+  }
+}
+
 
 function generateFavicons() {
   const manifestFilter = filter('manifest.json', { restore: true });
@@ -22,8 +76,9 @@ function generateFavicons() {
   // ones we don't need using this filter.
   const redundantIconFilter = filter(['**', '!apple-touch-icon-*']);
 
-  return gulp.src(paths.favicons.src)
-    .pipe(favicons({
+  return new FaviconSourceStream(
+    paths.favicons.src,
+    {
       appName: siteConfig.title,
       appShortName: siteConfig.shortTitle,
       appDescription: siteConfig.description,
@@ -32,13 +87,15 @@ function generateFavicons() {
       theme_color: gravityParticles.colorSchemes.tealWhite.groupB.accent,
       display: 'browser',
       start_url: '/',
+      // logging: true,
       icons: {
         appleStartup: false,
         coast: false,
         firefox: false,
         yandex: false,
       },
-    }))
+    },
+  )
     // Rename and alter the web manifest
     .pipe(manifestFilter)
     .pipe(rename('site.webmanifest'))
