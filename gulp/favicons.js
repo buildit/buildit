@@ -7,6 +7,7 @@ const rename = require('gulp-rename');
 const filter = require('gulp-filter');
 const gravityParticles = require('@buildit/gravity-particles');
 
+const optimiseImages = require('./image-optim-pipe');
 const gulpConfig = require('../config/gulp.json');
 const siteConfig = require('../config/site.json').site;
 
@@ -105,6 +106,7 @@ function generateFavicons() {
     .pipe(manifestFilter.restore)
     // end of web manifest specific steps
     .pipe(redundantIconFilter)
+    .pipe(optimiseImages())
     .pipe(gulp.dest(paths.favicons.dest));
 }
 

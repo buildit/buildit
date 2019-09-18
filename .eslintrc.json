@@ -27,6 +27,21 @@
         "cy": "readonly",
         "expect": "readonly"
       }
+    },
+    {
+      "files": [
+        "gulpfile.js",
+        "metalsmith.js",
+        "gulp/**/*.js"
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
     }
   ]
 }
