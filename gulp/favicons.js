@@ -11,8 +11,7 @@ const optimiseImages = require('./image-optim-pipe');
 const gulpConfig = require('../config/gulp.json');
 const siteConfig = require('../config/site.json').site;
 
-// eslint-disable-next-line prefer-destructuring
-const paths = gulpConfig.paths;
+const { paths } = gulpConfig;
 
 
 class FaviconSourceStream extends Readable {
