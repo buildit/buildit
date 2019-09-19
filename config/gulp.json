@@ -35,6 +35,13 @@
     },
     "content": {
       "src": "content/"
+    },
+    "favicons": {
+      "src": [
+        "src/favicons/buildit-favicon-1500.png",
+        "src/favicons/buildit-favicon-96.png"
+      ],
+      "dest": "dist/"
     }
   }
 }

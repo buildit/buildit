@@ -11,6 +11,7 @@ const beautify = require('metalsmith-beautify');
 const drafts = require('metalsmith-drafts');
 const gravityPaths = require('@buildit/gravity-ui-web/build-api');
 const fs = require('fs');
+const gravityParticles = require('@buildit/gravity-particles');
 const pathNoIndex = require('./lib/metalsmith-path-noindex');
 const buildInfo = require('./lib/metalsmith-build-info');
 const envInfo = require('./lib/metalsmith-env-info');
@@ -35,6 +36,7 @@ ms.source('./pages')
       gravityPaths.distPath(gravityPaths.distSvgSymbolsFilename),
       'utf8',
     ),
+    gravityParticles,
   })
   .use(
     fsMetadata({

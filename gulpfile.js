@@ -9,10 +9,6 @@ const run = require('gulp-run');
 
 const critical = require('critical').stream;
 const autoprefixer = require('gulp-autoprefixer');
-const imagemin = require('gulp-imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const imageminPngquant = require('imagemin-pngquant');
-const imageminSvgo = require('imagemin-svgo');
 
 // internal gulp plugins
 
@@ -23,8 +19,10 @@ const chalk = require('chalk');
 
 // config
 const gravityBldApi = require('@buildit/gravity-ui-web/build-api');
+const optimiseImages = require('./gulp/image-optim-pipe');
 const scripts = require('./gulp/scripts');
 const browserSync = require('./gulp/browsersync');
+const favicons = require('./gulp/favicons');
 const gulpConfig = require('./config/gulp.json');
 
 // eslint-disable-next-line prefer-destructuring
@@ -122,16 +120,7 @@ function clean(done) {
 function imageOptim() {
   return gulp
     .src(paths.images.src)
-    .pipe(
-      gulpIf(
-        optimise,
-        imagemin([
-          imageminMozjpeg({ quality: 85 }),
-          imageminPngquant({ quality: [0.65, 0.8] }),
-          imageminSvgo({ plugins: [{ removeViewBox: false }] }),
-        ]),
-      ),
-    )
+    .pipe(optimiseImages())
     .pipe(gulp.dest(paths.images.dest));
 }
 
@@ -166,6 +155,7 @@ function watch(done) {
       browserSync.reload,
     ),
   );
+  gulp.watch(paths.favicons.src, favicons.generateFavicons);
   done();
 }
 
@@ -199,7 +189,14 @@ gulp.task(
     'clean',
     printBuildInfo,
     metalsmithBuild,
-    gulp.parallel(assets, imageOptim, styles, scripts.bundle, copyDebugCss),
+    gulp.parallel(
+      assets,
+      imageOptim,
+      styles,
+      scripts.bundle,
+      copyDebugCss,
+      favicons.generateFavicons,
+    ),
     criticalCss,
   ),
 );
