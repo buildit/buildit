@@ -32,7 +32,8 @@
       "files": [
         "gulpfile.js",
         "metalsmith.js",
-        "gulp/**/*.js"
+        "gulp/**/*.js",
+        "lib/**/*.js"
       ],
       "rules": {
         "import/no-extraneous-dependencies": [
