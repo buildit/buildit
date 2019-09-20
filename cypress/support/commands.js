@@ -27,5 +27,5 @@ Cypress.Commands.add('scrollReveal', (selector) => {
 Cypress.Commands.add('smoothScroll', (anchor) => {
   cy.get(anchor).click();
   cy.get(`a[href="${anchor}"]`).click();
-  cy.location(location => expect(location).to.contain(anchor));
+  cy.location((location) => expect(location).to.contain(anchor));
 });
