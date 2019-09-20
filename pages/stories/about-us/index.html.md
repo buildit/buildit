@@ -10,8 +10,8 @@ description: Who we are, what we do, and how we do it
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
-  src: https://placeimg.com/1280/720/arch
-  alt: Everything we do is driven by you
+  src: /images/articles/about-people.jpg
+  alt: Various Buildsters outside the Duke of York cinema in Brighton
   remote: true
 ogType: article
 section: stories
