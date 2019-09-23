@@ -29,11 +29,6 @@ Maybe it's even possible to write a **simple app** that will throw out a status 
 
 Bragging? Underestimating scrum masters and project managers? Let's call a bluff! There was no other way to settle the argument than to run an experiment...
 
-<figure>
-  <img src="/images/articles/daily-routine/sleeping-guys.jpg" alt="Programmers taking a nap after exhausting meetup">
-  <figcaption>Photo taken in train during journey from the first BuildIt Poland face-to-face meetup in Warsaw. Hangover was real.</figcaption>
-</figure>
-
 ## Meet the Team
 
 After releasing MVP, in one of the not-so-sunny August 2019 afternoons, we finally gathered everyone involved in the project in one room.
@@ -50,8 +45,8 @@ Before writing even one line of code we prepared [interactive prototype](https:/
 Another important part of pre-production process was defining potential users [proto-personas](https://github.com/BuildIt-Poland/daily-routine/blob/master/extras/daily-routine-proto-personas.pdf).
 
 <figure>
-  <img src="/images/articles/daily-routine/proto-personas.jpg" alt="Daily Routine proto personas">
-  <figcaption>Daily Routine Back End developer screen prototype</figcaption>
+  <img src="/images/articles/daily-routine/daily-routine-prototype-and-personas.jpg" alt="Back End Developer screen prototype and Scrum Master proto persona">
+  <figcaption>Early stages screen prototype and proto persona</figcaption>
 </figure>
 
 
@@ -59,12 +54,10 @@ Another important part of pre-production process was defining potential users [p
 
 Next step was setting up **backlog** in Jira and **project board** on the Gdańsk office's windows.
 
-![Daily Routine delivery wall](/images/articles/daily-routine/delivery-wall-side.jpg)
-
-![Colorful notes and stickers to put tasks and their status on delivery wall](/images/articles/daily-routine/sticky-notes.jpg)
-
-![One of the tasks on Daily Routine's delivery wall](/images/articles/daily-routine/task-status.jpg)
-
+<figure>
+  <img src="/images/articles/daily-routine/daily-routine-wall-task-stickers.jpg" alt="Delivery Wall, sticky notes and stickers to track app development progress">
+  <figcaption>We tracked app development progress on the Delivery Wall</figcaption>
+</figure>
 
 # It is just a beginning
 
