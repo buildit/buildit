@@ -119,7 +119,7 @@ function clean(done) {
 function imageOptim() {
   return gulp
     .src(paths.images.src)
-    .pipe(optimiseImages())
+    .pipe(optimiseImages(true))
     .pipe(gulp.dest(paths.images.dest));
 }
 
