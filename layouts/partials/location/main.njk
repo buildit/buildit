@@ -1,3 +1,8 @@
+{% if image and image.remote %}
+  {% set imageSrc %}{{ image.src }}{% endset %}
+{% else %}
+  {% set imageSrc %}{{ env.url }}/{{ image.src or config.site.ogImage }}{% endset %}
+{% endif %}
 <article
   typeof="schema:Place"
   resource="https://buildit.wiprodigital.com/thing/studio/{{ countryCode}}/{{ citySlug }}"
@@ -8,7 +13,7 @@
     <p>{{ description }}</p>
     {% endif %}
     {% if image %}
-      <img src="{{ image.src }}" alt="{{ image.alt }}" />
+      <img src="{{ imageSrc }}" alt="{{ image.alt }}" />
     {% endif %}
     <link rel="schema:mainEntityOfPage" href="/{{ path }}">
   </header>

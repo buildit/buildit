@@ -12,7 +12,7 @@ originalSourceSiteId: buildit-medium-blog
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
-  src: /images/articles/ibgds-title.jpg
+  src: images/articles/ibgds-title.jpg
   alt: Photo of the Cat's Paw Nebula, a cloudlike formation in space
 ogType: article
 section: stories

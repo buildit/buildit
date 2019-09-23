@@ -10,7 +10,7 @@ description: Not sure what are you suppose to say during upcoming daily meeting?
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
-  src: /images/articles/daily-routine/daily-routine-delivery-wall-shot.jpg
+  src: images/articles/daily-routine/daily-routine-delivery-wall-shot.jpg
   alt: Printed mock-ups of the Daily Routine app's UI stuck on the office windows
 ogType: article
 section: stories
@@ -59,7 +59,7 @@ Another important part of pre-production process was defining potential users [p
 
 Next step was setting up **backlog** in Jira and **project board** on the Gdańsk office's windows.
 
-![Daily Routine delivery wall](/images/articles/daily-routine/delivery-wall.jpg)
+![Daily Routine delivery wall](/images/articles/daily-routine/delivery-wall-side.jpg)
 
 ![Colorful notes and stickers to put tasks and their status on delivery wall](/images/articles/daily-routine/sticky-notes.jpg)
 

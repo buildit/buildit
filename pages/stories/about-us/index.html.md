@@ -10,15 +10,14 @@ description: Who we are, what we do, and how we do it
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
-  src: /images/articles/about-people.jpg
+  src: images/articles/about-people.jpg
   alt: Various Buildsters outside the Duke of York cinema in Brighton
-  remote: true
 ogType: article
 section: stories
 ---
 ## Who we are
 <div class="web-c-video-player">
-  <iframe src="https://www.youtube-nocookie.com/embed/E_MIWWwnd60" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/E_MIWWwnd60?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Innovative** - self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.

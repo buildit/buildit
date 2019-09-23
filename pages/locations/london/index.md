@@ -20,6 +20,6 @@ blocks-njk:
   main: layouts/partials/location/main.njk
 collection: colLocations
 image:
-  src: /images/locations/london-reception.jpg
+  src: images/locations/london-reception.jpg
   alt: The London studio's reception area
 ---
