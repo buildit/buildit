@@ -12,8 +12,8 @@ originalSourceSiteId: buildit-medium-blog
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
-  src: images/articles/gravity.png
-  alt: Buildit's Gravity Design System
+  src: images/articles/ibgds-title.jpg
+  alt: Photo of the Cat's Paw Nebula, a cloudlike formation in space
 ogType: article
 section: stories
 ---
@@ -212,3 +212,6 @@ Some new internal web projects are being worked on and they have agreed to use a
 To that end, we are beginning to raise awareness of Gravity and its benefits within our organisation (this very article is a part of that effort!). We are also exploring other approaches and means to get our work sponsored, including scaling Gravity to serve other parts of Wipro beyond just Buildit.
 
 All going well, we will have plenty more stories to tell about Gravity in the future. Watch this space!
+
+
+<!-- title photo credit: https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA22567 -->

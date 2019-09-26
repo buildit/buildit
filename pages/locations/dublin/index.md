@@ -22,7 +22,7 @@ blocks-njk:
 collection: colLocations
 description: Hi, we’re a bunch of designers and technologists taking a cross-functional lens to thorny problems.
 image:
-  src: /images/dublin-team.jpg
+  src: images/dublin-team.jpg
   alt: Group photo of the Dublin studio staff
 ---
 ## From insights to impact

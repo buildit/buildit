@@ -10,13 +10,16 @@ description: Who we are, what we do, and how we do it
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
-  src: https://placeimg.com/1280/720/arch
-  alt: Everything we do is driven by you
-  remote: true
+  src: images/articles/about-people.jpg
+  alt: Various Buildsters outside the Duke of York cinema in Brighton
 ogType: article
 section: stories
 ---
 ## Who we are
+<div class="web-c-video-player">
+  <iframe src="https://www.youtube-nocookie.com/embed/E_MIWWwnd60?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 **Innovative** - self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.
 
 **Problem solvers** - we enjoy finding ways to make complicated tasks easy. We tackle root-causes, not symptoms. We are user-centric but keep an eye on the big picture.
@@ -24,6 +27,7 @@ section: stories
 **No "bull"** - from open-minded to open source, as natural collaborators, we are not afraid to 'do the right thing' for our clients and their customers.
 
 **Battle tested** - resilience is our most valuable quality, with teams that own, commit and have the ability to adapt to unique organisational aspirations and challenges.
+
 
 ## What we do
 We partner with our clients to solve hard problems, and help them deliver world-class products.We help them improve the way they solve business problems, ultimately changing the way they change.

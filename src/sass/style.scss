@@ -54,6 +54,31 @@
   padding: $grav-sp-m;
 }
 
+.web-c-video-player {
+  @include grav-color-apply('background-color', 'a', 'neutral-alt');
+
+  position: relative;
+  display: block;
+  border: none;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 100%;
+    padding-top: #{ 100% / 16 * 9 };
+  }
+}
+
 /********************/
 /* Trumps           */
 /********************/
