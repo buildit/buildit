@@ -38,7 +38,7 @@ After releasing MVP, in one of the not-so-sunny August 2019 afternoons, we final
   <figcaption>From left to right: Przemysław Popowicz, Lech Wypychowski, Marcin Goławski, Michał Pieniążek (hologram), Maciej Hein, Mateusz Łachacz, Marek Mollin</figcaption>
 </figure>
 
-# Prototyping before coding
+## Prototyping before coding
 
 Before writing even one line of code we prepared [interactive prototype](https://wiprodigital.invisionapp.com/share/RXS7T0ME984#/screens) in InVision and gathered helpful feedback about overall user experience.
 
@@ -50,7 +50,7 @@ Another important part of pre-production process was defining potential users [p
 </figure>
 
 
-# Design driven delivery
+## Design driven delivery
 
 Next step was setting up **backlog** in Jira and **project board** on the Gdańsk office's windows.
 
@@ -59,7 +59,7 @@ Next step was setting up **backlog** in Jira and **project board** on the Gdań
   <figcaption>We tracked app development progress on the Delivery Wall</figcaption>
 </figure>
 
-# It is just a beginning
+## It is just a beginning
 
 After 2 months of hard work we finally released **MVP**. But we have a feeling it's just a beginning. [Don't shy away and contribute](https://github.com/BuildIt-Poland/daily-routine).
 
