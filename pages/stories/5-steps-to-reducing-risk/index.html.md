@@ -15,10 +15,7 @@ image:
 ogType: article
 section: stories
 ---
-# 5 Steps to Reducing Risk
-
 >The key to getting something done in 6 months, is to get a version of it done in 6 days, and expose it to the real world
-
 <!-- via [John Cutler](https://twitter.com/johncutlefish/status/1134917251335954433) -->
 
 Large enterprise organisations have always admired the approach and urgency of start-up’s. When you are stuck in the swamp of process and sign-offs the idea of emulating a start-up model seems particularly enticing. However this usually misses the point as accelerated delivery without customer validation, whilst it may meet internal metrics, is unlikely to lead to a successful digital service.
