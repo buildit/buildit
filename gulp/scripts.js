@@ -43,7 +43,7 @@ function bundle() {
         ],
       })
       // eslint-disable-next-line no-shadow
-      .then(bundle => bundle.write({
+      .then((bundle) => bundle.write({
         file: path.join(paths.scripts.dest, 'bundle.min.js'),
         format: 'umd',
         sourcemap: true,

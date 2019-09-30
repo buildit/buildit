@@ -35,7 +35,7 @@ class FaviconSourceStream extends Readable {
           this._config,
         );
 
-        this._favicons = images.concat(files).map(file => new Vinyl({
+        this._favicons = images.concat(files).map((file) => new Vinyl({
           path: file.name,
           contents: Buffer.isBuffer(file.contents)
             ? file.contents

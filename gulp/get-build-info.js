@@ -14,7 +14,7 @@ function isLocalBuild() {
 
 async function getCommitInfo() {
   if (isLocalBuild()) {
-    return new Promise(resolve => resolve({
+    return new Promise((resolve) => resolve({
       hash: '',
       shortHash: '',
     }));
