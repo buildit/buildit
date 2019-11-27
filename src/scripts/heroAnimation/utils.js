@@ -1,5 +1,4 @@
-import { TweenLite } from "gsap/TweenLite";
-import { Circ } from "gsap/EasePack";
+import { TweenLite, Circ } from "gsap";
 
 export function calcPointsLimiter(width, height) {
   const pointsLimiterMin = 6;
@@ -21,7 +20,7 @@ export function drawLines(p, ctx) {
 
 export function shiftPoint(point, ease, shiftMethod) {
   shiftMethod = shiftMethod || TweenLite.to;
-  ease = ease || Circ.easeInOut;
+  ease = ease || Circ.inOut;
 
   const duration = 1 + 1 * Math.random();
   const vars = {
