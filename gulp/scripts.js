@@ -25,7 +25,6 @@ function bundle() {
               // ES6 transpilation is made from babel
               languageIn: "ECMASCRIPT5_STRICT",
               languageOut: "ECMASCRIPT5_STRICT",
-              env: "CUSTOM",
               warningLevel: "QUIET",
               applyInputSourceMaps: false,
               useTypesForOptimization: false,
@@ -44,6 +43,7 @@ function bundle() {
           file: path.join(paths.scripts.dest, "bundle.min.js"),
           format: "umd",
           sourcemap: true,
+          compact: true,
           // For non-optimised builds
           // (this gets stripped off by closure otheriwse)
           banner: `/* ${bldInfo.description} ${bldInfo.commitShortHash} */`
