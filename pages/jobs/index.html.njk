@@ -24,7 +24,7 @@ nav-index: 2
         <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
       </h3>
     </header>
-    <ul class="grav-o-two-column grav-o-column-list web-c-job-list">
+    <ul class="grav-o-two-column grav-o-reset-list web-c-job-list">
       {% for job in jobs %}
         {% include 'partials/jobs/job-card.njk' %}
       {% endfor %}
