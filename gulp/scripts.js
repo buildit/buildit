@@ -1,9 +1,8 @@
 const path = require("path");
-const gulp = require("gulp");
 const gulpIf = require("gulp-if");
 const rollup = require("rollup");
 const babel = require("rollup-plugin-babel");
-const closure = require("rollup-plugin-closure-compiler-js");
+const closure = require("@ampproject/rollup-plugin-closure-compiler");
 const resolveNodeModules = require("rollup-plugin-node-resolve");
 const paths = require("../config.json").paths;
 const envs = require("./envs");
@@ -35,9 +34,7 @@ function bundle() {
               rewritePolyfills: false,
               // Use Closure's outputWrapper to prepend build info
               // for optimised builds
-              outputWrapper: `/* ${bldInfo.description} ${
-                bldInfo.commitShortHash
-              } */\n%output%`
+              outputWrapper: `/* ${bldInfo.description} ${bldInfo.commitShortHash} */\n%output%`
             })
           )
         ]
