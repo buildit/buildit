@@ -21,15 +21,16 @@ const optimise = envs.shouldOptimise();
  * compress them.
  */
 module.exports = (createWebp = false) => {
-  let imagePipe = lazypipe().pipe(
-    gulpIf,
-    optimise,
-    imagemin([
-      imageminMozjpeg({ quality: 85 }),
-      imageminPngquant({ quality: [0.65, 0.8] }),
-      imageminSvgo({ plugins: [{ removeViewBox: false }] }),
-    ]),
-  );
+  let imagePipe = lazypipe()
+    .pipe(
+      gulpIf,
+      optimise,
+      imagemin([
+        imageminMozjpeg({ quality: 85 }),
+        imageminPngquant({ quality: [0.65, 0.8] }),
+        imageminSvgo({ plugins: [{ removeViewBox: false }] }),
+      ]),
+    );
 
   if (createWebp) {
     // Additionally generate WebP copies of the source

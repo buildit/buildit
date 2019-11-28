@@ -1,0 +1,42 @@
+{
+  "variants": {
+    "title": {
+      "match": [
+        "images/articles/**/*",
+        "images/locations/**/*"
+      ],
+      "sizes": {
+        "lrg": {
+          "width": 1168,
+          "height": {
+            "min": 256,
+            "max": 480
+          }
+        }
+      },
+      "densities": [1, 2]
+    },
+    "card": {
+      "match": "images/articles/**/*",
+      "sizes": {
+        "std": {
+          "width": 585,
+          "height": 520
+        }
+      },
+      "densities": [1, 2]
+    },
+    "article": {
+      "match": [
+        "images/articles/**/*",
+        "images/locations/**/*"
+      ],
+      "sizes": {
+        "lrg": {
+          "width": 880
+        }
+      },
+      "densities": [1, 2]
+    }
+  }
+}
