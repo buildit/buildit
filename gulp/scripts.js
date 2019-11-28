@@ -2,10 +2,9 @@ const path = require('path');
 const gulpIf = require('gulp-if');
 const rollup = require('rollup');
 const babel = require('rollup-plugin-babel');
-const closure = require('rollup-plugin-closure-compiler-js');
+const closure = require('@ampproject/rollup-plugin-closure-compiler');
 const resolveNodeModules = require('rollup-plugin-node-resolve');
-// eslint-disable-next-line prefer-destructuring
-const paths = require('../config/gulp.json').paths;
+const { paths } = require('../config/gulp.json');
 const envs = require('./envs');
 const getBuildInfo = require('./get-build-info.js');
 
@@ -26,7 +25,6 @@ function bundle() {
               // ES6 transpilation is made from babel
               languageIn: 'ECMASCRIPT5_STRICT',
               languageOut: 'ECMASCRIPT5_STRICT',
-              env: 'CUSTOM',
               warningLevel: 'QUIET',
               applyInputSourceMaps: false,
               useTypesForOptimization: false,
@@ -47,6 +45,7 @@ function bundle() {
         file: path.join(paths.scripts.dest, 'bundle.min.js'),
         format: 'umd',
         sourcemap: true,
+        compact: true,
         // For non-optimised builds
         // (this gets stripped off by closure otheriwse)
         banner: `/* ${bldInfo.description} ${bldInfo.commitShortHash} */`,
