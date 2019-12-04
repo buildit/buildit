@@ -8,7 +8,32 @@
     <h1 property="schema:headline">{{ title }}</h1>
     <p>{{ description }}</p>
     <time property="schema:datePublished schema:dateModified" datetime="{{ date }}">{{ humanDate }}</time>
-    <img property="schema:image" src="{{ imageSrc }}" alt="{{ image.alt or config.site.ogImageAlt }}" />
+    <picture>
+      <source
+        type="image/webp"
+        srcset="
+          {{ imageSrc | imgVariant('title','lrg', 1) | webp }} 1168w,
+          {{ imageSrc | imgVariant('title','lrg', 2) | webp }} 2336w
+        "
+        sizes="
+          (max-width: 74.99rem) 100vw,
+          (min-width: 75rem) 73rem
+        "
+      >
+      <img
+        property="schema:image"
+        alt="{{ image.alt or config.site.ogImageAlt }}"
+        src="{{ imageSrc | imgVariant('title','lrg', 1) }}"
+        srcset="
+          {{ imageSrc | imgVariant('title','lrg', 1) }} 1168w,
+          {{ imageSrc | imgVariant('title','lrg', 2) }} 2336w
+        "
+        sizes="
+          (max-width: 74.99rem) 100vw,
+          (min-width: 75rem) 73rem
+        "
+      >
+    </picture>
     <link rel="schema:author schema:publisher" href="https://buildit.wiprodigital.com/thing/buildit-org">
   </header>
   <meta property="schema:mainEntityOfPage" content="/{{ path }}">

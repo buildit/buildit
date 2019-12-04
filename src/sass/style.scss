@@ -23,6 +23,13 @@
 /* Base             */
 /********************/
 
+source + * {
+  margin-top: 0;
+}
+
+picture {
+  display: block;
+}
 
 /********************/
 /* Objects          */
@@ -35,6 +42,10 @@
 .grav-c-callout {
   background: url('/images/callout.jpg') center center;
   background-size: cover;
+}
+
+.grav-c-card-basic picture {
+  @include grav-decoration-notch-in;
 }
 
 .web-c-job-list {

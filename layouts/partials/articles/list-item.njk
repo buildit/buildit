@@ -7,7 +7,34 @@
   <div class="grav-c-card-basic">
     <a href="/{{ article.path }}" property="schema:url">
       {% if article.image %}
-        <img property="schema:image" src="{{ imageSrc }}" alt="{{ article.image.alt }}" />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              {{ imageSrc | imgVariant('card','std', 1) | webp }} 585w,
+              {{ imageSrc | imgVariant('card','std', 2) | webp }} 1170w
+            "
+            sizes="
+              (max-width: 55.99rem) 100vw,
+              (min-width: 56rem) and (max-width: 74.99rem) 50vw,
+              (min-width: 75rem) 34.5rem
+            "
+          >
+          <img
+            property="schema:image"
+            alt="{{ article.image.alt }}"
+            src="{{ imageSrc | imgVariant('card','lrg', 1) }}"
+            srcset="
+              {{ imageSrc | imgVariant('card','std', 1) }} 585w,
+              {{ imageSrc | imgVariant('card','std', 2) }} 1170w
+            "
+            sizes="
+              (max-width: 55.99rem) 100vw,
+              (min-width: 56rem) and (max-width: 74.99rem) 50vw,
+              (min-width: 75rem) 34.5rem
+            "
+          >
+        </picture>
         <svg role="img">
           <use xlink:href="#decoration-arrow-right"></use>
         </svg>

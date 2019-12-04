@@ -19,11 +19,13 @@ const chalk = require('chalk');
 
 // config
 const gravityBldApi = require('@buildit/gravity-ui-web/build-api');
+const imageVariants = require('./lib/gulp-image-variants');
 const optimiseImages = require('./gulp/image-optim-pipe');
 const scripts = require('./gulp/scripts');
 const browserSync = require('./gulp/browsersync');
 const favicons = require('./gulp/favicons');
 const gulpConfig = require('./config/gulp.json');
+const imageVariantsConfig = require('./config/images.json');
 
 // eslint-disable-next-line prefer-destructuring
 const paths = gulpConfig.paths;
@@ -119,7 +121,8 @@ function clean(done) {
 function imageOptim() {
   return gulp
     .src(paths.images.src)
-    .pipe(optimiseImages())
+    .pipe(imageVariants(imageVariantsConfig))
+    .pipe(optimiseImages(true))
     .pipe(gulp.dest(paths.images.dest));
 }
 

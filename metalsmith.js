@@ -22,10 +22,12 @@ const jobListings = require('./lib/metalsmith-job-listings');
 const groupByKey = require('./lib/metalsmith-group-by-key');
 const namedIndexSort = require('./lib/sorts/named-index-sort');
 const dateSort = require('./lib/sorts/date-sort');
+const nunjucksFilters = require('./lib/nunjucks-filters');
 
 const nunjucksJsTransformerOptions = {
   html: true,
   root: 'layouts',
+  filters: nunjucksFilters,
 };
 
 ms.source('./pages')
