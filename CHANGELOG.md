@@ -1,3 +1,10 @@
+## [4.5.1](https://github.com/buildit/buildit/compare/v4.5.0...v4.5.1) (2019-08-30)
+
+
+### Bug Fixes
+
+* fixes alignment of social media links and lists ([a494196](https://github.com/buildit/buildit/commit/a494196))
+
 # [4.5.0](https://github.com/buildit/buildit/compare/v4.4.2...v4.5.0) (2019-04-23)
 
 
