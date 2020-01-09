@@ -10,6 +10,12 @@ module.exports = function formatBuilditJobPostings(allJobs) {
       job.location.city.toLocaleLowerCase()
     );
 
+    // Handlebars 4.6.0 no longer supports using prototype
+    // methods, so we cannot access the .url prop as it's
+    // a getter function.
+    // Therefore adding a new prop with the value:
+    job.urlStr = job.url;
+
     // See if we already have a jobLocation object we can
     // append to
     let jobLocation = accumulator.find(jl => {
