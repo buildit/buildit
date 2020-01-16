@@ -23,13 +23,6 @@
 /* Base             */
 /********************/
 
-source + * {
-  margin-top: 0;
-}
-
-picture {
-  display: block;
-}
 
 /********************/
 /* Objects          */
@@ -44,8 +37,10 @@ picture {
   background-size: cover;
 }
 
-.grav-c-card-basic picture {
-  @include grav-decoration-notch-in;
+.grav-c-card-basic {
+  picture {
+    display: block;
+  }
 }
 
 .web-c-job-list {
@@ -93,10 +88,3 @@ picture {
 /********************/
 /* Trumps           */
 /********************/
-
-// Temporary work-around for bug in Gravity's
-// column layout styling that causes the page to
-// overflow the viewport horizontally.
-.grav-o-container {
-  overflow-x: hidden;
-}
