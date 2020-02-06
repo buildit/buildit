@@ -46,7 +46,7 @@
     "npm": ">= 5.8.0"
   },
   "devDependencies": {
-    "@ampproject/rollup-plugin-closure-compiler": "^0.19.0",
+    "@ampproject/rollup-plugin-closure-compiler": "^0.21.0",
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@buildit/gravity-ui-web": "^2.2.4",
@@ -54,8 +54,8 @@
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
     "@commitlint/travis-cli": "^8.3.4",
-    "@semantic-release/changelog": "^3.0.6",
-    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
     "babel-jest": "^24.9.0",
     "browser-sync": "^2.26.7",
     "chalk": "^3.0.0",
@@ -112,7 +112,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "scrollreveal": "^4.0.5",
-    "semantic-release": "^15.14.0"
+    "semantic-release": "^17.0.0"
   },
   "private": true,
   "config": {
