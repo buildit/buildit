@@ -1,3 +1,10 @@
+# [4.6.0](https://github.com/buildit/buildit/compare/v4.5.2...v4.6.0) (2020-02-06)
+
+
+### Features
+
+* **location:** Updated location of Warsaw's office ([98c4ed0](https://github.com/buildit/buildit/commit/98c4ed0c76d8430287d966e943f4f98223fcafb4))
+
 ## [4.5.2](https://github.com/buildit/buildit/compare/v4.5.1...v4.5.2) (2020-01-09)
 
 
