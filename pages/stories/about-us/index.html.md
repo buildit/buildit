@@ -17,7 +17,7 @@ section: stories
 ---
 ## Who we are
 <div class="web-c-video-player">
-  <iframe src="https://www.youtube-nocookie.com/embed/E_MIWWwnd60?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe title="Promotional video showing Buildit staff working in the London studio" src="https://www.youtube-nocookie.com/embed/E_MIWWwnd60?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Innovative** - self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.
