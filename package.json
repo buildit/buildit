@@ -68,7 +68,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "eyeglass": "^2.4.1",
+    "eyeglass": "^3.0.0",
     "git-last-commit": "^1.0.0",
     "gsap": "^3.0.5",
     "gulp": "^4.0.2",
