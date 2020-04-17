@@ -1,3 +1,10 @@
+## [4.6.1](https://github.com/buildit/buildit/compare/v4.6.0...v4.6.1) (2020-04-17)
+
+
+### Bug Fixes
+
+* solves issues when there are no open job positions ([8d413f5](https://github.com/buildit/buildit/commit/8d413f5e2ca49bc0bd6aee0a21044881d1d87301))
+
 # [4.6.0](https://github.com/buildit/buildit/compare/v4.5.2...v4.6.0) (2020-02-06)
 
 
