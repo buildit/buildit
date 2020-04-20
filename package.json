@@ -21,7 +21,7 @@
     "cypress:open": "cypress open",
     "cypress:cli": "cypress run",
     "cypress:travis": "npm run spin-up-server & cypress run",
-    "pa11y": "./node_modules/.bin/pa11y-ci --sitemap http://localhost:8080/sitemap.xml",
+    "pa11y": "./node_modules/.bin/pa11y-ci --sitemap http://localhost:8080/sitemap.xml  --sitemap-find '^https://.+?.buildit.digital' --sitemap-replace 'http://localhost:8080'",
     "pa11y:travis": "npm run spin-up-server & npm run pa11y",
     "ci": "npm run lint && npm run test && npm run cypress:travis && npm run pa11y"
   },
