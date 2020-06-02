@@ -46,7 +46,7 @@
     "npm": ">= 5.8.0"
   },
   "devDependencies": {
-    "@ampproject/rollup-plugin-closure-compiler": "^0.25.2",
+    "@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@buildit/gravity-ui-web": "^2.2.4",
