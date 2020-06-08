@@ -2,7 +2,7 @@
 # Meta-data
 title:       Locations
 ogTitle:     We are global
-description: List of Buildit's global studios with addresses and directions.
+description: List of buildit's global studios with addresses and directions.
 page-url:    locations
 
 # Display
