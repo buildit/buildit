@@ -90,3 +90,9 @@ body {
   margin: $grav-sp-m;
   vertical-align: middle;
 }
+
+@media (max-width: (gravy-breakpoint(medium) - 1px)) {
+  .grav-c-page-header__logo {
+    margin-top: 0;
+  }
+}
