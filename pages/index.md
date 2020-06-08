@@ -1,7 +1,7 @@
 ---
 # Meta-data
-description: Buildit is a global network of transformation studios. We help connect the dots in an ever-changing world.
-ogTitle: Buildit
+description: buildit is a global network of transformation studios. We help connect the dots in an ever-changing world
+ogTitle: buildit
 
 # Display
 layout: homepage.hbs
@@ -9,7 +9,7 @@ footerModifierClass: grav-c-footer-no-margin
 
 # Content
 hero:
-  pullout: Buildit is a global network of digital transformation studios.
+  pullout: buildit is a global network of digital transformation studios
   paragraph: We help connect the dots in an ever-changing world.
   cta-label: About us
   url: /about/

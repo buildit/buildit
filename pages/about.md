@@ -1,7 +1,7 @@
 ---
 # Meta-data
 title: About us
-description: Who Buildit are, what they do and how they do it.
+description: Who buildit are, what they do and how they do it.
 page-url: about
 
 # Display
