@@ -54,7 +54,7 @@ function metalsmith() {
   handlebarsHelpers.date({ handlebars: handlebars });
 
   // Custom helper for our flourish effects
-  handlebars.registerHelper("flourishShapes", function(name, excludeGradient) {
+  handlebars.registerHelper("flourishShapes", function (name, excludeGradient) {
     const contextData = flourishShapes[name];
     // If no 2nd arg is given to the helper, Handlebars passed in its options
     // object here
@@ -76,10 +76,10 @@ function metalsmith() {
       // grab files with front matter and assign them as a property so metalsmith will find it
       .pipe(
         frontMatter({
-          property: "frontMatter"
+          property: "frontMatter",
         })
       )
-      .on("data", function(file) {
+      .on("data", function (file) {
         assign(file, file.frontMatter);
         delete file.frontMatter;
       })
@@ -93,10 +93,10 @@ function metalsmith() {
               url: siteEnv.url,
               gtmContainerId: siteEnv.gtmContainerId,
               gtmAuthId: siteEnv.gtmAuthId,
-              gtmPreviewId: siteEnv.gtmPreviewId
+              gtmPreviewId: siteEnv.gtmPreviewId,
             },
             build: {
-              excludeRobots: siteEnv.excludeRobots
+              excludeRobots: siteEnv.excludeRobots,
             },
 
             // Defaults for Twitter card meta tags
@@ -108,13 +108,13 @@ function metalsmith() {
             // (See: http://ogp.me/)
             ogType: "website",
             ogImage: "builidt-default-sharing-img.png",
-            ogImageAlt: "Buildit @ Wipro Digital"
+            ogImageAlt: "buildit | wipro digital",
           })
           .use(jobListings())
           .use(buildInfo())
           .use(
             collections({
-              locations: `locations/*.md`
+              locations: `locations/*.md`,
             })
           )
           .use(drafts())
@@ -123,30 +123,30 @@ function metalsmith() {
           .use(
             permalinks({
               pattern: ":page-url",
-              relative: false
+              relative: false,
             })
           )
           .use(
             discoverPartials({
-              directory: `${paths.templates.src}${paths.templates.partials}`
+              directory: `${paths.templates.src}${paths.templates.partials}`,
             })
           )
           .use(
             layouts({
-              directory: `${paths.templates.src}`
+              directory: `${paths.templates.src}`,
             })
           )
           .use(
             sitemap({
               hostname: siteEnv.url,
-              omitIndex: true
+              omitIndex: true,
             })
           )
           .use(
             htmlMinifier({
               minifierOptions: {
-                removeComments: false
-              }
+                removeComments: false,
+              },
             })
           )
           .use(debug())
@@ -156,5 +156,5 @@ function metalsmith() {
 }
 
 module.exports = {
-  build: metalsmith
+  build: metalsmith,
 };

@@ -1,7 +1,7 @@
 
 {
-  "title": "Buildit @ Wipro Digital",
-  "description": "The Buildit @ Wipro Digital website",
+  "title": "buildit | wipro digital",
+  "description": "The buildit | wipro digital website",
   "envs": {
     "local-dev": {
       "url": "http://localhost:8080",
