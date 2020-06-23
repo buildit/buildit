@@ -90,7 +90,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.0",
     "imagemin-svgo": "^8.0.0",
-    "jest": "^26.0.1",
+    "jest": "^26.1.0",
     "jstransformer-handlebars": "^1.1.0",
     "lodash-es": "^4.17.15",
     "lodash.assign": "^4.2.0",
