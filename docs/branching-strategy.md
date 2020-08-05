@@ -18,7 +18,7 @@ Once ready for review, the feature branch should be pushed to this Github repo a
 
 The maintainers will then review the PR and either merge into develop (and then delete that feature branch), or request additional changes.
 
-See: [Buildit website's contribution guidelines](../CONTRIBUTING.md)
+See: [buildit website's contribution guidelines](../CONTRIBUTING.md)
 
 
 

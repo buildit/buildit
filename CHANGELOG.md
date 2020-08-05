@@ -1,3 +1,20 @@
+# [4.7.0](https://github.com/buildit/buildit/compare/v4.6.1...v4.7.0) (2020-08-05)
+
+
+### Bug Fixes
+
+* **header:** corrects logo position on narrow viewports ([8e14984](https://github.com/buildit/buildit/commit/8e1498491723ead1c7023ce7dc9e9686b1809b54))
+* **header:** removes conflicting layout hack ([afff0cf](https://github.com/buildit/buildit/commit/afff0cf3fa85dc39a4b8a26ab259212bcb1afbf3))
+* corrects buildit name in title ([5fb1aa9](https://github.com/buildit/buildit/commit/5fb1aa93e99cc73a3263eaa2901aea982d0e6c45))
+
+
+### Features
+
+* lowercases instances of "buildit" ([21ef486](https://github.com/buildit/buildit/commit/21ef48621828154d415f2e3dfe547b8572df5741))
+* updates favicons to new logo ([c0dcc9d](https://github.com/buildit/buildit/commit/c0dcc9d0a402154664bb84446194da1ef01da39a))
+* updates to new Gravity v2 release for new Buildit logo ([afad6e6](https://github.com/buildit/buildit/commit/afad6e69438cbbf3c164a79614ac06c6533c2477))
+* updates wording on homepage ([7522f68](https://github.com/buildit/buildit/commit/7522f68071ef69ed7b4cb6e1f5516fac2ccc4be5))
+
 ## [4.6.1](https://github.com/buildit/buildit/compare/v4.6.0...v4.6.1) (2020-04-17)
 
 

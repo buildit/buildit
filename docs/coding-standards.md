@@ -12,7 +12,7 @@ We use Prettier to lint and tidy-up our JS code - see [eslint-config-prettier](h
 
 
 ## HTML
-The majority of our HTML is a composition of components provided by Buildit's Gravity design system. Our HTML markup **must** therefore match the per-component markup that defines in its [Gravity living pattern library](http://style.buildit.digital/) (use the "Show Pattern Info" option to see the markup):
+The majority of our HTML is a composition of components provided by buildit's Gravity design system. Our HTML markup **must** therefore match the per-component markup that defines in its [Gravity living pattern library](http://style.buildit.digital/) (use the "Show Pattern Info" option to see the markup):
 
 ![Short video of Gravity's pattern library, showing how to navigate to a pattern, open its pattern info panel and select the "HTML" tab to see the corresponding markup](./gravity-pattern-library.gif)
 

@@ -1,10 +1,8 @@
-# Buildit website
+# buildit website
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/buildit/buildit.svg)](https://greenkeeper.io/)
+This is the source code for the buildit website: [https://buildit.wiprodigital.com/](https://buildit.wiprodigital.com/)
 
-This is the source code for the Buildit website: [https://buildit.wiprodigital.com/](https://buildit.wiprodigital.com/)
-
-To provide feedback, raise bugs or request features, please use our [Buildit website feedback form](https://docs.google.com/forms/d/e/1FAIpQLScOeoF7XfYYs3R8b9K_zvSY0oVS92hAV82FXUOyy8JnDz2lNg/viewform).
+To provide feedback, raise bugs or request features, please use our [buildit website feedback form](https://docs.google.com/forms/d/e/1FAIpQLScOeoF7XfYYs3R8b9K_zvSY0oVS92hAV82FXUOyy8JnDz2lNg/viewform).
 
 If you want to get involved in the development of this website, then please see our [contribution guidelines](./CONTRIBUTING.md).
 

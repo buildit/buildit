@@ -1,12 +1,12 @@
 ---
 layout: basic-page.njk
-title: Buildit’s design system, Gravity
+title: buildit’s design system, Gravity
 collection:
   - colStories
   - colArticles
 date: "2018-06-15T12:00:00.000Z"
 article-index: 0
-description: We have created a nascent design system and its name is Gravity. It supports our Buildit @ Wipro Digital website and our internal projects. 
+description: We have created a nascent design system and its name is Gravity. It supports our buildit | wipro digital website and our internal projects. 
 canonicalUrl: https://medium.com/buildit/introducing-buildits-gravity-design-system-44c3fe7a1d26
 originalSourceSiteId: buildit-medium-blog
 blocks-njk:
@@ -22,7 +22,7 @@ This is the story of how Gravity came to be and where it is headed next.
 ## The motivation
 Buildit has had a website and a small number of internal web applications for some time. All of them had been designed and built independently and consequently looked and behaved quite differently from each other. There was, therefore, a clear case for unifying their UI code to create consistency and reduce the amount of redundant code that needed to be maintained.
 
-Furthermore, Buildit is a consultancy and, in case you hadn’t already noticed, we have been [working with design systems for some time now](https://medium.com/buildit/our-atomic-journey-so-far-b333c98b1d3f). We have helped our clients create everything from living style guides to full-blown design systems. Unfortunately, much of our work is covered by NDAs so we can’t publicly share details of what we’ve done.
+Furthermore, buildit is a consultancy and, in case you hadn’t already noticed, we have been [working with design systems for some time now](https://medium.com/buildit/our-atomic-journey-so-far-b333c98b1d3f). We have helped our clients create everything from living style guides to full-blown design systems. Unfortunately, much of our work is covered by NDAs so we can’t publicly share details of what we’ve done.
 
 However, by “practicing what we preach” we can:
 - Create a case study we can share widely and thereby increase our design system credibility with clients
@@ -35,7 +35,7 @@ Work on our design system began in earnest in May 2017. There were a number of u
 We conducted some research and workshops to get a handle on what shape our design system should take to best serve its consumers.
 
 ## Tech stack research
-Buildit already had three projects that could potentially benefit from a design system: The Buildit website and two internal web apps.
+Buildit already had three projects that could potentially benefit from a design system: The buildit website and two internal web apps.
 
 <figure><img src="/images/articles/ibgds-01.png" alt="Some of the questions from our questionnaire"><figcaption>Some of the questions from our questionnaire</figcaption></figure>
 
@@ -55,13 +55,13 @@ Based on these insights and some intense debate, we eventually settled on the fo
 - We’d **use [BEMIT](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/) conventions** to organise our SASS code and name our class names.
 
 ## Choosing a name
-“Buildit design system” is a bit of a mouthful. Not to mention dull. We decided early on that we wanted to give our design system a name. To get inspiration we enlisted the help of all of Buildit by creating an online suggestion form with two questions:
+“Buildit design system” is a bit of a mouthful. Not to mention dull. We decided early on that we wanted to give our design system a name. To get inspiration we enlisted the help of all of buildit by creating an online suggestion form with two questions:
 - What should we call the design system?
 - Why should it be called that?
 
-![Screenshot of Buildit's Slack channel](/images/articles/ibgds-02.png)
+![Screenshot of buildit's Slack channel](/images/articles/ibgds-02.png)
 
-That form was then shared on a Buildit-wide Slack channel. We received a good number of responses from fellow Buildsters around the world. Here are a few interesting and amusing suggestions that were rejected:
+That form was then shared on a buildit-wide Slack channel. We received a good number of responses from fellow Buildsters around the world. Here are a few interesting and amusing suggestions that were rejected:
 - “Amnesty”, because it’s your get out of design hell free card when you implement it correctly
 - “Pangu”, the creator of all things in Chinese mythology
 - “Designy McDesignFace”
@@ -71,7 +71,7 @@ The one we liked best and ultimately chose was, of course, “Gravity”. Curiou
 
 > It’s a natural force for bringing things closer together, similar to what we want to do with design + engineering.
 
-The naming exercise turned out to be quite fun. An unexpected benefit was that many people in Buildit became aware of Gravity and also felt at least somewhat involved.
+The naming exercise turned out to be quite fun. An unexpected benefit was that many people in buildit became aware of Gravity and also felt at least somewhat involved.
 
 ## Design principles
 Successful design systems have a set of design principles to guide their work and decision making. Naturally, we wanted a set of our own.
@@ -126,11 +126,11 @@ No surprise there. Many people have written about [the need to treat a design sy
 
 ## The resurrection
 
-In early December 2017, an internal project was kicked off to refresh the [Buildit website](https://buildit.wiprodigital.com/). Based on our experience with Gravity and also some other internal projects that people had done “on the side”, we insisted that this had to be run properly, just as though it was a client project. That meant that the team would be assigned to work on the website for a certain amount of time and could not be snatched away for other things.
+In early December 2017, an internal project was kicked off to refresh the [buildit website](https://buildit.wiprodigital.com/). Based on our experience with Gravity and also some other internal projects that people had done “on the side”, we insisted that this had to be run properly, just as though it was a client project. That meant that the team would be assigned to work on the website for a certain amount of time and could not be snatched away for other things.
 
 Even though we were building a website, part of that was designing and developing a set of UI components. We therefore picked up Gravity’s mostly empty UI library and pattern library and fleshed them out just enough to build the website. To be honest, even if we hadn’t had Gravity, we still would have built a pattern library, because *that’s just how you make websites*.
 
-<figure><img src="/images/articles/ibgds-06.jpg" alt="The relationship between the code for Gravity’s pattern library, UI library and Buildit’s website"><figcaption>The relationship between the code for Gravity’s pattern library, UI library and Buildit’s website</figcaption></figure>
+<figure><img src="/images/articles/ibgds-06.jpg" alt="The relationship between the code for Gravity’s pattern library, UI library and buildit’s website"><figcaption>The relationship between the code for Gravity’s pattern library, UI library and buildit’s website</figcaption></figure>
 
 In terms of design, we sketched on paper and whiteboards, tested some navigation flows with a clickable wireframe prototype in Balsamiq and did some visual design explorations in Sketch and Illustrator. However, whatever artefacts we produced in those tools were ephemeral, rough drafts. **As soon as we felt our ideas had matured enough, we implemented them in HTML & CSS within our pattern library and then iterated and refined them in there.**
 
@@ -190,13 +190,13 @@ This model helped us better organise our ideas and we ended up with:
 
 ### Goals:
 - **Education** — Help Buildsters gain and refine experience of design systems
-- **Living case study** — Continuously showcase Buildit’s design system expertise to clients and the wider Wipro organisation
+- **Living case study** — Continuously showcase buildit’s design system expertise to clients and the wider Wipro organisation
 - **Low maintenance** — We are not a product company. Therefore, funding for an in-house design system will always be a tough sell, so let’s make our lives as easy as we can
-- **Consistent Buildit look and feel** — A basic raison d’être of any design system
+- **Consistent buildit look and feel** — A basic raison d’être of any design system
 
 ### Principles:
 - **Inclusive** — Everything about Gravity, from the UI designs and components it provides to the way in which it is run and maintained should strive to be inclusive. That means removing barriers to entry for using or contributing to Gravity itself. That also means enabling products to be accessible to the broadest possible audience.
-- **Lean** — Less is often more. Whether it’s reducing waste while working on projects, writing terse code, designing focussed UIs or just avoiding fluffy language when communicating, leanness is something we value at Buildit. Gravity should embody and support that as much as possible.
+- **Lean** — Less is often more. Whether it’s reducing waste while working on projects, writing terse code, designing focussed UIs or just avoiding fluffy language when communicating, leanness is something we value at buildit. Gravity should embody and support that as much as possible.
 - **Robust** — There is a lot we cannot control when it comes to digital products. We can’t decide what device, operating system, browser or settings people use when interacting with our products. Neither can we predict what the future might hold. And yet, the products we build need to embrace that uncertainty and handle all the diverse use-cases gracefully and reliably. Robustness is therefore an important principle for us to consider in everything we do for Gravity.
 - **Considered** — Everything about Gravity — be it design, tech or process — should exist for a reason. We should always be able to explain why something is the way it is. Wherever possible we should use data and research to drive our decisions. Failing that we should tap the experience and know-how of relevant experts. Finally, if something does boil down to a subjective decision, then we should note that and be prepared to revise it later if new information allows us to make a more informed decision.
 - **Progressive** — Gravity is an opportunity for us to constantly try new things. New design directions. New technologies. New approaches towards designing and building user interfaces. We should take full advantage of this and strive to be a leader rather than a follower on all fronts.
@@ -205,11 +205,11 @@ The work we have done to date mostly adheres to those principles. Some of the pr
 
 ## Securing funding
 
-Perhaps most importantly, with Buildit’s refreshed website now live, we need to find new ways to fund continued work on Gravity.
+Perhaps most importantly, with buildit’s refreshed website now live, we need to find new ways to fund continued work on Gravity.
 
 Some new internal web projects are being worked on and they have agreed to use and, where needed, contribute back to Gravity. However, we know that longer-term Gravity cannot be entirely dependent on the generosity of other projects. It needs its own funding.
 
-To that end, we are beginning to raise awareness of Gravity and its benefits within our organisation (this very article is a part of that effort!). We are also exploring other approaches and means to get our work sponsored, including scaling Gravity to serve other parts of Wipro beyond just Buildit.
+To that end, we are beginning to raise awareness of Gravity and its benefits within our organisation (this very article is a part of that effort!). We are also exploring other approaches and means to get our work sponsored, including scaling Gravity to serve other parts of Wipro beyond just buildit.
 
 All going well, we will have plenty more stories to tell about Gravity in the future. Watch this space!
 

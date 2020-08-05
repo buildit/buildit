@@ -6,7 +6,7 @@ collection:
   - colArticles
 date: "2018-07-18T06:59:00.000Z"
 article-index: 1
-description: As a small team of Creative Technologists here at Buildit we thrive on rapidly making and breaking things to find the answers that improve products.
+description: As a small team of Creative Technologists here at buildit we thrive on rapidly making and breaking things to find the answers that improve products.
 canonicalUrl: https://medium.com/buildit/who-you-gonna-call-fb737b9d6268
 originalSourceSiteId: buildit-medium-blog
 blocks-njk:
@@ -17,7 +17,7 @@ image:
 ogType: article
 section: people
 ---
-As a small team of Creative Technologists here at Buildit we thrive on rapidly making and breaking things to find the answers that improve products. Believing this should be done using any means, we can avoid derailing into detail and this enables us to tackle some of the broader problems. Combining design and technology by iterating and evaluating together we can cover the ground where the two intersect. This grey area is not always a very visible space making it problematic for planning in product teams. Bridging this gap involves asking questions and gathering information and a Creative Tech approach is no different. This can be daunting as teams converge to work it out, but, unlike separated disciplines Creative Tech can own it and take the burden away. Embracing this challenge, work can be delivered without falling victim to any misunderstood compromise.
+As a small team of Creative Technologists here at buildit we thrive on rapidly making and breaking things to find the answers that improve products. Believing this should be done using any means, we can avoid derailing into detail and this enables us to tackle some of the broader problems. Combining design and technology by iterating and evaluating together we can cover the ground where the two intersect. This grey area is not always a very visible space making it problematic for planning in product teams. Bridging this gap involves asking questions and gathering information and a Creative Tech approach is no different. This can be daunting as teams converge to work it out, but, unlike separated disciplines Creative Tech can own it and take the burden away. Embracing this challenge, work can be delivered without falling victim to any misunderstood compromise.
 
 An example of where Creative Tech has impacted a project was with a client struggling to complete before a looming deadline, already under pressure when we joined the team. Working alongside a fellow Creative Tech we asked for the outlined brief, followed by a conversation about where they currently were to understand why progress had slowed. All this was discovered in a single meeting.
 

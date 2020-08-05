@@ -17,7 +17,7 @@ section: stories
 ---
 ## Who we are
 <div class="web-c-video-player">
-  <iframe title="Promotional video showing Buildit staff working in the London studio" src="https://www.youtube-nocookie.com/embed/E_MIWWwnd60?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe title="Promotional video showing buildit staff working in the London studio" src="https://www.youtube-nocookie.com/embed/E_MIWWwnd60?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Innovative** - self-confessed geeks, always curious to explore technology and better ways of working that deliver maximum business impact.
@@ -48,8 +48,8 @@ We approach each project and client as unique and we never start with a preconce
 Read more about how we approach [continuous improvement and systems thinking](https://medium.com/buildit/org-change/home) on our Medium blog.
 
 ## Our people
-Buildit has an open structure, which means that employees work within wide boundaries.
+buildit has an open structure, which means that employees work within wide boundaries.
 
-The environment and culture, which is shaped by Buildit’s people, is driven by several key factors including transparency, curiosity, inclusivity, pragmatism and responsibility. Buildit employees work in an environment where everyone is encouraged to continually develop through a cohesive unit of learning, and perhaps more importantly, given the autonomy to do so.
+The environment and culture, which is shaped by buildit’s people, is driven by several key factors including transparency, curiosity, inclusivity, pragmatism and responsibility. buildit employees work in an environment where everyone is encouraged to continually develop through a cohesive unit of learning, and perhaps more importantly, given the autonomy to do so.
 
 We are part of the larger Wipro network and partner with [Wipro Digital](https://wiprodigital.com/) and [Designit](https://designit.com/).

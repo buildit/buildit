@@ -1,9 +1,9 @@
 # Metadata
 
-The Buildit website embeds rich meta data in its HTML. This helps search engine bots, social media networks and other tools better understand and surface our content. For example:
+The buildit website embeds rich meta data in its HTML. This helps search engine bots, social media networks and other tools better understand and surface our content. For example:
 
 * When sharing one of our pages, Facebook, Twitter, Slack and others will display a little card with an image, title and short description.
-* When people search for Buildit on Google and other search engines, they _may_ display info cards about the Buildit organisation, its studios and jobs alongside the normal search results.
+* When people search for buildit on Google and other search engines, they _may_ display info cards about the buildit organisation, its studios and jobs alongside the normal search results.
 
 The rest of this page explains in more detail the relevant standards that we make use of.
 
@@ -25,7 +25,7 @@ Twitter have defined a number of special `<meta>` names in their [Twitter Cards 
 
 We therefore use Schema.org expressed as RDFa attributes to embed some extra metadata into our page's HTML markup. Examples are:
 
-* In the header & footed Buildit is marked up as a [`schema:Organization`](https://schema.org/Organization) resource.
+* In the header & footed buildit is marked up as a [`schema:Organization`](https://schema.org/Organization) resource.
 * Each studio on the locations page has been marked up as a [`schema:Place`](https://schema.org/Place) resource.
 * Each job posting on the careers page has been marked up as a [`schema:JobPosting`](https://schema.org/JobPosting).
 
@@ -39,13 +39,13 @@ We chose RDFa because:
 
 Some of the resources we describe are referenced by others or in multiple places. In those cases, we assign them a URI. Note that there is no requirement for these URIs to be locatable - i.e. for them to be URLs. Sometimes they might, but oftentimes they won't. Especially if they are purely to identify a real world thing (e.g. an office or a person) or an abstract concept (e.g. an organisation).
 
-To avoid clashes with "normal" URLs, all these Buildit URIs should be prefixed with `https://buildit.wiprodigital.com/thing/`. Conversely, actual pages of our website must never have URLs that begin with that path. Furthermore, developers are encouraged to list URIs below as they add them. That way, future developers have visibility of what's already available and can re-use rather than re-invent.
+To avoid clashes with "normal" URLs, all these buildit URIs should be prefixed with `https://buildit.wiprodigital.com/thing/`. Conversely, actual pages of our website must never have URLs that begin with that path. Furthermore, developers are encouraged to list URIs below as they add them. That way, future developers have visibility of what's already available and can re-use rather than re-invent.
 
-* **`https://buildit.wiprodigital.com/thing/buildit-org`**: Identifies a Buildit organisation.
-* **`https://buildit.wiprodigital.com/thing/studio/[xx]/[city]`**: Identifies a Buildit studio's physical place.
+* **`https://buildit.wiprodigital.com/thing/buildit-org`**: Identifies a buildit organisation.
+* **`https://buildit.wiprodigital.com/thing/studio/[xx]/[city]`**: Identifies a buildit studio's physical place.
     * `[xx]` is the lowercase [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) country code that the studio is in.
     * `[city]` is the lowercase city name.
-* **`https://buildit.wiprodigital.com/thing/job-location/[xx]/[city]`**: Identifies a location where a Buildit job is based.
+* **`https://buildit.wiprodigital.com/thing/job-location/[xx]/[city]`**: Identifies a location where a buildit job is based.
     * `[xx]` is the lowercase [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) country code.
     * `[city]` is the lowercase city name.
 

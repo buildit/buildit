@@ -6,7 +6,7 @@ collection:
   - colArticles
 date: "2018-06-03T12:00:00.000Z"
 article-index: 0
-description: The five steps that are at the heart of Buildit's Cycle7 process
+description: The five steps that are at the heart of buildit's Cycle7 process
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:
@@ -20,7 +20,7 @@ section: stories
 
 Large enterprise organisations have always admired the approach and urgency of start-up’s. When you are stuck in the swamp of process and sign-offs the idea of emulating a start-up model seems particularly enticing. However this usually misses the point as accelerated delivery without customer validation, whilst it may meet internal metrics, is unlikely to lead to a successful digital service.
 
-At Buildit we have been navigating this problem on how we can integrate a lean methodology to quickly uncover and validate assumptions for propositions within larger client projects. Through experimentation we have evolved and refined a methodology that’s designed to kick-start a digital project and reduce risk. Here are some of the components of that methodology…
+At buildit we have been navigating this problem on how we can integrate a lean methodology to quickly uncover and validate assumptions for propositions within larger client projects. Through experimentation we have evolved and refined a methodology that’s designed to kick-start a digital project and reduce risk. Here are some of the components of that methodology…
 
 1. **The Team**: The team should be small, co-creational and cross-functional. Design and technology working closely together with a strong product owner
 2. **Time**: We deliberately keep this initial phase to around 7 weeks. In all our previous case studies we have found that this is the optimal time to evaluate the key assumptions and velocity is also essential for prioritisation and focus.

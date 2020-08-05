@@ -6,7 +6,7 @@ collection:
   - colArticles
 date: "2018-09-20T12:00:00.000Z"
 article-index: 0
-description: Not sure what are you suppose to say during upcoming daily meeting? Are you going to brag or maybe confess? In Buildit @ Wipro Digital we created a little app to help answering such cumbersome questions. Not necessarily in a very serious manner.
+description: Not sure what are you suppose to say during upcoming daily meeting? Are you going to brag or maybe confess? In buildit | wipro digital we created a little app to help answering such cumbersome questions. Not necessarily in a very serious manner.
 blocks-njk:
   main: layouts/partials/articles/main.njk
 image:

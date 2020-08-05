@@ -13,7 +13,6 @@ const siteConfig = require('../config/site.json').site;
 
 const { paths } = gulpConfig;
 
-
 class FaviconSourceStream extends Readable {
   constructor(sourceFiles, config) {
     super({
@@ -63,7 +62,6 @@ class FaviconSourceStream extends Readable {
     }
   }
 }
-
 
 function generateFavicons() {
   const manifestFilter = filter('manifest.json', { restore: true });

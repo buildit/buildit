@@ -4,7 +4,7 @@ describe('Homepage', () => {
   });
 
   it('should render the page title', () => {
-    cy.title().should('include', 'Buildit @ Wipro Digital');
+    cy.title().should('include', 'buildit | wipro digital');
   });
 
   it('should add a link for each location', () => {

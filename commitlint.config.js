@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     // Set a saner max-length.
     'header-max-length': [2, 'always', 200],
+    'body-max-line-length': [2, 'always', 300],
 
     // Disable requirement to not allow a full stop.
     'subject-full-stop': [0, 'never', '.'],

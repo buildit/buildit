@@ -39,7 +39,7 @@
     <section>
       <h2>Jobs</h2>
       {% if jobsByCity[title].length > 0 %}
-      <p>Current job postings for Buildit's {{ title }} studio:</p>
+      <p>Current job postings for buildit's {{ title }} studio:</p>
       <ul class="web-c-job-list">
         {% for job in jobsByCity[title] %}
           {% include 'partials/jobs/job-card.njk' %}
@@ -52,9 +52,9 @@
           <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
         </span>
       </span>
-      <p>For open positions in other Buildit studios and locations, please visit our <a href="/jobs/">jobs page</a>.</p>
+      <p>For open positions in other buildit studios and locations, please visit our <a href="/jobs/">jobs page</a>.</p>
       {% else %}
-      <p>Currently, there are no open job postings for Buildit's {{ title }} studio. You can see open positions in other Buildit studios and locations on our <a href="/jobs/">jobs page</a>.</p>
+      <p>Currently, there are no open job postings for buildit's {{ title }} studio. You can see open positions in other buildit studios and locations on our <a href="/jobs/">jobs page</a>.</p>
       {% endif %}
       <p>If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a>.</p>
     </section>

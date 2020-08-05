@@ -50,6 +50,5 @@ module.exports = (createWebp = false) => {
       .pipe(imagePipe); // Now optimise
   }
 
-
   return imagePipe();
 };
