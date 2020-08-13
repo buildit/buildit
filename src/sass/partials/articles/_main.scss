@@ -1,0 +1,101 @@
+article.grav-c-article {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $grav-sp-xl;
+  position: relative;
+
+  @media (min-width: grav-breakpoint(large)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grav-c-page-intro {
+    grid-column: 1/-1;
+
+    @media (min-width: grav-breakpoint(large)) {
+      grid-column: 1/2;
+      align-self: flex-start;
+      position: sticky;
+      top: calc(var(--grav-fs-base) * 1.5);
+    }
+
+    >* {
+      display: block;
+    }
+
+    p,
+    time {
+      @include grav-color-apply("color", "b", "neutral-subtle");
+    }
+
+    time {
+      @include grav-font-size(-1);
+      font-weight: grav-font-weight('primary', 'bold');
+    }
+
+    p {
+      @include grav-font-size(-1);
+    }
+  }
+
+  .hero {
+    grid-column: 1/-1;
+    margin-top: 0;
+    margin-right: -$grav-sp-xl;
+    margin-left: -$grav-sp-xl;
+
+    @media (min-width: grav-breakpoint(large)) {
+      grid-column: 2 / -1;
+      margin-top: -$grav-sp-xl;
+      margin-left: 0;
+    }
+
+    img {
+      @include grav-decoration-notch-out(var(--grav-fs-plus-4), $grav-sp-s);
+      @include grav-color-apply("background", "a", "neutral-alt");
+
+      width: 100%;
+      min-height: 28rem;
+      height: 100%;
+      object-fit: cover;
+
+      @media (min-width: grav-breakpoint(medium)) {
+        @include grav-decoration-notch-out($grav-c-page-intro-notch-size,
+          $grav-sp-l);
+      }
+
+      @media (min-width: grav-breakpoint(large)) {
+        @include grav-decoration-notch-out($grav-c-page-intro-notch-size,
+          $grav-sp-l * $grav-sp-ostentatious-padding-left-multiplier);
+      }
+    }
+  }
+
+  .grav-c-ostentatious-copy {
+    grid-column: 1/-1;
+    padding-left: $grav-sp-m;
+    padding-right: $grav-sp-m;
+    max-width: 52ch;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: grav-breakpoint(large)) {
+      grid-column: 2 / -1;
+    }
+
+    >*+* {
+      margin-top: $grav-sp-l;
+    }
+  }
+
+  aside {
+    grid-column: 1/-1;
+
+    @media (min-width: grav-breakpoint(large)) {
+      grid-column: 2 / -1;
+    }
+  }
+
+  .grav-c-related-items {
+    margin-bottom: $grav-sp-xl;
+  }
+}

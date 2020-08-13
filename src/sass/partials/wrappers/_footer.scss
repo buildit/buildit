@@ -1,0 +1,12 @@
+body>footer {
+  border-top-width: 0;
+  border-bottom-width: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  padding: $grav-sp-inset-m;
+
+  span {
+    @include grav-color-apply('color', 'b', 'control-disabled');
+  }
+}

@@ -1,44 +1,73 @@
 /********************/
 /* Dependencies     */
 /********************/
-@import 'gravity-ui-web';
-
+@import "gravity-ui-web";
 
 /********************/
 /* Settings         */
 /********************/
 
-
 /********************/
 /* Tools            */
 /********************/
-
 
 /********************/
 /* Generics         */
 /********************/
 
-
 /********************/
 /* Base             */
 /********************/
-
+$grav-c-page-intro-notch-size: var(--grav-fs-plus-4);
+@import "./_basic-page.scss";
 
 /********************/
 /* Objects          */
 /********************/
 
-
 /********************/
 /* Components       */
 /********************/
+@import "./partials/wrappers/_header.scss";
+@import "./partials/wrappers/_footer.scss";
+@import "./partials/home/_main.scss";
+@import "./partials/articles/_main.scss";
+@import "./partials/articles/_list-item.scss";
+
+.grav-c-page-intro h1 {
+  @include grav-color-apply("color", "b", "accent");
+}
+
+.grav-c-hero {
+  @include grav-color-apply("background-color", "b", "accent");
+  margin-bottom: $grav-sp-xxl;
+  margin-right: -$grav-sp-xl;
+  margin-left: -$grav-sp-xl;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='32' width='32'><text x='16' y='16' fill='white' font-weight='bold' font-size='25'>+</text></svg>");
+
+  .grav-c-hero__container {
+    margin: $grav-sp-xxl $grav-sp-s;
+    padding: $grav-sp-xl * 2 $grav-sp-m $grav-sp-xxl;
+
+    h1 {
+      max-width: 100%;
+    }
+  }
+}
+
 .grav-c-callout {
-  background: url('/images/callout.jpg') center center;
+  background: url("/images/callout.jpg") center center;
   background-size: cover;
+  margin-left: -$grav-sp-xl;
+  margin-right: -$grav-sp-xl;
 }
 
 .web-c-job-list {
-  li + li {
+  li+li {
     margin-top: 0.5em;
   }
 }
@@ -47,15 +76,15 @@
 // Used on republished articles to link to the
 // original source.
 .web-c-subtle-notice {
-  @include grav-color-apply('background-color', 'a', 'neutral-alt');
-  @include grav-color-apply('color', 'b', 'neutral-subtle');
+  @include grav-color-apply("background-color", "a", "neutral-alt");
+  @include grav-color-apply("color", "b", "neutral-subtle");
   @include grav-font-size(-1);
 
   padding: $grav-sp-m;
 }
 
 .web-c-video-player {
-  @include grav-color-apply('background-color', 'a', 'neutral-alt');
+  @include grav-color-apply("background-color", "a", "neutral-alt");
 
   position: relative;
   display: block;
@@ -71,11 +100,11 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     height: 0;
     width: 100%;
-    padding-top: #{ 100% / 16 * 9 };
+    padding-top: #{100% / 16 * 9};
   }
 }
 

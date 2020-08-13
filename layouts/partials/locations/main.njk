@@ -1,9 +1,17 @@
-<div class="grav-o-two-column">
-  {% if contents %}
-    {{ contents | safe }}
-  {% endif %}
+<div class="grid">
+  <div class="grav-c-page-intro">
+    <h1>Locations</h1>
+    <p>
+      We’re worldwide. That’s right next to you.
+    </p>
+  </div>
+  <div class="grav-o-two-column">
+    {% if contents %}
+      {{ contents | safe }}
+    {% endif %}
 
-  {% for location in collections.colLocations | sort(false, false, 'title') %}
-    {% include 'partials/locations/location-card.njk' %}
-  {% endfor %}
+    {% for location in collections.colLocations | sort(false, false, 'title') %}
+      {% include 'partials/locations/location-card.njk' %}
+    {% endfor %}
+  </div>
 </div>

@@ -30,7 +30,7 @@ describe('Homepage', () => {
 
   describe('navigation', () => {
     function verifyPage(name) {
-      cy.get('.grav-c-nav-menu')
+      cy.get('.nav')
         .find(`a[href='/${name.toLowerCase()}/']`)
         .click()
         .get('h1')

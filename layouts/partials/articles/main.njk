@@ -6,9 +6,12 @@
 <article class="grav-c-article" typeof="schema:Article">
   <header class="grav-c-page-intro">
     <h1 property="schema:headline">{{ title }}</h1>
-    <p>{{ description }}</p>
     <time property="schema:datePublished schema:dateModified" datetime="{{ date }}">{{ humanDate }}</time>
-    <picture>
+    <p>{{ description }}</p>
+    <link rel="schema:author schema:publisher" href="https://buildit.wiprodigital.com/thing/buildit-org">
+  </header>
+  <meta property="schema:mainEntityOfPage" content="/{{ path }}">
+  <picture class="hero">
       <source
         type="image/webp"
         srcset="
@@ -34,9 +37,6 @@
         "
       >
     </picture>
-    <link rel="schema:author schema:publisher" href="https://buildit.wiprodigital.com/thing/buildit-org">
-  </header>
-  <meta property="schema:mainEntityOfPage" content="/{{ path }}">
   <div class="grav-c-ostentatious-copy" property="schema:articleBody">
     {{ contents | safe }}
 
@@ -51,15 +51,15 @@
     </aside>
     {% endif %}
   </div>
+  {% if next %}
+    <aside>
+      <hr>
+      <ul class="grav-c-related-items">
+        <li>
+          <span>Next Story</span>
+          <a href="/{{ next.path }}">{{ next.title }}</a>
+        </li>
+      </ul>
+    </aside>
+  {% endif %}
 </article>
-{% if next %}
-  <hr>
-  <aside>
-    <ul class="grav-c-related-items">
-      <li>
-        <span>Next Story</span>
-        <a href="/{{ next.path }}">{{ next.title }}</a>
-      </li>
-    </ul>
-  </aside>
-{% endif %}

@@ -4,6 +4,7 @@
   {% set imageSrc %}{{ env.url }}/{{ image.src or config.site.ogImage }}{% endset %}
 {% endif %}
 <article
+  class="grid"
   typeof="schema:Place"
   resource="https://buildit.wiprodigital.com/thing/studio/{{ countryCode}}/{{ citySlug }}"
 >
@@ -12,21 +13,23 @@
     {% if description %}
     <p>{{ description }}</p>
     {% endif %}
-    {% if image %}
-      <img src="{{ imageSrc }}" alt="{{ image.alt }}" />
-    {% endif %}
     <link rel="schema:mainEntityOfPage" href="/{{ path }}">
   </header>
-  {# Convoluted way of checking whether contents is blank
-     - i.e. only whitespace #}
-  {% if contents.length > 0 %}
-  <div class="grav-c-ostentatious-copy">
-      {{ contents | safe }}
-  </div>
-  <hr>
-  {% endif %}
 
-  <div class="grav-o-two-column">
+  <div>
+    {% if image %}
+      <div class="hero">
+        <img src="{{ imageSrc }}" alt="{{ image.alt }}" />
+      </div>
+    {% endif %}
+    {# Convoluted way of checking whether contents is blank
+      - i.e. only whitespace #}
+    {% if contents.length > 0 %}
+    <div class="grav-c-ostentatious-copy">
+        {{ contents | safe }}
+    </div>
+    <hr>
+    {% endif %}
     <section class="grav-c-location-card">
       <h2>Address</h2>
       {% include 'partials/location/address.njk' %}
@@ -36,8 +39,8 @@
       </a>
     </section>
 
+    <h2>Jobs</h2>
     <section>
-      <h2>Jobs</h2>
       {% if jobsByCity[title].length > 0 %}
       <p>Current job postings for buildit's {{ title }} studio:</p>
       <ul class="web-c-job-list">

@@ -1,0 +1,78 @@
+.grav-c-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: $grav-sp-m;
+  padding-top: $grav-sp-m;
+
+  @media (min-width: grav-breakpoint(extra-large)) {
+    grid-template-columns: 1fr;
+    row-gap: $grav-sp-m;
+
+    .grav-c-page-header__logo {
+      margin-top: $grav-sp-xl;
+    }
+  }
+
+  .grav-c-page-header__logo {
+    padding-top: $grav-sp-m;
+    margin: 0;
+  }
+
+  .grav-c-toggle-menu {
+    display: block;
+
+    @media (max-width: $grav-page-heading-trigger-breakpoint) {
+      // overriding gravity-ui-web styles
+      display: block;
+    }
+
+    @media (min-width: grav-breakpoint(extra-large)) {
+      display: none;
+    }
+
+    /* stylelint-disable-next-line selector-max-compound-selectors */
+    &[aria-pressed]~nav.nav,
+    &[aria-pressed='false']~nav.nav {
+      @include grav-transition(max-height, $grav-tr-speed-slow);
+      max-height: 0;
+      overflow: hidden;
+
+      @media (min-width: grav-breakpoint(extra-large)) {
+        // stylelint-disable-line max-nesting-depth
+        display: flex;
+        max-height: none;
+        overflow: visible;
+      }
+    }
+
+    /* stylelint-disable-next-line selector-max-compound-selectors */
+    &[aria-pressed='true']~nav.nav {
+      max-height: 100vh;
+
+      @media (min-width: grav-breakpoint(extra-large)) {
+        // stylelint-disable-line max-nesting-depth
+        display: flex;
+      }
+    }
+
+  }
+}
+
+nav.nav {
+  margin-top: 0;
+
+  ul,
+  li {
+    flex: 1;
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  a {
+    display: block;
+  }
+}

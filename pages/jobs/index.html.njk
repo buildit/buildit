@@ -4,39 +4,43 @@ ogTitle: buildit Jobs
 title: Jobs
 schema: CollectionPage
 collection: colMainNav
-nav-index: 2
+nav-index: 3
 ---
-<div class="grav-c-page-intro">
-  <h1>Jobs</h1>
-  <p>If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a></p>
-</div>
-{% for country, cities in jobsByCountryAndCity | dictsort %}
-<h2>{{ country }}</h2>
-  {% for city, jobs in cities | dictsort %}
-  {% set jobLocation = jobs[0].location %}
-  {% set studio = locationsByCity[city][0] %}
-  <section>
-    <header typeof="schema:Place" resource="{{jobLocation.uri}}">
-      <h3 property="schema:address" typeof="schema:PostalAddress" class="grav-u-font-size-plus-3">
-      <span property="schema:name">
-        <span property="schema:addressLocality">{{ city }}</span>
-      </span>
-        <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
-      </h3>
-    </header>
-    <ul class="grav-o-two-column grav-o-reset-list web-c-job-list">
-      {% for job in jobs %}
-        {% include 'partials/jobs/job-card.njk' %}
+<div class="grid">
+  <div class="grav-c-page-intro">
+    <h1>Jobs</h1>
+    <p>If you have any questions please reach out to us at: <a href="mailto:talent-buildit@wipro.com">talent-buildit@wipro.com</a></p>
+  </div>
+  {% for country, cities in jobsByCountryAndCity | dictsort %}
+  <div>
+    <h2>{{ country }}</h2>
+      {% for city, jobs in cities | dictsort %}
+      {% set jobLocation = jobs[0].location %}
+      {% set studio = locationsByCity[city][0] %}
+      <section>
+        <header typeof="schema:Place" resource="{{jobLocation.uri}}">
+          <h3 property="schema:address" typeof="schema:PostalAddress" class="grav-u-font-size-plus-3">
+          <span property="schema:name">
+            <span property="schema:addressLocality">{{ city }}</span>
+          </span>
+            <meta property="schema:addressCountry" content="{{jobLocation.countryCode}}">
+          </h3>
+        </header>
+        <ul class="grav-o-two-column grav-o-reset-list web-c-job-list">
+          {% for job in jobs %}
+            {% include 'partials/jobs/job-card.njk' %}
+          {% endfor %}
+        </ul>
+        {% if studio %}
+          <p>Learn about our <a href="/{{ studio.path }}">{{ city }} studio</a>.</p>
+        {% endif %}
+      </section>
       {% endfor %}
-    </ul>
-    {% if studio %}
-      <p>Learn about our <a href="/{{ studio.path }}">{{ city }} studio</a>.</p>
-    {% endif %}
-  </section>
-  {% endfor %}
-  {% if not loop.last %}
-  <hr>
-  {% endif %}
-{% else %}
-<p>Sorry, buildit does not have any open positions right now. As soon as something opens up, it will be posted here so please check back again soon.</p>
-{% endfor %}
+      {% if not loop.last %}
+      <hr>
+      {% endif %}
+    {% else %}
+    <p>Sorry, buildit does not have any open positions right now. As soon as something opens up, it will be posted here so please check back again soon.</p>
+    {% endfor %}
+  </div>
+</div>

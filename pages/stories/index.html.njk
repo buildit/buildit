@@ -6,14 +6,16 @@ schema: CollectionPage
 collection: colMainNav
 nav-index: 0
 ---
-<div class="grav-c-page-intro">
-  <h1>Stories</h1>
-  <p>
-    Stories about our world and the things we do.
-  </p>
+<div class="grid">
+  <div class="grav-c-page-intro">
+    <h1>Stories</h1>
+    <p>
+      Stories about our world and the things we do.
+    </p>
+  </div>
+  <ul class="grav-c-list-cards-basic" typeof="schema:ItemList">
+    {% for article in colStories %}
+      {% include "partials/articles/list-item.njk" %}
+    {% endfor %}
+  </ul>
 </div>
-<ul class="grav-c-list-cards-basic" typeof="schema:ItemList">
-  {% for article in colStories %}
-    {% include "partials/articles/list-item.njk" %}
-  {% endfor %}
-</ul>
