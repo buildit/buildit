@@ -1,97 +1,98 @@
 body.layout {
   display: grid;
-  grid-template: auto 1fr auto / repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr auto;
 
-  &:after {
+  &:after,
+  &:before {
     display: none;
   }
 
   @media (min-width: grav-breakpoint(extra-large)) {
     grid-template-rows: 1fr auto;
   }
-}
 
-body > header {
-  grid-row: 1 / 2;
-  grid-column: 1 / -1;
+  >header {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
 
-  @media (min-width: grav-breakpoint(extra-large)) {
-    grid-row: 1 / 3;
-    grid-column: 1 / 2;
-  }
-}
-
-body > main {
-  grid-column: 1 / -1;
-  margin: $grav-sp-xl;
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $grav-sp-xl;
-    .hero {
-      margin-top: calc((var(--grav-fs-base) * -1.5) - 0.75rem);
-      margin-right: -$grav-sp-xl;
-      img {
-        @include grav-decoration-notch-out(var(--grav-fs-plus-4), $grav-sp-s);
-        @include grav-color-apply("background", "a", "neutral-alt");
-        width: 100%;
-        min-height: 28rem;
-        height: 100%;
-        object-fit: cover;
-
-        @media (min-width: grav-breakpoint(medium)) {
-          @include grav-decoration-notch-out(
-            $grav-c-page-intro-notch-size,
-            $grav-sp-l
-          );
-        }
-
-        @media (min-width: grav-breakpoint(large)) {
-          @include grav-decoration-notch-out(
-            $grav-c-page-intro-notch-size,
-            $grav-sp-l * $grav-sp-ostentatious-padding-left-multiplier
-          );
-        }
-      }
+    @media (min-width: grav-breakpoint(extra-large)) {
+      grid-row: 1 / 3;
+      grid-column: 1 / 2;
     }
   }
 
-  @media (min-width: grav-breakpoint(large)) {
-    .grid {
-      grid-template-columns: 1fr 2fr;
-    }
-    .hero {
-      margin-left: -$grav-sp-xl;
-    }
-  }
-
-  @media (min-width: grav-breakpoint(extra-large)) {
-    grid-column: 2 / -1;
+  >main {
+    grid-column: 1 / -1;
+    margin: $grav-sp-xl;
 
     .grid {
+      display: grid;
+      grid-template-columns: 1fr;
       gap: $grav-sp-xl;
 
-      .grav-c-page-intro {
-        grid-column: 1 / 2;
-        grid-row: 1 / -1;
-        align-self: flex-start;
-        position: sticky;
-        top: calc(var(--grav-fs-base) * 1.5);
+      .hero {
+        margin-top: calc((var(--grav-fs-base) * -1.5) - 0.75rem);
+        margin-right: -$grav-sp-xl;
+
+        img {
+          @include grav-decoration-notch-out(var(--grav-fs-plus-4), $grav-sp-s);
+          @include grav-color-apply("background", "a", "neutral-alt");
+          width: 100%;
+          min-height: 28rem;
+          height: 100%;
+          object-fit: cover;
+
+          @media (min-width: grav-breakpoint(medium)) {
+            @include grav-decoration-notch-out($grav-c-page-intro-notch-size,
+              $grav-sp-l);
+          }
+
+          @media (min-width: grav-breakpoint(large)) {
+            @include grav-decoration-notch-out($grav-c-page-intro-notch-size,
+              $grav-sp-l * $grav-sp-ostentatious-padding-left-multiplier);
+          }
+        }
+      }
+    }
+
+    @media (min-width: grav-breakpoint(large)) {
+      .grid {
+        grid-template-columns: 1fr 2fr;
       }
 
-      > * {
-        grid-column: 2 / -1;
+      .hero {
+        margin-left: -$grav-sp-xl;
+      }
+    }
+
+    @media (min-width: grav-breakpoint(extra-large)) {
+      grid-column: 2 / -1;
+
+      .grid {
+        gap: $grav-sp-xl;
+
+        .grav-c-page-intro {
+          grid-column: 1 / 2;
+          grid-row: 1 / -1;
+          align-self: flex-start;
+          position: sticky;
+          top: calc(var(--grav-fs-base) * 1.5);
+        }
+
+        >* {
+          grid-column: 2 / -1;
+        }
       }
     }
   }
-}
 
-body > footer {
-  grid-column: 1 / -1;
+  >footer {
+    grid-column: 1 / -1;
 
-  @media (min-width: grav-breakpoint(extra-large)) {
-    grid-row: 2 / 3;
-    grid-column: 2 / -1;
+    @media (min-width: grav-breakpoint(extra-large)) {
+      grid-row: 2 / 3;
+      grid-column: 2 / -1;
+    }
   }
 }
