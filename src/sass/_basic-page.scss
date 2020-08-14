@@ -34,21 +34,24 @@ body.layout {
       .hero {
         margin-top: calc((var(--grav-fs-base) * -1.5) - 0.75rem);
         margin-right: -$grav-sp-xl;
+        margin-left: -$grav-sp-xl;
 
         img {
           @include grav-decoration-notch-out(var(--grav-fs-plus-4), $grav-sp-s);
           @include grav-color-apply("background", "a", "neutral-alt");
           width: 100%;
-          min-height: 28rem;
+          min-height: 12rem;
           height: 100%;
           object-fit: cover;
 
           @media (min-width: grav-breakpoint(medium)) {
+            min-height: 20rem;
             @include grav-decoration-notch-out($grav-c-page-intro-notch-size,
               $grav-sp-l);
           }
 
           @media (min-width: grav-breakpoint(large)) {
+            min-height: 28rem;
             @include grav-decoration-notch-out($grav-c-page-intro-notch-size,
               $grav-sp-l * $grav-sp-ostentatious-padding-left-multiplier);
           }
@@ -59,11 +62,12 @@ body.layout {
     @media (min-width: grav-breakpoint(large)) {
       .grid {
         grid-template-columns: 1fr 2fr;
+
+        .hero {
+          margin-left: 0;
+        }
       }
 
-      .hero {
-        margin-left: -$grav-sp-xl;
-      }
     }
 
     @media (min-width: grav-breakpoint(extra-large)) {
