@@ -6,8 +6,6 @@ To provide feedback, raise bugs or request features, please use our [Buildit web
 
 If you want to get involved in the development of this website, then please see our [contribution guidelines](./CONTRIBUTING.md).
 
-
-
 ## Requirements
 
 Node v8.10.0 or higher is required.
@@ -83,6 +81,15 @@ Where `production` corresponds to the key of the desired environment defined in 
 
 If no `--env` argument is provided to the builds, then the first environment defined in `config.json` will be used.
 
+## Branches
+
+For complete info see our [branching strategy docs](./docs/branching-strategy.md). The basic premise is that `master` is always correct and deployed, `develop` is used for creating feature branches and to then merge in to `master`. `next` is "special" and is used to build and test the _next_ big version of the app.
+
+## Deployment
+
+The app will auto-deploy to [production](https://buildit.wiprodigital.com/) using Travis with every passing merge to `master`.
+
+It will also auto-deploy to the [`next` environment](www-next.buildit.digital/) with every passing merge to the `next` branch.
 
 ## More information
 
