@@ -1,3 +1,10 @@
+# [4.8.0](https://github.com/buildit/buildit/compare/v4.7.0...v4.8.0) (2020-08-27)
+
+
+### Features
+
+* remove ex studios ([17635b1](https://github.com/buildit/buildit/commit/17635b1ece469e6a467f01c03ee607ad4844e359))
+
 # [4.7.0](https://github.com/buildit/buildit/compare/v4.6.1...v4.7.0) (2020-08-05)
 
 
