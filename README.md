@@ -16,7 +16,7 @@ If you use [NVM](https://github.com/creationix/nvm) for managing Node, you can j
 
 and before running any other npm command, run
 
-    $ nvm use
+    $ nvm use 
 
 
 ## Build and development
