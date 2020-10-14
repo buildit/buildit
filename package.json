@@ -108,7 +108,7 @@
     "minimist": "^1.2.5",
     "pa11y-ci": "^2.4.0",
     "prettier": "^2.1.1",
-    "rollup": "^2.26.6",
+    "rollup": "^2.30.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "scrollreveal": "^4.0.7",
