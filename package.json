@@ -86,7 +86,7 @@
     "handlebars-helpers": "^0.10.0",
     "handlebars-layouts": "^3.1.4",
     "http-server": "^0.12.3",
-    "husky": "^4.2.5",
+    "husky": "^5.0.9",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.0",
     "imagemin-svgo": "^8.0.0",
