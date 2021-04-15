@@ -60,7 +60,7 @@
     "browser-sync": "^2.26.12",
     "chalk": "^4.1.0",
     "commitizen": "^4.2.1",
-    "critical": "^2.0.3",
+    "critical": "^3.0.1",
     "cypress": "^5.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "debug": "^4.1.1",
